@@ -1,0 +1,16 @@
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\bin\Debug\net8.0-windows\ManageFurniture.exe
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\bin\Debug\net8.0-windows\ManageFurniture.deps.json
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\bin\Debug\net8.0-windows\ManageFurniture.runtimeconfig.json
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\bin\Debug\net8.0-windows\ManageFurniture.dll
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\bin\Debug\net8.0-windows\ManageFurniture.pdb
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.Form1.resources
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.csproj.GenerateResource.cache
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.GeneratedMSBuildEditorConfig.editorconfig
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.AssemblyInfoInputs.cache
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.AssemblyInfo.cs
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.csproj.CoreCompileInputs.cache
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.dll
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\refint\ManageFurniture.dll
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.pdb
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.genruntimeconfig.cache
+D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ref\ManageFurniture.dll
