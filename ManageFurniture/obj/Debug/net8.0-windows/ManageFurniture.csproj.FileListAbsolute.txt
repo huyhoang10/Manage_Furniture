@@ -14,3 +14,13 @@ D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\De
 D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.pdb
 D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.genruntimeconfig.cache
 D:\SPKT\HỌC KÌ 4\winform\final_project\ManageFurniture\ManageFurniture\obj\Debug\net8.0-windows\ref\ManageFurniture.dll
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.Forms.FWelcome.resources
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.csproj.GenerateResource.cache
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.GeneratedMSBuildEditorConfig.editorconfig
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.AssemblyInfoInputs.cache
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.AssemblyInfo.cs
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.csproj.CoreCompileInputs.cache
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.sourcelink.json
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.dll
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\refint\ManageFurniture.dll
+D:\SPKT\Winform_Final_Project\huyhoang10\Manage_Furniture\ManageFurniture\obj\Debug\net8.0-windows\ManageFurniture.pdb

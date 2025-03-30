@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SPKT\\HỌC KÌ 4\\winform\\final_project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\ManageFurniture.csproj",
+      "projectUniqueName": "D:\\SPKT\\Winform_Final_Project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\ManageFurniture.csproj",
       "projectName": "ManageFurniture",
-      "projectPath": "D:\\SPKT\\HỌC KÌ 4\\winform\\final_project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\ManageFurniture.csproj",
+      "projectPath": "D:\\SPKT\\Winform_Final_Project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\ManageFurniture.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\SPKT\\HỌC KÌ 4\\winform\\final_project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\obj\\",
+      "outputPath": "D:\\SPKT\\Winform_Final_Project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
