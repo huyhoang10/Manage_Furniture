@@ -1,29 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SPKT\\Winform_Final_Project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\ManageFurniture.csproj": {}
+    "D:\\WINFORMS\\proj\\ManageFurniture\\ManageFurniture.csproj": {}
   },
   "projects": {
-    "D:\\SPKT\\Winform_Final_Project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\ManageFurniture.csproj": {
+    "D:\\WINFORMS\\proj\\ManageFurniture\\ManageFurniture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SPKT\\Winform_Final_Project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\ManageFurniture.csproj",
+        "projectUniqueName": "D:\\WINFORMS\\proj\\ManageFurniture\\ManageFurniture.csproj",
         "projectName": "ManageFurniture",
-        "projectPath": "D:\\SPKT\\Winform_Final_Project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\ManageFurniture.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\SPKT\\Winform_Final_Project\\huyhoang10\\Manage_Furniture\\ManageFurniture\\obj\\",
+        "projectPath": "D:\\WINFORMS\\proj\\ManageFurniture\\ManageFurniture.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\WINFORMS\\proj\\ManageFurniture\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,11 +45,17 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Guna.UI2.WinForms": {
+              "target": "Package",
+              "version": "[2.0.4.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -66,7 +75,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

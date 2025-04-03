@@ -1,0 +1,127 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WINFORMS\\proj\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|d:\\winforms\\proj\\managefurniture\\forms\\fstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|solutionrelative:managefurniture\\forms\\fstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|d:\\winforms\\proj\\managefurniture\\forms\\uccustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|solutionrelative:managefurniture\\forms\\uccustomer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|d:\\winforms\\proj\\managefurniture\\forms\\fstaff.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|solutionrelative:managefurniture\\forms\\fstaff.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|d:\\winforms\\proj\\managefurniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|solutionrelative:managefurniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|d:\\winforms\\proj\\managefurniture\\forms\\fwelcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|solutionrelative:managefurniture\\forms\\fwelcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|d:\\winforms\\proj\\managefurniture\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B551A37B-6979-4A0D-B1CF-DC18C723F065}|ManageFurniture\\ManageFurniture.csproj|solutionrelative:managefurniture\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 103,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FStaff.Designer.cs",
+              "DocumentMoniker": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\FStaff.Designer.cs",
+              "RelativeDocumentMoniker": "ManageFurniture\\Forms\\FStaff.Designer.cs",
+              "ToolTip": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\FStaff.Designer.cs*",
+              "RelativeToolTip": "ManageFurniture\\Forms\\FStaff.Designer.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:15:18.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UCCustomer.cs [Design]",
+              "DocumentMoniker": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\UCCustomer.cs",
+              "RelativeDocumentMoniker": "ManageFurniture\\Forms\\UCCustomer.cs",
+              "ToolTip": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\UCCustomer.cs [Design]",
+              "RelativeToolTip": "ManageFurniture\\Forms\\UCCustomer.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:09:41.954Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UCCustomer.Designer.cs",
+              "DocumentMoniker": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\UCCustomer.Designer.cs",
+              "RelativeDocumentMoniker": "ManageFurniture\\Forms\\UCCustomer.Designer.cs",
+              "ToolTip": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\UCCustomer.Designer.cs",
+              "RelativeToolTip": "ManageFurniture\\Forms\\UCCustomer.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:08:44.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FStaff.cs [Design]",
+              "DocumentMoniker": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\FStaff.cs",
+              "RelativeDocumentMoniker": "ManageFurniture\\Forms\\FStaff.cs",
+              "ToolTip": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\FStaff.cs [Design]*",
+              "RelativeToolTip": "ManageFurniture\\Forms\\FStaff.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:08:58.02Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\WINFORMS\\proj\\ManageFurniture\\Program.cs",
+              "RelativeDocumentMoniker": "ManageFurniture\\Program.cs",
+              "ToolTip": "D:\\WINFORMS\\proj\\ManageFurniture\\Program.cs",
+              "RelativeToolTip": "ManageFurniture\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:14:32.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FWelcome.cs [Design]",
+              "DocumentMoniker": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\FWelcome.cs",
+              "RelativeDocumentMoniker": "ManageFurniture\\Forms\\FWelcome.cs",
+              "ToolTip": "D:\\WINFORMS\\proj\\ManageFurniture\\Forms\\FWelcome.cs [Design]",
+              "RelativeToolTip": "ManageFurniture\\Forms\\FWelcome.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:09:21.999Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
