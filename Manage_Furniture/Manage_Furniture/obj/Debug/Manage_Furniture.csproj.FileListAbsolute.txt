@@ -1,0 +1,14 @@
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe.config
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.pdb
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.UI2.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.AssemblyReference.cache
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Form1.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Properties.Resources.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.GenerateResource.cache
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.CoreCompileInputs.cache
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_F.3F40B1D6.Up2Date
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.exe
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.pdb
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Controls.UCCustomer.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FEmployee.resources
