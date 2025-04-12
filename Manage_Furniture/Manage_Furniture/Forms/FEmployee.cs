@@ -16,5 +16,15 @@ namespace Manage_Furniture.Forms
         {
             InitializeComponent();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void test1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
