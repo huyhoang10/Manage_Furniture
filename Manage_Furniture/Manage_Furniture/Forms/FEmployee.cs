@@ -16,5 +16,10 @@ namespace Manage_Furniture.Forms
         {
             InitializeComponent();
         }
+
+        private void FEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
