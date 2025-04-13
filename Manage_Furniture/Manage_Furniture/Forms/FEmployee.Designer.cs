@@ -34,19 +34,19 @@
             // ucHumanResourceManagement1
             // 
             this.ucHumanResourceManagement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucHumanResourceManagement1.Location = new System.Drawing.Point(350, 0);
+            this.ucHumanResourceManagement1.Location = new System.Drawing.Point(350, 3);
             this.ucHumanResourceManagement1.Name = "ucHumanResourceManagement1";
-            this.ucHumanResourceManagement1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucHumanResourceManagement1.Size = new System.Drawing.Size(1059, 693);
             this.ucHumanResourceManagement1.TabIndex = 0;
             // 
             // FEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1218, 749);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.ucHumanResourceManagement1);
             this.Name = "FEmployee";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FEmployee";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FEmployee_Load);

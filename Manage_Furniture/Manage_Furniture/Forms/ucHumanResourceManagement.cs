@@ -16,5 +16,15 @@ namespace Manage_Furniture.Controls
         {
             InitializeComponent();
         }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucHumanResourceManagement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
