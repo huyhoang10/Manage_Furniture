@@ -38,7 +38,7 @@
             this.btnWarehouse = new Guna.UI2.WinForms.Guna2Button();
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlAllButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             this.btnLogout.FillColor = System.Drawing.Color.White;
             this.btnLogout.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Location = new System.Drawing.Point(25, 865);
+            this.btnLogout.Location = new System.Drawing.Point(25, 945);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(300, 76);
             this.btnLogout.TabIndex = 9;
@@ -131,6 +131,7 @@
             this.btnSupplier.Size = new System.Drawing.Size(300, 76);
             this.btnSupplier.TabIndex = 5;
             this.btnSupplier.Text = "Supplier";
+            this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
             // 
             // btnWarehouse
             // 
@@ -147,6 +148,7 @@
             this.btnWarehouse.Size = new System.Drawing.Size(300, 76);
             this.btnWarehouse.TabIndex = 4;
             this.btnWarehouse.Text = "Warehouse";
+            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
             // 
             // btnOrder
             // 
@@ -163,7 +165,7 @@
             this.btnOrder.Size = new System.Drawing.Size(300, 76);
             this.btnOrder.TabIndex = 3;
             this.btnOrder.Text = "Order";
-            this.btnOrder.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnCustomer
             // 
@@ -181,14 +183,15 @@
             this.btnCustomer.Size = new System.Drawing.Size(300, 76);
             this.btnCustomer.TabIndex = 2;
             this.btnCustomer.Text = "Customer";
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
-            // guna2Panel1
+            // pnlUserControls
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(350, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1700, 1036);
-            this.guna2Panel1.TabIndex = 3;
+            this.pnlUserControls.BackColor = System.Drawing.Color.White;
+            this.pnlUserControls.Location = new System.Drawing.Point(350, 0);
+            this.pnlUserControls.Name = "pnlUserControls";
+            this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
+            this.pnlUserControls.TabIndex = 3;
             // 
             // FEmployee
             // 
@@ -196,12 +199,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ClientSize = new System.Drawing.Size(1902, 1033);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.pnlUserControls);
             this.Controls.Add(this.pnlAllButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FEmployee";
+            this.Text = "Manage_Furniture";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FEmployee_Load);
             this.pnlAllButton.ResumeLayout(false);
             this.pnlAllButton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
@@ -220,6 +225,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel pnlUserControls;
     }
 }
