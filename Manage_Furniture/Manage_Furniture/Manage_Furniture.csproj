@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +54,23 @@
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
     <Compile Include="Controls\FEmployeeControl.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FSignup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FSignup.Designer.cs">
+      <DependentUpon>FSignup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FWelcome.Designer.cs">
+      <DependentUpon>FWelcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FEmployee.cs">
       <SubType>Form</SubType>
@@ -63,6 +81,15 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FSignup.resx">
+      <DependentUpon>FSignup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FWelcome.resx">
+      <DependentUpon>FWelcome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -71,7 +98,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,6 +113,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4e80d9de-5ed3-4ee7-8d66-5903f4dc7466.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\armchair coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-off 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\living.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-in 1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
