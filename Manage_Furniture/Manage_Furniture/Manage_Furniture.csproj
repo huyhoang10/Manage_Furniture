@@ -58,6 +58,12 @@
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
     <Compile Include="Controls\FEmployeeControl.cs" />
+    <Compile Include="Forms\ucHumanResourceManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucHumanResourceManagement.Designer.cs">
+      <DependentUpon>ucHumanResourceManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
