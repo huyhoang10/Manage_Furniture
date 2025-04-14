@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        protected System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected virtual void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FEmployee));
             this.pnlAllButton = new Guna.UI2.WinForms.Guna2Panel();
@@ -216,15 +216,15 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel pnlAllButton;
-        private Guna.UI2.WinForms.Guna2Button btnCustomer;
-        private Guna.UI2.WinForms.Guna2Button btnSupplier;
-        private Guna.UI2.WinForms.Guna2Button btnWarehouse;
-        private Guna.UI2.WinForms.Guna2Button btnOrder;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnLogout;
-        private Guna.UI2.WinForms.Guna2Panel pnlUserControls;
+        protected Guna.UI2.WinForms.Guna2Panel pnlAllButton;
+        protected Guna.UI2.WinForms.Guna2Button btnCustomer;
+        protected Guna.UI2.WinForms.Guna2Button btnSupplier;
+        protected Guna.UI2.WinForms.Guna2Button btnWarehouse;
+        protected Guna.UI2.WinForms.Guna2Button btnOrder;
+        protected Guna.UI2.WinForms.Guna2Button guna2Button4;
+        protected Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
+        protected System.Windows.Forms.Label label1;
+        protected Guna.UI2.WinForms.Guna2Button btnLogout;
+        protected Guna.UI2.WinForms.Guna2Panel pnlUserControls;
     }
 }

@@ -1,12 +1,13 @@
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe.config
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.pdb
+D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.UI2.dll
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.AssemblyReference.cache
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FEmployee.resources
+D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FManager.resources
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Properties.Resources.resources
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.GenerateResource.cache
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.CoreCompileInputs.cache
+D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_F.3F40B1D6.Up2Date
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.exe
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.pdb
-D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.UI2.dll
-D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_F.3F40B1D6.Up2Date

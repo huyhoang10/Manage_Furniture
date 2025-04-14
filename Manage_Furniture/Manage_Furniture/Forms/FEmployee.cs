@@ -18,12 +18,13 @@ namespace Manage_Furniture.Forms
         }
 
 
-        private void FEmployee_Load(object sender, EventArgs e)
+        protected void FEmployee_Load(object sender, EventArgs e)
         {
-
+            SetAllButton();
+            btnCustomer.FillColor = Color.FromArgb(197, 166, 158);
         }
 
-        protected void SetAllButton()
+        protected virtual void SetAllButton()
         {
             btnCustomer.FillColor = Color.White;
             btnOrder.FillColor = Color.White;
@@ -31,25 +32,25 @@ namespace Manage_Furniture.Forms
             btnSupplier.FillColor = Color.White;
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
+        protected void btnCustomer_Click(object sender, EventArgs e)
         {
             SetAllButton();
             btnCustomer.FillColor = Color.FromArgb(197, 166, 158);
         }
 
-        private void btnOrder_Click(object sender, EventArgs e)
+        protected void btnOrder_Click(object sender, EventArgs e)
         {
             SetAllButton();
             btnOrder.FillColor = Color.FromArgb(197, 166, 158);
         }
 
-        private void btnWarehouse_Click(object sender, EventArgs e)
+        protected void btnWarehouse_Click(object sender, EventArgs e)
         {
             SetAllButton();
             btnWarehouse.FillColor = Color.FromArgb(197, 166, 158);
         }
 
-        private void btnSupplier_Click(object sender, EventArgs e)
+        protected void btnSupplier_Click(object sender, EventArgs e)
         {
             SetAllButton();
             btnSupplier.FillColor = Color.FromArgb(197, 166, 158);
