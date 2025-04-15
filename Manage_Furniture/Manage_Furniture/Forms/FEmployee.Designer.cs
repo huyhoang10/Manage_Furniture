@@ -40,6 +40,7 @@
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
             this.ucHumanResourceManagement1 = new Manage_Furniture.Controls.ucHumanResourceManagement();
+            this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
             this.pnlAllButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlUserControls.SuspendLayout();
@@ -190,6 +191,7 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
+            this.pnlUserControls.Controls.Add(this.ucSuppliercs1);
             this.pnlUserControls.Controls.Add(this.ucHumanResourceManagement1);
             this.pnlUserControls.Location = new System.Drawing.Point(350, 0);
             this.pnlUserControls.Name = "pnlUserControls";
@@ -201,10 +203,18 @@
             this.ucHumanResourceManagement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucHumanResourceManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucHumanResourceManagement1.Location = new System.Drawing.Point(0, 0);
-            this.ucHumanResourceManagement1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucHumanResourceManagement1.Margin = new System.Windows.Forms.Padding(4);
             this.ucHumanResourceManagement1.Name = "ucHumanResourceManagement1";
             this.ucHumanResourceManagement1.Size = new System.Drawing.Size(1700, 1036);
             this.ucHumanResourceManagement1.TabIndex = 0;
+            // 
+            // ucSuppliercs1
+            // 
+            this.ucSuppliercs1.Location = new System.Drawing.Point(0, 0);
+            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucSuppliercs1.Name = "ucSuppliercs1";
+            this.ucSuppliercs1.Size = new System.Drawing.Size(2069, 1275);
+            this.ucSuppliercs1.TabIndex = 1;
             // 
             // FEmployee
             // 
@@ -241,5 +251,6 @@
         protected Guna.UI2.WinForms.Guna2Button btnLogout;
         protected Guna.UI2.WinForms.Guna2Panel pnlUserControls;
         private Controls.ucHumanResourceManagement ucHumanResourceManagement1;
+        private ucSuppliercs ucSuppliercs1;
     }
 }

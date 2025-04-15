@@ -88,6 +88,12 @@
     <Compile Include="Forms\FManager.Designer.cs">
       <DependentUpon>FManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucSuppliercs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucSuppliercs.Designer.cs">
+      <DependentUpon>ucSuppliercs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucHumanResourceManagement.resx">
       <DependentUpon>ucHumanResourceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucSuppliercs.resx">
+      <DependentUpon>ucSuppliercs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
