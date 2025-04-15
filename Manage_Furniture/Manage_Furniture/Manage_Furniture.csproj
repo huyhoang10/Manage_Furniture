@@ -94,6 +94,12 @@
     <Compile Include="Forms\ucSuppliercs.Designer.cs">
       <DependentUpon>ucSuppliercs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucWarehouse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucWarehouse.Designer.cs">
+      <DependentUpon>ucWarehouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucSuppliercs.resx">
       <DependentUpon>ucSuppliercs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucWarehouse.resx">
+      <DependentUpon>ucWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

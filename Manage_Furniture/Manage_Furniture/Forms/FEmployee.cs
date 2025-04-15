@@ -48,12 +48,14 @@ namespace Manage_Furniture.Forms
         {
             SetAllButton();
             btnWarehouse.FillColor = Color.FromArgb(197, 166, 158);
+            ucWarehouse1.BringToFront();
         }
 
         protected void btnSupplier_Click(object sender, EventArgs e)
         {
             SetAllButton();
             btnSupplier.FillColor = Color.FromArgb(197, 166, 158);
+            ucSuppliercs1.BringToFront();
         }
     }
 }
