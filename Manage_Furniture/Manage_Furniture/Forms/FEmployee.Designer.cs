@@ -39,8 +39,10 @@
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
+            this.ucHumanResourceManagement1 = new Manage_Furniture.Controls.ucHumanResourceManagement();
             this.pnlAllButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlUserControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlAllButton
@@ -188,10 +190,21 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
+            this.pnlUserControls.Controls.Add(this.ucHumanResourceManagement1);
             this.pnlUserControls.Location = new System.Drawing.Point(350, 0);
             this.pnlUserControls.Name = "pnlUserControls";
             this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
             this.pnlUserControls.TabIndex = 3;
+            // 
+            // ucHumanResourceManagement1
+            // 
+            this.ucHumanResourceManagement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucHumanResourceManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHumanResourceManagement1.Location = new System.Drawing.Point(0, 0);
+            this.ucHumanResourceManagement1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucHumanResourceManagement1.Name = "ucHumanResourceManagement1";
+            this.ucHumanResourceManagement1.Size = new System.Drawing.Size(1700, 1036);
+            this.ucHumanResourceManagement1.TabIndex = 0;
             // 
             // FEmployee
             // 
@@ -210,6 +223,7 @@
             this.pnlAllButton.ResumeLayout(false);
             this.pnlAllButton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlUserControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,5 +240,6 @@
         protected System.Windows.Forms.Label label1;
         protected Guna.UI2.WinForms.Guna2Button btnLogout;
         protected Guna.UI2.WinForms.Guna2Panel pnlUserControls;
+        private Controls.ucHumanResourceManagement ucHumanResourceManagement1;
     }
 }

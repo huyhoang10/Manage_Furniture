@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manage_Furniture.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace Manage_Furniture
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnE_Click(object sender, EventArgs e)
+        {
+            FEmployee fEmployee = new FEmployee();
+            fEmployee.ShowDialog();
+
+        }
+
+        private void btnM_Click(object sender, EventArgs e)
+        {
+            FManager fManager = new FManager();
+            fManager.ShowDialog();
         }
     }
 }
