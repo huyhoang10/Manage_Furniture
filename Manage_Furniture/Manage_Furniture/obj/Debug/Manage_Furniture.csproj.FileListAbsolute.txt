@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe.config
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.pdb
@@ -13,3 +14,19 @@ D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Fur
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.pdb
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Form1.resources
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Controls.ucHumanResourceManagement.resources
+=======
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe.config
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.pdb
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.AssemblyReference.cache
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FSignup.resources
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.FWelcome.resources
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Properties.Resources.resources
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.GenerateResource.cache
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.CoreCompileInputs.cache
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.exe
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.pdb
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.UI2.dll
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FLogin.resources
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_F.3F40B1D6.Up2Date
+>>>>>>> Dev/Tam

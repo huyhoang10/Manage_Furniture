@@ -64,11 +64,17 @@
     <Compile Include="Forms\ucHumanResourceManagement.Designer.cs">
       <DependentUpon>ucHumanResourceManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\FSignup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\FSignup.Designer.cs">
+      <DependentUpon>FSignup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FWelcome.Designer.cs">
+      <DependentUpon>FWelcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FEmployee.cs">
       <SubType>Form</SubType>
@@ -85,9 +91,6 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FEmployee.resx">
       <DependentUpon>FEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
