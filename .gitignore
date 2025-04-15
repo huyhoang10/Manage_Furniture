@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Manage_Furniture/packages/Guna.UI2.WinForms.2.0.4.7
+/Manage_Furniture/.vs/Manage_Furniture
+/Manage_Furniture/Manage_Furniture/obj/Debug
+/Manage_Furniture
