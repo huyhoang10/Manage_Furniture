@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Manage_Furniture.Forms
+{
+    public partial class UCOverview : UserControl
+    {
+        public UCOverview()
+        {
+            InitializeComponent();
+        }
+
+    }
+}

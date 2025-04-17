@@ -33,8 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +54,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
@@ -60,9 +71,27 @@
     <Compile Include="Forms\FEmployee.Designer.cs">
       <DependentUpon>FEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FOverview.Designer.cs">
+      <DependentUpon>FOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UCOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UCOverview.Designer.cs">
+      <DependentUpon>UCOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FOverview.resx">
+      <DependentUpon>FOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UCOverview.resx">
+      <DependentUpon>UCOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,6 +101,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

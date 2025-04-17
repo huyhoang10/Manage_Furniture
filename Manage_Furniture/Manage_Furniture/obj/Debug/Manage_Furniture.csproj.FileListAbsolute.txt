@@ -1,0 +1,13 @@
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe.config
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.pdb
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.UI2.dll
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.AssemblyReference.cache
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.UCOverview.resources
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Properties.Resources.resources
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.GenerateResource.cache
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.CoreCompileInputs.cache
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_F.3F40B1D6.Up2Date
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.exe
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.pdb
+E:\winform\WINFORM_PROJECT\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FOverview.resources
