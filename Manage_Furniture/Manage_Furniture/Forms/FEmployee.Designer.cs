@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucHumanResourceManagement1 = new Manage_Furniture.Controls.ucHumanResourceManagement();
             this.SuspendLayout();
-            // 
-            // ucHumanResourceManagement1
-            // 
-            this.ucHumanResourceManagement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucHumanResourceManagement1.Location = new System.Drawing.Point(350, 3);
-            this.ucHumanResourceManagement1.Name = "ucHumanResourceManagement1";
-            this.ucHumanResourceManagement1.Size = new System.Drawing.Size(1059, 693);
-            this.ucHumanResourceManagement1.TabIndex = 0;
             // 
             // FEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.ucHumanResourceManagement1);
             this.Name = "FEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FEmployee";
@@ -55,7 +45,5 @@
         }
 
         #endregion
-
-        private Controls.ucHumanResourceManagement ucHumanResourceManagement1;
     }
 }
