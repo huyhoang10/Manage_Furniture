@@ -31,3 +31,5 @@ D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_F.3F40B1D6.Up2Date
 >>>>>>> Dev/Tam
 D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.ucSuppliercs.resources
+D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.ucWarehouse.resources
+D:\SPKT\HỌC KÌ 4\winform\Final_Project\huyhoang10\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Controls.ucHR.resources

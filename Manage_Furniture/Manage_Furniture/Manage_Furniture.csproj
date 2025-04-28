@@ -58,11 +58,11 @@
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
     <Compile Include="Controls\FEmployeeControl.cs" />
-    <Compile Include="Forms\ucHumanResourceManagement.cs">
+    <Compile Include="Forms\ucHR.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ucHumanResourceManagement.Designer.cs">
-      <DependentUpon>ucHumanResourceManagement.cs</DependentUpon>
+    <Compile Include="Forms\ucHR.Designer.cs">
+      <DependentUpon>ucHR.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FSignup.cs">
       <SubType>Form</SubType>
@@ -109,8 +109,8 @@
     <EmbeddedResource Include="Forms\FManager.resx">
       <DependentUpon>FManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucHumanResourceManagement.resx">
-      <DependentUpon>ucHumanResourceManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ucHR.resx">
+      <DependentUpon>ucHR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucSuppliercs.resx">
       <DependentUpon>ucSuppliercs.cs</DependentUpon>

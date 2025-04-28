@@ -18,7 +18,7 @@ namespace Manage_Furniture
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FWelcome());
+            Application.Run(new FManager());
         }
     }
 }
