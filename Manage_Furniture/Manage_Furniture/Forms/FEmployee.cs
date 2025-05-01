@@ -44,7 +44,7 @@ namespace Manage_Furniture.Forms
             btnOrder.FillColor = Color.FromArgb(197, 166, 158);
         }
 
-        protected void btnWarehouse_Click(object sender, EventArgs e)
+        protected virtual void btnWarehouse_Click(object sender, EventArgs e)
         {
             SetAllButton();
             btnWarehouse.FillColor = Color.FromArgb(197, 166, 158);

@@ -43,6 +43,7 @@ namespace Manage_Furniture.Forms
         {
             SetAllButton();
             btnHR.FillColor = Color.FromArgb(197, 166, 158);
+            ucHR1.BringToFront();
         }
 
     }
