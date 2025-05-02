@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        protected System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected virtual void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FEmployee));
             this.pnlAllButton = new Guna.UI2.WinForms.Guna2Panel();
@@ -39,8 +39,11 @@
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
+            this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
+            this.ucWarehouse1 = new Manage_Furniture.Forms.ucWarehouse();
             this.pnlAllButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlUserControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlAllButton
@@ -188,10 +191,29 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
+            this.pnlUserControls.Controls.Add(this.ucWarehouse1);
+            this.pnlUserControls.Controls.Add(this.ucSuppliercs1);
             this.pnlUserControls.Location = new System.Drawing.Point(350, 0);
             this.pnlUserControls.Name = "pnlUserControls";
             this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
             this.pnlUserControls.TabIndex = 3;
+            // 
+            // ucSuppliercs1
+            // 
+            this.ucSuppliercs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucSuppliercs1.Location = new System.Drawing.Point(0, 0);
+            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucSuppliercs1.Name = "ucSuppliercs1";
+            this.ucSuppliercs1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucSuppliercs1.TabIndex = 1;
+            // 
+            // ucWarehouse1
+            // 
+            this.ucWarehouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucWarehouse1.Location = new System.Drawing.Point(0, 0);
+            this.ucWarehouse1.Name = "ucWarehouse1";
+            this.ucWarehouse1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucWarehouse1.TabIndex = 2;
             // 
             // FEmployee
             // 
@@ -210,21 +232,24 @@
             this.pnlAllButton.ResumeLayout(false);
             this.pnlAllButton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlUserControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel pnlAllButton;
-        private Guna.UI2.WinForms.Guna2Button btnCustomer;
-        private Guna.UI2.WinForms.Guna2Button btnSupplier;
-        private Guna.UI2.WinForms.Guna2Button btnWarehouse;
-        private Guna.UI2.WinForms.Guna2Button btnOrder;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnLogout;
-        private Guna.UI2.WinForms.Guna2Panel pnlUserControls;
+        protected Guna.UI2.WinForms.Guna2Panel pnlAllButton;
+        protected Guna.UI2.WinForms.Guna2Button btnCustomer;
+        protected Guna.UI2.WinForms.Guna2Button btnSupplier;
+        protected Guna.UI2.WinForms.Guna2Button btnWarehouse;
+        protected Guna.UI2.WinForms.Guna2Button btnOrder;
+        protected Guna.UI2.WinForms.Guna2Button guna2Button4;
+        protected Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
+        protected System.Windows.Forms.Label label1;
+        protected Guna.UI2.WinForms.Guna2Button btnLogout;
+        protected Guna.UI2.WinForms.Guna2Panel pnlUserControls;
+        private ucSuppliercs ucSuppliercs1;
+        private ucWarehouse ucWarehouse1;
     }
 }

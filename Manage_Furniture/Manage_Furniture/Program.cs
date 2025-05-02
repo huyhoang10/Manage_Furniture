@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Manage_Furniture.Controls;
 using Manage_Furniture.Forms;
 
 namespace Manage_Furniture
@@ -17,7 +18,7 @@ namespace Manage_Furniture
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FEmployee());
+            Application.Run(new FManager());
         }
     }
 }

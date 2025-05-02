@@ -58,11 +58,23 @@
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
     <Compile Include="Controls\FEmployeeControl.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\ucHR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucHR.Designer.cs">
+      <DependentUpon>ucHR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FSignup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\FSignup.Designer.cs">
+      <DependentUpon>FSignup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FWelcome.Designer.cs">
+      <DependentUpon>FWelcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FEmployee.cs">
       <SubType>Form</SubType>
@@ -70,11 +82,41 @@
     <Compile Include="Forms\FEmployee.Designer.cs">
       <DependentUpon>FEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FManager.Designer.cs">
+      <DependentUpon>FManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucSuppliercs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucSuppliercs.Designer.cs">
+      <DependentUpon>ucSuppliercs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucWarehouse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucWarehouse.Designer.cs">
+      <DependentUpon>ucWarehouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FEmployee.resx">
       <DependentUpon>FEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FManager.resx">
+      <DependentUpon>FManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucHR.resx">
+      <DependentUpon>ucHR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucSuppliercs.resx">
+      <DependentUpon>ucSuppliercs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucWarehouse.resx">
+      <DependentUpon>ucWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +126,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -98,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
