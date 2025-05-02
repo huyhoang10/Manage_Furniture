@@ -21,5 +21,10 @@ namespace Manage_Furniture.Controls
         {
 
         }
+
+        private void dgv_Costumer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
