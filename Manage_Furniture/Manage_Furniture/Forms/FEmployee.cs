@@ -20,16 +20,20 @@ namespace Manage_Furniture.Forms
 
         protected void FEmployee_Load(object sender, EventArgs e)
         {
+            btnHome.Visible = false;
+            btnHR.Visible = false;
             SetAllButton();
-            btnCustomer.FillColor = Color.FromArgb(197, 166, 158);
+            btnOrder.FillColor = Color.FromArgb(197, 166, 158);
         }
 
         protected virtual void SetAllButton()
         {
-            btnCustomer.FillColor = Color.White;
+            btnHome.FillColor = Color.White;
             btnOrder.FillColor = Color.White;
+            btnCustomer.FillColor = Color.White;
             btnWarehouse.FillColor = Color.White;
             btnSupplier.FillColor = Color.White;
+            btnHR.FillColor = Color.White;
         }
 
         protected void btnCustomer_Click(object sender, EventArgs e)
@@ -56,6 +60,20 @@ namespace Manage_Furniture.Forms
             SetAllButton();
             btnSupplier.FillColor = Color.FromArgb(197, 166, 158);
             ucSuppliercs1.BringToFront();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            SetAllButton();
+            btnHome.FillColor = Color.FromArgb(197, 166, 158);
+            ucSuppliercs1.BringToFront();
+        }
+
+        private void btnHR_Click(object sender, EventArgs e)
+        {
+            SetAllButton();
+            btnHR.FillColor = Color.FromArgb(197, 166, 158);
+            ucHR1.BringToFront();
         }
     }
 }

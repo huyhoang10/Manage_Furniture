@@ -39,8 +39,11 @@
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
-            this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
             this.ucWarehouse1 = new Manage_Furniture.Forms.ucWarehouse();
+            this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
+            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHR = new Guna.UI2.WinForms.Guna2Button();
+            this.ucHR1 = new Manage_Furniture.Controls.ucHR();
             this.pnlAllButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlUserControls.SuspendLayout();
@@ -49,6 +52,8 @@
             // pnlAllButton
             // 
             this.pnlAllButton.BackColor = System.Drawing.Color.White;
+            this.pnlAllButton.Controls.Add(this.btnHR);
+            this.pnlAllButton.Controls.Add(this.btnHome);
             this.pnlAllButton.Controls.Add(this.btnLogout);
             this.pnlAllButton.Controls.Add(this.label1);
             this.pnlAllButton.Controls.Add(this.picLogo);
@@ -129,7 +134,7 @@
             this.btnSupplier.FillColor = System.Drawing.Color.White;
             this.btnSupplier.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupplier.ForeColor = System.Drawing.Color.Black;
-            this.btnSupplier.Location = new System.Drawing.Point(25, 576);
+            this.btnSupplier.Location = new System.Drawing.Point(25, 591);
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Size = new System.Drawing.Size(300, 76);
             this.btnSupplier.TabIndex = 5;
@@ -146,7 +151,7 @@
             this.btnWarehouse.FillColor = System.Drawing.Color.White;
             this.btnWarehouse.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWarehouse.ForeColor = System.Drawing.Color.Black;
-            this.btnWarehouse.Location = new System.Drawing.Point(25, 476);
+            this.btnWarehouse.Location = new System.Drawing.Point(25, 487);
             this.btnWarehouse.Name = "btnWarehouse";
             this.btnWarehouse.Size = new System.Drawing.Size(300, 76);
             this.btnWarehouse.TabIndex = 4;
@@ -163,7 +168,7 @@
             this.btnOrder.FillColor = System.Drawing.Color.White;
             this.btnOrder.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.Black;
-            this.btnOrder.Location = new System.Drawing.Point(25, 376);
+            this.btnOrder.Location = new System.Drawing.Point(25, 279);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(300, 76);
             this.btnOrder.TabIndex = 3;
@@ -178,10 +183,10 @@
             this.btnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(166)))), ((int)(((byte)(158)))));
+            this.btnCustomer.FillColor = System.Drawing.Color.White;
             this.btnCustomer.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.ForeColor = System.Drawing.Color.Black;
-            this.btnCustomer.Location = new System.Drawing.Point(25, 276);
+            this.btnCustomer.Location = new System.Drawing.Point(25, 383);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(300, 76);
             this.btnCustomer.TabIndex = 2;
@@ -191,6 +196,7 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
+            this.pnlUserControls.Controls.Add(this.ucHR1);
             this.pnlUserControls.Controls.Add(this.ucWarehouse1);
             this.pnlUserControls.Controls.Add(this.ucSuppliercs1);
             this.pnlUserControls.Location = new System.Drawing.Point(350, 0);
@@ -198,22 +204,67 @@
             this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
             this.pnlUserControls.TabIndex = 3;
             // 
-            // ucSuppliercs1
-            // 
-            this.ucSuppliercs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucSuppliercs1.Location = new System.Drawing.Point(0, 0);
-            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucSuppliercs1.Name = "ucSuppliercs1";
-            this.ucSuppliercs1.Size = new System.Drawing.Size(1552, 1036);
-            this.ucSuppliercs1.TabIndex = 1;
-            // 
             // ucWarehouse1
             // 
             this.ucWarehouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucWarehouse1.Location = new System.Drawing.Point(0, 0);
+            this.ucWarehouse1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucWarehouse1.Name = "ucWarehouse1";
             this.ucWarehouse1.Size = new System.Drawing.Size(1552, 1036);
             this.ucWarehouse1.TabIndex = 2;
+            // 
+            // ucSuppliercs1
+            // 
+            this.ucSuppliercs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucSuppliercs1.Location = new System.Drawing.Point(0, 0);
+            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucSuppliercs1.Name = "ucSuppliercs1";
+            this.ucSuppliercs1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucSuppliercs1.TabIndex = 1;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.BorderRadius = 16;
+            this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(166)))), ((int)(((byte)(158)))));
+            this.btnHome.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.Black;
+            this.btnHome.Location = new System.Drawing.Point(25, 175);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(300, 76);
+            this.btnHome.TabIndex = 10;
+            this.btnHome.Text = "Home";
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnHR
+            // 
+            this.btnHR.BorderRadius = 16;
+            this.btnHR.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHR.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHR.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHR.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHR.FillColor = System.Drawing.Color.White;
+            this.btnHR.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHR.ForeColor = System.Drawing.Color.Black;
+            this.btnHR.Location = new System.Drawing.Point(25, 695);
+            this.btnHR.Name = "btnHR";
+            this.btnHR.Size = new System.Drawing.Size(300, 76);
+            this.btnHR.TabIndex = 11;
+            this.btnHR.Text = "HR";
+            this.btnHR.Click += new System.EventHandler(this.btnHR_Click);
+            // 
+            // ucHR1
+            // 
+            this.ucHR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucHR1.Location = new System.Drawing.Point(0, 0);
+            this.ucHR1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucHR1.Name = "ucHR1";
+            this.ucHR1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucHR1.TabIndex = 3;
             // 
             // FEmployee
             // 
@@ -251,5 +302,8 @@
         protected Guna.UI2.WinForms.Guna2Panel pnlUserControls;
         private ucSuppliercs ucSuppliercs1;
         private ucWarehouse ucWarehouse1;
+        protected Guna.UI2.WinForms.Guna2Button btnHR;
+        protected Guna.UI2.WinForms.Guna2Button btnHome;
+        private Controls.ucHR ucHR1;
     }
 }

@@ -20,8 +20,8 @@ namespace Manage_Furniture.Forms
 
         protected void FManager_Load(object sender, EventArgs e)
         {
-            btnHome.BringToFront();
-            btnHR.BringToFront();
+            btnHome.Visible = true;
+            btnHR.Visible = true;
             SetAllButton();
             btnHome.FillColor = Color.FromArgb(197, 166, 158);
         }
@@ -32,19 +32,5 @@ namespace Manage_Furniture.Forms
             btnHome.FillColor = Color.White;
             btnHR.FillColor = Color.White;
         }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            SetAllButton();
-            btnHome.FillColor = Color.FromArgb(197, 166, 158);
-        }
-
-        private void btnHR_Click(object sender, EventArgs e)
-        {
-            SetAllButton();
-            btnHR.FillColor = Color.FromArgb(197, 166, 158);
-            ucHR1.BringToFront();
-        }
-
     }
 }
