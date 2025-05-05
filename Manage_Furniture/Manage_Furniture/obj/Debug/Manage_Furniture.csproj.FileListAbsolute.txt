@@ -9,6 +9,10 @@ D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.CoreCompileInputs.cache
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.exe
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.pdb
-D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.UI2.dll
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FLogin.resources
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_F.3F40B1D6.Up2Date
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.Charts.WinForms.dll
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.UI2.dll
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.Charts.WinForms.xml
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FOrder.resources
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.UCOrder.resources

@@ -8,5 +8,13 @@ namespace Manage_Furniture.ADO
 {
     internal class connectDatabase
     {
+        private static manager_furnitureDataContext db;
+
+        public static manager_furnitureDataContext GetContext()
+        {
+            if (db == null)
+                db = new manager_furnitureDataContext();
+            return db;
+        }
     }
 }

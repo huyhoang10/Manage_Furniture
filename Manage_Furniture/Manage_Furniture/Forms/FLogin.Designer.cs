@@ -29,43 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FLogin));
-            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.txt_username = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.phide = new System.Windows.Forms.PictureBox();
             this.guna2Shapes3 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.pshow = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_passwd = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_signup = new System.Windows.Forms.Label();
             this.btn_login = new Guna.UI2.WinForms.Guna2Button();
-            this.phide = new System.Windows.Forms.PictureBox();
-            this.pshow = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rbtn_admin = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbtn_employee = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pshow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2Shapes1
-            // 
-            this.guna2Shapes1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            this.guna2Shapes1.Location = new System.Drawing.Point(1040, 87);
-            this.guna2Shapes1.Name = "guna2Shapes1";
-            this.guna2Shapes1.PolygonSkip = 1;
-            this.guna2Shapes1.Rotate = 0F;
-            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
-            this.guna2Shapes1.Size = new System.Drawing.Size(687, 850);
-            this.guna2Shapes1.TabIndex = 1;
-            this.guna2Shapes1.Text = "guna2Shapes1";
-            this.guna2Shapes1.Zoom = 100;
             // 
             // txt_username
             // 
@@ -98,7 +86,7 @@
             this.panel1.Controls.Add(this.guna2Shapes2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_username);
-            this.panel1.Location = new System.Drawing.Point(1128, 364);
+            this.panel1.Location = new System.Drawing.Point(1128, 392);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(524, 110);
             this.panel1.TabIndex = 4;
@@ -136,10 +124,22 @@
             this.panel2.Controls.Add(this.pshow);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txt_passwd);
-            this.panel2.Location = new System.Drawing.Point(1128, 523);
+            this.panel2.Location = new System.Drawing.Point(1128, 551);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(524, 110);
             this.panel2.TabIndex = 6;
+            // 
+            // phide
+            // 
+            this.phide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.phide.BackgroundImage = global::Manage_Furniture.Properties.Resources.eye_off_2;
+            this.phide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.phide.Location = new System.Drawing.Point(467, 45);
+            this.phide.Name = "phide";
+            this.phide.Size = new System.Drawing.Size(50, 50);
+            this.phide.TabIndex = 8;
+            this.phide.TabStop = false;
+            this.phide.Click += new System.EventHandler(this.phide_Click);
             // 
             // guna2Shapes3
             // 
@@ -154,6 +154,18 @@
             this.guna2Shapes3.TabIndex = 5;
             this.guna2Shapes3.Text = "guna2Shapes3";
             this.guna2Shapes3.Zoom = 100;
+            // 
+            // pshow
+            // 
+            this.pshow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.pshow.BackgroundImage = global::Manage_Furniture.Properties.Resources.eye_1;
+            this.pshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pshow.Location = new System.Drawing.Point(467, 45);
+            this.pshow.Name = "pshow";
+            this.pshow.Size = new System.Drawing.Size(50, 50);
+            this.pshow.TabIndex = 7;
+            this.pshow.TabStop = false;
+            this.pshow.Click += new System.EventHandler(this.pshow_Click);
             // 
             // label2
             // 
@@ -192,31 +204,6 @@
             this.txt_passwd.Size = new System.Drawing.Size(471, 48);
             this.txt_passwd.TabIndex = 3;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            this.label3.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1168, 802);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(299, 33);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Don\'t have an account?";
-            // 
-            // lbl_signup
-            // 
-            this.lbl_signup.AutoSize = true;
-            this.lbl_signup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            this.lbl_signup.Font = new System.Drawing.Font("Montserrat", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_signup.ForeColor = System.Drawing.Color.White;
-            this.lbl_signup.Location = new System.Drawing.Point(1488, 802);
-            this.lbl_signup.Name = "lbl_signup";
-            this.lbl_signup.Size = new System.Drawing.Size(109, 32);
-            this.lbl_signup.TabIndex = 10;
-            this.lbl_signup.Text = "Sign Up";
-            this.lbl_signup.Click += new System.EventHandler(this.lbl_signup_Click);
-            // 
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
@@ -232,44 +219,21 @@
             this.btn_login.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(44)))), ((int)(((byte)(26)))));
             this.btn_login.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_login.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_login.Location = new System.Drawing.Point(1260, 688);
+            this.btn_login.Location = new System.Drawing.Point(1255, 781);
             this.btn_login.Name = "btn_login";
             this.btn_login.ShadowDecoration.BorderRadius = 45;
             this.btn_login.ShadowDecoration.Color = System.Drawing.Color.DimGray;
             this.btn_login.Size = new System.Drawing.Size(279, 77);
             this.btn_login.TabIndex = 7;
             this.btn_login.Text = " LOG IN";
-            // 
-            // phide
-            // 
-            this.phide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            this.phide.BackgroundImage = global::Manage_Furniture.Properties.Resources.eye_off_2;
-            this.phide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.phide.Location = new System.Drawing.Point(467, 45);
-            this.phide.Name = "phide";
-            this.phide.Size = new System.Drawing.Size(50, 50);
-            this.phide.TabIndex = 8;
-            this.phide.TabStop = false;
-            this.phide.Click += new System.EventHandler(this.phide_Click);
-            // 
-            // pshow
-            // 
-            this.pshow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            this.pshow.BackgroundImage = global::Manage_Furniture.Properties.Resources.eye_1;
-            this.pshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pshow.Location = new System.Drawing.Point(467, 45);
-            this.pshow.Name = "pshow";
-            this.pshow.Size = new System.Drawing.Size(50, 50);
-            this.pshow.TabIndex = 7;
-            this.pshow.TabStop = false;
-            this.pshow.Click += new System.EventHandler(this.pshow_Click);
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
             this.pictureBox2.BackgroundImage = global::Manage_Furniture.Properties.Resources.logo1;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1292, 123);
+            this.pictureBox2.Location = new System.Drawing.Point(1292, 151);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(214, 184);
             this.pictureBox2.TabIndex = 2;
@@ -285,20 +249,94 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // rbtn_admin
+            // 
+            this.rbtn_admin.AutoSize = true;
+            this.rbtn_admin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.rbtn_admin.CheckedState.BorderColor = System.Drawing.Color.Maroon;
+            this.rbtn_admin.CheckedState.BorderThickness = 0;
+            this.rbtn_admin.CheckedState.FillColor = System.Drawing.Color.White;
+            this.rbtn_admin.CheckedState.InnerColor = System.Drawing.Color.Maroon;
+            this.rbtn_admin.CheckedState.InnerOffset = -6;
+            this.rbtn_admin.Font = new System.Drawing.Font("Montserrat SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.rbtn_admin.ForeColor = System.Drawing.Color.White;
+            this.rbtn_admin.Location = new System.Drawing.Point(28, 16);
+            this.rbtn_admin.Name = "rbtn_admin";
+            this.rbtn_admin.Size = new System.Drawing.Size(122, 39);
+            this.rbtn_admin.TabIndex = 8;
+            this.rbtn_admin.Text = "Admin";
+            this.rbtn_admin.UncheckedState.BorderColor = System.Drawing.Color.Maroon;
+            this.rbtn_admin.UncheckedState.BorderThickness = 2;
+            this.rbtn_admin.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.rbtn_admin.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbtn_admin.UseVisualStyleBackColor = false;
+            // 
+            // rbtn_employee
+            // 
+            this.rbtn_employee.AutoSize = true;
+            this.rbtn_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.rbtn_employee.CheckedState.BorderColor = System.Drawing.Color.Maroon;
+            this.rbtn_employee.CheckedState.BorderThickness = 0;
+            this.rbtn_employee.CheckedState.FillColor = System.Drawing.Color.White;
+            this.rbtn_employee.CheckedState.InnerColor = System.Drawing.Color.Maroon;
+            this.rbtn_employee.CheckedState.InnerOffset = -6;
+            this.rbtn_employee.Font = new System.Drawing.Font("Montserrat SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.rbtn_employee.ForeColor = System.Drawing.Color.White;
+            this.rbtn_employee.Location = new System.Drawing.Point(210, 16);
+            this.rbtn_employee.Name = "rbtn_employee";
+            this.rbtn_employee.Size = new System.Drawing.Size(165, 39);
+            this.rbtn_employee.TabIndex = 9;
+            this.rbtn_employee.Text = "Employee";
+            this.rbtn_employee.UncheckedState.BorderColor = System.Drawing.Color.Maroon;
+            this.rbtn_employee.UncheckedState.BorderThickness = 2;
+            this.rbtn_employee.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.rbtn_employee.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbtn_employee.UseMnemonic = false;
+            this.rbtn_employee.UseVisualStyleBackColor = false;
+            // 
+            // guna2GroupBox1
+            // 
+            this.guna2GroupBox1.BorderThickness = 0;
+            this.guna2GroupBox1.Controls.Add(this.rbtn_employee);
+            this.guna2GroupBox1.Controls.Add(this.rbtn_admin);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
+            this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.guna2GroupBox1.Location = new System.Drawing.Point(1202, 676);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(393, 76);
+            this.guna2GroupBox1.TabIndex = 10;
+            this.guna2GroupBox1.Text = "gb_role";
+            // 
+            // guna2Shapes1
+            // 
+            this.guna2Shapes1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.guna2Shapes1.Location = new System.Drawing.Point(1055, 114);
+            this.guna2Shapes1.Name = "guna2Shapes1";
+            this.guna2Shapes1.PolygonSkip = 1;
+            this.guna2Shapes1.Rotate = 0F;
+            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
+            this.guna2Shapes1.Size = new System.Drawing.Size(674, 797);
+            this.guna2Shapes1.TabIndex = 11;
+            this.guna2Shapes1.Text = "guna2Shapes1";
+            this.guna2Shapes1.Zoom = 100;
+            // 
             // FLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(75)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(1902, 1033);
-            this.Controls.Add(this.lbl_signup);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.guna2Shapes1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.guna2Shapes1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -313,15 +351,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pshow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2GroupBox1.ResumeLayout(false);
+            this.guna2GroupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox txt_username;
         private System.Windows.Forms.Panel panel1;
@@ -334,7 +372,9 @@
         private System.Windows.Forms.PictureBox pshow;
         private System.Windows.Forms.PictureBox phide;
         private Guna.UI2.WinForms.Guna2Button btn_login;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_signup;
+        private Guna.UI2.WinForms.Guna2RadioButton rbtn_admin;
+        private Guna.UI2.WinForms.Guna2RadioButton rbtn_employee;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
     }
 }
