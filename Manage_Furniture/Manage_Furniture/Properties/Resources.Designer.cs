@@ -63,19 +63,9 @@ namespace Manage_Furniture.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconsearch {
+        internal static System.Drawing.Bitmap IconSearch {
             get {
-                object obj = ResourceManager.GetObject("iconsearch", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap searchicon {
-            get {
-                object obj = ResourceManager.GetObject("searchicon", resourceCulture);
+                object obj = ResourceManager.GetObject("IconSearch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
