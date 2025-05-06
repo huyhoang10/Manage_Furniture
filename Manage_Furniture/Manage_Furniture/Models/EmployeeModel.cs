@@ -15,8 +15,9 @@ namespace Manage_Furniture.Models
         public string Address { get; set; }
         public string Salary { get; set; }
         public string Status { get; set; }
+        public string password { get; set; } // Thêm thuộc tính password
 
-        public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string status)
+        public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string status, string password)
         {
             Id = id;
             Name = name;
@@ -25,7 +26,9 @@ namespace Manage_Furniture.Models
             Address = address;
             Salary = salary;
             Status = status;
+            this.password = password;
         }
     }
+
 
 }

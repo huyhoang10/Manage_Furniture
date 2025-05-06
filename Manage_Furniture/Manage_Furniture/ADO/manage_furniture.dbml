@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ManageFurniture" Class="manage_furnitureDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ManageFurniture;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="Manage_Furniture.Properties.Settings" SettingsPropertyName="ManageFurnitureConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bill" Member="bills">
+    <Type Name="bill">
+      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Association Name="order_bill" Member="order" ThisKey="id_order" OtherKey="id" Type="order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer" Member="customers">
+    <Type Name="customer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="customer_order" Member="orders" ThisKey="id" OtherKey="id_customer" Type="order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.employee" Member="employees">
+    <Type Name="employee">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="salary" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orders" Member="orders">
+    <Type Name="order">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_product" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_purchase" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="order_bill" Member="bill" ThisKey="id" OtherKey="id_order" Type="bill" Cardinality="One" />
+      <Association Name="customer_order" Member="customer" ThisKey="id_customer" OtherKey="id" Type="customer" IsForeignKey="true" />
+      <Association Name="product_order" Member="product" ThisKey="id_product" OtherKey="id" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.product" Member="products">
+    <Type Name="product">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="brand" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="product_order" Member="orders" ThisKey="id" OtherKey="id_product" Type="order" />
+      <Association Name="product_warehouse" Member="warehouse" ThisKey="id" OtherKey="id_product" Type="warehouse" Cardinality="One" />
+      <Association Name="supplier_product" Member="supplier1" ThisKey="supplier" OtherKey="id" Type="supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.supplier" Member="suppliers">
+    <Type Name="supplier">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contact" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="supplier_product" Member="products" ThisKey="id" OtherKey="supplier" Type="product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="user">
+      <Column Name="phone" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.warehouse" Member="warehouses">
+    <Type Name="warehouse">
+      <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="product_warehouse" Member="product" ThisKey="id_product" OtherKey="id" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

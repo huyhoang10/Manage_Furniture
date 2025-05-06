@@ -1,68 +1,131 @@
 ﻿using Manage_Furniture.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-
+using Manage_Furniture.ADO;
+using System.Windows.Forms;
 
 namespace Manage_Furniture.Controls
 {
     internal class HRControl
     {
-        private List<EmployeeModel> employees = new List<EmployeeModel>();
-
-        public HRControl()
-        {
-            // Gọi phương thức EmployeeController() trong constructor để thêm dữ liệu giả khi khởi tạo
-            EmployeeController();
-        }
-
-        public void EmployeeController()
-        {
-            // Fake data
-            employees.Add(new EmployeeModel("NV001", "Nguyễn Văn A", "0912345678", "Man", "Hà Nội", "10,000,000", "Active"));
-            employees.Add(new EmployeeModel("NV002", "Trần Thị B", "0987654321", "Female", "TP.HCM", "9,500,000", "Inactive"));
-            employees.Add(new EmployeeModel("NV003", "Lê Văn C", "0909123456", "Man", "Đà Nẵng", "11,000,000", "Active"));
-            employees.Add(new EmployeeModel("NV004", "Phạm Thị D", "0932123456", "Female", "Cần Thơ", "8,800,000", "Inactive"));
-        }
+        private manage_furnitureDataContext db = new manage_furnitureDataContext();
 
         public List<EmployeeModel> GetAll(string status = null)
         {
+            var query = db.employees.AsQueryable();
+
             if (!string.IsNullOrEmpty(status))
             {
-                // Lọc dữ liệu theo trạng thái
-                return employees.Where(e => e.Status.Equals(status, StringComparison.OrdinalIgnoreCase)).ToList();
+                query = query.Where(e => e.status.Equals(status));
             }
-            return employees;
+
+            var result = query.Select(e => new EmployeeModel(
+                e.id.ToString(),
+                e.name,
+                e.phone,
+                e.sex,
+                e.address,
+                e.salary.ToString(),
+                e.password,
+                e.status
+            )).ToList();
+
+            // Định dạng lại salary sau khi lấy từ DB
+            return result.Select(emp => new EmployeeModel(
+                emp.Id,
+                emp.Name,
+                emp.Phone,
+                emp.Sex,
+                emp.Address,
+                decimal.TryParse(emp.Salary, out decimal salary) ? salary.ToString("N0") : "0", // Định dạng sau khi lấy dữ liệu
+                emp.password,
+                emp.Status
+            )).ToList();
         }
+
 
         public void AddEmployee(EmployeeModel emp)
+
         {
-            employees.Add(emp);
+            // Kiểm tra xem id đã tồn tại trong cơ sở dữ liệu chưa
+            var existingEmp = db.employees.FirstOrDefault(e => e.id.ToString() == emp.Id);
+            if (existingEmp != null)
+            {
+                MessageBox.Show("Mã nhân viên đã tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;  // Không thêm nhân viên mới
+            }
+            var newEmp = new employee
+            {
+                id = int.Parse(emp.Id),  // Convert string to int for id
+                name = emp.Name,
+                phone = emp.Phone,
+                sex = emp.Sex,
+                address = emp.Address,
+                salary = decimal.Parse(emp.Salary.Replace(",", "")),
+                password = emp.password,
+                status = emp.Status
+            };
+
+            db.employees.InsertOnSubmit(newEmp);
+            db.SubmitChanges();
         }
 
-        public void DeleteEmployee(string id)
+        public void DeleteEmployee(int id)  // Use int for id
         {
-            var emp = employees.Find(e => e.Id == id);
+            var emp = db.employees.FirstOrDefault(e => e.id == id);  // Ensure id is of type int
             if (emp != null)
             {
-                employees.Remove(emp);
+                emp.status = "Inactive";  // Update the status to "Inactive"
+                db.SubmitChanges();  // Save changes to the database
             }
         }
+
+        public void UpdateEmployee(EmployeeModel emp)
+        {
+            var existing = db.employees.FirstOrDefault(e => e.id == int.Parse(emp.Id));  // Convert string to int for id
+            if (existing != null)
+            {
+                existing.name = emp.Name;
+                existing.phone = emp.Phone;
+                existing.sex = emp.Sex;
+                existing.address = emp.Address;
+                existing.salary = decimal.Parse(emp.Salary.Replace(",", ""));
+                existing.status = emp.Status;
+                existing.password = emp.password;  // Update password if needed
+
+                db.SubmitChanges();
+            }
+        }
+
         public List<EmployeeModel> SearchEmployees(string keyword)
         {
-            if (string.IsNullOrWhiteSpace(keyword))
+            var query = db.employees.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(keyword))
             {
-                return employees;
+                query = query.Where(e =>
+                    e.id.ToString().Contains(keyword) ||  // Convert id to string for search (if id is int)
+                    e.name.Contains(keyword) ||
+                    e.phone.Contains(keyword) ||
+                    e.address.Contains(keyword)
+                );
             }
 
-            return employees.Where(e =>
-                 e.Id.ToLower().Contains(keyword.ToLower()) ||
-                 e.Name.ToLower().Contains(keyword.ToLower()) ||
-                 e.Phone.ToLower().Contains(keyword.ToLower()) ||
-                 e.Address.ToLower().Contains(keyword.ToLower())
-             ).ToList();
+            // Lấy danh sách nhân viên từ cơ sở dữ liệu
+            var employees = query.ToList();
 
+            // Định dạng salary trong bộ nhớ
+            return employees.Select(e => new EmployeeModel(
+                e.id.ToString(),  // Convert id to string to match EmployeeModel constructor
+                e.name,
+                e.phone,
+                e.sex,
+                e.address,
+                e.salary.HasValue ? e.salary.Value.ToString("N0") : "0",
+                e.password,
+                e.status
+            )).ToList();
         }
+    }
 
     }
-}
