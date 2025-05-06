@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FOrder));
             this.gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
             this.gunaAreaDataset2 = new Guna.Charts.WinForms.GunaAreaDataset();
             this.gunaAreaDataset3 = new Guna.Charts.WinForms.GunaAreaDataset();
@@ -73,6 +74,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 1055);
             this.Controls.Add(this.ucOrder1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FOrder";

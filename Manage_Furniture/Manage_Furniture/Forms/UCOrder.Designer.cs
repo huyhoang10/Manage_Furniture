@@ -41,21 +41,23 @@
             this.btn_export = new Guna.UI2.WinForms.Guna2Button();
             this.manageFurnitureDataSet = new Manage_Furniture.ManageFurnitureDataSet();
             this.txt_customer_name = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_customer_sex = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_customer_phone = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_custormer_address = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_customer_type = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.cmb_customer_sex = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txt_order_note = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cmb_customer_type = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgv_orders = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.txt_sum = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_search = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.txt_customer_note = new Guna.UI2.WinForms.Guna2TextBox();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_product = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.col_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_date_purchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_money = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.manageFurnitureDataSet)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orders)).BeginInit();
@@ -110,6 +112,7 @@
             this.btn_order.Size = new System.Drawing.Size(175, 64);
             this.btn_order.TabIndex = 4;
             this.btn_order.Text = "Order";
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // btn_export
             // 
@@ -126,6 +129,7 @@
             this.btn_export.Size = new System.Drawing.Size(175, 64);
             this.btn_export.TabIndex = 5;
             this.btn_export.Text = "Export";
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
             // manageFurnitureDataSet
             // 
@@ -156,31 +160,6 @@
             this.txt_customer_name.SelectedText = "";
             this.txt_customer_name.Size = new System.Drawing.Size(334, 72);
             this.txt_customer_name.TabIndex = 2;
-            // 
-            // txt_customer_sex
-            // 
-            this.txt_customer_sex.BackColor = System.Drawing.Color.White;
-            this.txt_customer_sex.BorderColor = System.Drawing.Color.Maroon;
-            this.txt_customer_sex.BorderRadius = 25;
-            this.txt_customer_sex.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_customer_sex.DefaultText = "";
-            this.txt_customer_sex.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_customer_sex.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_customer_sex.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_customer_sex.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_customer_sex.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
-            this.txt_customer_sex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_sex.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_customer_sex.ForeColor = System.Drawing.Color.Black;
-            this.txt_customer_sex.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_sex.Location = new System.Drawing.Point(397, 25);
-            this.txt_customer_sex.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_customer_sex.Name = "txt_customer_sex";
-            this.txt_customer_sex.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_customer_sex.PlaceholderText = "Sex";
-            this.txt_customer_sex.SelectedText = "";
-            this.txt_customer_sex.Size = new System.Drawing.Size(150, 72);
-            this.txt_customer_sex.TabIndex = 2;
             // 
             // txt_customer_phone
             // 
@@ -232,44 +211,96 @@
             this.txt_custormer_address.Size = new System.Drawing.Size(511, 72);
             this.txt_custormer_address.TabIndex = 2;
             // 
-            // txt_customer_type
-            // 
-            this.txt_customer_type.BackColor = System.Drawing.Color.White;
-            this.txt_customer_type.BorderColor = System.Drawing.Color.Maroon;
-            this.txt_customer_type.BorderRadius = 25;
-            this.txt_customer_type.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_customer_type.DefaultText = "";
-            this.txt_customer_type.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_customer_type.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_customer_type.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_customer_type.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_customer_type.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
-            this.txt_customer_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_type.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_customer_type.ForeColor = System.Drawing.Color.Black;
-            this.txt_customer_type.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_type.Location = new System.Drawing.Point(36, 385);
-            this.txt_customer_type.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_customer_type.Name = "txt_customer_type";
-            this.txt_customer_type.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_customer_type.PlaceholderText = "Type";
-            this.txt_customer_type.SelectedText = "";
-            this.txt_customer_type.Size = new System.Drawing.Size(511, 72);
-            this.txt_customer_type.TabIndex = 2;
-            // 
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BorderRadius = 16;
-            this.guna2CustomGradientPanel1.Controls.Add(this.txt_customer_note);
-            this.guna2CustomGradientPanel1.Controls.Add(this.txt_customer_type);
+            this.guna2CustomGradientPanel1.Controls.Add(this.cmb_customer_sex);
+            this.guna2CustomGradientPanel1.Controls.Add(this.txt_order_note);
             this.guna2CustomGradientPanel1.Controls.Add(this.txt_custormer_address);
             this.guna2CustomGradientPanel1.Controls.Add(this.txt_customer_phone);
-            this.guna2CustomGradientPanel1.Controls.Add(this.txt_customer_sex);
             this.guna2CustomGradientPanel1.Controls.Add(this.txt_customer_name);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(948, 193);
+            this.guna2CustomGradientPanel1.Controls.Add(this.cmb_customer_type);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(948, 160);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(575, 740);
             this.guna2CustomGradientPanel1.TabIndex = 7;
+            // 
+            // cmb_customer_sex
+            // 
+            this.cmb_customer_sex.AutoCompleteCustomSource.AddRange(new string[] {
+            "Sex"});
+            this.cmb_customer_sex.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_customer_sex.BorderColor = System.Drawing.Color.Maroon;
+            this.cmb_customer_sex.BorderRadius = 25;
+            this.cmb_customer_sex.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_customer_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_customer_sex.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
+            this.cmb_customer_sex.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_customer_sex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_customer_sex.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.cmb_customer_sex.ForeColor = System.Drawing.Color.Black;
+            this.cmb_customer_sex.ItemHeight = 50;
+            this.cmb_customer_sex.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cmb_customer_sex.Location = new System.Drawing.Point(397, 25);
+            this.cmb_customer_sex.Name = "cmb_customer_sex";
+            this.cmb_customer_sex.Size = new System.Drawing.Size(150, 56);
+            this.cmb_customer_sex.StartIndex = 0;
+            this.cmb_customer_sex.TabIndex = 4;
+            this.cmb_customer_sex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_order_note
+            // 
+            this.txt_order_note.BackColor = System.Drawing.Color.White;
+            this.txt_order_note.BorderColor = System.Drawing.Color.Maroon;
+            this.txt_order_note.BorderRadius = 40;
+            this.txt_order_note.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_order_note.DefaultText = "";
+            this.txt_order_note.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_order_note.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_order_note.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_order_note.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_order_note.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
+            this.txt_order_note.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_order_note.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_order_note.ForeColor = System.Drawing.Color.Black;
+            this.txt_order_note.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_order_note.Location = new System.Drawing.Point(36, 503);
+            this.txt_order_note.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_order_note.Name = "txt_order_note";
+            this.txt_order_note.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txt_order_note.PlaceholderText = "Note Orders";
+            this.txt_order_note.SelectedText = "";
+            this.txt_order_note.Size = new System.Drawing.Size(511, 214);
+            this.txt_order_note.TabIndex = 2;
+            this.txt_order_note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cmb_customer_type
+            // 
+            this.cmb_customer_type.AutoCompleteCustomSource.AddRange(new string[] {
+            "Regular",
+            "VIP"});
+            this.cmb_customer_type.BackColor = System.Drawing.Color.Transparent;
+            this.cmb_customer_type.BorderColor = System.Drawing.Color.Maroon;
+            this.cmb_customer_type.BorderRadius = 25;
+            this.cmb_customer_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_customer_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_customer_type.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
+            this.cmb_customer_type.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_customer_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmb_customer_type.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.cmb_customer_type.ForeColor = System.Drawing.Color.Black;
+            this.cmb_customer_type.ItemHeight = 50;
+            this.cmb_customer_type.Items.AddRange(new object[] {
+            "Regular",
+            "VIP"});
+            this.cmb_customer_type.Location = new System.Drawing.Point(36, 385);
+            this.cmb_customer_type.Name = "cmb_customer_type";
+            this.cmb_customer_type.Size = new System.Drawing.Size(511, 56);
+            this.cmb_customer_type.StartIndex = 0;
+            this.cmb_customer_type.TabIndex = 3;
+            this.cmb_customer_type.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgv_orders
             // 
@@ -291,13 +322,14 @@
             this.col_product,
             this.col_quantity,
             this.col_date_purchase,
-            this.col_money});
+            this.col_money,
+            this.col_total});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_orders.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_orders.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -315,7 +347,7 @@
             this.dgv_orders.RowHeadersWidth = 51;
             this.dgv_orders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_orders.RowTemplate.Height = 24;
-            this.dgv_orders.Size = new System.Drawing.Size(874, 692);
+            this.dgv_orders.Size = new System.Drawing.Size(874, 632);
             this.dgv_orders.TabIndex = 1;
             this.dgv_orders.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_orders.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -338,15 +370,43 @@
             this.dgv_orders.ThemeStyle.RowsStyle.Height = 24;
             this.dgv_orders.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_orders.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_orders.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_CellValueChanged);
             // 
             // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.BorderRadius = 16;
+            this.guna2CustomGradientPanel2.Controls.Add(this.txt_sum);
             this.guna2CustomGradientPanel2.Controls.Add(this.dgv_orders);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(23, 193);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(23, 160);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 740);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 748);
             this.guna2CustomGradientPanel2.TabIndex = 8;
+            // 
+            // txt_sum
+            // 
+            this.txt_sum.BackColor = System.Drawing.Color.White;
+            this.txt_sum.BorderColor = System.Drawing.Color.Maroon;
+            this.txt_sum.BorderRadius = 15;
+            this.txt_sum.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_sum.DefaultText = "";
+            this.txt_sum.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_sum.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_sum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_sum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_sum.Enabled = false;
+            this.txt_sum.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
+            this.txt_sum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_sum.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_sum.ForeColor = System.Drawing.Color.Black;
+            this.txt_sum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_sum.Location = new System.Drawing.Point(628, 674);
+            this.txt_sum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_sum.Name = "txt_sum";
+            this.txt_sum.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txt_sum.PlaceholderText = "Total = 0";
+            this.txt_sum.SelectedText = "";
+            this.txt_sum.Size = new System.Drawing.Size(256, 53);
+            this.txt_sum.TabIndex = 5;
             // 
             // guna2TextBox1
             // 
@@ -390,35 +450,11 @@
             this.btn_search.Size = new System.Drawing.Size(50, 45);
             this.btn_search.TabIndex = 10;
             // 
-            // txt_customer_note
-            // 
-            this.txt_customer_note.BackColor = System.Drawing.Color.White;
-            this.txt_customer_note.BorderColor = System.Drawing.Color.Maroon;
-            this.txt_customer_note.BorderRadius = 40;
-            this.txt_customer_note.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_customer_note.DefaultText = "";
-            this.txt_customer_note.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_customer_note.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_customer_note.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_customer_note.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_customer_note.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
-            this.txt_customer_note.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_note.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_customer_note.ForeColor = System.Drawing.Color.Black;
-            this.txt_customer_note.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_note.Location = new System.Drawing.Point(36, 503);
-            this.txt_customer_note.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_customer_note.Name = "txt_customer_note";
-            this.txt_customer_note.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_customer_note.PlaceholderText = "Note Orders";
-            this.txt_customer_note.SelectedText = "";
-            this.txt_customer_note.Size = new System.Drawing.Size(511, 214);
-            this.txt_customer_note.TabIndex = 2;
-            // 
             // col_id
             // 
-            this.col_id.FillWeight = 32.08556F;
-            this.col_id.HeaderText = "ID";
+            this.col_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_id.FillWeight = 47.03881F;
+            this.col_id.HeaderText = "No";
             this.col_id.MinimumWidth = 6;
             this.col_id.Name = "col_id";
             // 
@@ -426,7 +462,7 @@
             // 
             this.col_product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_product.DataPropertyName = "id";
-            this.col_product.FillWeight = 113.5829F;
+            this.col_product.FillWeight = 168.0779F;
             this.col_product.HeaderText = "Product";
             this.col_product.MinimumWidth = 6;
             this.col_product.Name = "col_product";
@@ -437,7 +473,7 @@
             // 
             this.col_quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_quantity.DataPropertyName = "quantity";
-            this.col_quantity.FillWeight = 113.5829F;
+            this.col_quantity.FillWeight = 95.68577F;
             this.col_quantity.HeaderText = "Quantity";
             this.col_quantity.MinimumWidth = 6;
             this.col_quantity.Name = "col_quantity";
@@ -446,7 +482,7 @@
             // 
             this.col_date_purchase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_date_purchase.DataPropertyName = "date_purchase";
-            this.col_date_purchase.FillWeight = 113.5829F;
+            this.col_date_purchase.FillWeight = 95.68577F;
             this.col_date_purchase.HeaderText = "Date Purchase";
             this.col_date_purchase.MinimumWidth = 6;
             this.col_date_purchase.Name = "col_date_purchase";
@@ -455,10 +491,17 @@
             // 
             this.col_money.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_money.DataPropertyName = "money";
-            this.col_money.FillWeight = 113.5829F;
+            this.col_money.FillWeight = 95.68577F;
             this.col_money.HeaderText = "Money";
             this.col_money.MinimumWidth = 6;
             this.col_money.Name = "col_money";
+            // 
+            // col_total
+            // 
+            this.col_total.FillWeight = 84.24312F;
+            this.col_total.HeaderText = "Total";
+            this.col_total.MinimumWidth = 6;
+            this.col_total.Name = "col_total";
             // 
             // UCOrder
             // 
@@ -494,20 +537,22 @@
         private Guna.UI2.WinForms.Guna2Button btn_export;
         private ManageFurnitureDataSet manageFurnitureDataSet;
         private Guna.UI2.WinForms.Guna2TextBox txt_customer_name;
-        private Guna.UI2.WinForms.Guna2TextBox txt_customer_sex;
         private Guna.UI2.WinForms.Guna2TextBox txt_customer_phone;
         private Guna.UI2.WinForms.Guna2TextBox txt_custormer_address;
-        private Guna.UI2.WinForms.Guna2TextBox txt_customer_type;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_orders;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2CircleButton btn_search;
-        private Guna.UI2.WinForms.Guna2TextBox txt_customer_note;
+        private Guna.UI2.WinForms.Guna2TextBox txt_order_note;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_customer_type;
+        private Guna.UI2.WinForms.Guna2ComboBox cmb_customer_sex;
+        private Guna.UI2.WinForms.Guna2TextBox txt_sum;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
         private System.Windows.Forms.DataGridViewComboBoxColumn col_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_date_purchase;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_money;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_total;
     }
 }
