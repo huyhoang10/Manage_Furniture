@@ -40,9 +40,11 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,7 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
+    <Compile Include="ADO\manager_furniture.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>manager_furniture.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FEmployeeControl.cs" />
+    <Compile Include="Controls\ucOverviewControl.cs" />
+    <Compile Include="Forms\FOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FOverview.Designer.cs">
+      <DependentUpon>FOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ucHR.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +102,12 @@
     <Compile Include="Forms\FManager.Designer.cs">
       <DependentUpon>FManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucOverview.Designer.cs">
+      <DependentUpon>ucOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ucSuppliercs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,8 +129,14 @@
     <EmbeddedResource Include="Forms\FManager.resx">
       <DependentUpon>FManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FOverview.resx">
+      <DependentUpon>FOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucHR.resx">
       <DependentUpon>ucHR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucOverview.resx">
+      <DependentUpon>ucOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucSuppliercs.resx">
       <DependentUpon>ucSuppliercs.cs</DependentUpon>
@@ -128,6 +154,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ADO\manager_furniture.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>manager_furniture.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ADO\manager_furniture.dbml.layout">
+      <DependentUpon>manager_furniture.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -144,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
