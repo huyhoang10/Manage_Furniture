@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "D:\\Manage_Furniture\\Manage_Furniture\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\controls\\uccustomercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\controls\\uccustomercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\dtsbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\dtsbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\dtsbill.xsc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\dtsbill.xsc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\crvbill.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\crvbill.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\dtsbill.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\dtsbill.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\controls\\uccustomercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\controls\\uccustomercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\dtsbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\dtsbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\forms\\dtsbill.xsc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\dtsbill.xsc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\dtsbill.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\dtsbill.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,33 +50,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UCCustomerController.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Controls\\UCCustomerController.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Controls\\UCCustomerController.cs",
               "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Controls\\UCCustomerController.cs",
               "RelativeToolTip": "Manage_Furniture\\Controls\\UCCustomerController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAkwGkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAgwD8AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T16:04:11.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UCCustomer.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCCustomer.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCCustomer.cs",
               "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCCustomer.cs",
               "RelativeToolTip": "Manage_Furniture\\Forms\\UCCustomer.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAowFEAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAIAwwDAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T15:52:26.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UCCustomer.cs [Design]",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCCustomer.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCCustomer.cs",
@@ -88,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "crvBill.rpt",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\crvBill.rpt",
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\crvBill.rpt",
@@ -100,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "dtsBill.xsc",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\dtsBill.xsc",
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\dtsBill.xsc",
@@ -144,7 +144,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "connectDatabase.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\ADO\\connectDatabase.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\ADO\\connectDatabase.cs",
@@ -178,7 +178,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "dtsBill.xsd",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\dtsBill.xsd",
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\dtsBill.xsd",
@@ -211,7 +211,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "dtsBill.Designer.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\dtsBill.Designer.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\dtsBill.Designer.cs",

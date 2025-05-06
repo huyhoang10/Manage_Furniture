@@ -56,7 +56,10 @@ namespace Manage_Furniture.Controls
                 txt_Phone.Text = customer.Phone;
                 txt_Sex.Text = customer.Sex;
                 txt_Address.Text = customer.Address;
-                txt_Type.Text = customer.Type;
+                if (cmb_Type.Items.Contains(customer.Type))
+                    cmb_Type.SelectedItem = customer.Type;
+                else
+                    cmb_Type.SelectedIndex = -1;
                 btn_Update.Enabled = true;
             }
         }
@@ -73,7 +76,7 @@ namespace Manage_Furniture.Controls
                     Phone = txt_Phone.Text.Trim(),
                     Sex = txt_Sex.Text.Trim(),
                     Address = txt_Address.Text.Trim(),
-                    Type = txt_Type.Text.Trim()
+                    Type = cmb_Type.SelectedItem?.ToString().Trim()
                 };
 
                 string message;
