@@ -13,6 +13,7 @@ using Manage_Furniture.Controls;
 using Guna.UI2.WinForms;
 using Guna.UI2.AnimatorNS;
 using System.Xml.Linq;
+using Manage_Furniture.Forms;
 
 namespace Manage_Furniture.Controls
 {
@@ -37,6 +38,7 @@ namespace Manage_Furniture.Controls
         {
             Customerclass cc = new Customerclass();
             dgv_Customer.DataSource = cc.GetAllCustomers();
+            cmb_FillterType.SelectedItem = "All";
         }
 
         private void dgv_Customer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -77,7 +79,7 @@ namespace Manage_Furniture.Controls
                 string message;
                 bool success = ct.UpdateCustomer(updatedCustomer, out message);
 
-                MessageBox.Show(message, success ? "Thành công" : "Lỗi", MessageBoxButtons.OK,
+                MessageBox.Show(message, success ? "complete" : "error", MessageBoxButtons.OK,
                                 success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
 
                 if (success)
@@ -87,18 +89,29 @@ namespace Manage_Furniture.Controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}", "System error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
-            // Ép kiểu trực tiếp sang Guna2TextBox
-            Guna.UI2.WinForms.Guna2TextBox txtSearch = (Guna.UI2.WinForms.Guna2TextBox)sender;
+            if (txt_Search.Text == "")
+            {
+                LoadData();
+                cmb_FillterType.Enabled = true;
+            }
+            else
+            {
+                cmb_FillterType.Enabled = false;
+                cmb_FillterType.Enabled = false;
+                cmb_FillterType.SelectedItem = "All";
+                // Ép kiểu trực tiếp sang Guna2TextBox
+                Guna.UI2.WinForms.Guna2TextBox txtSearch = (Guna.UI2.WinForms.Guna2TextBox)sender;
 
-            // Giờ bạn có thể sử dụng txtSearch thay vì TextBox
-            UCCustomerController controller = new UCCustomerController();
-            controller.SearchCustomersByPhone(txtSearch.Text, dgv_Customer);
+                // Giờ bạn có thể sử dụng txtSearch thay vì TextBox
+                UCCustomerController controller = new UCCustomerController();
+                controller.SearchCustomersByPhone(txtSearch.Text, dgv_Customer);
+            }
         }
 
         private void cmb_FillterType_SelectedIndexChanged(object sender, EventArgs e)
@@ -106,20 +119,23 @@ namespace Manage_Furniture.Controls
             string selectedType = cmb_FillterType.SelectedItem.ToString();
             UCCustomerController controller = new UCCustomerController();
             Customerclass cc = new Customerclass();
+
             if (selectedType == "All")
             {
-                dgv_Customer.DataSource =  cc.GetAllCustomers();
+                dgv_Customer.DataSource = cc.GetAllCustomers();
             }
             else
             {
-                dgv_Customer.DataSource = controller.FilterCustomers(
-                    txt_Name.Text.Trim(),
-                    txt_Phone.Text.Trim(),
-                    txt_Sex.Text,
-                    txt_Address.Text.Trim(),
+                // Lọc trực tiếp trên context.customers
+                var filteredCustomers = controller.FilterCustomers(
                     selectedType
                 );
+
+                // Gán kết quả đã lọc vào DataGridView
+                dgv_Customer.DataSource = filteredCustomers;
             }
         }
+
     }
 }
+

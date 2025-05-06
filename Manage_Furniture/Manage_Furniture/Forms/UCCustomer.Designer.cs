@@ -36,8 +36,6 @@
             this.lvw_Customer = new System.Windows.Forms.ListView();
             this.btn_Update = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txt_Name = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_Phone = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_ID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,8 +50,11 @@
             this.col_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmb_FillterType = new Guna.UI2.WinForms.Guna2ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,42 +107,6 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(119, 43);
             this.guna2HtmlLabel1.TabIndex = 6;
             this.guna2HtmlLabel1.Text = "Admin";
-            // 
-            // txt_Search
-            // 
-            this.txt_Search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(90)))), ((int)(((byte)(75)))));
-            this.txt_Search.BorderRadius = 20;
-            this.txt_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Search.DefaultText = "";
-            this.txt_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Search.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Search.IconRight = global::Manage_Furniture.Properties.Resources.IconSearch;
-            this.txt_Search.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.txt_Search.IconRightSize = new System.Drawing.Size(24, 24);
-            this.txt_Search.Location = new System.Drawing.Point(1244, 129);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_Search.Name = "txt_Search";
-            this.txt_Search.PlaceholderText = "Search by phone number";
-            this.txt_Search.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_Search.SelectedText = "";
-            this.txt_Search.Size = new System.Drawing.Size(288, 57);
-            this.txt_Search.TabIndex = 8;
-            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1431, 17);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(86, 82);
-            this.guna2CirclePictureBox1.TabIndex = 7;
-            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // txt_Name
             // 
@@ -409,17 +374,66 @@
             "Loyal",
             "Regular",
             "VIP"});
-            this.cmb_FillterType.Location = new System.Drawing.Point(904, 168);
+            this.cmb_FillterType.Location = new System.Drawing.Point(823, 157);
             this.cmb_FillterType.Name = "cmb_FillterType";
             this.cmb_FillterType.Size = new System.Drawing.Size(149, 36);
             this.cmb_FillterType.TabIndex = 18;
             this.cmb_FillterType.SelectedIndexChanged += new System.EventHandler(this.cmb_FillterType_SelectedIndexChanged);
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.AutoSize = false;
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(978, 164);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(75, 29);
+            this.guna2HtmlLabel2.TabIndex = 19;
+            this.guna2HtmlLabel2.Text = "Type";
+            // 
+            // txt_Search
+            // 
+            this.txt_Search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(90)))), ((int)(((byte)(75)))));
+            this.txt_Search.BorderRadius = 20;
+            this.txt_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Search.DefaultText = "";
+            this.txt_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Search.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Search.IconRight = global::Manage_Furniture.Properties.Resources.IconSearch;
+            this.txt_Search.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.txt_Search.IconRightSize = new System.Drawing.Size(24, 24);
+            this.txt_Search.Location = new System.Drawing.Point(1244, 129);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_Search.Name = "txt_Search";
+            this.txt_Search.PlaceholderText = "Search by phone number";
+            this.txt_Search.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_Search.SelectedText = "";
+            this.txt_Search.Size = new System.Drawing.Size(288, 57);
+            this.txt_Search.TabIndex = 8;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1431, 17);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(86, 82);
+            this.guna2CirclePictureBox1.TabIndex = 7;
+            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // UCCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.cmb_FillterType);
             this.Controls.Add(this.dgv_Customer);
             this.Controls.Add(this.txt_Type);
@@ -437,8 +451,8 @@
             this.Name = "UCCustomer";
             this.Size = new System.Drawing.Size(1552, 1036);
             this.Load += new System.EventHandler(this.UCCustomer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,5 +480,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_address;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_type;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_FillterType;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }
