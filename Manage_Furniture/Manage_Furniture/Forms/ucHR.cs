@@ -128,6 +128,7 @@ namespace Manage_Furniture.Controls
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selected = cmbFilter.SelectedItem.ToString();
+            cmbFilter.SelectedIndex = 0;
             if (selected == "Man" || selected == "Female")
             {
                 var list = controller.GetAll().Where(emp =>
