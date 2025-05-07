@@ -39,6 +39,8 @@ namespace Manage_Furniture.Controls
             Customerclass cc = new Customerclass();
             dgv_Customer.DataSource = cc.GetAllCustomers();
             cmb_FillterType.SelectedItem = "All";
+            cmb_Type.SelectedIndex = 0;
+            cmb_Sex.SelectedIndex = 0;
         }
 
         private void dgv_Customer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -54,7 +56,10 @@ namespace Manage_Furniture.Controls
                 txt_ID.Text = customer.Id.ToString();
                 txt_Name.Text = customer.Name;
                 txt_Phone.Text = customer.Phone;
-                txt_Sex.Text = customer.Sex;
+                if (cmb_Sex.Items.Contains(customer.Sex))
+                    cmb_Sex.SelectedItem = customer.Sex;
+                else
+                    cmb_Type.SelectedIndex = -1;
                 txt_Address.Text = customer.Address;
                 if (cmb_Type.Items.Contains(customer.Type))
                     cmb_Type.SelectedItem = customer.Type;
@@ -74,7 +79,7 @@ namespace Manage_Furniture.Controls
                     Id = int.Parse(txt_ID.Text),
                     Name = txt_Name.Text.Trim(),
                     Phone = txt_Phone.Text.Trim(),
-                    Sex = txt_Sex.Text.Trim(),
+                    Sex = cmb_Sex.SelectedItem?.ToString().Trim(),
                     Address = txt_Address.Text.Trim(),
                     Type = cmb_Type.SelectedItem?.ToString().Trim()
                 };
@@ -139,6 +144,11 @@ namespace Manage_Furniture.Controls
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cr c = new cr();
+            c.Show();
+        }
     }
 }
 

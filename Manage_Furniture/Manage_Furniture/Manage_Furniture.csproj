@@ -65,6 +65,12 @@
       <DependentUpon>mananger_furniture.dbml</DependentUpon>
     </Compile>
     <Compile Include="Controls\UCCustomerController.cs" />
+    <Compile Include="Forms\cr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\cr.Designer.cs">
+      <DependentUpon>cr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\crvBill.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +104,9 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\cr.resx">
+      <DependentUpon>cr.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\crvBill.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crvBill.cs</LastGenOutput>

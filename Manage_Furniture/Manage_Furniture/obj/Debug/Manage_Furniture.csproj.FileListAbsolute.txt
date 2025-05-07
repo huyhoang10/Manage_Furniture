@@ -29,3 +29,4 @@ D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions
 D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\stdole.dll
 D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.cr.resources
