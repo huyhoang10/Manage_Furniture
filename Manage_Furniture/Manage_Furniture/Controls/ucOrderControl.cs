@@ -7,12 +7,14 @@ using System.Windows.Forms;
 using Manage_Furniture.ADO;
 using Manage_Furniture.Forms;
 using Manage_Furniture.Models;
+using static Manage_Furniture.Forms.UCBill;
 
 namespace Manage_Furniture.Controls
 {
     internal class ucOrderControl
     {
         manager_furnitureDataContext db = connectDatabase.GetContext();
+        public static int GlobalOrderId = 0;
         public List<product> GetAllProducts()
         {
             return db.products.ToList();
@@ -43,7 +45,7 @@ namespace Manage_Furniture.Controls
         }
 
         public void AddOrderAndCustomer(string customer_name, string sex, string phone, string address,
-                                          string type, string note, decimal totalMoney, DataGridView dgv_orders)
+                                          string type, string note, DataGridView dgv_orders, decimal GrandTotal)
         {
             int customerId = new Random().Next(1000, 9999);
 
@@ -84,13 +86,13 @@ namespace Manage_Furniture.Controls
                         id_product = id_product,
                         quantity = quantity,
                         date_purchase = DateTime.Now,
-                        money = totalMoney,
+                        money = quantity * GetProductById(id_product).price,
                         note = note
                     };
-
+                    GlobalOrderId = orderId;
                     AddOrder(newOrder);
                 }
-
+                AddBill(orderId, GrandTotal);
                 MessageBox.Show("Order added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -99,10 +101,17 @@ namespace Manage_Furniture.Controls
             }
         }
 
-        public void CreateBill(bill newBill)
+
+        public void AddBill(int orderId, decimal grandTotal)
         {
-            newBill.id_order = new Random().Next(1000,9999);
-            db.bills.InsertOnSubmit(newBill); 
+            var newBill = new bill
+            {
+                id_order = orderId,
+                money = grandTotal
+            };
+
+            db.bills.InsertOnSubmit(newBill);
+            db.SubmitChanges();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Manage_Furniture.Forms
         private int tempOrderId = 1;
         private object txt_Search;
 
+        decimal GrandTotal = 0;
         public UCOrder()
         {
             InitializeComponent();
@@ -122,6 +123,7 @@ namespace Manage_Furniture.Forms
                     }
                 }
                 txt_sum.Text = sum.ToString("C");
+                GrandTotal = sum;
             }
         }
 
@@ -153,19 +155,15 @@ namespace Manage_Furniture.Forms
                 return;
             }
 
-            // Saved totalMoney
-            if (!decimal.TryParse(txt_sum.Text, System.Globalization.NumberStyles.Currency, null, out decimal totalMoney))
-            {
-                MessageBox.Show("Invalid money format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            orderControl.AddOrderAndCustomer(customer_name, sex, phone, address, type, note, totalMoney, dgv_orders);
+            orderControl.AddOrderAndCustomer(customer_name, sex, phone, address, type, note, dgv_orders,GrandTotal);
 
         }
 
         private void btn_export_Click(object sender, EventArgs e)
         {
+
+            UCBill ucBill = new UCBill();
+            ucBill.ShowDialog();
             txt_customer_name.ResetText();
             cmb_customer_sex.SelectedIndex = 0;
             txt_customer_phone.ResetText();
@@ -177,6 +175,5 @@ namespace Manage_Furniture.Forms
             dgv_orders.Rows.Clear();
             tempOrderId = 1;
         }
-
     }
 }
