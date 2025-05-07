@@ -49,8 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtSex = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtId = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSalary = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,6 +57,8 @@
             this.pnlView = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dgvView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnAll = new Guna.UI2.WinForms.Guna2Button();
+            this.cmbSex = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnBlock = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -86,7 +86,7 @@
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(453, 742);
+            this.btnAdd.Location = new System.Drawing.Point(327, 622);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 46);
             this.btnAdd.TabIndex = 7;
@@ -103,7 +103,7 @@
             this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Location = new System.Drawing.Point(565, 742);
+            this.btnEdit.Location = new System.Drawing.Point(464, 622);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(109, 46);
             this.btnEdit.TabIndex = 8;
@@ -242,12 +242,12 @@
             this.cmbFilter.ItemHeight = 30;
             this.cmbFilter.Items.AddRange(new object[] {
             "All",
-            "Men",
+            "Male",
             "Female",
             "< 100$",
             "100$ – 500$",
             "> 500$"});
-            this.cmbFilter.Location = new System.Drawing.Point(988, 239);
+            this.cmbFilter.Location = new System.Drawing.Point(824, 234);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(130, 36);
             this.cmbFilter.TabIndex = 12;
@@ -265,7 +265,7 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(694, 238);
+            this.txtSearch.Location = new System.Drawing.Point(530, 234);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "Search";
@@ -321,18 +321,17 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 16;
+            this.guna2Panel1.Controls.Add(this.cmbSex);
             this.guna2Panel1.Controls.Add(this.txtPassword);
-            this.guna2Panel1.Controls.Add(this.txtSex);
-            this.guna2Panel1.Controls.Add(this.txtId);
             this.guna2Panel1.Controls.Add(this.txtSalary);
             this.guna2Panel1.Controls.Add(this.txtAddress);
             this.guna2Panel1.Controls.Add(this.txtPhone);
             this.guna2Panel1.Controls.Add(this.txtName);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(808, 280);
+            this.guna2Panel1.Location = new System.Drawing.Point(608, 280);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(314, 508);
+            this.guna2Panel1.Size = new System.Drawing.Size(333, 419);
             this.guna2Panel1.TabIndex = 18;
             // 
             // txtPassword
@@ -351,7 +350,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(16, 346);
+            this.txtPassword.Location = new System.Drawing.Point(16, 95);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -359,56 +358,6 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(281, 62);
             this.txtPassword.TabIndex = 10;
-            // 
-            // txtSex
-            // 
-            this.txtSex.BackColor = System.Drawing.Color.Transparent;
-            this.txtSex.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.txtSex.BorderRadius = 16;
-            this.txtSex.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSex.DefaultText = "";
-            this.txtSex.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSex.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSex.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSex.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSex.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
-            this.txtSex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSex.ForeColor = System.Drawing.Color.Black;
-            this.txtSex.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSex.Location = new System.Drawing.Point(221, 178);
-            this.txtSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtSex.Name = "txtSex";
-            this.txtSex.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtSex.PlaceholderText = "Sex";
-            this.txtSex.SelectedText = "";
-            this.txtSex.Size = new System.Drawing.Size(76, 62);
-            this.txtSex.TabIndex = 9;
-            // 
-            // txtId
-            // 
-            this.txtId.BackColor = System.Drawing.Color.Transparent;
-            this.txtId.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.txtId.BorderRadius = 16;
-            this.txtId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtId.DefaultText = "";
-            this.txtId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtId.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
-            this.txtId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.ForeColor = System.Drawing.Color.Black;
-            this.txtId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtId.Location = new System.Drawing.Point(16, 96);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtId.Name = "txtId";
-            this.txtId.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtId.PlaceholderText = "ID";
-            this.txtId.SelectedText = "";
-            this.txtId.Size = new System.Drawing.Size(281, 62);
-            this.txtId.TabIndex = 8;
             // 
             // txtSalary
             // 
@@ -426,7 +375,7 @@
             this.txtSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalary.ForeColor = System.Drawing.Color.Black;
             this.txtSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSalary.Location = new System.Drawing.Point(16, 430);
+            this.txtSalary.Location = new System.Drawing.Point(16, 342);
             this.txtSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -451,7 +400,7 @@
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Location = new System.Drawing.Point(16, 265);
+            this.txtAddress.Location = new System.Drawing.Point(16, 258);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -482,7 +431,7 @@
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPhone.PlaceholderText = "Phone";
             this.txtPhone.SelectedText = "";
-            this.txtPhone.Size = new System.Drawing.Size(197, 62);
+            this.txtPhone.Size = new System.Drawing.Size(197, 60);
             this.txtPhone.TabIndex = 5;
             // 
             // txtName
@@ -520,7 +469,7 @@
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(680, 742);
+            this.btnDelete.Location = new System.Drawing.Point(54, 622);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 46);
             this.btnDelete.TabIndex = 19;
@@ -533,7 +482,7 @@
             this.pnlView.Controls.Add(this.dgvView);
             this.pnlView.Location = new System.Drawing.Point(54, 280);
             this.pnlView.Name = "pnlView";
-            this.pnlView.Size = new System.Drawing.Size(735, 445);
+            this.pnlView.Size = new System.Drawing.Size(549, 336);
             this.pnlView.TabIndex = 20;
             // 
             // dgvView
@@ -541,15 +490,17 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvView.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
+            this.dgvView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvView.ColumnHeadersHeight = 4;
+            this.dgvView.ColumnHeadersHeight = 50;
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -562,9 +513,10 @@
             this.dgvView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvView.Location = new System.Drawing.Point(22, 26);
             this.dgvView.Name = "dgvView";
+            this.dgvView.ReadOnly = true;
             this.dgvView.RowHeadersVisible = false;
             this.dgvView.RowHeadersWidth = 82;
-            this.dgvView.Size = new System.Drawing.Size(692, 402);
+            this.dgvView.Size = new System.Drawing.Size(512, 294);
             this.dgvView.TabIndex = 0;
             this.dgvView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -574,12 +526,12 @@
             this.dgvView.ThemeStyle.BackColor = System.Drawing.Color.Silver;
             this.dgvView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvView.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvView.ThemeStyle.ReadOnly = false;
+            this.dgvView.ThemeStyle.HeaderStyle.Height = 50;
+            this.dgvView.ThemeStyle.ReadOnly = true;
             this.dgvView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -607,11 +559,49 @@
             this.btnAll.Text = "All";
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
+            // cmbSex
+            // 
+            this.cmbSex.BackColor = System.Drawing.Color.Transparent;
+            this.cmbSex.BorderRadius = 16;
+            this.cmbSex.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSex.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
+            this.cmbSex.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbSex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbSex.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbSex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbSex.ItemHeight = 30;
+            this.cmbSex.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbSex.Location = new System.Drawing.Point(220, 177);
+            this.cmbSex.Name = "cmbSex";
+            this.cmbSex.Size = new System.Drawing.Size(98, 36);
+            this.cmbSex.TabIndex = 11;
+            // 
+            // btnBlock
+            // 
+            this.btnBlock.BorderRadius = 16;
+            this.btnBlock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBlock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBlock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBlock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBlock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
+            this.btnBlock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlock.ForeColor = System.Drawing.Color.Black;
+            this.btnBlock.Location = new System.Drawing.Point(187, 622);
+            this.btnBlock.Name = "btnBlock";
+            this.btnBlock.Size = new System.Drawing.Size(134, 46);
+            this.btnBlock.TabIndex = 22;
+            this.btnBlock.Text = "Block";
+            this.btnBlock.Click += new System.EventHandler(this.btnBlock_Click);
+            // 
             // ucHR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.Controls.Add(this.btnBlock);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.pnlView);
@@ -663,12 +653,12 @@
         private Guna.UI2.WinForms.Guna2TextBox txtAddress;
         private Guna.UI2.WinForms.Guna2TextBox txtPhone;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private Guna.UI2.WinForms.Guna2TextBox txtSex;
-        private Guna.UI2.WinForms.Guna2TextBox txtId;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlView;
         private Guna.UI2.WinForms.Guna2DataGridView dgvView;
         private Guna.UI2.WinForms.Guna2Button btnAll;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbSex;
+        private Guna.UI2.WinForms.Guna2Button btnBlock;
     }
 }

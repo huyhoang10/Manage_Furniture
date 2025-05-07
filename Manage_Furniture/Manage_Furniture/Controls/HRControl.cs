@@ -38,11 +38,15 @@ namespace Manage_Furniture.Controls
                 emp.Sex,
                 emp.Address,
                 decimal.TryParse(emp.Salary, out decimal salary) ? salary.ToString("N0") : "0", // Định dạng sau khi lấy dữ liệu
-                emp.password,
+                emp.Password,
                 emp.Status
             )).ToList();
         }
-
+        public bool IsEmployeeIdExists(string id)
+        {
+            return db.employees.Any(e => e.id.ToString() == id);
+        }
+    
 
         public void AddEmployee(EmployeeModel emp)
 
@@ -62,21 +66,57 @@ namespace Manage_Furniture.Controls
                 sex = emp.Sex,
                 address = emp.Address,
                 salary = decimal.Parse(emp.Salary.Replace(",", "")),
-                password = emp.password,
+                password = emp.Password,
                 status = emp.Status
             };
 
             db.employees.InsertOnSubmit(newEmp);
             db.SubmitChanges();
         }
+        public bool IsPhoneExists(string phone, string excludeId = null)
+        {
+            if (string.IsNullOrEmpty(excludeId))
+            {
+                return db.employees.Any(e => e.phone == phone);
+            }
+            else
+            {
+                return db.employees.Any(e => e.phone == phone && e.id.ToString() != excludeId);
+            }
+        }
 
-        public void DeleteEmployee(int id)  // Use int for id
+        public void BlockEmployee(int id)  // Use int for id
         {
             var emp = db.employees.FirstOrDefault(e => e.id == id);  // Ensure id is of type int
             if (emp != null)
             {
                 emp.status = "Inactive";  // Update the status to "Inactive"
                 db.SubmitChanges();  // Save changes to the database
+            }
+        }
+        public void UnblockEmployee(int id)  // Use int for id
+        {
+            var emp = db.employees.FirstOrDefault(e => e.id == id);  // Ensure id is of type int
+            if (emp != null)
+            {
+                emp.status = "Active";  // Update the status to "Active"
+                db.SubmitChanges();  // Save changes to the database
+            }
+        }
+        public bool DeleteEmployee(int id)
+        {
+            try
+            {
+                var employee = db.employees.FirstOrDefault(emp => emp.id == id);
+                if (employee == null) return false;
+
+                db.employees.DeleteOnSubmit(employee);
+                db.SubmitChanges(); // Không cần db.employees.Context
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -91,7 +131,7 @@ namespace Manage_Furniture.Controls
                 existing.address = emp.Address;
                 existing.salary = decimal.Parse(emp.Salary.Replace(",", ""));
                 existing.status = emp.Status;
-                existing.password = emp.password;  // Update password if needed
+                existing.password = emp.Password;  // Update password if needed
 
                 db.SubmitChanges();
             }

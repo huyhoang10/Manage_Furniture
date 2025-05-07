@@ -20,12 +20,34 @@ namespace Manage_Furniture.Controls
 
         private void ucHumanResourceManagement_Load(object sender, EventArgs e)
         {
-            dgvView.AutoGenerateColumns = true;
+            dgvView.AutoGenerateColumns = true; // Đảm bảo tự động tạo cột bị tắt
+                                                 
+            //if (!dgvView.Columns.Contains("STT"))
+            //{
+            //    DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
+            //    sttColumn.Name = "STT";
+            //    sttColumn.HeaderText = "STT";
+            //    sttColumn.ReadOnly = true;
+            //    dgvView.Columns.Insert(0, sttColumn); // Thêm vào cột đầu tiên
+            //}
+        
+
             RefreshGrid();
         }
 
         private void RefreshGrid()
         {
+            cmbSex.DrawMode = DrawMode.OwnerDrawFixed;
+            cmbSex.ItemHeight = 56; 
+
+            cmbSex.DrawItem += (s, e) =>
+            {
+                if (e.Index < 0) return;
+                e.DrawBackground();
+                string text = cmbSex.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, cmbSex.Font, Brushes.Black, e.Bounds);
+                e.DrawFocusRectangle();
+            };
             dgvView.DataSource = null;
             dgvView.DataSource = controller.GetAll("Active"); // Lấy danh sách nhân viên từ cơ sở dữ liệu
             var employees = controller.GetAll();
@@ -33,34 +55,98 @@ namespace Manage_Furniture.Controls
             // Tuỳ chỉnh header cột (nếu cần)
             var activeEmployees = employees.Where(e => e.Status == "Active").ToList();
             var inactiveEmployees = employees.Where(e => e.Status == "Inactive").ToList();
-
+            
+            
+            
             // Cập nhật số liệu
             txtTotalE.Text = employees.Count.ToString();
             txtEActive.Text = activeEmployees.Count.ToString();
             txtEInactive.Text = inactiveEmployees.Count.ToString();
+            cmbFilter.SelectedIndex = 0;
+            cmbSex.SelectedIndex = 0;
         }
+
+        private string GenerateUniqueId()
+        {
+            Random rnd = new Random();
+            string id;
+            do
+            {
+                id = rnd.Next(100000, 999999).ToString();
+            }
+            while (controller.IsEmployeeIdExists(id)); // Kiểm tra trong DB
+            return id;
+        }
+        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtId.Text) || string.IsNullOrWhiteSpace(txtName.Text))
+            // Random ID nếu cần (và không nhập tay)
+            string generatedId = GenerateUniqueId();
+
+            // Kiểm tra tên
+            if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ Mã NV và Tên.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập tên nhân viên.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            // Kiểm tra số điện thoại
+            if (string.IsNullOrWhiteSpace(txtPhone.Text) || !txtPhone.Text.All(char.IsDigit) || txtPhone.Text.Length < 9)
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Kiểm tra số điện thoại đã tồn tại
+            if (controller.IsPhoneExists(txtPhone.Text.Trim()))
+            {
+                MessageBox.Show("Số điện thoại đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+
+            // Kiểm tra giới tính (ComboBox)
+            if (string.IsNullOrWhiteSpace(cmbSex.Text) || (cmbSex.Text != "Male" && cmbSex.Text != "Female"))
+            {
+                MessageBox.Show("Vui lòng chọn giới tính.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra địa chỉ
+            if (string.IsNullOrWhiteSpace(txtAddress.Text))
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra lương
+            if (!decimal.TryParse(txtSalary.Text.Replace(",", ""), out decimal salary) || salary <= 0)
+            {
+                MessageBox.Show("Lương phải là số dương hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra mật khẩu
+            if (string.IsNullOrWhiteSpace(txtPassword.Text) || txtPassword.Text.Length < 6)
+            {
+                MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Tạo model và gọi thêm
             EmployeeModel newEmp = new EmployeeModel(
-                txtId.Text,
+                generatedId,
                 txtName.Text,
                 txtPhone.Text,
-                txtSex.Text,
+                cmbSex.Text,
                 txtAddress.Text,
-                txtSalary.Text,
+                salary.ToString("N0"), // Lưu lương theo định dạng có dấu phẩy
                 txtPassword.Text,
-                "Active" // Mặc định trạng thái là Active
+                "Active"
             );
 
-            controller.AddEmployee(newEmp);  // Lưu nhân viên vào database
-            RefreshGrid();  // Cập nhật lại Grid
+            controller.AddEmployee(newEmp);
+            RefreshGrid();
             ClearInputs();
         }
 
@@ -81,10 +167,10 @@ namespace Manage_Furniture.Controls
 
         private void ClearInputs()
         {
-            txtId.Clear();
+            
             txtName.Clear();
             txtPhone.Clear();
-            txtSex.Clear();
+            cmbSex.Refresh();
             txtAddress.Clear();
             txtSalary.Clear();
         }
@@ -123,18 +209,18 @@ namespace Manage_Furniture.Controls
         {
             string selected = cmbFilter.SelectedItem.ToString();
 
+
             // Lấy toàn bộ danh sách nhân viên
             List<EmployeeModel> list = controller.GetAll("Active");
 
-            if (selected == "Man" || selected == "Female")
+            if (selected == "Male" || selected == "Female")
             {
                 list = list.Where(emp =>
                     emp.Sex.Equals(selected, StringComparison.OrdinalIgnoreCase)
                 ).ToList();
             }
             else if (selected == "< 100$")
-            { 
-                
+            {
                 list = list.Where(emp =>
                     decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary < 100
                 ).ToList();
@@ -142,7 +228,6 @@ namespace Manage_Furniture.Controls
 
             else if (selected == "100$ – 500$")
             {
-               
                 list = list.Where(emp =>
                     decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary >= 100 && salary <= 500
                 ).ToList();
@@ -158,12 +243,10 @@ namespace Manage_Furniture.Controls
                 // Không cần lọc gì cả
                 list = controller.GetAll("Active");
             }
-            // Nếu là "All" thì không lọc gì
 
             dgvView.DataSource = null;
             dgvView.DataSource = list;
         }
-
 
         private void dgvView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -172,19 +255,36 @@ namespace Manage_Furniture.Controls
                 DataGridViewRow row = dgvView.Rows[e.RowIndex];
 
                 // Gán giá trị lên TextBox
-                txtId.Text = row.Cells["Id"].Value?.ToString();
+              
                 txtName.Text = row.Cells["Name"].Value?.ToString();
                 txtPhone.Text = row.Cells["Phone"].Value?.ToString();
-                txtSex.Text = row.Cells["Sex"].Value?.ToString();
+                cmbSex.Text = row.Cells["Sex"].Value?.ToString();
                 txtAddress.Text = row.Cells["Address"].Value?.ToString();
                 txtSalary.Text = row.Cells["Salary"].Value?.ToString();
                 txtPassword.Text = row.Cells["password"].Value?.ToString();
-                txtId.Enabled = false;  // Mã NV không được chỉnh sửa
+                if(row.Cells["Status"].Value != null)
+                {
+                    if (row.Cells["Status"].Value.ToString() == "Active")
+                    {
+                        btnBlock.Text = "Block";
+                    }
+                    else
+                    {
+                        btnBlock.Text = "Unblock";
+                    }
+                }
+                else
+                {
+                    btnBlock.Text = "Block";
+                }
+
             }
         }
 
         private void btnAll_Click(object sender, EventArgs e)
+
         {
+
             btnAll.FillColor = Color.Green;  // Thay đổi màu nền
             btnActive.FillColor = Color.White;
             btnInactive.FillColor = Color.White;
@@ -196,6 +296,7 @@ namespace Manage_Furniture.Controls
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+
             // Kiểm tra xem người dùng đã chọn một hàng trong DataGridView chưa
             if (dgvView.SelectedRows.Count == 0)
             {
@@ -208,39 +309,52 @@ namespace Manage_Furniture.Controls
 
             // Lấy nhân viên từ cơ sở dữ liệu theo id
             var employee = controller.GetAll().FirstOrDefault(ee => ee.Id.ToString() == id);
-
-            if (employee == null)
+            if (employee == null) return;
+            if (controller.IsPhoneExists(txtPhone.Text.Trim(), id))
             {
-                MessageBox.Show("Nhân viên không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Số điện thoại đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Cập nhật thông tin vào các trường nhập
+            employee.Name = txtName.Text;
+            employee.Phone = txtPhone.Text;
+            employee.Sex = cmbSex.Text;
+            employee.Address = txtAddress.Text;
+            employee.Salary = txtSalary.Text;
+            employee.Password = txtPassword.Text;
+
+            controller.UpdateEmployee(employee);
+            MessageBox.Show("Chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            RefreshGrid();
+        }
+
+        private void btnBlock_Click(object sender, EventArgs e)
+        {
+            if (dgvView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần khoá.", "Chưa chọn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Tạo đối tượng EmployeeModel từ các TextBox và giữ nguyên trạng thái (status) cũ
-            EmployeeModel updatedEmployee = new EmployeeModel(
-                id,  // Giữ nguyên id vì đây là khóa chính
-                txtName.Text,
-                txtPhone.Text,
-                txtSex.Text,
-                txtAddress.Text,
-                txtSalary.Text,
-                employee.Status,
-                txtPassword.Text
+            // Chuyển đổi id sang kiểu int
+            int id = Convert.ToInt32(dgvView.SelectedRows[0].Cells["Id"].Value);
+            var current = dgvView.SelectedRows[0].Cells["Status"].Value;
+            if (current.ToString() == "Inactive")
+            {
                
-            );
+                controller.UnblockEmployee(id); // Cập nhật trạng thái nhân viên thành Inactive
+                RefreshGrid();  // Cập nhật lại Grid
+                MessageBox.Show("Đã mở khoá nhân viên!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+              
+                controller.BlockEmployee(id); // Cập nhật trạng thái nhân viên thành Inactive
+                RefreshGrid();  // Cập nhật lại Grid
+                MessageBox.Show("Đã khoá nhân viên!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Gọi controller để cập nhật thông tin nhân viên trong cơ sở dữ liệu
-            controller.UpdateEmployee(updatedEmployee);
-
-            // Cập nhật lại grid
-            RefreshGrid();
-
-            // Thông báo thành công
-            MessageBox.Show("Thông tin nhân viên đã được cập nhật!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Clear các input sau khi cập nhật
-            ClearInputs();
+            }
+           
         }
-
-
     }
 }
