@@ -30,9 +30,6 @@ namespace Manage_Furniture.ADO
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertbill(bill instance);
-    partial void Updatebill(bill instance);
-    partial void Deletebill(bill instance);
     partial void Insertcustomer(customer instance);
     partial void Updatecustomer(customer instance);
     partial void Deletecustomer(customer instance);
@@ -54,6 +51,9 @@ namespace Manage_Furniture.ADO
     partial void Insertwarehouse(warehouse instance);
     partial void Updatewarehouse(warehouse instance);
     partial void Deletewarehouse(warehouse instance);
+    partial void Insertbill(bill instance);
+    partial void Updatebill(bill instance);
+    partial void Deletebill(bill instance);
     #endregion
 		
 		public manager_furnitureDataContext() : 
@@ -84,14 +84,6 @@ namespace Manage_Furniture.ADO
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<bill> bills
-		{
-			get
-			{
-				return this.GetTable<bill>();
-			}
 		}
 		
 		public System.Data.Linq.Table<customer> customers
@@ -149,131 +141,12 @@ namespace Manage_Furniture.ADO
 				return this.GetTable<warehouse>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bill")]
-	public partial class bill : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_order;
-		
-		private System.Nullable<decimal> _money;
-		
-		private EntityRef<order> _order;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_orderChanging(int value);
-    partial void Onid_orderChanged();
-    partial void OnmoneyChanging(System.Nullable<decimal> value);
-    partial void OnmoneyChanged();
-    #endregion
-		
-		public bill()
-		{
-			this._order = default(EntityRef<order>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_order", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id_order
+		public System.Data.Linq.Table<bill> bills
 		{
 			get
 			{
-				return this._id_order;
-			}
-			set
-			{
-				if ((this._id_order != value))
-				{
-					if (this._order.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_orderChanging(value);
-					this.SendPropertyChanging();
-					this._id_order = value;
-					this.SendPropertyChanged("id_order");
-					this.Onid_orderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_money", DbType="Decimal(15,2)")]
-		public System.Nullable<decimal> money
-		{
-			get
-			{
-				return this._money;
-			}
-			set
-			{
-				if ((this._money != value))
-				{
-					this.OnmoneyChanging(value);
-					this.SendPropertyChanging();
-					this._money = value;
-					this.SendPropertyChanged("money");
-					this.OnmoneyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="order_bill", Storage="_order", ThisKey="id_order", OtherKey="id", IsForeignKey=true)]
-		public order order
-		{
-			get
-			{
-				return this._order.Entity;
-			}
-			set
-			{
-				order previousValue = this._order.Entity;
-				if (((previousValue != value) 
-							|| (this._order.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._order.Entity = null;
-						previousValue.bill = null;
-					}
-					this._order.Entity = value;
-					if ((value != null))
-					{
-						value.bill = this;
-						this._id_order = value.id;
-					}
-					else
-					{
-						this._id_order = default(int);
-					}
-					this.SendPropertyChanged("order");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<bill>();
 			}
 		}
 	}
@@ -700,11 +573,11 @@ namespace Manage_Furniture.ADO
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id;
+		private int _id_order;
 		
-		private System.Nullable<int> _id_customer;
+		private int _id_customer;
 		
-		private System.Nullable<int> _id_product;
+		private int _id_product;
 		
 		private System.Nullable<int> _quantity;
 		
@@ -714,8 +587,6 @@ namespace Manage_Furniture.ADO
 		
 		private string _note;
 		
-		private EntityRef<bill> _bill;
-		
 		private EntityRef<customer> _customer;
 		
 		private EntityRef<product> _product;
@@ -724,11 +595,11 @@ namespace Manage_Furniture.ADO
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onid_customerChanging(System.Nullable<int> value);
+    partial void Onid_orderChanging(int value);
+    partial void Onid_orderChanged();
+    partial void Onid_customerChanging(int value);
     partial void Onid_customerChanged();
-    partial void Onid_productChanging(System.Nullable<int> value);
+    partial void Onid_productChanging(int value);
     partial void Onid_productChanged();
     partial void OnquantityChanging(System.Nullable<int> value);
     partial void OnquantityChanged();
@@ -742,34 +613,33 @@ namespace Manage_Furniture.ADO
 		
 		public order()
 		{
-			this._bill = default(EntityRef<bill>);
 			this._customer = default(EntityRef<customer>);
 			this._product = default(EntityRef<product>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_order", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_order
 		{
 			get
 			{
-				return this._id;
+				return this._id_order;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._id_order != value))
 				{
-					this.OnidChanging(value);
+					this.Onid_orderChanging(value);
 					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this._id_order = value;
+					this.SendPropertyChanged("id_order");
+					this.Onid_orderChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_customer", DbType="Int")]
-		public System.Nullable<int> id_customer
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_customer", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_customer
 		{
 			get
 			{
@@ -792,8 +662,8 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_product", DbType="Int")]
-		public System.Nullable<int> id_product
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_product", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_product
 		{
 			get
 			{
@@ -896,35 +766,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="order_bill", Storage="_bill", ThisKey="id", OtherKey="id_order", IsUnique=true, IsForeignKey=false)]
-		public bill bill
-		{
-			get
-			{
-				return this._bill.Entity;
-			}
-			set
-			{
-				bill previousValue = this._bill.Entity;
-				if (((previousValue != value) 
-							|| (this._bill.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._bill.Entity = null;
-						previousValue.order = null;
-					}
-					this._bill.Entity = value;
-					if ((value != null))
-					{
-						value.order = this;
-					}
-					this.SendPropertyChanged("bill");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_order", Storage="_customer", ThisKey="id_customer", OtherKey="id", IsForeignKey=true)]
 		public customer customer
 		{
@@ -952,7 +793,7 @@ namespace Manage_Furniture.ADO
 					}
 					else
 					{
-						this._id_customer = default(Nullable<int>);
+						this._id_customer = default(int);
 					}
 					this.SendPropertyChanged("customer");
 				}
@@ -986,7 +827,7 @@ namespace Manage_Furniture.ADO
 					}
 					else
 					{
-						this._id_product = default(Nullable<int>);
+						this._id_product = default(int);
 					}
 					this.SendPropertyChanged("product");
 				}
@@ -1671,6 +1512,92 @@ namespace Manage_Furniture.ADO
 						this._id_product = default(int);
 					}
 					this.SendPropertyChanged("product");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bill")]
+	public partial class bill : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_order;
+		
+		private System.Nullable<decimal> _money;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_orderChanging(int value);
+    partial void Onid_orderChanged();
+    partial void OnmoneyChanging(System.Nullable<decimal> value);
+    partial void OnmoneyChanged();
+    #endregion
+		
+		public bill()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_order", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_order
+		{
+			get
+			{
+				return this._id_order;
+			}
+			set
+			{
+				if ((this._id_order != value))
+				{
+					this.Onid_orderChanging(value);
+					this.SendPropertyChanging();
+					this._id_order = value;
+					this.SendPropertyChanged("id_order");
+					this.Onid_orderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_money", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> money
+		{
+			get
+			{
+				return this._money;
+			}
+			set
+			{
+				if ((this._money != value))
+				{
+					this.OnmoneyChanging(value);
+					this.SendPropertyChanging();
+					this._money = value;
+					this.SendPropertyChanged("money");
+					this.OnmoneyChanged();
 				}
 			}
 		}

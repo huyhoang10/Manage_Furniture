@@ -42,17 +42,6 @@ namespace Manage_Furniture.Forms
             }   
         }
 
-        private void lbl_signup_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FSignup fSignup = new FSignup();
-            fSignup.ShowDialog();
-            fSignup = null;
-            this.Show();
-        }
-
-
-
         private void btn_login_Click(object sender, EventArgs e)
         {
             var uclogin_control = new ucLoginControl();

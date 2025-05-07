@@ -48,16 +48,16 @@
             this.txt_order_note = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmb_customer_type = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgv_orders = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.txt_sum = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btn_search = new Guna.UI2.WinForms.Guna2CircleButton();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_product = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.col_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_date_purchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.txt_sum = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_search_phone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_search = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.manageFurnitureDataSet)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orders)).BeginInit();
@@ -185,6 +185,7 @@
             this.txt_customer_phone.SelectedText = "";
             this.txt_customer_phone.Size = new System.Drawing.Size(511, 72);
             this.txt_customer_phone.TabIndex = 2;
+            this.txt_customer_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_customer_phone_KeyPress);
             // 
             // txt_custormer_address
             // 
@@ -372,84 +373,6 @@
             this.dgv_orders.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_orders.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_CellValueChanged);
             // 
-            // guna2CustomGradientPanel2
-            // 
-            this.guna2CustomGradientPanel2.BorderRadius = 16;
-            this.guna2CustomGradientPanel2.Controls.Add(this.txt_sum);
-            this.guna2CustomGradientPanel2.Controls.Add(this.dgv_orders);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(23, 160);
-            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 748);
-            this.guna2CustomGradientPanel2.TabIndex = 8;
-            // 
-            // txt_sum
-            // 
-            this.txt_sum.BackColor = System.Drawing.Color.White;
-            this.txt_sum.BorderColor = System.Drawing.Color.Maroon;
-            this.txt_sum.BorderRadius = 15;
-            this.txt_sum.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_sum.DefaultText = "";
-            this.txt_sum.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_sum.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_sum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_sum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_sum.Enabled = false;
-            this.txt_sum.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
-            this.txt_sum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_sum.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_sum.ForeColor = System.Drawing.Color.Black;
-            this.txt_sum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_sum.Location = new System.Drawing.Point(628, 674);
-            this.txt_sum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_sum.Name = "txt_sum";
-            this.txt_sum.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_sum.PlaceholderText = "Total = 0";
-            this.txt_sum.SelectedText = "";
-            this.txt_sum.Size = new System.Drawing.Size(256, 53);
-            this.txt_sum.TabIndex = 5;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(75)))), ((int)(((byte)(71)))));
-            this.guna2TextBox1.BorderRadius = 20;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Italic);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.guna2TextBox1.IconRightSize = new System.Drawing.Size(25, 25);
-            this.guna2TextBox1.Location = new System.Drawing.Point(1135, 69);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox1.PlaceholderText = "ID or Name";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(388, 70);
-            this.guna2TextBox1.TabIndex = 9;
-            // 
-            // btn_search
-            // 
-            this.btn_search.BackColor = System.Drawing.Color.White;
-            this.btn_search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_search.FillColor = System.Drawing.Color.White;
-            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_search.ForeColor = System.Drawing.Color.White;
-            this.btn_search.HoverState.FillColor = System.Drawing.Color.LightGray;
-            this.btn_search.Image = global::Manage_Furniture.Properties.Resources.search_1;
-            this.btn_search.Location = new System.Drawing.Point(1461, 83);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btn_search.Size = new System.Drawing.Size(50, 45);
-            this.btn_search.TabIndex = 10;
-            // 
             // col_id
             // 
             this.col_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -503,13 +426,93 @@
             this.col_total.MinimumWidth = 6;
             this.col_total.Name = "col_total";
             // 
+            // guna2CustomGradientPanel2
+            // 
+            this.guna2CustomGradientPanel2.BorderRadius = 16;
+            this.guna2CustomGradientPanel2.Controls.Add(this.txt_sum);
+            this.guna2CustomGradientPanel2.Controls.Add(this.dgv_orders);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(23, 160);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 748);
+            this.guna2CustomGradientPanel2.TabIndex = 8;
+            // 
+            // txt_sum
+            // 
+            this.txt_sum.BackColor = System.Drawing.Color.White;
+            this.txt_sum.BorderColor = System.Drawing.Color.Maroon;
+            this.txt_sum.BorderRadius = 15;
+            this.txt_sum.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_sum.DefaultText = "";
+            this.txt_sum.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_sum.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_sum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_sum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_sum.Enabled = false;
+            this.txt_sum.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
+            this.txt_sum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_sum.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_sum.ForeColor = System.Drawing.Color.Black;
+            this.txt_sum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_sum.Location = new System.Drawing.Point(628, 674);
+            this.txt_sum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_sum.Name = "txt_sum";
+            this.txt_sum.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txt_sum.PlaceholderText = "Total = 0";
+            this.txt_sum.SelectedText = "";
+            this.txt_sum.Size = new System.Drawing.Size(256, 53);
+            this.txt_sum.TabIndex = 5;
+            // 
+            // txt_search_phone
+            // 
+            this.txt_search_phone.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(75)))), ((int)(((byte)(71)))));
+            this.txt_search_phone.BorderRadius = 20;
+            this.txt_search_phone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_search_phone.DefaultText = "";
+            this.txt_search_phone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_search_phone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_search_phone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_search_phone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_search_phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_search_phone.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic);
+            this.txt_search_phone.ForeColor = System.Drawing.Color.Black;
+            this.txt_search_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_search_phone.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.txt_search_phone.IconRightSize = new System.Drawing.Size(25, 25);
+            this.txt_search_phone.Location = new System.Drawing.Point(1095, 70);
+            this.txt_search_phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_search_phone.Name = "txt_search_phone";
+            this.txt_search_phone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_search_phone.PlaceholderText = "Phone Customer";
+            this.txt_search_phone.SelectedText = "";
+            this.txt_search_phone.Size = new System.Drawing.Size(428, 69);
+            this.txt_search_phone.TabIndex = 9;
+            // 
+            // btn_search
+            // 
+            this.btn_search.BackColor = System.Drawing.Color.White;
+            this.btn_search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_search.FillColor = System.Drawing.Color.White;
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_search.ForeColor = System.Drawing.Color.White;
+            this.btn_search.HoverState.FillColor = System.Drawing.Color.LightGray;
+            this.btn_search.Image = global::Manage_Furniture.Properties.Resources.search_1;
+            this.btn_search.Location = new System.Drawing.Point(1461, 83);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btn_search.Size = new System.Drawing.Size(50, 45);
+            this.btn_search.TabIndex = 10;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // UCOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.Controls.Add(this.btn_search);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.txt_search_phone);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.btn_export);
             this.Controls.Add(this.btn_order);
@@ -542,7 +545,7 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_orders;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txt_search_phone;
         private Guna.UI2.WinForms.Guna2CircleButton btn_search;
         private Guna.UI2.WinForms.Guna2TextBox txt_order_note;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_customer_type;

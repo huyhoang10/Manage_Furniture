@@ -2,7 +2,6 @@ D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Manage
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.pdb
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.AssemblyReference.cache
-D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FSignup.resources
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.FWelcome.resources
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Properties.Resources.resources
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.GenerateResource.cache

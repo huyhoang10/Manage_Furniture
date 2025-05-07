@@ -124,6 +124,15 @@ namespace Manage_Furniture.Forms
             }
         }
 
+        private void txt_customer_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Invalid Phone Format!", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
 
         private void InitializeDataGridViewEvents()
         {
@@ -141,18 +150,22 @@ namespace Manage_Furniture.Forms
             string type = cmb_customer_type.Text;
             string note = txt_order_note.Text;
 
+
+            // Check Row dgv_orders ?=null
             if (!dgv_orders.Rows.Cast<DataGridViewRow>().Any(r => !r.IsNewRow && r.Cells["col_product"].Value != null))
             {
                 MessageBox.Show("No product to order!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            // Check textbox Customer
             else if (string.IsNullOrEmpty(customer_name) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(address))
             {
                 MessageBox.Show("Please fill in all customer fields!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Saved totalMoney
+            // Check totalMoney
             if (!decimal.TryParse(txt_sum.Text, System.Globalization.NumberStyles.Currency, null, out decimal totalMoney))
             {
                 MessageBox.Show("Invalid money format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -161,18 +174,48 @@ namespace Manage_Furniture.Forms
 
             orderControl.AddOrderAndCustomer(customer_name, sex, phone, address, type, note, totalMoney, dgv_orders);
 
-            txt_customer_name.ResetText();
-            txt_customer_phone.ResetText();
-            txt_custormer_address.ResetText();
-            txt_order_note.ResetText();
-            txt_sum.Text ="";
-            dgv_orders.Rows.Clear();
+        }
+
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            var phone = txt_search_phone.Text.Trim();
+            if (string.IsNullOrEmpty(phone))
+            {
+                MessageBox.Show("Please enter a phone number to search!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (orderControl.IsPhoneNumberExists(phone))
+            {
+                var customer = orderControl.GetCustomerByPhone(phone);
+
+                txt_customer_name.Text = customer.name;
+                cmb_customer_sex.SelectedItem = customer.sex;
+                txt_customer_phone.Text = customer.phone;
+                txt_custormer_address.Text = customer.address;
+                cmb_customer_type.SelectedItem = customer.type;
+            }
+            else
+            {
+                MessageBox.Show("Customer is not in database yet, do you want to add?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            }
         }
 
         private void btn_export_Click(object sender, EventArgs e)
         {
-
+            txt_customer_name.ResetText();
+            cmb_customer_sex.SelectedIndex = 0;  
+            txt_customer_phone.ResetText();
+            txt_custormer_address.ResetText();
+            cmb_customer_type.SelectedIndex = 0;
+            txt_order_note.ResetText();
+            txt_search_phone.ResetText();
+            txt_sum.Text = "";
+            dgv_orders.Rows.Clear();
+            tempOrderId = 1;
         }
 
+        
     }
 }
