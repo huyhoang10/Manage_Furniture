@@ -58,11 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
-    <Compile Include="ADO\manager_furniture.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>manager_furniture.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\FEmployeeControl.cs" />
     <Compile Include="Controls\ucSuppliersControls.cs" />
     <Compile Include="Controls\ucWarehouseControls.cs" />
@@ -139,14 +134,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ADO\manager_furniture.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>manager_furniture.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ADO\manager_furniture.dbml.layout">
-      <DependentUpon>manager_furniture.dbml</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
