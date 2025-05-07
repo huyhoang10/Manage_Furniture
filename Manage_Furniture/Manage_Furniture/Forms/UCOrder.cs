@@ -268,15 +268,24 @@ namespace Manage_Furniture.Forms
             }
             else
             {
-                MessageBox.Show("Customer is not in database yet, do you want to add?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                txt_customer_phone.Text = txt_search_phone.Text;
+                DialogResult result = MessageBox.Show("Customer is not in database yet, do you want to add?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    txt_customer_phone.Text = txt_search_phone.Text;
+                }
             }
         }
 
         private void btn_export_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
             txt_customer_name.ResetText();
-            cmb_customer_sex.SelectedIndex = 0;  
+            cmb_customer_sex.SelectedIndex = 0;
             txt_customer_phone.ResetText();
             txt_custormer_address.ResetText();
             cmb_customer_type.SelectedIndex = 0;
@@ -286,6 +295,5 @@ namespace Manage_Furniture.Forms
             dgv_orders.Rows.Clear();
             tempOrderId = 1;
         }
-
     }
 }
