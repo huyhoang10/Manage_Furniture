@@ -33,5 +33,16 @@ namespace Manage_Furniture.Properties {
                 return ((string)(this["ManageFurnitureConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ManageFurniture;Integrated Security=True;Encrypt=Tr" +
+            "ue;TrustServerCertificate=True")]
+        public string ManageFurnitureConnectionString1 {
+            get {
+                return ((string)(this["ManageFurnitureConnectionString1"]));
+            }
+        }
     }
 }

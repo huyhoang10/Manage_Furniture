@@ -44,6 +44,7 @@
             this.ucHR1 = new Manage_Furniture.Controls.ucHR();
             this.ucWarehouse1 = new Manage_Furniture.Forms.ucWarehouse();
             this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
+            this.ucOverview1 = new Manage_Furniture.Forms.ucOverview();
             this.pnlAllButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlUserControls.SuspendLayout();
@@ -258,6 +259,7 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
+            this.pnlUserControls.Controls.Add(this.ucOverview1);
             this.pnlUserControls.Controls.Add(this.ucHR1);
             this.pnlUserControls.Controls.Add(this.ucWarehouse1);
             this.pnlUserControls.Controls.Add(this.ucSuppliercs1);
@@ -292,6 +294,14 @@
             this.ucSuppliercs1.Name = "ucSuppliercs1";
             this.ucSuppliercs1.Size = new System.Drawing.Size(1552, 1036);
             this.ucSuppliercs1.TabIndex = 1;
+            // 
+            // ucOverview1
+            // 
+            this.ucOverview1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucOverview1.Location = new System.Drawing.Point(0, 0);
+            this.ucOverview1.Name = "ucOverview1";
+            this.ucOverview1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucOverview1.TabIndex = 4;
             // 
             // FEmployee
             // 
@@ -332,5 +342,6 @@
         protected Guna.UI2.WinForms.Guna2Button btnHR;
         protected Guna.UI2.WinForms.Guna2Button btnHome;
         private Controls.ucHR ucHR1;
+        private ucOverview ucOverview1;
     }
 }

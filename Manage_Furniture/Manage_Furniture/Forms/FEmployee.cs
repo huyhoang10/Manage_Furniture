@@ -66,7 +66,7 @@ namespace Manage_Furniture.Forms
         {
             SetAllButton();
             btnHome.FillColor = Color.FromArgb(197, 166, 158);
-            ucSuppliercs1.BringToFront();
+            ucOverview1.BringToFront();
         }
 
         private void btnHR_Click(object sender, EventArgs e)
