@@ -53,7 +53,6 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.cmb_Type = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmb_Sex = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -326,7 +325,6 @@
             this.cmb_FillterType.ItemHeight = 30;
             this.cmb_FillterType.Items.AddRange(new object[] {
             "All",
-            "Loyal",
             "Regular",
             "VIP"});
             this.cmb_FillterType.Location = new System.Drawing.Point(823, 157);
@@ -426,22 +424,11 @@
             this.cmb_Sex.Size = new System.Drawing.Size(140, 36);
             this.cmb_Sex.TabIndex = 22;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1056, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // UCCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cmb_Sex);
             this.Controls.Add(this.cmb_Type);
             this.Controls.Add(this.guna2HtmlLabel2);
@@ -490,6 +477,5 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_Type;
         private Guna.UI2.WinForms.Guna2ComboBox cmb_Sex;
-        private System.Windows.Forms.Button button1;
     }
 }

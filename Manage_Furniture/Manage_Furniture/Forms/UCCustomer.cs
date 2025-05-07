@@ -143,12 +143,6 @@ namespace Manage_Furniture.Controls
                 dgv_Customer.DataSource = filteredCustomers;
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            cr c = new cr();
-            c.Show();
-        }
     }
 }
 

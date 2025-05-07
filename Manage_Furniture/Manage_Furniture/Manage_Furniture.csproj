@@ -65,23 +65,6 @@
       <DependentUpon>mananger_furniture.dbml</DependentUpon>
     </Compile>
     <Compile Include="Controls\UCCustomerController.cs" />
-    <Compile Include="Forms\cr.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\cr.Designer.cs">
-      <DependentUpon>cr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\crvBill.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crvBill.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Forms\dtsBill.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dtsBill.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\UCCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,13 +87,6 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\cr.resx">
-      <DependentUpon>cr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\crvBill.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crvBill.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UCCustomer.resx">
       <DependentUpon>UCCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,17 +108,6 @@
     </None>
     <None Include="ADO\mananger_furniture.dbml.layout">
       <DependentUpon>mananger_furniture.dbml</DependentUpon>
-    </None>
-    <None Include="Forms\dtsBill.xsc">
-      <DependentUpon>dtsBill.xsd</DependentUpon>
-    </None>
-    <None Include="Forms\dtsBill.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dtsBill.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Forms\dtsBill.xss">
-      <DependentUpon>dtsBill.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
