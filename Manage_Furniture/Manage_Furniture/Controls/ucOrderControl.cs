@@ -33,7 +33,7 @@ namespace Manage_Furniture.Controls
         {
             newOrder.date_purchase = DateTime.Now;
             db.orders.InsertOnSubmit(newOrder);
-            db.SubmitChanges();
+            db.SubmitChanges();  
         }
 
         public void AddCustomer(customer newCustomer)
@@ -79,7 +79,7 @@ namespace Manage_Furniture.Controls
 
                     var newOrder = new order
                     {
-                        id = orderId,
+                        id_order = orderId,
                         id_customer = customerId,
                         id_product = id_product,
                         quantity = quantity,

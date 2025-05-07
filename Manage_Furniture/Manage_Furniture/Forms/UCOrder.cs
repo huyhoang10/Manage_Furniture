@@ -161,17 +161,16 @@ namespace Manage_Furniture.Forms
 
             orderControl.AddOrderAndCustomer(customer_name, sex, phone, address, type, note, totalMoney, dgv_orders);
 
-            txt_customer_name.ResetText();
-            txt_customer_phone.ResetText();
-            txt_custormer_address.ResetText();
-            txt_order_note.ResetText();
-            txt_sum.Text ="";
-            dgv_orders.Rows.Clear();
         }
 
         private void btn_export_Click(object sender, EventArgs e)
         {
-
+            txt_customer_name.ResetText();
+            txt_customer_phone.ResetText();
+            txt_custormer_address.ResetText();
+            txt_order_note.ResetText();
+            txt_sum.Text = "";
+            dgv_orders.Rows.Clear();
         }
 
     }
