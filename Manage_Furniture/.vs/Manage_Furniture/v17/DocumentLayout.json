@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,19 +11,19 @@
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\controls\\ucordercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WINFORMS\\PROJECT FINAL\\fnn\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\manage_furniture\\forms\\flogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\flogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\manage_furniture\\ado\\manager_furniture.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\ado\\manager_furniture.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\winforms\\project final\\fnn\\manage_furniture\\manage_furniture\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WINFORMS\\PROJECT FINAL\\fnn\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,7 +33,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -65,48 +61,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UCOrder.cs [Design]",
-              "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs",
-              "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCOrder.cs",
-              "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs [Design]*",
-              "RelativeToolTip": "Manage_Furniture\\Forms\\UCOrder.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T06:39:38.688Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FLogin.cs",
-              "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\FLogin.cs",
-              "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\FLogin.cs",
-              "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\FLogin.cs",
-              "RelativeToolTip": "Manage_Furniture\\Forms\\FLogin.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAWwCoAAAAJAAAAAAAAAA==",
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Manage_Furniture\\Models\\Order.cs",
+              "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Models\\Order.cs",
+              "RelativeToolTip": "Manage_Furniture\\Models\\Order.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T06:09:16.313Z"
+              "WhenOpened": "2025-05-07T08:21:23.738Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "manager_furniture.dbml",
-              "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\ADO\\manager_furniture.dbml",
-              "RelativeDocumentMoniker": "Manage_Furniture\\ADO\\manager_furniture.dbml",
-              "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\ADO\\manager_furniture.dbml",
-              "RelativeToolTip": "Manage_Furniture\\ADO\\manager_furniture.dbml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
-              "WhenOpened": "2025-05-07T06:07:25.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UCOrder.cs",
               "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCOrder.cs",
-              "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs*",
-              "RelativeToolTip": "Manage_Furniture\\Forms\\UCOrder.cs*",
-              "ViewState": "AgIAALwAAAAAAAAAAAAqwNMAAAAnAAAAAAAAAA==",
+              "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs",
+              "RelativeToolTip": "Manage_Furniture\\Forms\\UCOrder.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAA/wIoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T03:01:07.84Z",
               "EditorCaption": ""
@@ -114,18 +88,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "UCOrder.cs [Design]",
+              "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs",
+              "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCOrder.cs",
+              "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs [Design]",
+              "RelativeToolTip": "Manage_Furniture\\Forms\\UCOrder.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T06:39:38.688Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ucOrderControl.cs",
               "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Controls\\ucOrderControl.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Controls\\ucOrderControl.cs",
               "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Controls\\ucOrderControl.cs",
               "RelativeToolTip": "Manage_Furniture\\Controls\\ucOrderControl.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAmwFAAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAGMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T08:35:58.014Z"
+              "WhenOpened": "2025-05-05T08:35:58.014Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\.gitignore",
               "RelativeDocumentMoniker": "..\\.gitignore",
@@ -137,15 +124,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "connectDatabase.cs",
               "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\ADO\\connectDatabase.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\ADO\\connectDatabase.cs",
               "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\ADO\\connectDatabase.cs",
               "RelativeToolTip": "Manage_Furniture\\ADO\\connectDatabase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T09:13:41.399Z"
+              "WhenOpened": "2025-05-05T09:13:41.399Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -65,12 +65,12 @@ namespace Manage_Furniture.Controls
 
             try
             {
-                var existingCustomer = db.customers.FirstOrDefault(c => c.phone == phone);
+                var existingCustomer = GetCustomerByPhone(phone);
 
                 if (existingCustomer != null)
                 {
-                    DialogResult result = MessageBox.Show("Customer already exists! Would you like to create a new order for this customer?",
-                                                          "Customer Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Customer already exists! \nWould you like to create a new order for this customer?",
+                                                          "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.No)
                         return; 
                     customerId = existingCustomer.id;
@@ -97,13 +97,16 @@ namespace Manage_Furniture.Controls
                         continue;
 
                     string productValue = row.Cells["col_product"].Value.ToString();
-                    string[] parts = productValue.Split('_');
+                    string[] parts = productValue.Split('-');
 
                     if (parts.Length < 2 || !int.TryParse(parts[0], out int id_product))
                         continue;
 
                     if (!int.TryParse(row.Cells["col_quantity"].Value?.ToString(), out int quantity) || quantity <= 0)
                         quantity = 1;
+
+                    var product = GetProductById(id_product);
+                    if (product == null) continue;
 
                     var newOrder = new order
                     {
@@ -112,13 +115,13 @@ namespace Manage_Furniture.Controls
                         id_product = id_product,
                         quantity = quantity,
                         date_purchase = DateTime.Now,
-                        money = totalMoney,
+                        money = product.price * quantity,  
                         note = note
                     };
 
                     AddOrder(newOrder);
                 }
-
+                
                 var newBill = new bill
                 {
                     id_order = orderId,
@@ -127,8 +130,6 @@ namespace Manage_Furniture.Controls
 
                 db.bills.InsertOnSubmit(newBill);
                 db.SubmitChanges();
-
-                MessageBox.Show("Order and bill added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 MessageBox.Show("Order added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

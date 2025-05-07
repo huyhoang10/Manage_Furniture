@@ -27,7 +27,7 @@ namespace Manage_Furniture.Forms
             var products = orderControl.GetAllProducts()
                 .Select(p => new
                 {
-                    id_name = $"{p.id}_{p.name}",
+                    id_name = $"{p.id}-{p.name}",
                     name = p.name,
                     price = p.price
                 }).ToList();
@@ -47,7 +47,32 @@ namespace Manage_Furniture.Forms
             {
                 cb.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
                 cb.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+
+                var selectedProducts = dgv_orders.Rows.Cast<DataGridViewRow>()
+                    .Where(r => !r.IsNewRow && r.Index != dgv_orders.CurrentCell.RowIndex)
+                    .Select(r => r.Cells["col_product"].Value?.ToString())
+                    .Where(v => !string.IsNullOrEmpty(v))
+                    .ToList();
+
+                var allProducts = orderControl.GetAllProducts()
+                    .Select(p => new
+                    {
+                        id_name = $"{p.id}-{p.name}",
+                        name = p.name,
+                        price = p.price
+                    })
+                    .ToList();
+
+                var currentValue = dgv_orders.CurrentCell.Value?.ToString();
+                var availableProducts = allProducts
+                    .Where(p => !selectedProducts.Contains(p.id_name) || p.id_name == currentValue)
+                    .ToList();
+
+                cb.DataSource = availableProducts;
+                cb.DisplayMember = "id_name";
+                cb.ValueMember = "id_name";
             }
+    
         }
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,11 +85,14 @@ namespace Manage_Furniture.Forms
 
                 string selectedProductId = comboBox.SelectedValue.ToString();
                 var product = orderControl.GetAllProducts()
-                    .FirstOrDefault(p => $"{p.id}_{p.name}" == selectedProductId);
+                    .FirstOrDefault(p => $"{p.id}-{p.name}" == selectedProductId);
 
                 if (product != null)
                 {
-                    row.Cells["col_id"].Value = tempOrderId++;
+                    if (row.Cells["col_id"].Value == null || string.IsNullOrEmpty(row.Cells["col_id"].Value.ToString()))
+                    {
+                        row.Cells["col_id"].Value = tempOrderId++;
+                    }
                     row.Cells["col_date_purchase"].Value = DateTime.Now.ToString("yyyy-MM-dd");
                     row.Cells["col_money"].Value = ((int)product.price).ToString("C");
 
@@ -102,7 +130,7 @@ namespace Manage_Furniture.Forms
             if (!string.IsNullOrEmpty(selectedProductId) && !string.IsNullOrEmpty(quantityStr))
             {
                 var product = orderControl.GetAllProducts()
-                    .FirstOrDefault(p => $"{p.id}_{p.name}" == selectedProductId);
+                    .FirstOrDefault(p => $"{p.id}-{p.name}" == selectedProductId);
 
                 if (product != null && decimal.TryParse(quantityStr, out decimal qty))
                 {
@@ -124,31 +152,73 @@ namespace Manage_Furniture.Forms
             }
         }
 
-        private void txt_customer_phone_KeyPress(object sender, KeyPressEventArgs e)
+
+        // Update No in Orders
+        private void dgv_orders_RowLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            UpdateTempOrderId();
+        }
+        private void UpdateTempOrderId()
+        {
+
+            int id = 1;
+            foreach (DataGridViewRow row in dgv_orders.Rows)
             {
-                e.Handled = true;
-                MessageBox.Show("Invalid Phone Format!", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (row.Cells["col_id"].Value != null)
+                {
+                    row.Cells["col_id"].Value = id++;
+                }
+            }
+
+            if (dgv_orders.Rows.Count > 0)
+            {
+                tempOrderId = dgv_orders.Rows.Cast<DataGridViewRow>()
+                    .Where(r => r.Cells["col_id"].Value != null)
+                    .Max(r => (int)r.Cells["col_id"].Value) + 1;
+            }
+            else
+            {
+                tempOrderId = 1;
             }
         }
 
+        // Check value Phone
+        private void txt_customer_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+                MessageBox.Show("Invalid Phone Format!\nPlease enter digits only (0-9) for the phone number.", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        private void txt_customer_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+                MessageBox.Show("Invalid Name Format!\nPlease enter letters only (A-Z, a-z) for the name.", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         private void InitializeDataGridViewEvents()
         {
             dgv_orders.EditingControlShowing += dgv_orders_EditingControlShowing;
             dgv_orders.CellValueChanged += dgv_orders_CellValueChanged;
+            dgv_orders.RowLeave += dgv_orders_RowLeave;
         }
+
 
 
         private void btn_order_Click(object sender, EventArgs e)
         {
-            string customer_name = txt_customer_name.Text;
+            string customer_name = txt_customer_name.Text.Trim();
             string sex = cmb_customer_sex.Text;
-            string phone = txt_customer_phone.Text;
-            string address = txt_custormer_address.Text;
+            string phone = txt_customer_phone.Text.Trim();
+            string address = txt_custormer_address.Text.Trim();
             string type = cmb_customer_type.Text;
-            string note = txt_order_note.Text;
+            string note = txt_order_note.Text.Trim();
 
 
             // Check Row dgv_orders ?=null
@@ -182,7 +252,7 @@ namespace Manage_Furniture.Forms
             var phone = txt_search_phone.Text.Trim();
             if (string.IsNullOrEmpty(phone))
             {
-                MessageBox.Show("Please enter a phone number to search!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a phone number to search!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -198,7 +268,8 @@ namespace Manage_Furniture.Forms
             }
             else
             {
-                MessageBox.Show("Customer is not in database yet, do you want to add?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                MessageBox.Show("Customer is not in database yet, do you want to add?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                txt_customer_phone.Text = txt_search_phone.Text;
             }
         }
 
@@ -216,6 +287,5 @@ namespace Manage_Furniture.Forms
             tempOrderId = 1;
         }
 
-        
     }
 }

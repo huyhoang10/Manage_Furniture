@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Order = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.guna2ColorTransition1 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
@@ -107,7 +107,7 @@
             this.btn_order.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btn_order.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_order.ForeColor = System.Drawing.Color.Black;
-            this.btn_order.Location = new System.Drawing.Point(1034, 949);
+            this.btn_order.Location = new System.Drawing.Point(1025, 879);
             this.btn_order.Name = "btn_order";
             this.btn_order.Size = new System.Drawing.Size(175, 64);
             this.btn_order.TabIndex = 4;
@@ -124,7 +124,7 @@
             this.btn_export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btn_export.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold);
             this.btn_export.ForeColor = System.Drawing.Color.Black;
-            this.btn_export.Location = new System.Drawing.Point(1283, 949);
+            this.btn_export.Location = new System.Drawing.Point(1274, 879);
             this.btn_export.Name = "btn_export";
             this.btn_export.Size = new System.Drawing.Size(175, 64);
             this.btn_export.TabIndex = 5;
@@ -152,14 +152,15 @@
             this.txt_customer_name.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
             this.txt_customer_name.ForeColor = System.Drawing.Color.Black;
             this.txt_customer_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_name.Location = new System.Drawing.Point(36, 25);
+            this.txt_customer_name.Location = new System.Drawing.Point(36, 124);
             this.txt_customer_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_customer_name.Name = "txt_customer_name";
             this.txt_customer_name.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_customer_name.PlaceholderText = "Name Customer";
             this.txt_customer_name.SelectedText = "";
-            this.txt_customer_name.Size = new System.Drawing.Size(334, 72);
+            this.txt_customer_name.Size = new System.Drawing.Size(511, 72);
             this.txt_customer_name.TabIndex = 2;
+            this.txt_customer_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_customer_name_KeyPress);
             // 
             // txt_customer_phone
             // 
@@ -177,13 +178,13 @@
             this.txt_customer_phone.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
             this.txt_customer_phone.ForeColor = System.Drawing.Color.Black;
             this.txt_customer_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_phone.Location = new System.Drawing.Point(36, 141);
+            this.txt_customer_phone.Location = new System.Drawing.Point(36, 25);
             this.txt_customer_phone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_customer_phone.Name = "txt_customer_phone";
             this.txt_customer_phone.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_customer_phone.PlaceholderText = "Phone";
             this.txt_customer_phone.SelectedText = "";
-            this.txt_customer_phone.Size = new System.Drawing.Size(511, 72);
+            this.txt_customer_phone.Size = new System.Drawing.Size(334, 72);
             this.txt_customer_phone.TabIndex = 2;
             this.txt_customer_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_customer_phone_KeyPress);
             // 
@@ -203,7 +204,7 @@
             this.txt_custormer_address.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
             this.txt_custormer_address.ForeColor = System.Drawing.Color.Black;
             this.txt_custormer_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_custormer_address.Location = new System.Drawing.Point(36, 263);
+            this.txt_custormer_address.Location = new System.Drawing.Point(36, 224);
             this.txt_custormer_address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_custormer_address.Name = "txt_custormer_address";
             this.txt_custormer_address.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -223,7 +224,7 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.cmb_customer_type);
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(948, 160);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(575, 740);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(575, 669);
             this.guna2CustomGradientPanel1.TabIndex = 7;
             // 
             // cmb_customer_sex
@@ -242,11 +243,11 @@
             this.cmb_customer_sex.ForeColor = System.Drawing.Color.Black;
             this.cmb_customer_sex.ItemHeight = 50;
             this.cmb_customer_sex.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.cmb_customer_sex.Location = new System.Drawing.Point(397, 25);
+            "Female",
+            "Male"});
+            this.cmb_customer_sex.Location = new System.Drawing.Point(390, 25);
             this.cmb_customer_sex.Name = "cmb_customer_sex";
-            this.cmb_customer_sex.Size = new System.Drawing.Size(150, 56);
+            this.cmb_customer_sex.Size = new System.Drawing.Size(157, 56);
             this.cmb_customer_sex.StartIndex = 0;
             this.cmb_customer_sex.TabIndex = 4;
             this.cmb_customer_sex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -255,7 +256,7 @@
             // 
             this.txt_order_note.BackColor = System.Drawing.Color.White;
             this.txt_order_note.BorderColor = System.Drawing.Color.Maroon;
-            this.txt_order_note.BorderRadius = 40;
+            this.txt_order_note.BorderRadius = 20;
             this.txt_order_note.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_order_note.DefaultText = "";
             this.txt_order_note.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -267,9 +268,11 @@
             this.txt_order_note.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
             this.txt_order_note.ForeColor = System.Drawing.Color.Black;
             this.txt_order_note.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_order_note.Location = new System.Drawing.Point(36, 503);
+            this.txt_order_note.Location = new System.Drawing.Point(36, 424);
             this.txt_order_note.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_order_note.Multiline = true;
             this.txt_order_note.Name = "txt_order_note";
+            this.txt_order_note.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.txt_order_note.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_order_note.PlaceholderText = "Note Orders";
             this.txt_order_note.SelectedText = "";
@@ -281,6 +284,7 @@
             // 
             this.cmb_customer_type.AutoCompleteCustomSource.AddRange(new string[] {
             "Regular",
+            "Loyal",
             "VIP"});
             this.cmb_customer_type.BackColor = System.Drawing.Color.Transparent;
             this.cmb_customer_type.BorderColor = System.Drawing.Color.Maroon;
@@ -295,8 +299,9 @@
             this.cmb_customer_type.ItemHeight = 50;
             this.cmb_customer_type.Items.AddRange(new object[] {
             "Regular",
+            "Loyal",
             "VIP"});
-            this.cmb_customer_type.Location = new System.Drawing.Point(36, 385);
+            this.cmb_customer_type.Location = new System.Drawing.Point(36, 323);
             this.cmb_customer_type.Name = "cmb_customer_type";
             this.cmb_customer_type.Size = new System.Drawing.Size(511, 56);
             this.cmb_customer_type.StartIndex = 0;
@@ -305,17 +310,17 @@
             // 
             // dgv_orders
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_orders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.dgv_orders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_orders.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(19)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_orders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(19)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_orders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_orders.ColumnHeadersHeight = 50;
             this.dgv_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -325,30 +330,30 @@
             this.col_date_purchase,
             this.col_money,
             this.col_total});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_orders.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_orders.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_orders.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_orders.Location = new System.Drawing.Point(10, 25);
             this.dgv_orders.Name = "dgv_orders";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(19)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_orders.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(19)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_orders.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_orders.RowHeadersVisible = false;
             this.dgv_orders.RowHeadersWidth = 51;
             this.dgv_orders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_orders.RowTemplate.Height = 24;
-            this.dgv_orders.Size = new System.Drawing.Size(874, 632);
+            this.dgv_orders.Size = new System.Drawing.Size(874, 657);
             this.dgv_orders.TabIndex = 1;
             this.dgv_orders.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_orders.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -372,6 +377,7 @@
             this.dgv_orders.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_orders.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_orders.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_CellValueChanged);
+            this.dgv_orders.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_RowLeave);
             // 
             // col_id
             // 
@@ -433,7 +439,7 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.dgv_orders);
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(23, 160);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 748);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 783);
             this.guna2CustomGradientPanel2.TabIndex = 8;
             // 
             // txt_sum
@@ -453,7 +459,7 @@
             this.txt_sum.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
             this.txt_sum.ForeColor = System.Drawing.Color.Black;
             this.txt_sum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_sum.Location = new System.Drawing.Point(628, 674);
+            this.txt_sum.Location = new System.Drawing.Point(628, 713);
             this.txt_sum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_sum.Name = "txt_sum";
             this.txt_sum.PlaceholderForeColor = System.Drawing.Color.Black;
