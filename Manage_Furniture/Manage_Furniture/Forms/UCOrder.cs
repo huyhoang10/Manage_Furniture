@@ -14,6 +14,7 @@ namespace Manage_Furniture.Forms
         private ucOrderControl orderControl = new ucOrderControl();
         private Random random = new Random();
         private int tempOrderId = 1;
+        private object txt_Search;
 
         public UCOrder()
         {
@@ -166,11 +167,15 @@ namespace Manage_Furniture.Forms
         private void btn_export_Click(object sender, EventArgs e)
         {
             txt_customer_name.ResetText();
+            cmb_customer_sex.SelectedIndex = 0;
             txt_customer_phone.ResetText();
             txt_custormer_address.ResetText();
+            cmb_customer_type.SelectedIndex = 0;
             txt_order_note.ResetText();
+            txt_search_phone.ResetText();
             txt_sum.Text = "";
             dgv_orders.Rows.Clear();
+            tempOrderId = 1;
         }
 
     }

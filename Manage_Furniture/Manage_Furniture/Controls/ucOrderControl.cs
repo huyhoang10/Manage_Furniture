@@ -102,7 +102,7 @@ namespace Manage_Furniture.Controls
         public void CreateBill(bill newBill)
         {
             newBill.id_order = new Random().Next(1000,9999);
-            db.bills.InsertOnSubmit(newBill);
+            db.bills.InsertOnSubmit(newBill); 
         }
     }
 }

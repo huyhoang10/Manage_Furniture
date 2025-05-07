@@ -57,6 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
+    <Compile Include="ADO\dtsCrystalReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsCrystalReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ADO\manager_furniture.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,12 +87,6 @@
     </Compile>
     <Compile Include="Forms\FOrder.Designer.cs">
       <DependentUpon>FOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FSignup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FSignup.Designer.cs">
-      <DependentUpon>FSignup.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FWelcome.cs">
       <SubType>Form</SubType>
@@ -124,9 +123,6 @@
     <EmbeddedResource Include="Forms\FOrder.resx">
       <DependentUpon>FOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FSignup.resx">
-      <DependentUpon>FSignup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FWelcome.resx">
       <DependentUpon>FWelcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +139,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ADO\dtsCrystalReport.xsc">
+      <DependentUpon>dtsCrystalReport.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsCrystalReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsCrystalReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtsCrystalReport.xss">
+      <DependentUpon>dtsCrystalReport.xsd</DependentUpon>
+    </None>
     <None Include="ADO\manager_furniture.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>manager_furniture.designer.cs</LastGenOutput>

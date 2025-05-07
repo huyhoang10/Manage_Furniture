@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "D:\\Manage_Furniture\\Manage_Furniture\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\ucorder.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\ucorder.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\ado\\dtscrystalreport.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\ado\\dtscrystalreport.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\ado\\manager_furniture.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\ado\\manager_furniture.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\controls\\ucordercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\controls\\ucordercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\ucorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -28,10 +44,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|D:\\Manage_Furniture\\Manage_Furniture\\manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\ado\\connectdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,7 +53,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 23,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,6 +82,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "manager_furniture.dbml",
+              "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\ADO\\manager_furniture.dbml",
+              "RelativeDocumentMoniker": "Manage_Furniture\\ADO\\manager_furniture.dbml",
+              "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\ADO\\manager_furniture.dbml",
+              "RelativeToolTip": "Manage_Furniture\\ADO\\manager_furniture.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2025-05-07T07:56:35.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UCOrder.Designer.cs",
+              "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.Designer.cs",
+              "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCOrder.Designer.cs",
+              "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.Designer.cs",
+              "RelativeToolTip": "Manage_Furniture\\Forms\\UCOrder.Designer.cs",
+              "ViewState": "AgIAAEsBAAAAAAAAAAAjwP0BAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T07:53:49.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dtsCrystalReport.xsd",
+              "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\ADO\\dtsCrystalReport.xsd",
+              "RelativeDocumentMoniker": "Manage_Furniture\\ADO\\dtsCrystalReport.xsd",
+              "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\ADO\\dtsCrystalReport.xsd",
+              "RelativeToolTip": "Manage_Furniture\\ADO\\dtsCrystalReport.xsd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2025-05-07T07:45:07.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Models\\Order.cs",
@@ -77,8 +126,7 @@
               "RelativeToolTip": "Manage_Furniture\\Models\\Order.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T15:36:59.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T15:36:59.735Z"
             },
             {
               "$type": "Document",
@@ -88,27 +136,26 @@
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCOrder.cs",
               "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs",
               "RelativeToolTip": "Manage_Furniture\\Forms\\UCOrder.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAmwKgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAKYAAAAAAAAAAAASwK4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T03:01:07.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ucOrderControl.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Controls\\ucOrderControl.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Controls\\ucOrderControl.cs",
-              "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Controls\\ucOrderControl.cs",
-              "RelativeToolTip": "Manage_Furniture\\Controls\\ucOrderControl.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCoAAAAJAAAAAAAAAA==",
+              "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Controls\\ucOrderControl.cs*",
+              "RelativeToolTip": "Manage_Furniture\\Controls\\ucOrderControl.cs*",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAkwGkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T08:35:58.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T08:35:58.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UCOrder.cs [Design]",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCOrder.cs",
@@ -120,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Models\\Product.cs",
@@ -128,12 +175,11 @@
               "RelativeToolTip": "Manage_Furniture\\Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T16:42:43.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T16:42:43.558Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Customer.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\Models\\Customer.cs",
@@ -145,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\.gitignore",
               "RelativeDocumentMoniker": "..\\..\\WINFORMS\\PROJECT FINAL\\fnn\\.gitignore",
@@ -157,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "connectDatabase.cs",
               "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\ADO\\connectDatabase.cs",
               "RelativeDocumentMoniker": "Manage_Furniture\\ADO\\connectDatabase.cs",
