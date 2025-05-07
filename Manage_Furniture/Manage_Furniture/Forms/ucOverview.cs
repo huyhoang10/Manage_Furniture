@@ -47,6 +47,11 @@ namespace Manage_Furniture.Forms
                 lblPercentChange.ForeColor = Color.Red;
             }
 
+            // Căn giữa lblPercentChange
+            lblPercentChange.Left = (pnlRevenue.Width - lblPercentChange.Width) / 2;
+            // Cho nó nằm dưới lblRevenue khoảng 20px
+            lblPercentChange.Top = lblRevenue.Bottom + 80;
+
 
             // --- Chart Revenue ---
             var monthlyRevenue = _ucOverviewControl.GetMonthlyRevenue();
@@ -68,7 +73,7 @@ namespace Manage_Furniture.Forms
 
             // --- Recently Orders ---
             dgvRecentOrder.Rows.Clear(); // chỉ Rows.Clear khi setup = tay
-            var recentOrders = _ucOverviewControl.GetTop3RecentOrders();
+            var recentOrders = _ucOverviewControl.GetTop4RecentOrders();
             if (recentOrders.Count == 0)
             {
                 MessageBox.Show("No recent orders to display.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -79,8 +84,8 @@ namespace Manage_Furniture.Forms
                 {
                     dgvRecentOrder.Rows.Add(
                         order.Id,
-                        order.IdCustomer,
-                        order.IdProduct,
+                        order.CustomerName,
+                        order.ProductName,
                         order.Quantity,
                         order.DatePurchase.ToShortDateString(),
                         order.Money,
@@ -93,9 +98,9 @@ namespace Manage_Furniture.Forms
         private void SetupDataGridView()
         {
             dgvRecentOrder.Columns.Clear();
-            dgvRecentOrder.Columns.Add("id", "ID");
-            dgvRecentOrder.Columns.Add("id_customer", " ID Customer");
-            dgvRecentOrder.Columns.Add("id_product", "ID Product");
+            dgvRecentOrder.Columns.Add("id_order", "ID");
+            dgvRecentOrder.Columns.Add("name", "Customer Name");
+            dgvRecentOrder.Columns.Add("name", "Product Name");
             dgvRecentOrder.Columns.Add("quantity", "Quantity");
             dgvRecentOrder.Columns.Add("date_purchase", "Date Purchase");
             dgvRecentOrder.Columns.Add("money", "Money");

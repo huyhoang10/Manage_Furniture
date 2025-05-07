@@ -28,9 +28,9 @@ namespace Manage_Furniture.Controls
             return connectDatabase.GetRevenueByMonth();
         }
 
-        public List<RecentOrder> GetTop3RecentOrders()
+        public List<RecentOrder> GetTop4RecentOrders()
         {
-            return connectDatabase.GetTop3RecentOrders();
+            return connectDatabase.GetTop4RecentOrders();
         }
 
     }

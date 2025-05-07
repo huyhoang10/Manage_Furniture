@@ -49,22 +49,25 @@ namespace Manage_Furniture.ADO
         }
 
         // Top 3 sản phẩm order gần đây nhất    
-        public static List<RecentOrder> GetTop3RecentOrders()
+        public static List<RecentOrder> GetTop4RecentOrders()
         {
             var orders = (from o in db.orders
                           join p in db.products on o.id_product equals p.id
+                          join c in db.customers on o.id_customer equals c.id
+                          orderby o.date_purchase descending
                           select new RecentOrder
                           {
-                              Id = o.id,
-                              IdCustomer = o.id_customer.Value,
-                              IdProduct = o.id_product.Value,
+                              Id = o.id_order,
+                              CustomerName = c.name,      // Thay vì IdCustomer
+                              ProductName = p.name,        // Thay vì IdProduct
                               Quantity = o.quantity.Value,
                               DatePurchase = o.date_purchase.Value,
                               Money = o.money ?? 0,
                               Note = o.note
-                          }).Take(3).ToList();
+                          }).Take(4).ToList();
             return orders;
         }
+
     }
 
     public class RevenuePerMonth
@@ -76,8 +79,8 @@ namespace Manage_Furniture.ADO
     public class RecentOrder
     {
         public int Id { get; set; }
-        public int IdCustomer { get; set; }
-        public int IdProduct { get; set; }
+        public string CustomerName { get; set; } 
+        public string ProductName { get; set; }
         public int Quantity { get; set; }
         public DateTime DatePurchase { get; set; }
         public decimal Money { get; set; }

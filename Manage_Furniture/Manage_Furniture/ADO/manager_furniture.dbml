@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ManageFurniture" Class="manager_furnitureDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ManageFurniture;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Manage_Furniture.Properties.Settings" SettingsPropertyName="ManageFurnitureConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.bill" Member="bills">
-    <Type Name="bill">
-      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
-      <Association Name="order_bill" Member="order" ThisKey="id_order" OtherKey="id" Type="order" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.customer" Member="customers">
     <Type Name="customer">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -29,20 +22,6 @@
       <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.orders" Member="orders">
-    <Type Name="order">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="id_product" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="date_purchase" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
-      <Column Name="note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="order_bill" Member="bill" ThisKey="id" OtherKey="id_order" Type="bill" Cardinality="One" />
-      <Association Name="customer_order" Member="customer" ThisKey="id_customer" OtherKey="id" Type="customer" IsForeignKey="true" />
-      <Association Name="product_order" Member="product" ThisKey="id_product" OtherKey="id" Type="product" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.product" Member="products">
     <Type Name="product">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -50,8 +29,8 @@
       <Column Name="brand" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="price" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="product_order" Member="orders" ThisKey="id" OtherKey="id_product" Type="order" />
       <Association Name="product_warehouse" Member="warehouse" ThisKey="id" OtherKey="id_product" Type="warehouse" Cardinality="One" />
+      <Association Name="product_order" Member="orders" ThisKey="id" OtherKey="id_product" Type="order" />
       <Association Name="supplier_product" Member="supplier1" ThisKey="supplier" OtherKey="id" Type="supplier" IsForeignKey="true" />
     </Type>
   </Table>
@@ -77,6 +56,25 @@
       <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="product_warehouse" Member="product" ThisKey="id_product" OtherKey="id" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.bill" Member="bills">
+    <Type Name="bill">
+      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orders" Member="orders">
+    <Type Name="order">
+      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_purchase" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="customer_order" Member="customer" ThisKey="id_customer" OtherKey="id" Type="customer" IsForeignKey="true" />
+      <Association Name="product_order" Member="product" ThisKey="id_product" OtherKey="id" Type="product" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
