@@ -29,8 +29,11 @@ namespace Manage_Furniture.Forms
             LoadDgvView();
             LoadCmbSuppliers();
             LoadCmbSubCategory();
-            
-
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false; btnAdd.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void LoadDgvView()
@@ -56,7 +59,10 @@ namespace Manage_Furniture.Forms
 
         private void dgvView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >=0 && e.ColumnIndex >= 0)
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            if (e.RowIndex >=0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = this.dgvView.Rows[e.RowIndex];
                 txtId.Text = row.Cells["col_Id"].Value.ToString();
@@ -171,6 +177,35 @@ namespace Manage_Furniture.Forms
                 cmbSubcategory.Text = "";
                 cmbSuppliers.Text = "";
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            LoadDgvView();
+            txtId.Text = "";
+            txtName.Text = "";
+            txtPrice.Text = "";
+            txtBrand.Text = "";
+            cmbSubcategory.Text = "";
+            cmbSuppliers.Text = "";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvView.DataSource = warehouseControls.SearchProducts(txtSearch.Text);
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbSuppliers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,6 +28,9 @@ namespace Manage_Furniture.Forms
         private void ucSuppliercs_Load(object sender, EventArgs e)
         {
             LoadDgvView();
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void LoadDgvView()
@@ -78,7 +81,10 @@ namespace Manage_Furniture.Forms
 
         private void dgvView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>=0 && e.ColumnIndex >= 0)
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            if (e.RowIndex>=0 && e.ColumnIndex >= 0)
             {
                 txtID.Text = dgvView.Rows[e.RowIndex].Cells["col_Id"].Value.ToString();
                 txtName.Text = dgvView.Rows[e.RowIndex].Cells["col_Name"].Value.ToString();
@@ -108,6 +114,24 @@ namespace Manage_Furniture.Forms
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
+        {
+            dgvView.DataSource = suppliersControls.SearchSupplier(txtSearch.Text);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            LoadDgvView();
+            txtID.Text = "";
+            txtName.Text = "";
+            txtContact.Text = "";
+            txtAddress.Text = "";
+            txtNote.Text = "";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dgvView.DataSource = suppliersControls.SearchSupplier(txtSearch.Text);
         }

@@ -73,10 +73,10 @@ namespace Manage_Furniture.Controls
 
             return furnitureCategories;
         }
-        public bool AddProductToWarehouse(string name,string supplier,string subcategory,string price,string quantity,string brand)
+        public bool AddProductToWarehouse(string name, string supplier, string subcategory, string price, string quantity, string brand)
         {
             Random random = new Random();
-            
+
             if (name == "")
             {
                 MessageBox.Show("Please fill name the fields", "Error");
@@ -118,9 +118,9 @@ namespace Manage_Furniture.Controls
             else
                 MessageBox.Show("Please choose product.", "Error");
         }
-        public bool EditProductInWarehouse(string id,string name, string supplier, string subcategory, string price, string quantity, string brand)
+        public bool EditProductInWarehouse(string id, string name, string supplier, string subcategory, string price, string quantity, string brand)
         {
-            if(id != "")
+            if (id != "")
             {
                 if (name == "")
                 {
@@ -142,7 +142,7 @@ namespace Manage_Furniture.Controls
                     MessageBox.Show("Please enter valid price", "Error");
                     return false;
                 }
-                connectDB.EditProductToWarehouse(Int32.Parse(id), name, Int32.Parse(supplier), priceValue, subcategory, brand,  Int32.Parse(quantity));
+                connectDB.EditProductToWarehouse(Int32.Parse(id), name, Int32.Parse(supplier), priceValue, subcategory, brand, Int32.Parse(quantity));
                 return true;
             }
             else
@@ -153,6 +153,11 @@ namespace Manage_Furniture.Controls
         public List<Products> DisplayInformation()
         {
             return connectDB.getProductToWarehouse();
+        }
+
+        public List<Products> SearchProducts(string key)
+        {
+            return connectDB.SearchProducts(key);
         }
     }
 }

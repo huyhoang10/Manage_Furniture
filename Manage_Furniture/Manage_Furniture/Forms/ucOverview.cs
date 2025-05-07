@@ -119,7 +119,7 @@ namespace Manage_Furniture.Forms
             dgv.EnableHeadersVisualStyles = false;
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SaddleBrown;
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 12, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 10, FontStyle.Bold);
             dgv.DefaultCellStyle.Font = new Font("Montserrat", 10, FontStyle.Regular);
             dgv.ColumnHeadersHeight = 40;
             dgv.RowTemplate.Height = 35;
@@ -142,14 +142,36 @@ namespace Manage_Furniture.Forms
             chart.Series[0].Color = Color.SaddleBrown;
             chart.Series[0].BorderWidth = 3;
 
-            // Thêm dòng này để XÓA legend
+            // Xóa legend
             chart.Legends.Clear();
+
+            // Set tên trục X và Y
+            chart.ChartAreas[0].AxisX.Title = "Month";
+            chart.ChartAreas[0].AxisX.TitleFont = new Font("Montserrat", 9, FontStyle.Bold);
+            chart.ChartAreas[0].AxisX.TitleForeColor = Color.Black;
+
+            chart.ChartAreas[0].AxisY.Title = "Revenue ($)";
+            chart.ChartAreas[0].AxisY.TitleFont = new Font("Montserrat", 9, FontStyle.Bold);
+            chart.ChartAreas[0].AxisY.TitleForeColor = Color.Black;
+
+            for (int i = 1; i <= 12; i++)
+            {
+                chart.ChartAreas[0].AxisX.CustomLabels.Add(i - 0.5, i + 0.5, i.ToString());
+            }
+
+            // Set trục X chỉ từ 1 tới 12
+            // Trục X
+            chart.ChartAreas[0].AxisX.Minimum = 0.5;
+            chart.ChartAreas[0].AxisX.Maximum = 12.5;
+            chart.ChartAreas[0].AxisX.Interval = 1;
+            chart.ChartAreas[0].AxisX.IsMarginVisible = true;
+            chart.Series[0]["PointWidth"] = "0.6";
+
+            chart.ChartAreas[0].InnerPlotPosition = new ElementPosition(20, 5, 75, 80);
 
             // Center chart trong Panel
             chart.Left = (chart.Parent.Width - chart.Width) / 2;
             chart.Top = (chart.Parent.Height - chart.Height) / 2;
         }
-
-
     }
 }

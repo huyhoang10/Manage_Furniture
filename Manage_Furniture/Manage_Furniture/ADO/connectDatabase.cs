@@ -119,44 +119,18 @@ namespace Manage_Furniture.ADO
                 Products product = new Products();
                 product.Id = products[i].id;
                 product.Name = products[i].name;
-                product.Supplier = products[i].supplier.ToString();
                 product.Brand = products[i].brand;
                 product.Subcategory = products[i].subcategory;
                 product.Price = (float)products[i].price;
+                var name_supplier = db.suppliers.Where(x => x.id == products[i].supplier).FirstOrDefault().name;
+                product.Supplier = products[i].supplier.ToString()+" - "+name_supplier;
+                product.Quantity = (int)db.warehouses.Where(x => x.id_product == products[i].id).FirstOrDefault().quantity;
                 listProducts.Add(product);
             }
             return listProducts;
         }
 
-        
-        public void DeleteProducts(int id)
-        {
-            var product = db.products.Where(x => x.id == id).FirstOrDefault();
-            {
-                if (product != null)
-                {
-                    db.products.DeleteOnSubmit(product);
-                    db.SubmitChanges();
-                }
-            }
-        }
-
-        //public void AddProducts(int id, string name, int idsupplier, float price, string brand, string subcategory, int quantity)
-        //{
-        //    product newProduct = new product();
-        //    newProduct.id = id;
-        //    newProduct.name = name;
-        //    newProduct.subcategory = subcategory;
-        //    newProduct.supplier = idsupplier;
-        //    newProduct.brand = brand;
-        //    newProduct.price = (decimal)price;
-        //    db.products.InsertOnSubmit(newProduct);
-        //    //warehouse addProduct = new warehouse();
-        //    //addProduct.id_product = id;
-        //    //addProduct.quantity = quantity;
-        //    //db.warehouses.InsertOnSubmit(addProduct);
-        //    db.SubmitChanges();
-        //}
+       
         public void AddProductToWarehouse(int id, string name, int idsupplier, float price, string brand, string subcategory, int quantity)
         {
             product newProduct = new product();
@@ -200,6 +174,14 @@ namespace Manage_Furniture.ADO
 
         public void DeleteProductToWarehouse(int idproduct)
         {
+            var product = db.products.Where(x => x.id == idproduct).FirstOrDefault();
+            {
+                if (product != null)
+                {
+                    db.products.DeleteOnSubmit(product);
+                    db.SubmitChanges();
+                }
+            }
             var warehouse = db.warehouses.Where(x => x.id_product == idproduct).FirstOrDefault();
             {
                 if (warehouse != null)
