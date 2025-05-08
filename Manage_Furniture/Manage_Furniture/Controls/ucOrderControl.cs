@@ -13,6 +13,7 @@ namespace Manage_Furniture.Controls
     internal class ucOrderControl
     {
         manager_furnitureDataContext db = connectDatabase.GetContext();
+        public static int global_orderID = 0;
         public List<product> GetAllProducts()
         {
             return db.products.ToList();
@@ -23,6 +24,8 @@ namespace Manage_Furniture.Controls
             return db.products.FirstOrDefault(p => p.id == id);
         }
 
+
+        // Check Phone?=exist
         public bool IsPhoneNumberExists(string phone)
         {
             var customer = db.customers.FirstOrDefault(c => c.phone == phone);
@@ -34,10 +37,36 @@ namespace Manage_Furniture.Controls
             return db.customers.FirstOrDefault(c => c.phone == phone);
         }
 
-
         public List<order> GetAllOrders()
         {
             return db.orders.ToList();
+        }
+
+
+        // Warehouse
+        public warehouse GetAllWarehouse(int id_product)
+        {
+            return db.warehouses.FirstOrDefault(p => p.id_product == id_product);
+        }
+
+        public int GetWarehouseQuantity(int id_product)
+        {
+            int totalQuantity = (int)db.warehouses
+                                  .Where(w => w.id_product == id_product) 
+                                  .Sum(w => w.quantity);
+
+            return totalQuantity;
+        }
+
+        // Update Quantiy of Product in Warehouse when ordered
+        public void UpdateWarehouseQuantity(int id_product, int quantitySold)
+        {
+            var warehouse = db.warehouses.FirstOrDefault(w => w.id_product == id_product);
+            if (warehouse != null)
+            {
+                warehouse.quantity -= quantitySold; 
+                db.SubmitChanges();
+            }
         }
 
         public void AddOrder(order newOrder)
@@ -54,42 +83,28 @@ namespace Manage_Furniture.Controls
         }
 
         public void AddOrderAndCustomer(string customer_name, string sex, string phone, string address,
-                                          string type, string note, decimal totalMoney, DataGridView dgv_orders)
+                                           string type, string note, decimal totalMoney, DataGridView dgv_orders)
         {
             int customerId = new Random().Next(10000, 99999);
             int orderId;
             do
             {
-                orderId = new Random().Next(10000, 100000); 
+                orderId = new Random().Next(10000, 100000);
             } while (orderId == customerId);
 
             try
             {
-                var existingCustomer = GetCustomerByPhone(phone);
-
-                if (existingCustomer != null)
+                var newCustomer = new customer
                 {
-                    DialogResult result = MessageBox.Show("Customer already exists! \nWould you like to create a new order for this customer?",
-                                                          "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.No)
-                        return; 
-                    customerId = existingCustomer.id;
-                }
-                else
-                {
+                    id = customerId,
+                    name = customer_name,
+                    sex = sex,
+                    phone = phone,
+                    address = address,
+                    type = type
+                };
 
-                    var newCustomer = new customer
-                    {
-                        id = customerId,
-                        name = customer_name,
-                        sex = sex,
-                        phone = phone,
-                        address = address,
-                        type = type
-                    };
-
-                    AddCustomer(newCustomer);
-                }
+                AddCustomer(newCustomer);
 
                 foreach (DataGridViewRow row in dgv_orders.Rows)
                 {
@@ -115,23 +130,12 @@ namespace Manage_Furniture.Controls
                         id_product = id_product,
                         quantity = quantity,
                         date_purchase = DateTime.Now,
-                        money = product.price * quantity,  
+                        money = product.price * quantity,
                         note = note
                     };
-
+                    global_orderID = orderId;
                     AddOrder(newOrder);
                 }
-                
-                var newBill = new bill
-                {
-                    id_order = orderId,
-                    money = totalMoney
-                };
-
-                db.bills.InsertOnSubmit(newBill);
-                db.SubmitChanges();
-
-                MessageBox.Show("Order added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -139,11 +143,17 @@ namespace Manage_Furniture.Controls
             }
         }
 
-        //public void CreateBill(bill newBill)
-        //{
-        //    newBill.id_order = ;
-        //    db.bills.InsertOnSubmit(newBill);
-        //}
+        public void AddBill(int orderId, decimal totalMoney)
+        {
+            var newBill = new bill
+            {
+                id_order = orderId,
+                money = totalMoney
+            };
+
+            db.bills.InsertOnSubmit(newBill);
+            db.SubmitChanges();
+        }
     }
 }
 

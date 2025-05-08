@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 using Manage_Furniture.ADO;
 using Manage_Furniture.Controls;
@@ -134,6 +135,24 @@ namespace Manage_Furniture.Forms
 
                 if (product != null && decimal.TryParse(quantityStr, out decimal qty))
                 {
+                    if (qty <= 0)
+                    {
+                        MessageBox.Show("Quantity must be greater than 0.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        row.Cells["col_quantity"].Value = 1;
+                        qty = 1;
+                    }
+
+                    int warehouseQuantity = orderControl.GetWarehouseQuantity(product.id);
+                    if (qty > warehouseQuantity)
+                    {
+                        MessageBox.Show($"The requested quantity for {product.name} exceeds the available stock. " +
+                                        $"Only {warehouseQuantity} items are available in stock.",
+                                        "Insufficient Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        row.Cells["col_quantity"].Value = warehouseQuantity;
+                        qty = warehouseQuantity;
+                    }
+
+
                     decimal total = (int)product.price * qty;
                     row.Cells["col_total"].Value = total.ToString("C");
                 }
@@ -182,7 +201,7 @@ namespace Manage_Furniture.Forms
             }
         }
 
-        // Check value Phone
+        // Check Invalid Phone 
         private void txt_customer_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ' ')
@@ -190,9 +209,14 @@ namespace Manage_Furniture.Forms
                 e.Handled = true;
                 MessageBox.Show("Invalid Phone Format!\nPlease enter digits only (0-9) for the phone number.", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            if (!char.IsControl(e.KeyChar) && txt_customer_phone.Text.Length >= 10)
+            {
+                e.Handled = true;
+                MessageBox.Show("Phone number cannot exceed 10 digits.", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
-
+        // Check Invalid Name
         private void txt_customer_name_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
@@ -209,8 +233,7 @@ namespace Manage_Furniture.Forms
             dgv_orders.RowLeave += dgv_orders_RowLeave;
         }
 
-
-
+        //  Order 
         private void btn_order_Click(object sender, EventArgs e)
         {
             string customer_name = txt_customer_name.Text.Trim();
@@ -242,11 +265,37 @@ namespace Manage_Furniture.Forms
                 return;
             }
 
+            var existingCustomer = orderControl.GetCustomerByPhone(phone);
+
+            if (existingCustomer != null)
+            {
+                DialogResult result = MessageBox.Show("Customer already exists! \nWould you like to create a new order for this customer?",
+                                                      "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                    return;
+            }
+
             orderControl.AddOrderAndCustomer(customer_name, sex, phone, address, type, note, totalMoney, dgv_orders);
+            MessageBox.Show("Order added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
+        // Check Invalid Phone in Search bar
+        private void txt_search_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+                MessageBox.Show("Invalid Phone Format!\nPlease enter digits only (0-9) for the phone number.", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (!char.IsControl(e.KeyChar) && txt_search_phone.Text.Length >= 10)
+            {
+                e.Handled = true;
+                MessageBox.Show("Phone number cannot exceed 10 digits.", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        // Search Customer Phone
         private void btn_search_Click(object sender, EventArgs e)
         {
             var phone = txt_search_phone.Text.Trim();
@@ -279,6 +328,7 @@ namespace Manage_Furniture.Forms
 
         private void btn_export_Click(object sender, EventArgs e)
         {
+            int order_id = ucOrderControl.global_orderID;
 
         }
 
@@ -290,10 +340,13 @@ namespace Manage_Furniture.Forms
             txt_custormer_address.ResetText();
             cmb_customer_type.SelectedIndex = 0;
             txt_order_note.ResetText();
+            txt_order_note.ResetText();
             txt_search_phone.ResetText();
             txt_sum.Text = "";
             dgv_orders.Rows.Clear();
             tempOrderId = 1;
         }
+
+
     }
 }
