@@ -137,7 +137,7 @@ namespace Manage_Furniture.Controls
                     AddOrder(newOrder);
                     UpdateWarehouseQuantity(product.id, quantity);
                 }
-                AddBill(orderId, customerId);
+                AddBill(orderId, totalMoney);
             }
             catch (Exception ex)
             {
