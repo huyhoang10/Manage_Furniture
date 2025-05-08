@@ -295,8 +295,8 @@ namespace Manage_Furniture.Forms
         private void btn_export_Click(object sender, EventArgs e)
         {
             int order_id = ucOrderControl.global_orderID;
-            UCBill ucBill = new UCBill();
-            ucBill.ShowDialog();
+            //UCBill ucBill = new UCBill();
+            //ucBill.ShowDialog();
 
         }
         private void btn_reset_Click(object sender, EventArgs e)

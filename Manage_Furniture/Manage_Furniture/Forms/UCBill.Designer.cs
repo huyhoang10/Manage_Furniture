@@ -61,7 +61,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private crvBill crvBill1;
-        private crvBill crvBill2;
+        //private crvBill crvBill1;
+        //private crvBill crvBill2;
     }
 }

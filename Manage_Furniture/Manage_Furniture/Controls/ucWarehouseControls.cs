@@ -8,7 +8,7 @@ using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Forms;
+
 
 namespace Manage_Furniture.Controls
 {

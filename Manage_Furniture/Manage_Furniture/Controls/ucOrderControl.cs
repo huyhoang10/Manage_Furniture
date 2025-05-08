@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Manage_Furniture.ADO;
 using Manage_Furniture.Forms;
 using Manage_Furniture.Models;
-using static Manage_Furniture.Forms.UCBill;
+//using static Manage_Furniture.Forms.UCBill;
 
 namespace Manage_Furniture.Controls
 {

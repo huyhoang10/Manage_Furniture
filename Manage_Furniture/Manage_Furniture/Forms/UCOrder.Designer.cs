@@ -39,7 +39,7 @@
             this.btn_reset = new Guna.UI2.WinForms.Guna2Button();
             this.btn_order = new Guna.UI2.WinForms.Guna2Button();
             this.btn_export = new Guna.UI2.WinForms.Guna2Button();
-            this.manageFurnitureDataSet = new Manage_Furniture.ManageFurnitureDataSet();
+            this.manageFurnitureDataSet = new Manage_Furniture.ManageFurnitureDataSet();    
             this.txt_customer_name = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_customer_phone = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_custormer_address = new Guna.UI2.WinForms.Guna2TextBox();
