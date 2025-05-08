@@ -1,6 +1,4 @@
-﻿using Manage_Furniture.ADO;
-using Manage_Furniture.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CrystalDecisions.CrystalReports.Engine;
+using Manage_Furniture.ADO;
+using Manage_Furniture.Controls;
 namespace Manage_Furniture.Forms
 {
     public partial class UCBill : Form
@@ -18,7 +18,6 @@ namespace Manage_Furniture.Forms
         {
             InitializeComponent();
         }
-
         public class BillItemDTO
         {
             public string IDOrder { get; set; }
@@ -80,7 +79,7 @@ namespace Manage_Furniture.Forms
             int orderid = ucOrderControl.global_orderID;
             try
             {
-                var data = GetBillData(10001);
+                var data = GetBillData(orderid);
 
                 // crvBill là lớp report đã được add vào project (tạo từ crvBill.rpt)
                 crvBill report = new crvBill();
@@ -97,7 +96,6 @@ namespace Manage_Furniture.Forms
                 MessageBox.Show("Lỗi khi tải báo cáo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
     
 }

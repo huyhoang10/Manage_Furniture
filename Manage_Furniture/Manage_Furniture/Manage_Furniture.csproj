@@ -65,6 +65,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
+    <Compile Include="ADO\dtsCRVBill.cs">
+      <DependentUpon>dtsCRVBill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\dtsCRVBill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsCRVBill.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ADO\manager_furniture.designer.cs" />
     <Compile Include="Controls\FEmployeeControl.cs" />
     <Compile Include="Controls\HRControl.cs" />
@@ -74,6 +82,12 @@
     <Compile Include="Controls\ucOverviewControl.cs" />
     <Compile Include="Controls\ucSuppliersControls.cs" />
     <Compile Include="Controls\ucWarehouseControls.cs" />
+    <Compile Include="Forms\crvBill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvBill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\FAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +123,12 @@
     </Compile>
     <Compile Include="Forms\FWelcome.Designer.cs">
       <DependentUpon>FWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UCBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UCBill.Designer.cs">
+      <DependentUpon>UCBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UCCustomer.cs">
       <SubType>UserControl</SubType>
@@ -165,6 +185,17 @@
     <Compile Include="Properties\Settings.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ADO\dtsCRVBill.xsc">
+      <DependentUpon>dtsCRVBill.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsCRVBill.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsCRVBill.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtsCRVBill.xss">
+      <DependentUpon>dtsCRVBill.xsd</DependentUpon>
+    </None>
     <None Include="ADO\manager_furniture.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>manager_furniture1.designer.cs</LastGenOutput>
@@ -196,6 +227,10 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\crvBill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvBill.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FEmployee.resx">
       <DependentUpon>FEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FWelcome.resx">
       <DependentUpon>FWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UCBill.resx">
+      <DependentUpon>UCBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UCCustomer.resx">
       <DependentUpon>UCCustomer.cs</DependentUpon>

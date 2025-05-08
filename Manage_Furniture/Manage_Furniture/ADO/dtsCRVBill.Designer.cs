@@ -20,9 +20,9 @@ namespace Manage_Furniture.ADO {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dtsBill")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dtsCRVBill")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dtsBill : global::System.Data.DataSet {
+    public partial class dtsCRVBill : global::System.Data.DataSet {
         
         private BillItemDTODataTable tableBillItemDTO;
         
@@ -30,7 +30,7 @@ namespace Manage_Furniture.ADO {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public dtsBill() {
+        public dtsCRVBill() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Manage_Furniture.ADO {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected dtsBill(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dtsCRVBill(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace Manage_Furniture.ADO {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dtsBill cln = ((dtsBill)(base.Clone()));
+            dtsCRVBill cln = ((dtsCRVBill)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace Manage_Furniture.ADO {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dtsBill";
+            this.DataSetName = "dtsCRVBill";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dtsBill.xsd";
+            this.Namespace = "http://tempuri.org/dtsCRVBill.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableBillItemDTO = new BillItemDTODataTable();
@@ -225,7 +225,7 @@ namespace Manage_Furniture.ADO {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dtsBill ds = new dtsBill();
+            dtsCRVBill ds = new dtsCRVBill();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -279,17 +279,19 @@ namespace Manage_Furniture.ADO {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class BillItemDTODataTable : global::System.Data.TypedTableBase<BillItemDTORow> {
             
-            private global::System.Data.DataColumn columnProductName;
+            private global::System.Data.DataColumn columnIDOrder;
             
             private global::System.Data.DataColumn columnCustomerName;
             
             private global::System.Data.DataColumn columnPhoneCustomer;
             
-            private global::System.Data.DataColumn columnSex;
-            
             private global::System.Data.DataColumn columnAddressCustomer;
             
+            private global::System.Data.DataColumn columnSex;
+            
             private global::System.Data.DataColumn columnCustomerType;
+            
+            private global::System.Data.DataColumn columnProductName;
             
             private global::System.Data.DataColumn columnQuantity;
             
@@ -297,15 +299,13 @@ namespace Manage_Furniture.ADO {
             
             private global::System.Data.DataColumn columnMoney;
             
-            private global::System.Data.DataColumn columnEmployeeName;
-            
             private global::System.Data.DataColumn columnDatePurchase;
             
             private global::System.Data.DataColumn columnNote;
             
             private global::System.Data.DataColumn columnGrandTotal;
             
-            private global::System.Data.DataColumn columnIDOrder;
+            private global::System.Data.DataColumn columnEmployeeName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -342,9 +342,9 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ProductNameColumn {
+            public global::System.Data.DataColumn IDOrderColumn {
                 get {
-                    return this.columnProductName;
+                    return this.columnIDOrder;
                 }
             }
             
@@ -366,14 +366,6 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SexColumn {
-                get {
-                    return this.columnSex;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn AddressCustomerColumn {
                 get {
                     return this.columnAddressCustomer;
@@ -382,9 +374,25 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SexColumn {
+                get {
+                    return this.columnSex;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn CustomerTypeColumn {
                 get {
                     return this.columnCustomerType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ProductNameColumn {
+                get {
+                    return this.columnProductName;
                 }
             }
             
@@ -414,14 +422,6 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EmployeeNameColumn {
-                get {
-                    return this.columnEmployeeName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn DatePurchaseColumn {
                 get {
                     return this.columnDatePurchase;
@@ -446,9 +446,9 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IDOrderColumn {
+            public global::System.Data.DataColumn EmployeeNameColumn {
                 get {
-                    return this.columnIDOrder;
+                    return this.columnEmployeeName;
                 }
             }
             
@@ -489,23 +489,23 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BillItemDTORow AddBillItemDTORow(string ProductName, string CustomerName, string PhoneCustomer, string Sex, string AddressCustomer, string CustomerType, string Quantity, string Price, string Money, string EmployeeName, string DatePurchase, string Note, string GrandTotal, string IDOrder) {
+            public BillItemDTORow AddBillItemDTORow(string IDOrder, string CustomerName, string PhoneCustomer, string AddressCustomer, string Sex, string CustomerType, string ProductName, string Quantity, string Price, string Money, string DatePurchase, string Note, string GrandTotal, string EmployeeName) {
                 BillItemDTORow rowBillItemDTORow = ((BillItemDTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ProductName,
+                        IDOrder,
                         CustomerName,
                         PhoneCustomer,
-                        Sex,
                         AddressCustomer,
+                        Sex,
                         CustomerType,
+                        ProductName,
                         Quantity,
                         Price,
                         Money,
-                        EmployeeName,
                         DatePurchase,
                         Note,
                         GrandTotal,
-                        IDOrder};
+                        EmployeeName};
                 rowBillItemDTORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBillItemDTORow);
                 return rowBillItemDTORow;
@@ -528,53 +528,53 @@ namespace Manage_Furniture.ADO {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnProductName = base.Columns["ProductName"];
+                this.columnIDOrder = base.Columns["IDOrder"];
                 this.columnCustomerName = base.Columns["CustomerName"];
                 this.columnPhoneCustomer = base.Columns["PhoneCustomer"];
-                this.columnSex = base.Columns["Sex"];
                 this.columnAddressCustomer = base.Columns["AddressCustomer"];
+                this.columnSex = base.Columns["Sex"];
                 this.columnCustomerType = base.Columns["CustomerType"];
+                this.columnProductName = base.Columns["ProductName"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnPrice = base.Columns["Price"];
                 this.columnMoney = base.Columns["Money"];
-                this.columnEmployeeName = base.Columns["EmployeeName"];
                 this.columnDatePurchase = base.Columns["DatePurchase"];
                 this.columnNote = base.Columns["Note"];
                 this.columnGrandTotal = base.Columns["GrandTotal"];
-                this.columnIDOrder = base.Columns["IDOrder"];
+                this.columnEmployeeName = base.Columns["EmployeeName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnProductName = new global::System.Data.DataColumn("ProductName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProductName);
+                this.columnIDOrder = new global::System.Data.DataColumn("IDOrder", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDOrder);
                 this.columnCustomerName = new global::System.Data.DataColumn("CustomerName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomerName);
                 this.columnPhoneCustomer = new global::System.Data.DataColumn("PhoneCustomer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPhoneCustomer);
-                this.columnSex = new global::System.Data.DataColumn("Sex", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSex);
                 this.columnAddressCustomer = new global::System.Data.DataColumn("AddressCustomer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAddressCustomer);
+                this.columnSex = new global::System.Data.DataColumn("Sex", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSex);
                 this.columnCustomerType = new global::System.Data.DataColumn("CustomerType", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomerType);
+                this.columnProductName = new global::System.Data.DataColumn("ProductName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductName);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
                 this.columnPrice = new global::System.Data.DataColumn("Price", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrice);
                 this.columnMoney = new global::System.Data.DataColumn("Money", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMoney);
-                this.columnEmployeeName = new global::System.Data.DataColumn("EmployeeName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmployeeName);
                 this.columnDatePurchase = new global::System.Data.DataColumn("DatePurchase", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatePurchase);
                 this.columnNote = new global::System.Data.DataColumn("Note", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNote);
                 this.columnGrandTotal = new global::System.Data.DataColumn("GrandTotal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGrandTotal);
-                this.columnIDOrder = new global::System.Data.DataColumn("IDOrder", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIDOrder);
+                this.columnEmployeeName = new global::System.Data.DataColumn("EmployeeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmployeeName);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -642,7 +642,7 @@ namespace Manage_Furniture.ADO {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dtsBill ds = new dtsBill();
+                dtsCRVBill ds = new dtsCRVBill();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -717,17 +717,17 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ProductName {
+            public string IDOrder {
                 get {
                     try {
-                        return ((string)(this[this.tableBillItemDTO.ProductNameColumn]));
+                        return ((string)(this[this.tableBillItemDTO.IDOrderColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProductName\' in table \'BillItemDTO\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'IDOrder\' in table \'BillItemDTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBillItemDTO.ProductNameColumn] = value;
+                    this[this.tableBillItemDTO.IDOrderColumn] = value;
                 }
             }
             
@@ -765,22 +765,6 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Sex {
-                get {
-                    try {
-                        return ((string)(this[this.tableBillItemDTO.SexColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sex\' in table \'BillItemDTO\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillItemDTO.SexColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string AddressCustomer {
                 get {
                     try {
@@ -797,6 +781,22 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Sex {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillItemDTO.SexColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sex\' in table \'BillItemDTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillItemDTO.SexColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string CustomerType {
                 get {
                     try {
@@ -808,6 +808,22 @@ namespace Manage_Furniture.ADO {
                 }
                 set {
                     this[this.tableBillItemDTO.CustomerTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ProductName {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillItemDTO.ProductNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductName\' in table \'BillItemDTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillItemDTO.ProductNameColumn] = value;
                 }
             }
             
@@ -861,22 +877,6 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EmployeeName {
-                get {
-                    try {
-                        return ((string)(this[this.tableBillItemDTO.EmployeeNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeName\' in table \'BillItemDTO\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillItemDTO.EmployeeNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string DatePurchase {
                 get {
                     try {
@@ -925,30 +925,30 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string IDOrder {
+            public string EmployeeName {
                 get {
                     try {
-                        return ((string)(this[this.tableBillItemDTO.IDOrderColumn]));
+                        return ((string)(this[this.tableBillItemDTO.EmployeeNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IDOrder\' in table \'BillItemDTO\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeName\' in table \'BillItemDTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBillItemDTO.IDOrderColumn] = value;
+                    this[this.tableBillItemDTO.EmployeeNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProductNameNull() {
-                return this.IsNull(this.tableBillItemDTO.ProductNameColumn);
+            public bool IsIDOrderNull() {
+                return this.IsNull(this.tableBillItemDTO.IDOrderColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProductNameNull() {
-                this[this.tableBillItemDTO.ProductNameColumn] = global::System.Convert.DBNull;
+            public void SetIDOrderNull() {
+                this[this.tableBillItemDTO.IDOrderColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -977,18 +977,6 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSexNull() {
-                return this.IsNull(this.tableBillItemDTO.SexColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSexNull() {
-                this[this.tableBillItemDTO.SexColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsAddressCustomerNull() {
                 return this.IsNull(this.tableBillItemDTO.AddressCustomerColumn);
             }
@@ -1001,6 +989,18 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSexNull() {
+                return this.IsNull(this.tableBillItemDTO.SexColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSexNull() {
+                this[this.tableBillItemDTO.SexColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCustomerTypeNull() {
                 return this.IsNull(this.tableBillItemDTO.CustomerTypeColumn);
             }
@@ -1009,6 +1009,18 @@ namespace Manage_Furniture.ADO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCustomerTypeNull() {
                 this[this.tableBillItemDTO.CustomerTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsProductNameNull() {
+                return this.IsNull(this.tableBillItemDTO.ProductNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetProductNameNull() {
+                this[this.tableBillItemDTO.ProductNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1049,18 +1061,6 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEmployeeNameNull() {
-                return this.IsNull(this.tableBillItemDTO.EmployeeNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEmployeeNameNull() {
-                this[this.tableBillItemDTO.EmployeeNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDatePurchaseNull() {
                 return this.IsNull(this.tableBillItemDTO.DatePurchaseColumn);
             }
@@ -1097,14 +1097,14 @@ namespace Manage_Furniture.ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsIDOrderNull() {
-                return this.IsNull(this.tableBillItemDTO.IDOrderColumn);
+            public bool IsEmployeeNameNull() {
+                return this.IsNull(this.tableBillItemDTO.EmployeeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetIDOrderNull() {
-                this[this.tableBillItemDTO.IDOrderColumn] = global::System.Convert.DBNull;
+            public void SetEmployeeNameNull() {
+                this[this.tableBillItemDTO.EmployeeNameColumn] = global::System.Convert.DBNull;
             }
         }
         
