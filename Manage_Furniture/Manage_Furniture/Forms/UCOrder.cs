@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using Manage_Furniture.ADO;
 using Manage_Furniture.Controls;
@@ -73,7 +74,7 @@ namespace Manage_Furniture.Forms
                 cb.DisplayMember = "id_name";
                 cb.ValueMember = "id_name";
             }
-    
+
         }
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -135,15 +136,9 @@ namespace Manage_Furniture.Forms
 
                 if (product != null && decimal.TryParse(quantityStr, out decimal qty))
                 {
-                    if (qty <= 0)
-                    {
-                        MessageBox.Show("Quantity must be greater than 0.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        row.Cells["col_quantity"].Value = 1;
-                        qty = 1;
-                    }
 
                     int warehouseQuantity = orderControl.GetWarehouseQuantity(product.id);
-                    if (qty > warehouseQuantity)
+                    if (qty > warehouseQuantity && qty!=0 )
                     {
                         MessageBox.Show($"The requested quantity for {product.name} exceeds the available stock. " +
                                         $"Only {warehouseQuantity} items are available in stock.",
@@ -151,7 +146,23 @@ namespace Manage_Furniture.Forms
                         row.Cells["col_quantity"].Value = warehouseQuantity;
                         qty = warehouseQuantity;
                     }
+                    else if(warehouseQuantity == 0)
+                    {
+                        MessageBox.Show("This out of stock!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.Cells["col_total"].Value = (0).ToString("C");
+                        qty = 0;
+                        return;
 
+                    }    
+                    else if (qty < 0) {
+                        MessageBox.Show("Quantity must be greater than 0.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        row.DefaultCellStyle.BackColor = dgv_orders.DefaultCellStyle.BackColor;
+                    }
 
                     decimal total = (int)product.price * qty;
                     row.Cells["col_total"].Value = total.ToString("C");
@@ -280,7 +291,29 @@ namespace Manage_Furniture.Forms
 
         }
 
-        // Check Invalid Phone in Search bar
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            int order_id = ucOrderControl.global_orderID;
+            UCBill ucBill = new UCBill();
+            ucBill.ShowDialog();
+
+        }
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            txt_customer_name.ResetText();
+            cmb_customer_sex.SelectedIndex = 0;
+            txt_customer_phone.ResetText();
+            txt_custormer_address.ResetText();
+            cmb_customer_type.SelectedIndex = 0;
+            txt_order_note.ResetText();
+            txt_order_note.ResetText();
+            txt_search_phone.ResetText();
+            txt_sum.Text = "";
+            dgv_orders.Rows.Clear();
+            tempOrderId = 1;
+        }
+
         private void txt_search_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ' ')
@@ -291,19 +324,26 @@ namespace Manage_Furniture.Forms
             if (!char.IsControl(e.KeyChar) && txt_search_phone.Text.Length >= 10)
             {
                 e.Handled = true;
-                MessageBox.Show("Phone number cannot exceed 10 digits.", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Phone number cannot exceed 10 digits!", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        // Search Customer Phone
+        // Check Invalid Phone in Search bar
         private void btn_search_Click(object sender, EventArgs e)
         {
+
             var phone = txt_search_phone.Text.Trim();
             if (string.IsNullOrEmpty(phone))
             {
                 MessageBox.Show("Please enter a phone number to search!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            //if (phone.Length < 10)
+            //{
+            //    MessageBox.Show("Phone number must be at least 10 digits!", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             if (orderControl.IsPhoneNumberExists(phone))
             {
@@ -325,28 +365,5 @@ namespace Manage_Furniture.Forms
                 }
             }
         }
-
-        private void btn_export_Click(object sender, EventArgs e)
-        {
-            int order_id = ucOrderControl.global_orderID;
-
-        }
-
-        private void btn_reset_Click(object sender, EventArgs e)
-        {
-            txt_customer_name.ResetText();
-            cmb_customer_sex.SelectedIndex = 0;
-            txt_customer_phone.ResetText();
-            txt_custormer_address.ResetText();
-            cmb_customer_type.SelectedIndex = 0;
-            txt_order_note.ResetText();
-            txt_order_note.ResetText();
-            txt_search_phone.ResetText();
-            txt_sum.Text = "";
-            dgv_orders.Rows.Clear();
-            tempOrderId = 1;
-        }
-
-
     }
 }

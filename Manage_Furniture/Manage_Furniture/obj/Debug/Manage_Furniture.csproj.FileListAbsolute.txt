@@ -31,3 +31,45 @@ D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Crysta
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\stdole.dll
+=======
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe.config
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.exe
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Manage_Furniture.pdb
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.Charts.WinForms.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.UI2.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Guna.Charts.WinForms.xml
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.AssemblyReference.cache
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FLogin.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.FOrder.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.FWelcome.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.UCOrder.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Properties.Resources.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.GenerateResource.cache
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.csproj.CoreCompileInputs.cache
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_F.3F40B1D6.Up2Date
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.exe
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.pdb
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.Shared.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\stdole.dll
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.UCBill.resources
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Forms\crvBill.rpt
+D:\Manage_Furniture\Manage_Furniture\Manage_Furniture\bin\Debug\Forms\crvBill.cs
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\obj\Debug\Manage_Furniture.Forms.UCBill.resources
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Forms\crvBill.rpt
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\Forms\crvBill.cs
+D:\WINFORMS\PROJECT FINAL\fnn\Manage_Furniture\Manage_Furniture\bin\Debug\CrystalDecisions.Windows.Forms.dll

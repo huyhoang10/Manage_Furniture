@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ManageFurniture" Class="manager_furnitureDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ManageFurniture;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="Manage_Furniture.Properties.Settings" SettingsPropertyName="ManageFurnitureConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ManageFurniture;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Manage_Furniture.Properties.Settings" SettingsPropertyName="ManageFurnitureConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bill" Member="bills">
+    <Type Name="bill">
+      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.customer" Member="customers">
     <Type Name="customer">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -69,12 +75,6 @@
       <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="product_warehouse" Member="product" ThisKey="id_product" OtherKey="id" Type="product" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.bill" Member="bills">
-    <Type Name="bill">
-      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

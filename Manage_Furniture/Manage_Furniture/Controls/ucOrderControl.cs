@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Manage_Furniture.ADO;
 using Manage_Furniture.Forms;
 using Manage_Furniture.Models;
+using static Manage_Furniture.Forms.UCBill;
 
 namespace Manage_Furniture.Controls
 {
@@ -14,6 +15,7 @@ namespace Manage_Furniture.Controls
     {
         manager_furnitureDataContext db = connectDatabase.GetContext();
         public static int global_orderID = 0;
+
         public List<product> GetAllProducts()
         {
             return db.products.ToList();
@@ -23,7 +25,6 @@ namespace Manage_Furniture.Controls
         {
             return db.products.FirstOrDefault(p => p.id == id);
         }
-
 
         // Check Phone?=exist
         public bool IsPhoneNumberExists(string phone)
@@ -41,7 +42,6 @@ namespace Manage_Furniture.Controls
         {
             return db.orders.ToList();
         }
-
 
         // Warehouse
         public warehouse GetAllWarehouse(int id_product)
@@ -62,9 +62,9 @@ namespace Manage_Furniture.Controls
         public void UpdateWarehouseQuantity(int id_product, int quantitySold)
         {
             var warehouse = db.warehouses.FirstOrDefault(w => w.id_product == id_product);
-            if (warehouse != null)
+            if (warehouse != null && warehouse.quantity > 0)
             {
-                warehouse.quantity -= quantitySold; 
+                warehouse.quantity -= quantitySold;
                 db.SubmitChanges();
             }
         }
@@ -73,7 +73,7 @@ namespace Manage_Furniture.Controls
         {
             newOrder.date_purchase = DateTime.Now;
             db.orders.InsertOnSubmit(newOrder);
-            db.SubmitChanges();
+            db.SubmitChanges();  
         }
 
         public void AddCustomer(customer newCustomer)
@@ -135,14 +135,15 @@ namespace Manage_Furniture.Controls
                     };
                     global_orderID = orderId;
                     AddOrder(newOrder);
+                    UpdateWarehouseQuantity(product.id, quantity);
                 }
+                AddBill(orderId, customerId);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public void AddBill(int orderId, decimal totalMoney)
         {
             var newBill = new bill

@@ -30,6 +30,9 @@ namespace Manage_Furniture.ADO
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void Insertbill(bill instance);
+    partial void Updatebill(bill instance);
+    partial void Deletebill(bill instance);
     partial void Insertcustomer(customer instance);
     partial void Updatecustomer(customer instance);
     partial void Deletecustomer(customer instance);
@@ -51,13 +54,10 @@ namespace Manage_Furniture.ADO
     partial void Insertwarehouse(warehouse instance);
     partial void Updatewarehouse(warehouse instance);
     partial void Deletewarehouse(warehouse instance);
-    partial void Insertbill(bill instance);
-    partial void Updatebill(bill instance);
-    partial void Deletebill(bill instance);
     #endregion
 		
 		public manager_furnitureDataContext() : 
-				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString, mappingSource)
+				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -84,6 +84,14 @@ namespace Manage_Furniture.ADO
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<bill> bills
+		{
+			get
+			{
+				return this.GetTable<bill>();
+			}
 		}
 		
 		public System.Data.Linq.Table<customer> customers
@@ -141,12 +149,90 @@ namespace Manage_Furniture.ADO
 				return this.GetTable<warehouse>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bill")]
+	public partial class bill : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<bill> bills
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_order;
+		
+		private System.Nullable<decimal> _money;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_orderChanging(int value);
+    partial void Onid_orderChanged();
+    partial void OnmoneyChanging(System.Nullable<decimal> value);
+    partial void OnmoneyChanged();
+    #endregion
+		
+		public bill()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_order", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_order
 		{
 			get
 			{
-				return this.GetTable<bill>();
+				return this._id_order;
+			}
+			set
+			{
+				if ((this._id_order != value))
+				{
+					this.Onid_orderChanging(value);
+					this.SendPropertyChanging();
+					this._id_order = value;
+					this.SendPropertyChanged("id_order");
+					this.Onid_orderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_money", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> money
+		{
+			get
+			{
+				return this._money;
+			}
+			set
+			{
+				if ((this._money != value))
+				{
+					this.OnmoneyChanging(value);
+					this.SendPropertyChanging();
+					this._money = value;
+					this.SendPropertyChanged("money");
+					this.OnmoneyChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1512,92 +1598,6 @@ namespace Manage_Furniture.ADO
 						this._id_product = default(int);
 					}
 					this.SendPropertyChanged("product");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bill")]
-	public partial class bill : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_order;
-		
-		private System.Nullable<decimal> _money;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_orderChanging(int value);
-    partial void Onid_orderChanged();
-    partial void OnmoneyChanging(System.Nullable<decimal> value);
-    partial void OnmoneyChanged();
-    #endregion
-		
-		public bill()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_order", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id_order
-		{
-			get
-			{
-				return this._id_order;
-			}
-			set
-			{
-				if ((this._id_order != value))
-				{
-					this.Onid_orderChanging(value);
-					this.SendPropertyChanging();
-					this._id_order = value;
-					this.SendPropertyChanged("id_order");
-					this.Onid_orderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_money", DbType="Decimal(15,2)")]
-		public System.Nullable<decimal> money
-		{
-			get
-			{
-				return this._money;
-			}
-			set
-			{
-				if ((this._money != value))
-				{
-					this.OnmoneyChanging(value);
-					this.SendPropertyChanging();
-					this._money = value;
-					this.SendPropertyChanged("money");
-					this.OnmoneyChanged();
 				}
 			}
 		}

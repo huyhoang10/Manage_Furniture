@@ -36,6 +36,7 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.Charts.WinForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.Charts.WinForms.1.1.0\lib\net472\Guna.Charts.WinForms.dll</HintPath>
     </Reference>
@@ -48,6 +49,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
+    <Compile Include="ADO\dtsCrystalReport.cs">
+      <DependentUpon>dtsCrystalReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\dtsCrystalReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsCrystalReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ADO\manager_furniture.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,6 +78,13 @@
     <Compile Include="Controls\FEmployeeControl.cs" />
     <Compile Include="Controls\ucLoginControl.cs" />
     <Compile Include="Controls\ucOrderControl.cs" />
+    <Compile Include="Forms\crvBill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvBill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Forms\FAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +115,12 @@
     <Compile Include="Forms\FEmployee.Designer.cs">
       <DependentUpon>FEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UCBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UCBill.Designer.cs">
+      <DependentUpon>UCBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UCOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +138,11 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\crvBill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvBill.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FWelcome.resx">
       <DependentUpon>FWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UCBill.resx">
+      <DependentUpon>UCBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UCOrder.resx">
       <DependentUpon>UCOrder.cs</DependentUpon>
@@ -137,6 +168,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ADO\dtsCrystalReport.xsc">
+      <DependentUpon>dtsCrystalReport.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsCrystalReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsCrystalReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtsCrystalReport.xss">
+      <DependentUpon>dtsCrystalReport.xsd</DependentUpon>
+    </None>
     <None Include="ADO\manager_furniture.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>manager_furniture.designer.cs</LastGenOutput>
