@@ -56,10 +56,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(69, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 73);
+            this.label1.Size = new System.Drawing.Size(371, 92);
             this.label1.TabIndex = 0;
             this.label1.Text = "Overview";
             // 
@@ -71,10 +70,10 @@
             this.pnlChart.Controls.Add(this.chartRevenue);
             this.pnlChart.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.pnlChart.FillColor = System.Drawing.Color.White;
-            this.pnlChart.Location = new System.Drawing.Point(65, 130);
-            this.pnlChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlChart.Location = new System.Drawing.Point(87, 160);
+            this.pnlChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChart.Name = "pnlChart";
-            this.pnlChart.Size = new System.Drawing.Size(634, 332);
+            this.pnlChart.Size = new System.Drawing.Size(845, 409);
             this.pnlChart.TabIndex = 1;
             // 
             // chartRevenue
@@ -84,14 +83,14 @@
             this.chartRevenue.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartRevenue.Legends.Add(legend1);
-            this.chartRevenue.Location = new System.Drawing.Point(24, 20);
-            this.chartRevenue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chartRevenue.Location = new System.Drawing.Point(32, 25);
+            this.chartRevenue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartRevenue.Name = "chartRevenue";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartRevenue.Series.Add(series1);
-            this.chartRevenue.Size = new System.Drawing.Size(586, 292);
+            this.chartRevenue.Size = new System.Drawing.Size(781, 359);
             this.chartRevenue.TabIndex = 0;
             this.chartRevenue.Text = "chart1";
             // 
@@ -102,10 +101,10 @@
             this.pnlRevenue.Controls.Add(this.lblRevenue);
             this.pnlRevenue.Controls.Add(this.label2);
             this.pnlRevenue.FillColor = System.Drawing.Color.White;
-            this.pnlRevenue.Location = new System.Drawing.Point(760, 130);
-            this.pnlRevenue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRevenue.Location = new System.Drawing.Point(1013, 160);
+            this.pnlRevenue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRevenue.Name = "pnlRevenue";
-            this.pnlRevenue.Size = new System.Drawing.Size(333, 332);
+            this.pnlRevenue.Size = new System.Drawing.Size(444, 409);
             this.pnlRevenue.TabIndex = 2;
             // 
             // lblPercentChange
@@ -114,10 +113,9 @@
             this.lblPercentChange.BackColor = System.Drawing.Color.White;
             this.lblPercentChange.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPercentChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblPercentChange.Location = new System.Drawing.Point(87, 262);
-            this.lblPercentChange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPercentChange.Location = new System.Drawing.Point(116, 322);
             this.lblPercentChange.Name = "lblPercentChange";
-            this.lblPercentChange.Size = new System.Drawing.Size(164, 29);
+            this.lblPercentChange.Size = new System.Drawing.Size(210, 37);
             this.lblPercentChange.TabIndex = 5;
             this.lblPercentChange.Text = "Decrease 0.5%";
             // 
@@ -128,10 +126,9 @@
             this.lblRevenue.BackColor = System.Drawing.Color.White;
             this.lblRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(44)))), ((int)(((byte)(26)))));
-            this.lblRevenue.Location = new System.Drawing.Point(100, 143);
-            this.lblRevenue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRevenue.Location = new System.Drawing.Point(133, 176);
             this.lblRevenue.Name = "lblRevenue";
-            this.lblRevenue.Size = new System.Drawing.Size(129, 44);
+            this.lblRevenue.Size = new System.Drawing.Size(158, 54);
             this.lblRevenue.TabIndex = 4;
             this.lblRevenue.Text = "1000$";
             this.lblRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,10 +139,9 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(107, 37);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(143, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 37);
+            this.label2.Size = new System.Drawing.Size(152, 45);
             this.label2.TabIndex = 0;
             this.label2.Text = "Revenue";
             this.label2.UseCompatibleTextRendering = true;
@@ -156,10 +152,10 @@
             this.pnlRecent.Controls.Add(this.label5);
             this.pnlRecent.Controls.Add(this.dgvRecentOrder);
             this.pnlRecent.FillColor = System.Drawing.Color.White;
-            this.pnlRecent.Location = new System.Drawing.Point(65, 492);
-            this.pnlRecent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRecent.Location = new System.Drawing.Point(87, 606);
+            this.pnlRecent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRecent.Name = "pnlRecent";
-            this.pnlRecent.Size = new System.Drawing.Size(1028, 293);
+            this.pnlRecent.Size = new System.Drawing.Size(1371, 361);
             this.pnlRecent.TabIndex = 3;
             // 
             // label5
@@ -168,10 +164,9 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.label5.Location = new System.Drawing.Point(19, 22);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(25, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(172, 26);
+            this.label5.Size = new System.Drawing.Size(218, 32);
             this.label5.TabIndex = 1;
             this.label5.Text = "Recently Order";
             // 
@@ -182,44 +177,44 @@
             this.dgvRecentOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRecentOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(30)))), ((int)(((byte)(16)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRecentOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecentOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRecentOrder.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvRecentOrder.Location = new System.Drawing.Point(24, 67);
-            this.dgvRecentOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRecentOrder.Location = new System.Drawing.Point(32, 82);
+            this.dgvRecentOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvRecentOrder.Name = "dgvRecentOrder";
             this.dgvRecentOrder.RowHeadersWidth = 51;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvRecentOrder.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRecentOrder.RowTemplate.Height = 24;
-            this.dgvRecentOrder.Size = new System.Drawing.Size(978, 193);
+            this.dgvRecentOrder.Size = new System.Drawing.Size(1304, 238);
             this.dgvRecentOrder.TabIndex = 0;
             // 
             // ucOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.Controls.Add(this.pnlRecent);
             this.Controls.Add(this.pnlRevenue);
             this.Controls.Add(this.pnlChart);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ucOverview";
-            this.Size = new System.Drawing.Size(1164, 842);
+            this.Size = new System.Drawing.Size(1552, 1036);
             this.pnlChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.pnlRevenue.ResumeLayout(false);
