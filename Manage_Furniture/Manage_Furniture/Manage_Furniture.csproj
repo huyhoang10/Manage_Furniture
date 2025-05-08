@@ -80,12 +80,6 @@
     <Compile Include="Forms\ucHR.Designer.cs">
       <DependentUpon>ucHR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FSignup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FSignup.Designer.cs">
-      <DependentUpon>FSignup.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
