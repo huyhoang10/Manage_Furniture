@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Manage_Furniture\\Manage_Furniture\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\forms\\uccustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|d:\\manage_furniture\\manage_furniture\\manage_furniture\\controls\\uccustomercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}|Manage_Furniture\\Manage_Furniture.csproj|solutionrelative:manage_furniture\\controls\\uccustomercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,31 +34,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UCCustomer.cs",
-              "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCCustomer.cs",
-              "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCCustomer.cs",
-              "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCCustomer.cs",
-              "RelativeToolTip": "Manage_Furniture\\Forms\\UCCustomer.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAQwCUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T17:15:05.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UCCustomer.cs [Design]",
-              "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCCustomer.cs",
-              "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCCustomer.cs",
-              "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Forms\\UCCustomer.cs [Design]",
-              "RelativeToolTip": "Manage_Furniture\\Forms\\UCCustomer.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T06:10:43.441Z",
-              "EditorCaption": " [Design]"
             }
           ]
         },
@@ -82,40 +44,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "bfb8ee55-cb7e-4eda-b39d-cb631b4d77ca",
-        "Display": 0,
-        "X": 32,
-        "Y": 78,
-        "Width": 845,
-        "Height": 441,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UCCustomerController.cs",
-              "DocumentMoniker": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Controls\\UCCustomerController.cs",
-              "RelativeDocumentMoniker": "Manage_Furniture\\Controls\\UCCustomerController.cs",
-              "ToolTip": "D:\\Manage_Furniture\\Manage_Furniture\\Manage_Furniture\\Controls\\UCCustomerController.cs",
-              "RelativeToolTip": "Manage_Furniture\\Controls\\UCCustomerController.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAgwGwAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T04:15:58.154Z",
-              "EditorCaption": ""
             }
           ]
         }
