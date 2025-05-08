@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Manage_Furniture.Forms
 {
-    public partial class FOverview : Form
+    public partial class UCBill : Form
     {
-        public FOverview()
+        public UCBill()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

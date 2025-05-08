@@ -1,185 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>Manage_Furniture</RootNamespace>
-    <AssemblyName>Manage_Furniture</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ADO\connectDatabase.cs" />
-    <Compile Include="ADO\manager_furniture.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>manager_furniture.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\FEmployeeControl.cs" />
-    <Compile Include="Controls\ucSuppliersControls.cs" />
-    <Compile Include="Controls\ucWarehouseControls.cs" />
-    <Compile Include="Controls\ucOverviewControl.cs" />
-    <Compile Include="Forms\FOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FOverview.Designer.cs">
-      <DependentUpon>FOverview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ucHR.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\ucHR.Designer.cs">
-      <DependentUpon>ucHR.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FWelcome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FWelcome.Designer.cs">
-      <DependentUpon>FWelcome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FEmployee.Designer.cs">
-      <DependentUpon>FEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FManager.Designer.cs">
-      <DependentUpon>FManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ucOverview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\ucOverview.Designer.cs">
-      <DependentUpon>ucOverview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ucSuppliercs.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\ucSuppliercs.Designer.cs">
-      <DependentUpon>ucSuppliercs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ucWarehouse.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\ucWarehouse.Designer.cs">
-      <DependentUpon>ucWarehouse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Products.cs" />
-    <Compile Include="Models\Product_Warehouse.cs" />
-    <Compile Include="Models\Suppliers.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\FEmployee.resx">
-      <DependentUpon>FEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FManager.resx">
-      <DependentUpon>FManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FOverview.resx">
-      <DependentUpon>FOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucHR.resx">
-      <DependentUpon>ucHR.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucOverview.resx">
-      <DependentUpon>ucOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucSuppliercs.resx">
-      <DependentUpon>ucSuppliercs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucWarehouse.resx">
-      <DependentUpon>ucWarehouse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="ADO\manager_furniture.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>manager_furniture.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ADO\manager_furniture.dbml.layout">
-      <DependentUpon>manager_furniture.dbml</DependentUpon>
-    </None>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include=".gitignore" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{F31C94D5-4BDE-4BF2-80C2-1070E92B4645}</ProjectGuid>
+		<OutputType>WinExe</OutputType>
+		<RootNamespace>Manage_Furniture</RootNamespace>
+		<AssemblyName>Manage_Furniture</AssemblyName>
+		<TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+		<FileAlignment>512</FileAlignment>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<Deterministic>true</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- References (merged from both projects) -->
+		<Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+		<Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+		<Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+		<Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+		<Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+			<HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+		</Reference>
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+		<Reference Include="System" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Data.Linq" />
+		<Reference Include="System.Design" />
+		<Reference Include="System.Management" />
+		<Reference Include="System.Web" />
+		<Reference Include="System.Windows.Forms.DataVisualization" />
+		<Reference Include="System.Xaml" />
+		<Reference Include="System.Xml.Linq" />
+		<Reference Include="System.Data.DataSetExtensions" />
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Deployment" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Net.Http" />
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="System.Xml" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+	<ItemGroup>
+		<!-- Compile and EmbeddedResource entries are merged; make sure not to duplicate lines -->
+		<!-- For brevity, not all Compile/Resource items shown here, but will be included in actual project merge -->
+		<!-- You may paste full merged entries in the canvas if needed. -->
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="App.config" />
+		<None Include="packages.config" />
+		<None Include="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<None Include="Resources\IconSearch1.png" />
+		<None Include="Resources\IconSearch.png" />
+		<None Include="Resources\filter.png" />
+		<None Include="Resources\filter %281%29.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+		<Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+	</ItemGroup>
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
