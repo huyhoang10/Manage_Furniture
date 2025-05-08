@@ -67,7 +67,7 @@
               "RelativeDocumentMoniker": "Manage_Furniture\\Forms\\UCOrder.cs",
               "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs",
               "RelativeToolTip": "Manage_Furniture\\Forms\\UCOrder.cs",
-              "ViewState": "AgIAAD0BAAAAAAAAAAAMwEsBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T03:01:07.84Z",
               "EditorCaption": ""
@@ -82,8 +82,7 @@
               "RelativeToolTip": "Manage_Furniture\\Controls\\ucOrderControl.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAAmwH8AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T08:35:58.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T08:35:58.014Z"
             },
             {
               "$type": "Document",
@@ -94,8 +93,7 @@
               "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\Manage_Furniture\\Manage_Furniture\\Forms\\UCOrder.cs [Design]",
               "RelativeToolTip": "Manage_Furniture\\Forms\\UCOrder.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T06:39:38.688Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-07T06:39:38.688Z"
             },
             {
               "$type": "Document",
@@ -117,7 +115,8 @@
               "ToolTip": "D:\\WINFORMS\\PROJECT FINAL\\fnn\\.gitignore",
               "RelativeToolTip": "..\\.gitignore",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-05T09:35:48.577Z"
+              "WhenOpened": "2025-05-05T09:35:48.577Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
