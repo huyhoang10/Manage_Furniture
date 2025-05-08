@@ -41,10 +41,11 @@
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
+            this.ucOverview1 = new Manage_Furniture.Forms.ucOverview();
             this.ucHR1 = new Manage_Furniture.Controls.ucHR();
             this.ucWarehouse1 = new Manage_Furniture.Forms.ucWarehouse();
             this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
-            this.ucOverview1 = new Manage_Furniture.Forms.ucOverview();
+            this.ucCustomer1 = new Manage_Furniture.Controls.UCCustomer();
             this.pnlAllButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlUserControls.SuspendLayout();
@@ -138,7 +139,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(44)))), ((int)(((byte)(26)))));
             this.label1.Location = new System.Drawing.Point(115, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 69);
+            this.label1.Size = new System.Drawing.Size(141, 55);
             this.label1.TabIndex = 8;
             this.label1.Text = "HQ3T";
             // 
@@ -259,6 +260,7 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
+            this.pnlUserControls.Controls.Add(this.ucCustomer1);
             this.pnlUserControls.Controls.Add(this.ucOverview1);
             this.pnlUserControls.Controls.Add(this.ucHR1);
             this.pnlUserControls.Controls.Add(this.ucWarehouse1);
@@ -267,6 +269,15 @@
             this.pnlUserControls.Name = "pnlUserControls";
             this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
             this.pnlUserControls.TabIndex = 3;
+            // 
+            // ucOverview1
+            // 
+            this.ucOverview1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucOverview1.Location = new System.Drawing.Point(0, 0);
+            this.ucOverview1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ucOverview1.Name = "ucOverview1";
+            this.ucOverview1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucOverview1.TabIndex = 4;
             // 
             // ucHR1
             // 
@@ -290,18 +301,18 @@
             // 
             this.ucSuppliercs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucSuppliercs1.Location = new System.Drawing.Point(0, 0);
-            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucSuppliercs1.Name = "ucSuppliercs1";
             this.ucSuppliercs1.Size = new System.Drawing.Size(1552, 1036);
             this.ucSuppliercs1.TabIndex = 1;
             // 
-            // ucOverview1
+            // ucCustomer1
             // 
-            this.ucOverview1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucOverview1.Location = new System.Drawing.Point(0, 0);
-            this.ucOverview1.Name = "ucOverview1";
-            this.ucOverview1.Size = new System.Drawing.Size(1552, 1036);
-            this.ucOverview1.TabIndex = 4;
+            this.ucCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucCustomer1.Location = new System.Drawing.Point(0, 0);
+            this.ucCustomer1.Name = "ucCustomer1";
+            this.ucCustomer1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucCustomer1.TabIndex = 5;
             // 
             // FEmployee
             // 
@@ -343,5 +354,6 @@
         protected Guna.UI2.WinForms.Guna2Button btnHome;
         private Controls.ucHR ucHR1;
         private ucOverview ucOverview1;
+        private Controls.UCCustomer ucCustomer1;
     }
 }

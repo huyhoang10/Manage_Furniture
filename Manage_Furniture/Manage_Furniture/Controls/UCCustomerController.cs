@@ -14,7 +14,7 @@ namespace Manage_Furniture.Controls
     
     internal class UCCustomerController
     {
-        mananger_furnitureDataContext context = new mananger_furnitureDataContext();
+        public static manager_furnitureDataContext db = new manager_furnitureDataContext();
         
         public Customerclass GetCustomerFromRow(DataGridViewRow row)
         {
@@ -51,7 +51,7 @@ namespace Manage_Furniture.Controls
 
             try
             {
-                var existingCustomer = context.customers.FirstOrDefault(c => c.id == updatedCustomer.Id);
+                var existingCustomer = db.customers.FirstOrDefault(c => c.id == updatedCustomer.Id);
 
                 if (existingCustomer == null)
                 {
@@ -66,7 +66,7 @@ namespace Manage_Furniture.Controls
                 existingCustomer.address = updatedCustomer.Address;
                 existingCustomer.type = updatedCustomer.Type;
 
-                context.SubmitChanges();
+                db.SubmitChanges();
 
                 message = "Update successful.";
                 return true;
@@ -106,7 +106,7 @@ namespace Manage_Furniture.Controls
         }
         public List<customer> FilterCustomers(string type)
         {
-            var query = context.customers.AsQueryable();  // Bắt đầu với một truy vấn cơ sở dữ liệu
+            var query = db.customers.AsQueryable();  // Bắt đầu với một truy vấn cơ sở dữ liệu
             if (!string.IsNullOrWhiteSpace(type))
                 query = query.Where(c => c.type.ToLower() == type.ToLower());  // Lọc theo loại
 

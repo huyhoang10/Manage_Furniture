@@ -9,7 +9,7 @@ namespace Manage_Furniture.Models
 {
     internal class Customerclass
     {
-        mananger_furnitureDataContext context = new mananger_furnitureDataContext();
+        public static manager_furnitureDataContext db = new manager_furnitureDataContext();
         public int Id { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
@@ -19,13 +19,13 @@ namespace Manage_Furniture.Models
 
         public List<customer> GetAllCustomers()
         {
-            return context.customers.ToList();
+            return db.customers.ToList();
         }
 
 
         public List<customer> SearchCustomersByPhone(string PhoneNumber)
         {
-            return context.customers
+            return db.customers
                           .Where(c => c.phone != null && c.phone.StartsWith(PhoneNumber))
                           .ToList();
         }

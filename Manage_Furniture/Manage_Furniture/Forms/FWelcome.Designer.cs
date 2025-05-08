@@ -84,7 +84,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::Manage_Furniture.Properties.Resources.logo1;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(1411, 436);
             this.pictureBox2.Name = "pictureBox2";
@@ -94,7 +93,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Manage_Furniture.Properties.Resources._4e80d9de_5ed3_4ee7_8d66_5903f4dc7466;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(90, 77);
             this.pictureBox1.Name = "pictureBox1";

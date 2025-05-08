@@ -40,6 +40,7 @@ namespace Manage_Furniture.Forms
         {
             SetAllButton();
             btnCustomer.FillColor = Color.FromArgb(197, 166, 158);
+            ucCustomer1.BringToFront();
         }
 
         protected void btnOrder_Click(object sender, EventArgs e)

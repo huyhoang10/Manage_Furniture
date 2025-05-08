@@ -358,7 +358,7 @@
             this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Search.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Search.IconRight = global::Manage_Furniture.Properties.Resources.IconSearch;
+     
             this.txt_Search.IconRightOffset = new System.Drawing.Point(5, 0);
             this.txt_Search.IconRightSize = new System.Drawing.Size(24, 24);
             this.txt_Search.Location = new System.Drawing.Point(1244, 129);
