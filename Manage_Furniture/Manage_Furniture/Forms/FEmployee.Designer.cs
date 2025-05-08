@@ -28,7 +28,6 @@
         /// </summary>
         protected virtual void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FEmployee));
             this.pnlAllButton = new Guna.UI2.WinForms.Guna2Panel();
             this.btnHR = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
@@ -42,10 +41,11 @@
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
             this.ucOverview1 = new Manage_Furniture.Forms.ucOverview();
-            this.ucHR1 = new Manage_Furniture.Controls.ucHR();
+            this.ucOrder1 = new Manage_Furniture.Forms.UCOrder();
+            this.ucCustomer1 = new Manage_Furniture.Controls.UCCustomer();
             this.ucWarehouse1 = new Manage_Furniture.Forms.ucWarehouse();
             this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
-            this.ucCustomer1 = new Manage_Furniture.Controls.UCCustomer();
+            this.ucHR1 = new Manage_Furniture.Controls.ucHR();
             this.pnlAllButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlUserControls.SuspendLayout();
@@ -80,7 +80,6 @@
             this.btnHR.FillColor = System.Drawing.Color.White;
             this.btnHR.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHR.ForeColor = System.Drawing.Color.Black;
-            this.btnHR.Image = ((System.Drawing.Image)(resources.GetObject("btnHR.Image")));
             this.btnHR.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHR.ImageSize = new System.Drawing.Size(35, 35);
             this.btnHR.Location = new System.Drawing.Point(25, 695);
@@ -102,7 +101,6 @@
             this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(166)))), ((int)(((byte)(158)))));
             this.btnHome.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.ImageSize = new System.Drawing.Size(35, 35);
             this.btnHome.Location = new System.Drawing.Point(25, 175);
@@ -123,7 +121,6 @@
             this.btnLogout.FillColor = System.Drawing.Color.White;
             this.btnLogout.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageSize = new System.Drawing.Size(35, 35);
             this.btnLogout.Location = new System.Drawing.Point(25, 945);
@@ -146,9 +143,8 @@
             // picLogo
             // 
             this.picLogo.FillColor = System.Drawing.Color.Black;
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.ImageRotate = 0F;
-            this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
+            this.picLogo.InitialImage = null;
             this.picLogo.Location = new System.Drawing.Point(19, 19);
             this.picLogo.Name = "picLogo";
             this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -182,7 +178,6 @@
             this.btnSupplier.FillColor = System.Drawing.Color.White;
             this.btnSupplier.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupplier.ForeColor = System.Drawing.Color.Black;
-            this.btnSupplier.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplier.Image")));
             this.btnSupplier.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSupplier.ImageSize = new System.Drawing.Size(35, 35);
             this.btnSupplier.Location = new System.Drawing.Point(25, 591);
@@ -203,7 +198,6 @@
             this.btnWarehouse.FillColor = System.Drawing.Color.White;
             this.btnWarehouse.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWarehouse.ForeColor = System.Drawing.Color.Black;
-            this.btnWarehouse.Image = ((System.Drawing.Image)(resources.GetObject("btnWarehouse.Image")));
             this.btnWarehouse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnWarehouse.ImageSize = new System.Drawing.Size(35, 35);
             this.btnWarehouse.Location = new System.Drawing.Point(25, 487);
@@ -224,7 +218,6 @@
             this.btnOrder.FillColor = System.Drawing.Color.White;
             this.btnOrder.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.Black;
-            this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
             this.btnOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnOrder.ImageSize = new System.Drawing.Size(35, 35);
             this.btnOrder.Location = new System.Drawing.Point(25, 279);
@@ -246,7 +239,6 @@
             this.btnCustomer.FillColor = System.Drawing.Color.White;
             this.btnCustomer.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.ForeColor = System.Drawing.Color.Black;
-            this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
             this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.ImageSize = new System.Drawing.Size(35, 35);
             this.btnCustomer.Location = new System.Drawing.Point(25, 383);
@@ -260,11 +252,12 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
-            this.pnlUserControls.Controls.Add(this.ucCustomer1);
-            this.pnlUserControls.Controls.Add(this.ucOverview1);
             this.pnlUserControls.Controls.Add(this.ucHR1);
-            this.pnlUserControls.Controls.Add(this.ucWarehouse1);
             this.pnlUserControls.Controls.Add(this.ucSuppliercs1);
+            this.pnlUserControls.Controls.Add(this.ucWarehouse1);
+            this.pnlUserControls.Controls.Add(this.ucCustomer1);
+            this.pnlUserControls.Controls.Add(this.ucOrder1);
+            this.pnlUserControls.Controls.Add(this.ucOverview1);
             this.pnlUserControls.Location = new System.Drawing.Point(350, 0);
             this.pnlUserControls.Name = "pnlUserControls";
             this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
@@ -277,16 +270,23 @@
             this.ucOverview1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucOverview1.Name = "ucOverview1";
             this.ucOverview1.Size = new System.Drawing.Size(1552, 1036);
-            this.ucOverview1.TabIndex = 4;
+            this.ucOverview1.TabIndex = 0;
             // 
-            // ucHR1
+            // ucOrder1
             // 
-            this.ucHR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucHR1.Location = new System.Drawing.Point(0, 0);
-            this.ucHR1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ucHR1.Name = "ucHR1";
-            this.ucHR1.Size = new System.Drawing.Size(1552, 1036);
-            this.ucHR1.TabIndex = 3;
+            this.ucOrder1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucOrder1.Location = new System.Drawing.Point(0, 0);
+            this.ucOrder1.Name = "ucOrder1";
+            this.ucOrder1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucOrder1.TabIndex = 1;
+            // 
+            // ucCustomer1
+            // 
+            this.ucCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucCustomer1.Location = new System.Drawing.Point(0, 0);
+            this.ucCustomer1.Name = "ucCustomer1";
+            this.ucCustomer1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucCustomer1.TabIndex = 2;
             // 
             // ucWarehouse1
             // 
@@ -295,7 +295,7 @@
             this.ucWarehouse1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucWarehouse1.Name = "ucWarehouse1";
             this.ucWarehouse1.Size = new System.Drawing.Size(1552, 1036);
-            this.ucWarehouse1.TabIndex = 2;
+            this.ucWarehouse1.TabIndex = 3;
             // 
             // ucSuppliercs1
             // 
@@ -304,15 +304,16 @@
             this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucSuppliercs1.Name = "ucSuppliercs1";
             this.ucSuppliercs1.Size = new System.Drawing.Size(1552, 1036);
-            this.ucSuppliercs1.TabIndex = 1;
+            this.ucSuppliercs1.TabIndex = 4;
             // 
-            // ucCustomer1
+            // ucHR1
             // 
-            this.ucCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucCustomer1.Location = new System.Drawing.Point(0, 0);
-            this.ucCustomer1.Name = "ucCustomer1";
-            this.ucCustomer1.Size = new System.Drawing.Size(1552, 1036);
-            this.ucCustomer1.TabIndex = 5;
+            this.ucHR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucHR1.Location = new System.Drawing.Point(0, 0);
+            this.ucHR1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucHR1.Name = "ucHR1";
+            this.ucHR1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucHR1.TabIndex = 5;
             // 
             // FEmployee
             // 
@@ -322,7 +323,6 @@
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.pnlUserControls);
             this.Controls.Add(this.pnlAllButton);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage_Furniture";
@@ -348,12 +348,13 @@
         protected System.Windows.Forms.Label label1;
         protected Guna.UI2.WinForms.Guna2Button btnLogout;
         protected Guna.UI2.WinForms.Guna2Panel pnlUserControls;
-        private ucSuppliercs ucSuppliercs1;
-        private ucWarehouse ucWarehouse1;
         protected Guna.UI2.WinForms.Guna2Button btnHR;
         protected Guna.UI2.WinForms.Guna2Button btnHome;
         private Controls.ucHR ucHR1;
-        private ucOverview ucOverview1;
+        private ucSuppliercs ucSuppliercs1;
+        private ucWarehouse ucWarehouse1;
         private Controls.UCCustomer ucCustomer1;
+        private UCOrder ucOrder1;
+        private ucOverview ucOverview1;
     }
 }

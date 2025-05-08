@@ -54,20 +54,20 @@ namespace Manage_Furniture.ADO
     partial void Insertwarehouse(warehouse instance);
     partial void Updatewarehouse(warehouse instance);
     partial void Deletewarehouse(warehouse instance);
-		#endregion
-
-		public manager_furnitureDataContext() :
-				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString, mappingSource)
+    #endregion
+		
+		public manager_furnitureDataContext() : 
+				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
-
-		public manager_furnitureDataContext(string connection) :
+		
+		public manager_furnitureDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
-
+		
 		public manager_furnitureDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{

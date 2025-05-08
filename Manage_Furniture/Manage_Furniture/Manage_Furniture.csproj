@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- References (merged from both projects) -->
+    <!-- References -->
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -41,18 +41,16 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -63,10 +61,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <!-- Compile and EmbeddedResource entries are merged; make sure not to duplicate lines -->
-    <!-- For brevity, not all Compile/Resource items shown here, but will be included in actual project merge -->
-    <!-- You may paste full merged entries in the canvas if needed. -->
+    <!-- Compile and EmbeddedResource entries -->
     <Compile Include="ADO\connectDatabase.cs" />
+    <Compile Include="ADO\dtsBill.cs">
+      <DependentUpon>dtsBill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\dtsBill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsBill.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ADO\manager_furniture.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,14 +78,34 @@
     </Compile>
     <Compile Include="Controls\FEmployeeControl.cs" />
     <Compile Include="Controls\UCCustomerController.cs" />
+    <Compile Include="Controls\ucLoginControl.cs" />
+    <Compile Include="Controls\ucOrderControl.cs" />
     <Compile Include="Controls\ucOverviewControl.cs" />
     <Compile Include="Controls\ucSuppliersControls.cs" />
     <Compile Include="Controls\ucWarehouseControls.cs" />
+    <Compile Include="Forms\crvBill.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvBill.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FAdmin.Designer.cs">
+      <DependentUpon>FAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FEmployee.Designer.cs">
       <DependentUpon>FEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FManager.cs">
       <SubType>Form</SubType>
@@ -101,6 +125,12 @@
     <Compile Include="Forms\FWelcome.Designer.cs">
       <DependentUpon>FWelcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UCBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UCBill.Designer.cs">
+      <DependentUpon>UCBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UCCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,6 +142,12 @@
     </Compile>
     <Compile Include="Forms\ucHR.Designer.cs">
       <DependentUpon>ucHR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UCOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UCOrder.Designer.cs">
+      <DependentUpon>UCOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ucOverview.cs">
       <SubType>UserControl</SubType>
@@ -131,44 +167,31 @@
     <Compile Include="Forms\ucWarehouse.Designer.cs">
       <DependentUpon>ucWarehouse.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageFurnitureDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageFurnitureDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Product_Warehouse.cs" />
     <Compile Include="Models\Suppliers.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ADO\manager_furniture.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>manager_furniture.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ADO\manager_furniture.dbml.layout">
-      <DependentUpon>manager_furniture.dbml</DependentUpon>
-    </None>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Resources\IconSearch1.png" />
-    <None Include="Resources\IconSearch.png" />
-    <None Include="Resources\filter.png" />
-    <None Include="Resources\filter %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <EmbeddedResource Include="Forms\crvBill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvBill.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FEmployee.resx">
       <DependentUpon>FEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FManager.resx">
       <DependentUpon>FManager.cs</DependentUpon>
@@ -179,11 +202,17 @@
     <EmbeddedResource Include="Forms\FWelcome.resx">
       <DependentUpon>FWelcome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UCBill.resx">
+      <DependentUpon>UCBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UCCustomer.resx">
       <DependentUpon>UCCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucHR.resx">
       <DependentUpon>ucHR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UCOrder.resx">
+      <DependentUpon>UCOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucOverview.resx">
       <DependentUpon>ucOverview.cs</DependentUpon>
@@ -194,6 +223,61 @@
     <EmbeddedResource Include="Forms\ucWarehouse.resx">
       <DependentUpon>ucWarehouse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ADO\dtsBill.xsc">
+      <DependentUpon>dtsBill.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsBill.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsBill.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtsBill.xss">
+      <DependentUpon>dtsBill.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\manager_furniture.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>manager_furniture.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ADO\manager_furniture.dbml.layout">
+      <DependentUpon>manager_furniture.dbml</DependentUpon>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\4e80d9de-5ed3-4ee7-8d66-5903f4dc7466.png" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\armchair coffee.png" />
+    <None Include="Resources\eye 1.png" />
+    <None Include="Resources\eye-off 2.png" />
+    <None Include="Resources\living.png" />
+    <None Include="Resources\log-in 1.png" />
+    <None Include="Resources\search 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\filter %281%29.png" />
+    <Content Include="Resources\filter.png" />
+    <Content Include="Resources\iconsearch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

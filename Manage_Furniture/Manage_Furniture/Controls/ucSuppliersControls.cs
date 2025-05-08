@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Manage_Furniture.Models;
 using Manage_Furniture.ADO;
-using System.Windows;
+using System.Windows.Forms;
 namespace Manage_Furniture.Controls
 {
     internal class ucSuppliersControls

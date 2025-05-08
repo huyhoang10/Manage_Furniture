@@ -24,6 +24,7 @@ namespace Manage_Furniture.Forms
             btnHR.Visible = false;
             SetAllButton();
             btnOrder.FillColor = Color.FromArgb(197, 166, 158);
+            ucOverview1.BringToFront();
         }
 
         protected virtual void SetAllButton()
@@ -47,6 +48,7 @@ namespace Manage_Furniture.Forms
         {
             SetAllButton();
             btnOrder.FillColor = Color.FromArgb(197, 166, 158);
+            ucOrder1.BringToFront();
         }
 
         protected virtual void btnWarehouse_Click(object sender, EventArgs e)
