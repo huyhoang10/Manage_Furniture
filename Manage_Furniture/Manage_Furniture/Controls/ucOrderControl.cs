@@ -105,7 +105,7 @@ namespace Manage_Furniture.Controls
                 };
 
                 AddCustomer(newCustomer);
-
+                AddBill(orderId, totalMoney);
                 foreach (DataGridViewRow row in dgv_orders.Rows)
                 {
                     if (row.IsNewRow || row.Cells["col_product"].Value == null)
@@ -137,7 +137,6 @@ namespace Manage_Furniture.Controls
                     AddOrder(newOrder);
                     UpdateWarehouseQuantity(product.id, quantity);
                 }
-                AddBill(orderId, totalMoney);
             }
             catch (Exception ex)
             {

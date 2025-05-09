@@ -34,7 +34,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            this.pbUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnActive = new Guna.UI2.WinForms.Guna2Button();
             this.btnInactive = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.cmbSex = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,7 +57,6 @@
             this.dgvView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnAll = new Guna.UI2.WinForms.Guna2Button();
             this.btnBlock = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.pnlView.SuspendLayout();
@@ -87,8 +84,8 @@
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(436, 766);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(543, 824);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(141, 57);
             this.btnAdd.TabIndex = 7;
@@ -105,24 +102,13 @@
             this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Location = new System.Drawing.Point(619, 766);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Location = new System.Drawing.Point(726, 824);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(145, 57);
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // pbUser
-            // 
-            this.pbUser.ImageRotate = 0F;
-            this.pbUser.Location = new System.Drawing.Point(1432, 5);
-            this.pbUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pbUser.Name = "pbUser";
-            this.pbUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbUser.Size = new System.Drawing.Size(56, 44);
-            this.pbUser.TabIndex = 10;
-            this.pbUser.TabStop = false;
             // 
             // panel1
             // 
@@ -133,7 +119,7 @@
             this.panel1.Controls.Add(this.txtEInactive);
             this.panel1.Controls.Add(this.txtEActive);
             this.panel1.Location = new System.Drawing.Point(60, 145);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1492, 150);
             this.panel1.TabIndex = 11;
@@ -208,7 +194,7 @@
             this.txtEInactive.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEInactive.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEInactive.Location = new System.Drawing.Point(501, 4);
-            this.txtEInactive.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtEInactive.Margin = new System.Windows.Forms.Padding(7);
             this.txtEInactive.Name = "txtEInactive";
             this.txtEInactive.PlaceholderText = "";
             this.txtEInactive.SelectedText = "";
@@ -255,8 +241,8 @@
             "< 100$",
             "100$ – 500$",
             "> 500$"});
-            this.cmbFilter.Location = new System.Drawing.Point(1099, 288);
-            this.cmbFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFilter.Location = new System.Drawing.Point(1325, 294);
+            this.cmbFilter.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(172, 36);
             this.cmbFilter.TabIndex = 12;
@@ -274,7 +260,7 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(707, 288);
+            this.txtSearch.Location = new System.Drawing.Point(933, 294);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "Search";
@@ -294,7 +280,7 @@
             this.btnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActive.ForeColor = System.Drawing.Color.Black;
             this.btnActive.Location = new System.Drawing.Point(211, 294);
-            this.btnActive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActive.Margin = new System.Windows.Forms.Padding(4);
             this.btnActive.Name = "btnActive";
             this.btnActive.Size = new System.Drawing.Size(123, 44);
             this.btnActive.TabIndex = 15;
@@ -312,23 +298,12 @@
             this.btnInactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInactive.ForeColor = System.Drawing.Color.Black;
             this.btnInactive.Location = new System.Drawing.Point(349, 294);
-            this.btnInactive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInactive.Margin = new System.Windows.Forms.Padding(4);
             this.btnInactive.Name = "btnInactive";
             this.btnInactive.Size = new System.Drawing.Size(123, 44);
             this.btnInactive.TabIndex = 16;
             this.btnInactive.Text = "Inactive";
             this.btnInactive.Click += new System.EventHandler(this.btnInactive_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1207, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Nguyễn Hoàng Thạch";
             // 
             // guna2Panel1
             // 
@@ -340,7 +315,7 @@
             this.guna2Panel1.Controls.Add(this.txtPhone);
             this.guna2Panel1.Controls.Add(this.txtName);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(811, 345);
+            this.guna2Panel1.Location = new System.Drawing.Point(1053, 345);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(444, 516);
@@ -362,7 +337,7 @@
             "Male",
             "Female"});
             this.cmbSex.Location = new System.Drawing.Point(293, 218);
-            this.cmbSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSex.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(129, 36);
             this.cmbSex.TabIndex = 11;
@@ -384,7 +359,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Location = new System.Drawing.Point(21, 117);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPassword.PlaceholderText = "Password";
@@ -409,7 +384,7 @@
             this.txtSalary.ForeColor = System.Drawing.Color.Black;
             this.txtSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSalary.Location = new System.Drawing.Point(21, 421);
-            this.txtSalary.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtSalary.Margin = new System.Windows.Forms.Padding(5);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtSalary.PlaceholderText = "Salary";
@@ -434,7 +409,7 @@
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddress.Location = new System.Drawing.Point(21, 318);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(5);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtAddress.PlaceholderText = "Address";
@@ -459,7 +434,7 @@
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.Location = new System.Drawing.Point(21, 219);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(5);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPhone.PlaceholderText = "Phone";
@@ -484,7 +459,7 @@
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Location = new System.Drawing.Point(21, 18);
-            this.txtName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtName.PlaceholderText = "Name Employee";
@@ -502,8 +477,8 @@
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(72, 766);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Location = new System.Drawing.Point(179, 824);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(145, 57);
             this.btnDelete.TabIndex = 19;
@@ -515,9 +490,9 @@
             this.pnlView.BorderRadius = 16;
             this.pnlView.Controls.Add(this.dgvView);
             this.pnlView.Location = new System.Drawing.Point(72, 345);
-            this.pnlView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlView.Margin = new System.Windows.Forms.Padding(4);
             this.pnlView.Name = "pnlView";
-            this.pnlView.Size = new System.Drawing.Size(732, 414);
+            this.pnlView.Size = new System.Drawing.Size(942, 471);
             this.pnlView.TabIndex = 20;
             // 
             // dgvView
@@ -545,14 +520,14 @@
             this.dgvView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvView.Location = new System.Drawing.Point(29, 32);
-            this.dgvView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(4);
             this.dgvView.Name = "dgvView";
             this.dgvView.ReadOnly = true;
             this.dgvView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvView.RowHeadersVisible = false;
             this.dgvView.RowHeadersWidth = 82;
             this.dgvView.RowTemplate.Height = 30;
-            this.dgvView.Size = new System.Drawing.Size(683, 362);
+            this.dgvView.Size = new System.Drawing.Size(875, 403);
             this.dgvView.TabIndex = 0;
             this.dgvView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -589,7 +564,7 @@
             this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAll.ForeColor = System.Drawing.Color.Black;
             this.btnAll.Location = new System.Drawing.Point(72, 294);
-            this.btnAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(123, 44);
             this.btnAll.TabIndex = 21;
@@ -606,8 +581,8 @@
             this.btnBlock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnBlock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlock.ForeColor = System.Drawing.Color.Black;
-            this.btnBlock.Location = new System.Drawing.Point(249, 766);
-            this.btnBlock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBlock.Location = new System.Drawing.Point(356, 824);
+            this.btnBlock.Margin = new System.Windows.Forms.Padding(4);
             this.btnBlock.Name = "btnBlock";
             this.btnBlock.Size = new System.Drawing.Size(179, 57);
             this.btnBlock.TabIndex = 22;
@@ -624,21 +599,18 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.pnlView);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInactive);
             this.Controls.Add(this.btnActive);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.cmbFilter);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pbUser);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucHR";
             this.Size = new System.Drawing.Size(1552, 1036);
             this.Load += new System.EventHandler(this.ucHumanResourceManagement_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
@@ -654,7 +626,6 @@
         private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox pbUser;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtEActive;
         private Guna.UI2.WinForms.Guna2TextBox txtEInactive;
@@ -662,7 +633,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnActive;
         private Guna.UI2.WinForms.Guna2Button btnInactive;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
