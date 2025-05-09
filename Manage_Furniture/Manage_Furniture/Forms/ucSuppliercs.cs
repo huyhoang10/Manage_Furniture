@@ -135,5 +135,10 @@ namespace Manage_Furniture.Forms
         {
             dgvView.DataSource = suppliersControls.SearchSupplier(txtSearch.Text);
         }
+
+        private void txtContact_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

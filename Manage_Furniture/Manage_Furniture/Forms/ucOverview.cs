@@ -117,13 +117,13 @@ namespace Manage_Furniture.Forms
         private void StyleDataGridView(DataGridView dgv)
         {
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SaddleBrown;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 0, 0); ;
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 10, FontStyle.Bold);
             dgv.DefaultCellStyle.Font = new Font("Montserrat", 10, FontStyle.Regular);
-            dgv.ColumnHeadersHeight = 40;
+            dgv.ColumnHeadersHeight = 50;
             dgv.RowTemplate.Height = 35;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.LightGray;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.White;
             dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.BackgroundColor = Color.White;
             dgv.BorderStyle = BorderStyle.None;

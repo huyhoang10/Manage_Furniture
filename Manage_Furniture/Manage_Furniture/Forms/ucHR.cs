@@ -356,5 +356,35 @@ namespace Manage_Furniture.Controls
             }
            
         }
+
+        private void txt_custormer_address_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
