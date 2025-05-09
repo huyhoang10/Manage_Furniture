@@ -57,12 +57,20 @@ namespace Manage_Furniture.Forms
 
                 if (loginRole != null)
                 {
-                    MessageBox.Show("Login successful!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    if (loginRole == "employee")
+                    {
+                        if (uclogin_control.CheckActive(username))
+                            MessageBox.Show("Login successful!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                        {
+                            MessageBox.Show("Your account is inactive. Please contact the administrator.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
                     if (loginRole == "admin")
                     {
-                        FAdmin fAdmin = new FAdmin(); 
-                        fAdmin.ShowDialog();
+                        FManager fManager = new FManager();
+                        fManager.ShowDialog();
                     }
                     else if (loginRole == "employee")
                     {

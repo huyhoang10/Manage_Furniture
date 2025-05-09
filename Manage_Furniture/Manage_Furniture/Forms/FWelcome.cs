@@ -25,8 +25,8 @@ namespace Manage_Furniture
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            FEmployee fEmployee = new FEmployee();
-            fEmployee.ShowDialog();
+            FLogin fLogin = new FLogin();
+            fLogin.ShowDialog();
         }
     }
 }

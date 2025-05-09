@@ -42,6 +42,7 @@ namespace Manage_Furniture.Forms
             SetAllButton();
             btnCustomer.FillColor = Color.FromArgb(197, 166, 158);
             ucCustomer1.BringToFront();
+            ucCustomer1.UCCustomer_Load(sender, e);
         }
 
         protected void btnOrder_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace Manage_Furniture.Forms
             SetAllButton();
             btnWarehouse.FillColor = Color.FromArgb(197, 166, 158);
             ucWarehouse1.BringToFront();
+            ucWarehouse1.ucWarehouse_Load(sender, e);
         }
 
         protected void btnSupplier_Click(object sender, EventArgs e)
@@ -63,6 +65,7 @@ namespace Manage_Furniture.Forms
             SetAllButton();
             btnSupplier.FillColor = Color.FromArgb(197, 166, 158);
             ucSuppliercs1.BringToFront();
+            ucSuppliercs1.ucSuppliercs_Load(sender, e);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -70,6 +73,7 @@ namespace Manage_Furniture.Forms
             SetAllButton();
             btnHome.FillColor = Color.FromArgb(197, 166, 158);
             ucOverview1.BringToFront();
+            ucOverview1.Loaddata();
         }
 
         private void btnHR_Click(object sender, EventArgs e)
@@ -77,6 +81,7 @@ namespace Manage_Furniture.Forms
             SetAllButton();
             btnHR.FillColor = Color.FromArgb(197, 166, 158);
             ucHR1.BringToFront();
+            ucHR1.ucHumanResourceManagement_Load(sender, e);
         }
     }
 }

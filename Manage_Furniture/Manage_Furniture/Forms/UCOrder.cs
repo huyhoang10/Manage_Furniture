@@ -22,6 +22,26 @@ namespace Manage_Furniture.Forms
             InitializeComponent();
             LoadProduct();
             InitializeDataGridViewEvents();
+            EntryLock();
+        }
+
+        private void EntryAllow() { 
+            txt_customer_name.Enabled = true;
+            //txt_customer_phone.Enabled = true;
+            txt_order_note.Enabled = true;
+            txt_custormer_address.Enabled = true;
+            cmb_customer_sex.Enabled = true;
+            cmb_customer_type.Enabled = true;
+        }
+
+        private void EntryLock()
+        {
+            txt_customer_name.Enabled = false;
+            txt_customer_phone.Enabled = false;
+            txt_order_note.Enabled = false;
+            txt_custormer_address.Enabled = false;
+            cmb_customer_sex.Enabled = false;
+            cmb_customer_type.Enabled = false;
         }
 
         public void LoadProduct()
@@ -278,14 +298,6 @@ namespace Manage_Furniture.Forms
 
             var existingCustomer = orderControl.GetCustomerByPhone(phone);
 
-            if (existingCustomer != null)
-            {
-                DialogResult result = MessageBox.Show("Customer already exists! \nWould you like to create a new order for this customer?",
-                                                      "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.No)
-                    return;
-            }
-
             orderControl.AddOrderAndCustomer(customer_name, sex, phone, address, type, note, totalMoney, dgv_orders);
             MessageBox.Show("Order added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -312,6 +324,7 @@ namespace Manage_Furniture.Forms
             txt_sum.Text = "";
             dgv_orders.Rows.Clear();
             tempOrderId = 1;
+            EntryLock();
         }
 
         private void txt_search_phone_KeyPress(object sender, KeyPressEventArgs e)
@@ -339,11 +352,11 @@ namespace Manage_Furniture.Forms
                 return;
             }
 
-            //if (phone.Length < 10)
-            //{
-            //    MessageBox.Show("Phone number must be at least 10 digits!", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if (phone.Length < 10)
+            {
+                MessageBox.Show("Phone number must be at least 10 digits!", "Error Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (orderControl.IsPhoneNumberExists(phone))
             {
@@ -358,7 +371,13 @@ namespace Manage_Furniture.Forms
             else
             {
                 DialogResult result = MessageBox.Show("Customer is not in database yet, do you want to add?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
+                EntryAllow();
+                txt_customer_name.ResetText();
+                cmb_customer_sex.SelectedIndex = 0;
+                txt_customer_phone.ResetText();
+                txt_custormer_address.ResetText();
+                cmb_customer_type.SelectedIndex = 0;
+                txt_order_note.ResetText();
                 if (result == DialogResult.Yes)
                 {
                     txt_customer_phone.Text = txt_search_phone.Text;

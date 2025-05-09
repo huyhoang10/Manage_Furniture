@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucHR));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -113,7 +114,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(111, 36);
+            this.label4.Location = new System.Drawing.Point(118, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
@@ -160,7 +161,7 @@
             this.txtTotalE.ForeColor = System.Drawing.Color.Maroon;
             this.txtTotalE.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalE.Location = new System.Drawing.Point(17, 24);
-            this.txtTotalE.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTotalE.Margin = new System.Windows.Forms.Padding(7);
             this.txtTotalE.Name = "txtTotalE";
             this.txtTotalE.PlaceholderText = "";
             this.txtTotalE.SelectedText = "";
@@ -231,10 +232,7 @@
             this.cmbFilter.Items.AddRange(new object[] {
             "All",
             "Male",
-            "Female",
-            "< 100$",
-            "100$ – 500$",
-            "> 500$"});
+            "Female"});
             this.cmbFilter.Location = new System.Drawing.Point(752, 160);
             this.cmbFilter.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFilter.Name = "cmbFilter";
@@ -256,6 +254,8 @@
             this.txtSearch.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
             this.txtSearch.Location = new System.Drawing.Point(1097, 160);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtSearch.Name = "txtSearch";
@@ -340,7 +340,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Location = new System.Drawing.Point(30, 108);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPassword.PlaceholderText = "Password";
@@ -366,7 +366,7 @@
             this.txtSalary.ForeColor = System.Drawing.Color.Black;
             this.txtSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSalary.Location = new System.Drawing.Point(30, 360);
-            this.txtSalary.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSalary.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtSalary.PlaceholderText = "Salary";
@@ -392,7 +392,7 @@
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddress.Location = new System.Drawing.Point(30, 276);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtAddress.PlaceholderText = "Address";
@@ -418,7 +418,7 @@
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.Location = new System.Drawing.Point(30, 192);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(5);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPhone.PlaceholderText = "Phone";
@@ -444,7 +444,7 @@
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Location = new System.Drawing.Point(29, 24);
-            this.txtName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtName.Name = "txtName";
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtName.PlaceholderText = "Name Employee";

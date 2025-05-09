@@ -267,7 +267,10 @@
     <EmbeddedResource Include="Forms\ucWarehouse.resx">
       <DependentUpon>ucWarehouse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\4e80d9de-5ed3-4ee7-8d66-5903f4dc7466.png" />

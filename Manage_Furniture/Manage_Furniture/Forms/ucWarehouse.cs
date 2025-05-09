@@ -24,7 +24,7 @@ namespace Manage_Furniture.Forms
 
         }
 
-        private void ucWarehouse_Load(object sender, EventArgs e)
+        public void ucWarehouse_Load(object sender, EventArgs e)
         {
             LoadDgvView();
             LoadCmbSuppliers();

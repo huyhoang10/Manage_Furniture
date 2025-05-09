@@ -58,7 +58,13 @@ namespace Manage_Furniture.Controls
                     message = "Customer not found.";
                     return false;
                 }
-
+                var customerWithSamePhone = db.customers
+                    .FirstOrDefault(c => c.phone == updatedCustomer.Phone && c.id != updatedCustomer.Id);
+                if (customerWithSamePhone != null)
+                {
+                    message = "Phone number already exists.";
+                    return false;
+                }
                 // Update info
                 existingCustomer.name = updatedCustomer.Name;
                 existingCustomer.phone = updatedCustomer.Phone;

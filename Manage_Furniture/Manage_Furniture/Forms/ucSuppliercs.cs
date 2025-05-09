@@ -25,7 +25,7 @@ namespace Manage_Furniture.Forms
 
         }
 
-        private void ucSuppliercs_Load(object sender, EventArgs e)
+        public void ucSuppliercs_Load(object sender, EventArgs e)
         {
             LoadDgvView();
             btnAdd.Enabled = true;

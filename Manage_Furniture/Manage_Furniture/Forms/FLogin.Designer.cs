@@ -40,19 +40,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_passwd = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_login = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rbtn_admin = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rbtn_employee = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pshow)).BeginInit();
+            this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_username
@@ -68,7 +68,7 @@
             this.txt_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_username.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
             this.txt_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_username.Font = new System.Drawing.Font("Montserrat SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_username.ForeColor = System.Drawing.Color.White;
             this.txt_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_username.Location = new System.Drawing.Point(9, 45);
@@ -112,7 +112,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 33);
+            this.label1.Size = new System.Drawing.Size(147, 33);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username";
             // 
@@ -132,8 +132,8 @@
             // phide
             // 
             this.phide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            //this.phide.BackgroundImage = global::Manage_Furniture.Properties.Resources.eye_off_2;
             this.phide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.phide.Image = ((System.Drawing.Image)(resources.GetObject("phide.Image")));
             this.phide.Location = new System.Drawing.Point(467, 45);
             this.phide.Name = "phide";
             this.phide.Size = new System.Drawing.Size(50, 50);
@@ -158,8 +158,8 @@
             // pshow
             // 
             this.pshow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            //this.pshow.BackgroundImage = global::Manage_Furniture.Properties.Resources.eye_1;
             this.pshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pshow.Image = ((System.Drawing.Image)(resources.GetObject("pshow.Image")));
             this.pshow.Location = new System.Drawing.Point(467, 45);
             this.pshow.Name = "pshow";
             this.pshow.Size = new System.Drawing.Size(50, 50);
@@ -174,7 +174,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 33);
+            this.label2.Size = new System.Drawing.Size(140, 33);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
@@ -191,7 +191,7 @@
             this.txt_passwd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_passwd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
             this.txt_passwd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_passwd.Font = new System.Drawing.Font("Montserrat SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_passwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_passwd.ForeColor = System.Drawing.Color.White;
             this.txt_passwd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_passwd.Location = new System.Drawing.Point(9, 45);
@@ -214,7 +214,7 @@
             this.btn_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
-            this.btn_login.Font = new System.Drawing.Font("Montserrat SemiBold", 18F, System.Drawing.FontStyle.Bold);
+            this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(44)))), ((int)(((byte)(26)))));
             this.btn_login.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(44)))), ((int)(((byte)(26)))));
             this.btn_login.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -228,27 +228,6 @@
             this.btn_login.Text = " LOG IN";
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
-            //this.pictureBox2.BackgroundImage = global::Manage_Furniture.Properties.Resources.logo1;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1292, 151);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(214, 184);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            //this.pictureBox1.BackgroundImage = global::Manage_Furniture.Properties.Resources.armchair_coffee;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(66, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(918, 856);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // rbtn_admin
             // 
             this.rbtn_admin.AutoSize = true;
@@ -258,11 +237,11 @@
             this.rbtn_admin.CheckedState.FillColor = System.Drawing.Color.White;
             this.rbtn_admin.CheckedState.InnerColor = System.Drawing.Color.Maroon;
             this.rbtn_admin.CheckedState.InnerOffset = -6;
-            this.rbtn_admin.Font = new System.Drawing.Font("Montserrat SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.rbtn_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.rbtn_admin.ForeColor = System.Drawing.Color.White;
             this.rbtn_admin.Location = new System.Drawing.Point(28, 16);
             this.rbtn_admin.Name = "rbtn_admin";
-            this.rbtn_admin.Size = new System.Drawing.Size(122, 39);
+            this.rbtn_admin.Size = new System.Drawing.Size(112, 33);
             this.rbtn_admin.TabIndex = 8;
             this.rbtn_admin.Text = "Admin";
             this.rbtn_admin.UncheckedState.BorderColor = System.Drawing.Color.Maroon;
@@ -275,17 +254,19 @@
             // 
             this.rbtn_employee.AutoSize = true;
             this.rbtn_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.rbtn_employee.Checked = true;
             this.rbtn_employee.CheckedState.BorderColor = System.Drawing.Color.Maroon;
             this.rbtn_employee.CheckedState.BorderThickness = 0;
             this.rbtn_employee.CheckedState.FillColor = System.Drawing.Color.White;
             this.rbtn_employee.CheckedState.InnerColor = System.Drawing.Color.Maroon;
             this.rbtn_employee.CheckedState.InnerOffset = -6;
-            this.rbtn_employee.Font = new System.Drawing.Font("Montserrat SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.rbtn_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.rbtn_employee.ForeColor = System.Drawing.Color.White;
             this.rbtn_employee.Location = new System.Drawing.Point(210, 16);
             this.rbtn_employee.Name = "rbtn_employee";
-            this.rbtn_employee.Size = new System.Drawing.Size(165, 39);
+            this.rbtn_employee.Size = new System.Drawing.Size(156, 33);
             this.rbtn_employee.TabIndex = 9;
+            this.rbtn_employee.TabStop = true;
             this.rbtn_employee.Text = "Employee";
             this.rbtn_employee.UncheckedState.BorderColor = System.Drawing.Color.Maroon;
             this.rbtn_employee.UncheckedState.BorderThickness = 2;
@@ -324,6 +305,29 @@
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 100;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(149)))), ((int)(((byte)(122)))));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1292, 151);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(214, 184);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(66, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(918, 856);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // FLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,10 +353,10 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pshow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

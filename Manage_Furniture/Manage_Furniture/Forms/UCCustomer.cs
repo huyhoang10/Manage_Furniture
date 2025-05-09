@@ -25,7 +25,7 @@ namespace Manage_Furniture.Controls
             InitializeComponent();
         }
 
-        private void UCCustomer_Load(object sender, EventArgs e)
+        public void UCCustomer_Load(object sender, EventArgs e)
         {
             LoadData();
             txt_ID.Enabled = false;
@@ -37,6 +37,7 @@ namespace Manage_Furniture.Controls
         private void LoadData()
         {
             Customerclass cc = new Customerclass();
+            dgv_Customer.DataSource = null;
             dgv_Customer.DataSource = cc.GetAllCustomers();
             cmb_FillterType.SelectedItem = "All";
             cmb_Type.SelectedIndex = 0;

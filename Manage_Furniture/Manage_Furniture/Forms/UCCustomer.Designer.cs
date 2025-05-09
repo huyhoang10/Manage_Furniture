@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCustomer));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Update = new Guna.UI2.WinForms.Guna2Button();
             this.txt_Name = new Guna.UI2.WinForms.Guna2TextBox();
@@ -109,7 +110,7 @@
             this.txt_Name.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_Name.PlaceholderText = "Name Customer";
             this.txt_Name.SelectedText = "";
-            this.txt_Name.Size = new System.Drawing.Size(367, 69);
+            this.txt_Name.Size = new System.Drawing.Size(350, 69);
             this.txt_Name.TabIndex = 9;
             // 
             // txt_Phone
@@ -133,7 +134,7 @@
             this.txt_Phone.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_Phone.PlaceholderText = "Phone";
             this.txt_Phone.SelectedText = "";
-            this.txt_Phone.Size = new System.Drawing.Size(367, 69);
+            this.txt_Phone.Size = new System.Drawing.Size(350, 69);
             this.txt_Phone.TabIndex = 11;
             // 
             // txt_ID
@@ -151,13 +152,13 @@
             this.txt_ID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_ID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_ID.Location = new System.Drawing.Point(407, 25);
+            this.txt_ID.Location = new System.Drawing.Point(380, 25);
             this.txt_ID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_ID.Name = "txt_ID";
             this.txt_ID.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_ID.PlaceholderText = "ID";
             this.txt_ID.SelectedText = "";
-            this.txt_ID.Size = new System.Drawing.Size(144, 69);
+            this.txt_ID.Size = new System.Drawing.Size(171, 69);
             this.txt_ID.TabIndex = 12;
             // 
             // txt_Address
@@ -344,8 +345,9 @@
             this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Search.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Search.IconRight = ((System.Drawing.Image)(resources.GetObject("txt_Search.IconRight")));
             this.txt_Search.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.txt_Search.IconRightSize = new System.Drawing.Size(24, 24);
+            this.txt_Search.IconRightSize = new System.Drawing.Size(35, 35);
             this.txt_Search.Location = new System.Drawing.Point(1097, 160);
             this.txt_Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Search.Name = "txt_Search";
@@ -395,9 +397,9 @@
             this.cmb_Sex.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmb_Sex.Location = new System.Drawing.Point(407, 125);
+            this.cmb_Sex.Location = new System.Drawing.Point(380, 125);
             this.cmb_Sex.Name = "cmb_Sex";
-            this.cmb_Sex.Size = new System.Drawing.Size(140, 56);
+            this.cmb_Sex.Size = new System.Drawing.Size(167, 56);
             this.cmb_Sex.TabIndex = 22;
             // 
             // guna2CustomGradientPanel1

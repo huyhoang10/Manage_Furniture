@@ -18,7 +18,7 @@ namespace Manage_Furniture.Controls
             InitializeComponent();
         }
 
-        private void ucHumanResourceManagement_Load(object sender, EventArgs e)
+        public void ucHumanResourceManagement_Load(object sender, EventArgs e)
         {
             dgvView.AutoGenerateColumns = true; // Đảm bảo tự động tạo cột bị tắt
                                                  
@@ -199,6 +199,8 @@ namespace Manage_Furniture.Controls
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            btnAll.FillColor = Color.Green;
+            btnActive.FillColor = Color.White;
             string keyword = txtSearch.Text.Trim();
             var results = controller.SearchEmployees(keyword);  // Tìm kiếm nhân viên theo từ khoá
             dgvView.DataSource = null;
@@ -207,11 +209,11 @@ namespace Manage_Furniture.Controls
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnAll.FillColor = Color.Green;  // Thay đổi màu nền
+            btnActive.FillColor = Color.White;
             string selected = cmbFilter.SelectedItem.ToString();
-
-
             // Lấy toàn bộ danh sách nhân viên
-            List<EmployeeModel> list = controller.GetAll("Active");
+            List<EmployeeModel> list = controller.GetAll();
 
             if (selected == "Male" || selected == "Female")
             {
@@ -219,29 +221,29 @@ namespace Manage_Furniture.Controls
                     emp.Sex.Equals(selected, StringComparison.OrdinalIgnoreCase)
                 ).ToList();
             }
-            else if (selected == "< 100$")
-            {
-                list = list.Where(emp =>
-                    decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary < 100
-                ).ToList();
-            }
+            //else if (selected == "< 100$")
+            //{
+            //    list = list.Where(emp =>
+            //        decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary < 100
+            //    ).ToList();
+            //}
 
-            else if (selected == "100$ – 500$")
-            {
-                list = list.Where(emp =>
-                    decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary >= 100 && salary <= 500
-                ).ToList();
-            }
-            else if (selected == "> 500$")
-            {
-                list = list.Where(emp =>
-                    decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary > 500
-                ).ToList();
-            }
+            //else if (selected == "100$ – 500$")
+            //{
+            //    list = list.Where(emp =>
+            //        decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary >= 100 && salary <= 500
+            //    ).ToList();
+            //}
+            //else if (selected == "> 500$")
+            //{
+            //    list = list.Where(emp =>
+            //        decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary > 500
+            //    ).ToList();
+            //}
             else if (selected == "All")
             {
                 // Không cần lọc gì cả
-                list = controller.GetAll("Active");
+                list = controller.GetAll();
             }
 
             dgvView.DataSource = null;

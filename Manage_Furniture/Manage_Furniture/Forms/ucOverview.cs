@@ -20,13 +20,52 @@ namespace Manage_Furniture.Forms
             InitializeComponent();
             dgvRecentOrder.RowHeadersVisible = false;
             _ucOverviewControl = new ucOverviewControl(); // khởi tạo
+            SetupDataGridView();
+            StyleDataGridView(dgvRecentOrder);
             Loaddata();
         }
 
-        private void Loaddata()
+
+        private void SetupDataGridView()
         {
-            SetupDataGridView();
-            StyleDataGridView(dgvRecentOrder);
+            dgvRecentOrder.Columns.Clear();
+            dgvRecentOrder.Columns.Add("id_order", "ID");
+            dgvRecentOrder.Columns.Add("name", "Customer Name");
+            dgvRecentOrder.Columns.Add("name", "Product Name");
+            dgvRecentOrder.Columns.Add("quantity", "Quantity");
+            dgvRecentOrder.Columns.Add("date_purchase", "Date Purchase");
+            dgvRecentOrder.Columns.Add("money", "Money");
+            dgvRecentOrder.Columns.Add("note", "Note");
+
+            foreach (DataGridViewColumn col in dgvRecentOrder.Columns)
+            {
+                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+        }
+
+        private void StyleDataGridView(DataGridView dgv)
+        {
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 0, 0); ;
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 10, FontStyle.Bold);
+            dgv.DefaultCellStyle.Font = new Font("Montserrat", 10, FontStyle.Regular);
+            dgv.ColumnHeadersHeight = 50;
+            dgv.RowTemplate.Height = 35;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgv.BackgroundColor = Color.White;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.GridColor = Color.LightGray;
+        }
+
+        public void Loaddata()
+        {
+            //SetupDataGridView();
+            //StyleDataGridView(dgvRecentOrder);
 
             // --- Revenue ---
             decimal currentRevenue = _ucOverviewControl.GetCurrentRevenue();
@@ -95,41 +134,7 @@ namespace Manage_Furniture.Forms
             }
         }
 
-        private void SetupDataGridView()
-        {
-            dgvRecentOrder.Columns.Clear();
-            dgvRecentOrder.Columns.Add("id_order", "ID");
-            dgvRecentOrder.Columns.Add("name", "Customer Name");
-            dgvRecentOrder.Columns.Add("name", "Product Name");
-            dgvRecentOrder.Columns.Add("quantity", "Quantity");
-            dgvRecentOrder.Columns.Add("date_purchase", "Date Purchase");
-            dgvRecentOrder.Columns.Add("money", "Money");
-            dgvRecentOrder.Columns.Add("note", "Note");
-
-            foreach (DataGridViewColumn col in dgvRecentOrder.Columns)
-            {
-                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
-        }
-
-        private void StyleDataGridView(DataGridView dgv)
-        {
-            dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 0, 0); ;
-            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 10, FontStyle.Bold);
-            dgv.DefaultCellStyle.Font = new Font("Montserrat", 10, FontStyle.Regular);
-            dgv.ColumnHeadersHeight = 50;
-            dgv.RowTemplate.Height = 35;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.White;
-            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgv.BackgroundColor = Color.White;
-            dgv.BorderStyle = BorderStyle.None;
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgv.GridColor = Color.LightGray;
-        }
+        
 
         private void StyleChart(Chart chart)
         {
