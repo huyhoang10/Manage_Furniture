@@ -6,6 +6,7 @@ using Manage_Furniture.Controls;
 using Manage_Furniture.ADO;
 using System.Drawing;
 using System.Collections.Generic;
+using Manage_Furniture.Forms;
 
 namespace Manage_Furniture.Controls
 {
@@ -359,34 +360,16 @@ namespace Manage_Furniture.Controls
            
         }
 
-        private void txt_custormer_address_TextChanged(object sender, EventArgs e)
+        private void btn_Excel_Click(object sender, EventArgs e)
         {
-
+            List<EmployeeModel> employees = controller.GetAll();
+            controller.ExportEmployeesToExcel(employees);
         }
 
-        private void txtPhone_TextChanged(object sender, EventArgs e)
+        private void btn_Report_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSalary_TextChanged(object sender, EventArgs e)
-        {
-
+            FReportEmployee report = new FReportEmployee();
+            report.ShowDialog();
         }
     }
 }

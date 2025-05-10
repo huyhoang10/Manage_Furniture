@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Manage_Furniture.ADO;
 using System.Windows.Forms;
+using ClosedXML.Excel;
+using System;
+using System.IO;
 
 namespace Manage_Furniture.Controls
 {
@@ -166,6 +169,61 @@ namespace Manage_Furniture.Controls
                 e.status
             )).ToList();
         }
+        public void ExportEmployeesToExcel(List<EmployeeModel> employees)
+        {
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Employees");
+
+                // Tiêu đề cột
+                worksheet.Cell(1, 1).Value = "ID";
+                worksheet.Cell(1, 2).Value = "Name";
+                worksheet.Cell(1, 3).Value = "Phone";
+                worksheet.Cell(1, 4).Value = "Sex";
+                worksheet.Cell(1, 5).Value = "Address";
+                worksheet.Cell(1, 6).Value = "Salary";
+                worksheet.Cell(1, 7).Value = "Password";
+                worksheet.Cell(1, 8).Value = "Status";
+
+                // Đổ dữ liệu
+                for (int i = 0; i < employees.Count; i++)
+                {
+                    var emp = employees[i];
+                    worksheet.Cell(i + 2, 1).Value = emp.Id;
+                    worksheet.Cell(i + 2, 2).Value = emp.Name;
+                    worksheet.Cell(i + 2, 3).Value = emp.Phone;
+                    worksheet.Cell(i + 2, 4).Value = emp.Sex;
+                    worksheet.Cell(i + 2, 5).Value = emp.Address;
+                    worksheet.Cell(i + 2, 6).Value = emp.Salary;
+                    worksheet.Cell(i + 2, 7).Value = emp.Password;
+                    worksheet.Cell(i + 2, 8).Value = emp.Status;
+                }
+
+                // Auto fit
+                worksheet.Columns().AdjustToContents();
+
+                // Lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Excel Workbook (*.xlsx)|*.xlsx",
+                    Title = "Save Employees Excel File"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        workbook.SaveAs(saveFileDialog.FileName);
+                        MessageBox.Show("Export successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error while saving Excel: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                
+            }
+        }
     }
 
-    }
+}

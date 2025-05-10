@@ -51,6 +51,8 @@
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btn_Report = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Excel = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -416,11 +418,47 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(575, 550);
             this.guna2CustomGradientPanel1.TabIndex = 12;
             // 
+            // btn_Report
+            // 
+            this.btn_Report.BorderRadius = 5;
+            this.btn_Report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Report.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Report.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Report.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Report.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.ForeColor = System.Drawing.Color.White;
+            this.btn_Report.Location = new System.Drawing.Point(675, 210);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(114, 33);
+            this.btn_Report.TabIndex = 27;
+            this.btn_Report.Text = "Report";
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
+            // 
+            // btn_Excel
+            // 
+            this.btn_Excel.BorderRadius = 5;
+            this.btn_Excel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Excel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Excel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Excel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Excel.FillColor = System.Drawing.Color.DarkGreen;
+            this.btn_Excel.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Excel.ForeColor = System.Drawing.Color.White;
+            this.btn_Excel.Location = new System.Drawing.Point(795, 210);
+            this.btn_Excel.Name = "btn_Excel";
+            this.btn_Excel.Size = new System.Drawing.Size(114, 33);
+            this.btn_Excel.TabIndex = 28;
+            this.btn_Excel.Text = "Excel";
+            this.btn_Excel.Click += new System.EventHandler(this.btn_Excel_Click);
+            // 
             // ucSuppliercs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.Controls.Add(this.btn_Excel);
+            this.Controls.Add(this.btn_Report);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.btnCancel);
@@ -462,5 +500,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Note;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2Button btn_Report;
+        private Guna.UI2.WinForms.Guna2Button btn_Excel;
     }
 }

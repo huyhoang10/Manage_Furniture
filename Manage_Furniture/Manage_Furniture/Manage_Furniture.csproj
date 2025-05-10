@@ -34,21 +34,76 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- References -->
+    <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.104.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.1.2.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=8.0.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.8.0.3\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.8.0.0\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.4.0.0\lib\net47\RBush.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Xml, Version=8.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.8.0.2\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -65,6 +120,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\connectDatabase.cs" />
+    <Compile Include="ADO\dtOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtOrder.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ADO\dtsCRVBill.cs">
       <DependentUpon>dtsCRVBill.xsd</DependentUpon>
     </Compile>
@@ -73,8 +133,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsCRVBill.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ADO\dtsCustomer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsCustomer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\dtsHR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsHR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\dtsSupplier.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsSupplier.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\dtsWarehouse.cs">
+      <DependentUpon>dtsWarehouse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\dtsWarehouse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsWarehouse.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ADO\manager_furniture.designer.cs" />
     <Compile Include="Controls\FEmployeeControl.cs" />
+    <Compile Include="Controls\Helper.cs" />
     <Compile Include="Controls\HRControl.cs" />
     <Compile Include="Controls\UCCustomerController.cs" />
     <Compile Include="Controls\ucLoginControl.cs" />
@@ -86,6 +170,36 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crvBill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\crvHR.cs">
+      <DependentUpon>crvHR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\crvSupplier.cs">
+      <DependentUpon>crvSupplier.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\crvWarehouse.cs">
+      <DependentUpon>crvWarehouse.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\crvOrder.cs">
+      <DependentUpon>crvOrder.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\crvCustomer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvCustomer.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\FAdmin.cs">
@@ -111,6 +225,36 @@
     </Compile>
     <Compile Include="Forms\FManager.Designer.cs">
       <DependentUpon>FManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FReportCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FReportCustomer.Designer.cs">
+      <DependentUpon>FReportCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FReportEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FReportEmployee.Designer.cs">
+      <DependentUpon>FReportEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FReportOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FReportOrder.Designer.cs">
+      <DependentUpon>FReportOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FReportSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FReportSupplier.Designer.cs">
+      <DependentUpon>FReportSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FReportWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FReportWarehouse.Designer.cs">
+      <DependentUpon>FReportWarehouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FWelcome.cs">
       <SubType>Form</SubType>
@@ -179,6 +323,17 @@
     <Compile Include="Properties\Settings.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ADO\dtOrder.xsc">
+      <DependentUpon>dtOrder.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtOrder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtOrder.xss">
+      <DependentUpon>dtOrder.xsd</DependentUpon>
+    </None>
     <None Include="ADO\dtsCRVBill.xsc">
       <DependentUpon>dtsCRVBill.xsd</DependentUpon>
     </None>
@@ -189,6 +344,50 @@
     </None>
     <None Include="ADO\dtsCRVBill.xss">
       <DependentUpon>dtsCRVBill.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsCustomer.xsc">
+      <DependentUpon>dtsCustomer.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsCustomer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsCustomer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtsCustomer.xss">
+      <DependentUpon>dtsCustomer.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsHR.xsc">
+      <DependentUpon>dtsHR.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsHR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsHR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtsHR.xss">
+      <DependentUpon>dtsHR.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsSupplier.xsc">
+      <DependentUpon>dtsSupplier.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsSupplier.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsSupplier.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtsSupplier.xss">
+      <DependentUpon>dtsSupplier.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsWarehouse.xsc">
+      <DependentUpon>dtsWarehouse.xsd</DependentUpon>
+    </None>
+    <None Include="ADO\dtsWarehouse.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsWarehouse.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADO\dtsWarehouse.xss">
+      <DependentUpon>dtsWarehouse.xsd</DependentUpon>
     </None>
     <None Include="ADO\manager_furniture.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -225,6 +424,26 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crvBill.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crvHR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvHR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crvSupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvSupplier.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crvWarehouse.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvWarehouse.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crvOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crvCustomer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvCustomer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FEmployee.resx">
       <DependentUpon>FEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +452,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FManager.resx">
       <DependentUpon>FManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FReportCustomer.resx">
+      <DependentUpon>FReportCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FReportEmployee.resx">
+      <DependentUpon>FReportEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FReportOrder.resx">
+      <DependentUpon>FReportOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FReportSupplier.resx">
+      <DependentUpon>FReportSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FReportWarehouse.resx">
+      <DependentUpon>FReportWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FWelcome.resx">
       <DependentUpon>FWelcome.cs</DependentUpon>

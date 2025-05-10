@@ -40,12 +40,12 @@
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
-            this.ucHR1 = new Manage_Furniture.Controls.ucHR();
             this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
             this.ucWarehouse1 = new Manage_Furniture.Forms.ucWarehouse();
             this.ucCustomer1 = new Manage_Furniture.Controls.UCCustomer();
             this.ucOrder1 = new Manage_Furniture.Forms.UCOrder();
             this.ucOverview1 = new Manage_Furniture.Forms.ucOverview();
+            this.ucHR1 = new Manage_Furniture.Controls.ucHR();
             this.pnlAllButton.SuspendLayout();
             this.pnlUserControls.SuspendLayout();
             this.SuspendLayout();
@@ -263,15 +263,6 @@
             this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
             this.pnlUserControls.TabIndex = 3;
             // 
-            // ucHR1
-            // 
-            this.ucHR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucHR1.Location = new System.Drawing.Point(0, 0);
-            this.ucHR1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucHR1.Name = "ucHR1";
-            this.ucHR1.Size = new System.Drawing.Size(0, 0);
-            this.ucHR1.TabIndex = 5;
-            // 
             // ucSuppliercs1
             // 
             this.ucSuppliercs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
@@ -316,6 +307,15 @@
             this.ucOverview1.Size = new System.Drawing.Size(1552, 1036);
             this.ucOverview1.TabIndex = 0;
             // 
+            // ucHR1
+            // 
+            this.ucHR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucHR1.Location = new System.Drawing.Point(0, 0);
+            this.ucHR1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucHR1.Name = "ucHR1";
+            this.ucHR1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucHR1.TabIndex = 5;
+            // 
             // FEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,7 +352,7 @@
         private Controls.UCCustomer ucCustomer1;
         private UCOrder ucOrder1;
         private ucOverview ucOverview1;
-        private Controls.ucHR ucHR1;
         private Guna.UI2.WinForms.Guna2Button btnUser;
+        private Controls.ucHR ucHR1;
     }
 }

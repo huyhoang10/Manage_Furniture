@@ -57,6 +57,8 @@
             this.btnBlock = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btn_Report = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Excel = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -347,7 +349,6 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(355, 72);
             this.txtPassword.TabIndex = 10;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtSalary
             // 
@@ -373,7 +374,6 @@
             this.txtSalary.SelectedText = "";
             this.txtSalary.Size = new System.Drawing.Size(515, 72);
             this.txtSalary.TabIndex = 7;
-            this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             // 
             // txtAddress
             // 
@@ -399,7 +399,6 @@
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(515, 72);
             this.txtAddress.TabIndex = 6;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // txtPhone
             // 
@@ -425,7 +424,6 @@
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(515, 72);
             this.txtPhone.TabIndex = 5;
-            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // txtName
             // 
@@ -451,7 +449,6 @@
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(516, 72);
             this.txtName.TabIndex = 4;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnDelete
             // 
@@ -504,7 +501,7 @@
             this.dgvView.RowHeadersVisible = false;
             this.dgvView.RowHeadersWidth = 82;
             this.dgvView.RowTemplate.Height = 30;
-            this.dgvView.Size = new System.Drawing.Size(861, 571);
+            this.dgvView.Size = new System.Drawing.Size(861, 504);
             this.dgvView.TabIndex = 0;
             this.dgvView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -578,7 +575,7 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.txtTotalE);
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(25, 258);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 708);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 631);
             this.guna2CustomGradientPanel2.TabIndex = 25;
             // 
             // guna2CustomGradientPanel1
@@ -595,11 +592,47 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(575, 462);
             this.guna2CustomGradientPanel1.TabIndex = 26;
             // 
+            // btn_Report
+            // 
+            this.btn_Report.BorderRadius = 5;
+            this.btn_Report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Report.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Report.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Report.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.ForeColor = System.Drawing.Color.White;
+            this.btn_Report.Location = new System.Drawing.Point(669, 895);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(114, 33);
+            this.btn_Report.TabIndex = 29;
+            this.btn_Report.Text = "Report";
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
+            // 
+            // btn_Excel
+            // 
+            this.btn_Excel.BorderRadius = 5;
+            this.btn_Excel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Excel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Excel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Excel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Excel.FillColor = System.Drawing.Color.DarkGreen;
+            this.btn_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Excel.ForeColor = System.Drawing.Color.White;
+            this.btn_Excel.Location = new System.Drawing.Point(789, 895);
+            this.btn_Excel.Name = "btn_Excel";
+            this.btn_Excel.Size = new System.Drawing.Size(114, 33);
+            this.btn_Excel.TabIndex = 30;
+            this.btn_Excel.Text = "Excel";
+            this.btn_Excel.Click += new System.EventHandler(this.btn_Excel_Click);
+            // 
             // ucHR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.Controls.Add(this.btn_Excel);
+            this.Controls.Add(this.btn_Report);
             this.Controls.Add(this.btnBlock);
             this.Controls.Add(this.cmbFilter);
             this.Controls.Add(this.btnDelete);
@@ -652,5 +685,7 @@
         private Guna.UI2.WinForms.Guna2Button btnBlock;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2Button btn_Report;
+        private Guna.UI2.WinForms.Guna2Button btn_Excel;
     }
 }
