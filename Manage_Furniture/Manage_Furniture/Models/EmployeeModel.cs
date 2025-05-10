@@ -28,6 +28,7 @@ namespace Manage_Furniture.Models
             Status = status;
             Password = password;
         }
+        public EmployeeModel() { }
     }
 
 

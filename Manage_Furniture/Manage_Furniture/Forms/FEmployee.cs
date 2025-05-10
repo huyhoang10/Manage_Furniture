@@ -25,6 +25,7 @@ namespace Manage_Furniture.Forms
             SetAllButton();
             btnOrder.FillColor = Color.FromArgb(197, 166, 158);
             ucOverview1.BringToFront();
+            btnUser.Text = "Hi! "+FLogin.userLogin.Name;
         }
 
         protected virtual void SetAllButton()
@@ -82,6 +83,18 @@ namespace Manage_Furniture.Forms
             btnHR.FillColor = Color.FromArgb(197, 166, 158);
             ucHR1.BringToFront();
             ucHR1.ucHumanResourceManagement_Load(sender, e);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to log out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FLogin.userLogin.Name = "";
+                FLogin.userLogin.Phone = "";
+                FLogin loginForm = new FLogin();
+                loginForm.Show();
+                this.Close();
+            }
         }
     }
 }

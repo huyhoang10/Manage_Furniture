@@ -265,20 +265,36 @@ namespace Manage_Furniture.ADO
         // Top 3 sản phẩm order gần đây nhất    
         public static List<RecentOrder> GetTop4RecentOrders()
         {
-            var orders = (from o in db.orders
-                          join p in db.products on o.id_product equals p.id
-                          join c in db.customers on o.id_customer equals c.id
-                          orderby o.date_purchase descending
-                          select new RecentOrder
-                          {
-                              Id = o.id_order,
-                              CustomerName = c.name,      // Thay vì IdCustomer
-                              ProductName = p.name,        // Thay vì IdProduct
-                              Quantity = o.quantity.Value,
-                              DatePurchase = o.date_purchase.Value,
-                              Money = o.money ?? 0,
-                              Note = o.note
-                          }).Take(4).ToList();
+            //var orders1 = (from o in db.orders
+            //              join p in db.products on o.id_product equals p.id
+            //              join c in db.customers on o.id_customer equals c.id
+            //              //orderby o.date_purchase descending
+            //              orderby c.id descending
+            //              select new RecentOrder
+            //              {
+            //                  Id = o.id_order,
+            //                  CustomerName = c.name,      // Thay vì IdCustomer
+            //                  //ProductName = p.name,        // Thay vì IdProduct
+            //                  //Quantity = o.quantity.Value,
+            //                  DatePurchase = o.date_purchase.Value,
+            //                  Money = o.money ?? 0,
+            //                  //Note = o.note
+            //              }).Take(4).ToList();
+            var orders = (
+                from b in db.bills
+                join o in db.orders on b.id_order equals o.id_order
+                join c in db.customers on o.id_customer equals c.id
+                group new { b, o, c } by b.id_order into g
+                let first = g.FirstOrDefault()
+                orderby first.o.date_purchase descending
+                select new RecentOrder
+                {
+                    Id = first.b.id_order,
+                    CustomerName = first.c.name,
+                    DatePurchase = first.o.date_purchase.Value,
+                    Money = first.b.money ?? 0,
+                    Note = first.o.note
+                }).Take(4).ToList();
             return orders;
         }
 
@@ -294,8 +310,8 @@ namespace Manage_Furniture.ADO
     {
         public int Id { get; set; }
         public string CustomerName { get; set; } 
-        public string ProductName { get; set; }
-        public int Quantity { get; set; }
+        //public string ProductName { get; set; }
+        //public int Quantity { get; set; }
         public DateTime DatePurchase { get; set; }
         public decimal Money { get; set; }
         public string Note { get; set; }

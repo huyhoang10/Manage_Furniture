@@ -31,8 +31,8 @@ namespace Manage_Furniture.Forms
             dgvRecentOrder.Columns.Clear();
             dgvRecentOrder.Columns.Add("id_order", "ID");
             dgvRecentOrder.Columns.Add("name", "Customer Name");
-            dgvRecentOrder.Columns.Add("name", "Product Name");
-            dgvRecentOrder.Columns.Add("quantity", "Quantity");
+            //dgvRecentOrder.Columns.Add("name", "Product Name");
+            //dgvRecentOrder.Columns.Add("quantity", "Quantity");
             dgvRecentOrder.Columns.Add("date_purchase", "Date Purchase");
             dgvRecentOrder.Columns.Add("money", "Money");
             dgvRecentOrder.Columns.Add("note", "Note");
@@ -124,8 +124,8 @@ namespace Manage_Furniture.Forms
                     dgvRecentOrder.Rows.Add(
                         order.Id,
                         order.CustomerName,
-                        order.ProductName,
-                        order.Quantity,
+                        //order.ProductName,
+                        //order.Quantity,
                         order.DatePurchase.ToShortDateString(),
                         order.Money,
                         order.Note

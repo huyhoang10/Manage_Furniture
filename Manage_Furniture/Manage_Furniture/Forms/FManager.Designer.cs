@@ -28,12 +28,12 @@
         /// </summary>
         protected  void InitializeComponent()
         {
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // picLogo
             // 
-            this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            //this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             // 
             // FManager
             // 
@@ -45,7 +45,7 @@
             this.Name = "FManager";
             this.Text = "FManager";
             this.Load += new System.EventHandler(this.FManager_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

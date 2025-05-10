@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Manage_Furniture.ADO;
 using Manage_Furniture.Controls;
+using Manage_Furniture.Models;
 
 namespace Manage_Furniture.Forms
 {
+   
     public partial class FLogin : Form
     {
+        public static EmployeeModel  userLogin = new EmployeeModel();
         public FLogin()
         {
             InitializeComponent();
@@ -67,18 +70,23 @@ namespace Manage_Furniture.Forms
                             return;
                         }
                     }
+                    
                     if (loginRole == "admin")
                     {
+                        userLogin.Name = "Admin";
                         FManager fManager = new FManager();
                         fManager.ShowDialog();
                     }
                     else if (loginRole == "employee")
                     {
+                        userLogin = uclogin_control.GetEmployee(username);
+                        //employeeModel = uclogin_control.GetEmployee(username);
                         FEmployee fEmployee = new FEmployee();
+                        fEmployee.ShowInTaskbar = false;
                         fEmployee.ShowDialog();
                     }
-
-                    this.Hide();
+                    
+                    //this.Hide();
                 }
                 else
                 {

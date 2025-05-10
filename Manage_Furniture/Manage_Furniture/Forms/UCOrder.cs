@@ -23,12 +23,12 @@ namespace Manage_Furniture.Forms
             LoadProduct();
             InitializeDataGridViewEvents();
             EntryLock();
+            dgv_orders.EditMode = DataGridViewEditMode.EditOnEnter;
         }
 
         private void EntryAllow() { 
             txt_customer_name.Enabled = true;
             //txt_customer_phone.Enabled = true;
-            txt_order_note.Enabled = true;
             txt_custormer_address.Enabled = true;
             cmb_customer_sex.Enabled = true;
             cmb_customer_type.Enabled = true;
@@ -38,7 +38,6 @@ namespace Manage_Furniture.Forms
         {
             txt_customer_name.Enabled = false;
             txt_customer_phone.Enabled = false;
-            txt_order_note.Enabled = false;
             txt_custormer_address.Enabled = false;
             cmb_customer_sex.Enabled = false;
             cmb_customer_type.Enabled = false;
@@ -222,9 +221,14 @@ namespace Manage_Furniture.Forms
 
             if (dgv_orders.Rows.Count > 0)
             {
+                //tempOrderId = dgv_orders.Rows.Cast<DataGridViewRow>()
+                //    .Where(r => r.Cells["col_id"].Value != null)
+                //    .Max(r => (int)r.Cells["col_id"].Value) + 1;
                 tempOrderId = dgv_orders.Rows.Cast<DataGridViewRow>()
-                    .Where(r => r.Cells["col_id"].Value != null)
-                    .Max(r => (int)r.Cells["col_id"].Value) + 1;
+                    .Where(r => r.Cells["col_id"].Value != null && int.TryParse(r.Cells["col_id"].Value.ToString(), out _))
+                    .Select(r => Convert.ToInt32(r.Cells["col_id"].Value))
+                    .DefaultIfEmpty(0)
+                    .Max() + 1;
             }
             else
             {

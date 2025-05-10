@@ -28,5 +28,19 @@ namespace Manage_Furniture.Controls
             }
             return false;
         }
+
+        public EmployeeModel GetEmployee(string phone)
+        {
+            var db = new manager_furnitureDataContext();
+            var employee = db.employees.FirstOrDefault(e => e.phone == phone);
+            if (employee != null)
+            {
+                EmployeeModel employeeModel = new EmployeeModel();
+                employeeModel.Name = employee.name;
+                employeeModel.Phone = employee.phone;
+                return employeeModel;
+            }
+            return null;
+        }
     }
 }

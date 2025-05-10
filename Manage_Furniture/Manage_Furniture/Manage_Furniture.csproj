@@ -112,12 +112,6 @@
     <Compile Include="Forms\FManager.Designer.cs">
       <DependentUpon>FManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FOverview.Designer.cs">
-      <DependentUpon>FOverview.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,9 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FManager.resx">
       <DependentUpon>FManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FOverview.resx">
-      <DependentUpon>FOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FWelcome.resx">
       <DependentUpon>FWelcome.cs</DependentUpon>

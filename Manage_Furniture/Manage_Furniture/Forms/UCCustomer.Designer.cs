@@ -82,8 +82,7 @@
             this.btn_Update.Location = new System.Drawing.Point(1156, 708);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.ShadowDecoration.BorderRadius = 24;
-            this.btn_Update.ShadowDecoration.Color = System.Drawing.Color.Gray;
-            this.btn_Update.ShadowDecoration.Enabled = true;
+            this.btn_Update.ShadowDecoration.Color = System.Drawing.SystemColors.GrayText;
             this.btn_Update.Size = new System.Drawing.Size(183, 67);
             this.btn_Update.TabIndex = 4;
             this.btn_Update.Text = "Update";
