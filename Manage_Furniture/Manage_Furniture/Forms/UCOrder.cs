@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Windows.Forms;
 using Manage_Furniture.ADO;
 using Manage_Furniture.Controls;
+using Manage_Furniture.Models;
 
 namespace Manage_Furniture.Forms
 {
@@ -364,6 +365,21 @@ namespace Manage_Furniture.Forms
                     txt_customer_phone.Text = txt_search_phone.Text;
                 }
             }
+        }
+
+        private void btn_Excel_Click(object sender, EventArgs e)
+        {
+            Customerclass cc = new Customerclass();
+            List<order> orders = orderControl.GetAllOrders();
+            List<product> products = orderControl.GetAllProducts();
+            List<customer> customers = cc.GetAllCustomers();
+            orderControl.ExportOrdersToExcel(orders,products,customers);
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            FReportOrder fReportOrder = new FReportOrder();
+            fReportOrder.ShowDialog();
         }
     }
 }

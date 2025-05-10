@@ -135,5 +135,22 @@ namespace Manage_Furniture.Forms
         {
             dgvView.DataSource = suppliersControls.SearchSupplier(txtSearch.Text);
         }
+
+        private void txtContact_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Excel_Click(object sender, EventArgs e)
+        {
+            List<Suppliers> listSuppliers = suppliersControls.DisplaySuppliers();
+            suppliersControls.ExportSuppliersToExcel(listSuppliers);
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            FReportSupplier fReportSupplier = new FReportSupplier();
+            fReportSupplier.ShowDialog();
+        }
     }
 }

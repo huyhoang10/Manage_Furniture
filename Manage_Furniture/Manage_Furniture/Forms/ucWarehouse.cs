@@ -1,4 +1,6 @@
-﻿using Manage_Furniture.Controls;
+﻿using Manage_Furniture.ADO;
+using Manage_Furniture.Controls;
+using Manage_Furniture.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -206,6 +208,19 @@ namespace Manage_Furniture.Forms
         private void cmbSuppliers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Excel_Click(object sender, EventArgs e)
+        {
+            List<Products> listProducts = warehouseControls.DisplayInformation();
+            warehouseControls.ExportProductsToExcel(listProducts);
+
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            FReportWarehouse fReportWarehouse = new FReportWarehouse();
+            fReportWarehouse.ShowDialog();
         }
     }
 }

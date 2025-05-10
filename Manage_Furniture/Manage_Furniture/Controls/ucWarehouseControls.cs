@@ -7,7 +7,9 @@ using System.Net;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using ClosedXML.Excel;
+using System.Windows.Forms;
+using System.Data;
 
 
 namespace Manage_Furniture.Controls
@@ -159,6 +161,94 @@ namespace Manage_Furniture.Controls
         public List<Products> SearchProducts(string key)
         {
             return connectDB.SearchProducts(key);
+        }
+
+        public void ExportProductsToExcel(List<Products> products)
+        {
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Warehouse");
+
+                // Tiêu đề cột
+                worksheet.Cell(1, 1).Value = "ID";
+                worksheet.Cell(1, 2).Value = "Name";
+                worksheet.Cell(1, 3).Value = "Supplier ID";
+                worksheet.Cell(1, 4).Value = "Price";
+                worksheet.Cell(1, 5).Value = "Brand";
+                worksheet.Cell(1, 6).Value = "Category";
+                worksheet.Cell(1, 7).Value = "Quantity";
+
+                // Dữ liệu
+                for (int i = 0; i < products.Count; i++)
+                {
+                    var p = products[i];
+                    worksheet.Cell(i + 2, 1).Value = p.Id;
+                    worksheet.Cell(i + 2, 2).Value = p.Name;
+                    worksheet.Cell(i + 2, 3).Value = p.Supplier;
+                    worksheet.Cell(i + 2, 4).Value = p.Price;
+                    worksheet.Cell(i + 2, 5).Value = p.Brand;
+                    worksheet.Cell(i + 2, 6).Value = p.Subcategory;
+                    worksheet.Cell(i + 2, 7).Value = p.Quantity;
+                }
+
+                worksheet.Columns().AdjustToContents();
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Excel Workbook (*.xlsx)|*.xlsx",
+                    Title = "Save Warehouse Product List"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        workbook.SaveAs(saveFileDialog.FileName);
+                        MessageBox.Show("Export successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error while saving Excel: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        public DataTable CreateProductsDataTable(List<Products> products)
+        {
+            // Tạo DataTable và định nghĩa các cột
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID", typeof(string));
+            dt.Columns.Add("Product", typeof(string));
+            dt.Columns.Add("Supplier", typeof(int));  // Hoặc có thể sử dụng string nếu muốn lấy tên nhà cung cấp
+            dt.Columns.Add("Price", typeof(decimal));
+            dt.Columns.Add("Brand", typeof(string));
+            dt.Columns.Add("Subcategory", typeof(string));
+            dt.Columns.Add("Quantity", typeof(int));
+
+            // Thêm dữ liệu vào DataTable từ danh sách products
+            foreach (var product in products)
+            {
+                DataRow row = dt.NewRow();
+                row["ID"] = product.Id.ToString();
+                row["Product"] = product.Name;
+                string[] parts = product.Supplier.Split('-');
+                if (parts.Length > 0 && int.TryParse(parts[0].Trim(), out int supplierId))
+                {
+                    row["Supplier"] = supplierId;
+                }
+                else
+                {
+                    row["Supplier"] = DBNull.Value;  // hoặc xử lý lỗi phù hợp
+                } // Nếu cần lấy tên nhà cung cấp thay vì ID, bạn sẽ cần truy vấn thêm từ bảng Supplier
+                row["Price"] = product.Price;
+                row["Brand"] = product.Brand;
+                row["Subcategory"] = product.Subcategory;
+                row["Quantity"] = product.Quantity;
+
+                dt.Rows.Add(row);
+            }
+
+            return dt;
         }
     }
 }

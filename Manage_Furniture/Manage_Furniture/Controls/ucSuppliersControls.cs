@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Manage_Furniture.Models;
 using Manage_Furniture.ADO;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 namespace Manage_Furniture.Controls
 {
     internal class ucSuppliersControls
@@ -82,6 +83,52 @@ namespace Manage_Furniture.Controls
         public List<Suppliers> SearchSupplier(string key)
         {
             return connectDB.SearchSuppliers(key);
+        }
+        public void ExportSuppliersToExcel(List<Suppliers> suppliers)
+        {
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Suppliers");
+
+                // Header
+                worksheet.Cell(1, 1).Value = "ID";
+                worksheet.Cell(1, 2).Value = "Name";
+                worksheet.Cell(1, 3).Value = "Contact";
+                worksheet.Cell(1, 4).Value = "Address";
+                worksheet.Cell(1, 5).Value = "Note";
+
+                // Dữ liệu
+                for (int i = 0; i < suppliers.Count; i++)
+                {
+                    var s = suppliers[i];
+                    worksheet.Cell(i + 2, 1).Value = s.Id;
+                    worksheet.Cell(i + 2, 2).Value = s.Name;
+                    worksheet.Cell(i + 2, 3).Value = s.Contact;
+                    worksheet.Cell(i + 2, 4).Value = s.Address;
+                    worksheet.Cell(i + 2, 5).Value = s.Note;
+                }
+
+                worksheet.Columns().AdjustToContents();
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Excel Workbook (*.xlsx)|*.xlsx",
+                    Title = "Save Suppliers Excel File"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        workbook.SaveAs(saveFileDialog.FileName);
+                        MessageBox.Show("Export successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error while saving Excel: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

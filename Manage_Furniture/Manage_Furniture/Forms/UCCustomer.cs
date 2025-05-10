@@ -76,7 +76,7 @@ namespace Manage_Furniture.Controls
             {
                 Customerclass updatedCustomer = new Customerclass
                 {
-                    Id = int.Parse(txt_ID.Text),
+                    Id = txt_ID.Text,
                     Name = txt_Name.Text.Trim(),
                     Phone = txt_Phone.Text.Trim(),
                     Sex = cmb_Sex.SelectedItem?.ToString().Trim(),
@@ -142,6 +142,20 @@ namespace Manage_Furniture.Controls
                 // Gán kết quả đã lọc vào DataGridView
                 dgv_Customer.DataSource = filteredCustomers;
             }
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            FReportCustomer report = new FReportCustomer();
+            report.ShowDialog();
+        }
+
+        private void btn_Excel_Click(object sender, EventArgs e)
+        {
+            Customerclass cc = new Customerclass();
+            UCCustomerController controller = new UCCustomerController();
+            List<customer> listcustomers = cc.GetAllCustomers();
+            controller.ExportCustomersToExcel(listcustomers);
         }
     }
 }

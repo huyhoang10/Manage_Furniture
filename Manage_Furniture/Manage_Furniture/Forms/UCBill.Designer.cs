@@ -53,6 +53,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "UCBill";
             this.Text = "UCBill";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

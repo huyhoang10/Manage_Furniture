@@ -9,6 +9,9 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Manage_Furniture.ADO;
 using Manage_Furniture.Models;
+using ClosedXML.Excel;
+using System.IO;
+
 namespace Manage_Furniture.Controls
 {
     
@@ -20,7 +23,7 @@ namespace Manage_Furniture.Controls
         {
             return new Customerclass
             {
-                Id = Convert.ToInt32(row.Cells["col_id"].Value),
+                Id = row.Cells["col_id"].Value?.ToString(),
                 Name = row.Cells["col_name"].Value?.ToString(),
                 Phone = row.Cells["col_phone"].Value?.ToString(),
                 Sex = row.Cells["col_sex"].Value?.ToString(),
@@ -51,7 +54,19 @@ namespace Manage_Furniture.Controls
 
             try
             {
-                var existingCustomer = db.customers.FirstOrDefault(c => c.id == updatedCustomer.Id);
+                int customerId = Convert.ToInt32(updatedCustomer.Id);
+
+                // Kiểm tra trùng số điện thoại (trừ chính khách hàng đang chỉnh sửa)
+                bool isDuplicatePhone = db.customers.Any(c =>
+                    c.phone == updatedCustomer.Phone && c.id != customerId);
+
+                if (isDuplicatePhone)
+                {
+                    message = "This phone number is already in use by another customer.";
+                    return false;
+                }
+
+                var existingCustomer = db.customers.FirstOrDefault(c => c.id == customerId);
 
                 if (existingCustomer == null)
                 {
@@ -77,6 +92,7 @@ namespace Manage_Furniture.Controls
                 return false;
             }
         }
+
 
         public void SearchCustomersByPhone(String txt_SearchPhone, DataGridView dgv_Customer)
         {
@@ -112,6 +128,48 @@ namespace Manage_Furniture.Controls
 
             // Trả về danh sách khách hàng đã lọc
             return query.ToList();
+        }
+        public void ExportCustomersToExcel(List<customer> customers)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog()
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                Title = "Save Customer List"
+            })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    // Tạo workbook mới
+                    using (var workbook = new XLWorkbook())
+                    {
+                        // Thêm worksheet vào workbook
+                        var worksheet = workbook.Worksheets.Add("Customers");
+
+                        // Header
+                        worksheet.Cell(1, 1).Value = "ID";
+                        worksheet.Cell(1, 2).Value = "Name";
+                        worksheet.Cell(1, 3).Value = "Phone";
+                        worksheet.Cell(1, 4).Value = "Sex";
+                        worksheet.Cell(1, 5).Value = "Address";
+                        worksheet.Cell(1, 6).Value = "Type";
+
+                        // Dữ liệu
+                        for (int i = 0; i < customers.Count; i++)
+                        {
+                            worksheet.Cell(i + 2, 1).Value = customers[i].id;
+                            worksheet.Cell(i + 2, 2).Value = customers[i].name;
+                            worksheet.Cell(i + 2, 3).Value = customers[i].phone;
+                            worksheet.Cell(i + 2, 4).Value = customers[i].sex;
+                            worksheet.Cell(i + 2, 5).Value = customers[i].address;
+                            worksheet.Cell(i + 2, 6).Value = customers[i].type;
+                        }
+
+                        // Lưu file
+                        workbook.SaveAs(sfd.FileName);
+                        MessageBox.Show("Export successful!", "Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
     }
 }
