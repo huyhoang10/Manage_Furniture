@@ -24,7 +24,8 @@ namespace Manage_Furniture.Controls
             var user = db.employees.FirstOrDefault(u => u.phone == phone);
             if (user != null)
             {
-                return user.status == "Active";
+                if(user.status == "Active")
+                    return true;
             }
             return false;
         }

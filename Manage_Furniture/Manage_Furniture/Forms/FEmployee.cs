@@ -22,6 +22,7 @@ namespace Manage_Furniture.Forms
         {
             btnHome.Visible = false;
             btnHR.Visible = false;
+            btnSupplier.Visible = false;
             SetAllButton();
             btnOrder.FillColor = Color.FromArgb(197, 166, 158);
             ucOverview1.BringToFront();
@@ -36,6 +37,7 @@ namespace Manage_Furniture.Forms
             btnWarehouse.FillColor = Color.White;
             btnSupplier.FillColor = Color.White;
             btnHR.FillColor = Color.White;
+            btnHistory.FillColor = Color.White;
         }
 
         protected void btnCustomer_Click(object sender, EventArgs e)
@@ -95,6 +97,14 @@ namespace Manage_Furniture.Forms
                 loginForm.Show();
                 this.Close();
             }
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            SetAllButton();
+            btnHistory.FillColor = Color.FromArgb(197, 166, 158);
+            ucHistory1.BringToFront();
+            ucHistory1.ucHistory_Load(sender, e);
         }
     }
 }

@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Manage_Furniture.ADO;
+using Manage_Furniture.Controls;
+using Manage_Furniture.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
-using System.Security.Cryptography;
 using System.Windows.Forms;
-using Manage_Furniture.ADO;
-using Manage_Furniture.Controls;
-using Manage_Furniture.Models;
 
 namespace Manage_Furniture.Forms
 {
@@ -27,7 +25,8 @@ namespace Manage_Furniture.Forms
             dgv_orders.EditMode = DataGridViewEditMode.EditOnEnter;
         }
 
-        private void EntryAllow() { 
+        private void EntryAllow()
+        {
             txt_customer_name.Enabled = true;
             //txt_customer_phone.Enabled = true;
             txt_custormer_address.Enabled = true;
@@ -158,7 +157,7 @@ namespace Manage_Furniture.Forms
                 {
 
                     int warehouseQuantity = orderControl.GetWarehouseQuantity(product.id);
-                    if (qty > warehouseQuantity && qty!=0 )
+                    if (qty > warehouseQuantity && qty != 0)
                     {
                         MessageBox.Show($"The requested quantity for {product.name} exceeds the available stock. " +
                                         $"Only {warehouseQuantity} items are available in stock.",
@@ -166,7 +165,7 @@ namespace Manage_Furniture.Forms
                         row.Cells["col_quantity"].Value = warehouseQuantity;
                         qty = warehouseQuantity;
                     }
-                    else if(warehouseQuantity == 0)
+                    else if (warehouseQuantity == 0)
                     {
                         MessageBox.Show("This out of stock!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         row.DefaultCellStyle.BackColor = Color.Red;
@@ -174,8 +173,9 @@ namespace Manage_Furniture.Forms
                         qty = 0;
                         return;
 
-                    }    
-                    else if (qty < 0) {
+                    }
+                    else if (qty < 0)
+                    {
                         MessageBox.Show("Quantity must be greater than 0.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
@@ -396,13 +396,19 @@ namespace Manage_Furniture.Forms
             List<order> orders = orderControl.GetAllOrders();
             List<product> products = orderControl.GetAllProducts();
             List<customer> customers = cc.GetAllCustomers();
-            orderControl.ExportOrdersToExcel(orders,products,customers);
+            orderControl.ExportOrdersToExcel(orders, products, customers);
         }
 
         private void btn_Report_Click(object sender, EventArgs e)
         {
             FReportOrder fReportOrder = new FReportOrder();
             fReportOrder.ShowDialog();
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            ucHistory ucHistory = new ucHistory();
+            ucHistory.Show();
         }
     }
 }

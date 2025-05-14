@@ -47,11 +47,6 @@
             this.txt_order_note = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmb_customer_type = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgv_orders = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.txt_sum = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_search_phone = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btn_search = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.manageFurnitureDataSet = new Manage_Furniture.ManageFurnitureDataSet();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_product = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.col_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +59,7 @@
             this.btn_search = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btn_Report = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Excel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
             this.manageFurnitureDataSet = new Manage_Furniture.ManageFurnitureDataSet();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orders)).BeginInit();
@@ -380,10 +376,67 @@
             this.dgv_orders.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_CellValueChanged);
             this.dgv_orders.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_RowLeave);
             // 
+            // col_id
+            // 
+            this.col_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_id.FillWeight = 47.03881F;
+            this.col_id.HeaderText = "No";
+            this.col_id.MinimumWidth = 6;
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            // 
+            // col_product
+            // 
+            this.col_product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_product.DataPropertyName = "id";
+            this.col_product.FillWeight = 168.0779F;
+            this.col_product.HeaderText = "Product";
+            this.col_product.MinimumWidth = 6;
+            this.col_product.Name = "col_product";
+            this.col_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // col_quantity
+            // 
+            this.col_quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_quantity.DataPropertyName = "quantity";
+            this.col_quantity.FillWeight = 95.68577F;
+            this.col_quantity.HeaderText = "Quantity";
+            this.col_quantity.MinimumWidth = 6;
+            this.col_quantity.Name = "col_quantity";
+            // 
+            // col_date_purchase
+            // 
+            this.col_date_purchase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_date_purchase.DataPropertyName = "date_purchase";
+            this.col_date_purchase.FillWeight = 95.68577F;
+            this.col_date_purchase.HeaderText = "Date Purchase";
+            this.col_date_purchase.MinimumWidth = 6;
+            this.col_date_purchase.Name = "col_date_purchase";
+            this.col_date_purchase.ReadOnly = true;
+            // 
+            // col_money
+            // 
+            this.col_money.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_money.DataPropertyName = "money";
+            this.col_money.FillWeight = 95.68577F;
+            this.col_money.HeaderText = "Money";
+            this.col_money.MinimumWidth = 6;
+            this.col_money.Name = "col_money";
+            this.col_money.ReadOnly = true;
+            // 
+            // col_total
+            // 
+            this.col_total.FillWeight = 84.24312F;
+            this.col_total.HeaderText = "Total";
+            this.col_total.MinimumWidth = 6;
+            this.col_total.Name = "col_total";
+            this.col_total.ReadOnly = true;
+            // 
             // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.BorderRadius = 16;
-            this.guna2CustomGradientPanel2.Controls.Add(this.txt_sum);  //1
+            this.guna2CustomGradientPanel2.Controls.Add(this.txt_sum);
             this.guna2CustomGradientPanel2.Controls.Add(this.dgv_orders);
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(25, 258);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
@@ -469,9 +522,9 @@
             this.btn_Report.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Report.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_Report.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_Report.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Report.ForeColor = System.Drawing.Color.White;
-            this.btn_Report.Location = new System.Drawing.Point(675, 205);
+            this.btn_Report.Location = new System.Drawing.Point(30, 208);
             this.btn_Report.Name = "btn_Report";
             this.btn_Report.Size = new System.Drawing.Size(114, 33);
             this.btn_Report.TabIndex = 26;
@@ -486,87 +539,43 @@
             this.btn_Excel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Excel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_Excel.FillColor = System.Drawing.Color.DarkGreen;
-            this.btn_Excel.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Excel.ForeColor = System.Drawing.Color.White;
-            this.btn_Excel.Location = new System.Drawing.Point(795, 205);
+            this.btn_Excel.Location = new System.Drawing.Point(162, 208);
             this.btn_Excel.Name = "btn_Excel";
             this.btn_Excel.Size = new System.Drawing.Size(114, 33);
             this.btn_Excel.TabIndex = 27;
             this.btn_Excel.Text = "Excel";
             this.btn_Excel.Click += new System.EventHandler(this.btn_Excel_Click);
             // 
+            // btnHistory
+            // 
+            this.btnHistory.BorderRadius = 16;
+            this.btnHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHistory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
+            this.btnHistory.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.Black;
+            this.btnHistory.Location = new System.Drawing.Point(948, 949);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(175, 64);
+            this.btnHistory.TabIndex = 28;
+            this.btnHistory.Text = "History";
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
             // manageFurnitureDataSet
             // 
             this.manageFurnitureDataSet.DataSetName = "ManageFurnitureDataSet";
             this.manageFurnitureDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // manageFurnitureDataSet
-            // 
-            this.manageFurnitureDataSet.DataSetName = "ManageFurnitureDataSet";
-            this.manageFurnitureDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // col_id
-            // 
-            this.col_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_id.FillWeight = 47.03881F;
-            this.col_id.HeaderText = "No";
-            this.col_id.MinimumWidth = 6;
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            // 
-            // col_product
-            // 
-            this.col_product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_product.DataPropertyName = "id";
-            this.col_product.FillWeight = 168.0779F;
-            this.col_product.HeaderText = "Product";
-            this.col_product.MinimumWidth = 6;
-            this.col_product.Name = "col_product";
-            this.col_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // col_quantity
-            // 
-            this.col_quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_quantity.DataPropertyName = "quantity";
-            this.col_quantity.FillWeight = 95.68577F;
-            this.col_quantity.HeaderText = "Quantity";
-            this.col_quantity.MinimumWidth = 6;
-            this.col_quantity.Name = "col_quantity";
-            // 
-            // col_date_purchase
-            // 
-            this.col_date_purchase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_date_purchase.DataPropertyName = "date_purchase";
-            this.col_date_purchase.FillWeight = 95.68577F;
-            this.col_date_purchase.HeaderText = "Date Purchase";
-            this.col_date_purchase.MinimumWidth = 6;
-            this.col_date_purchase.Name = "col_date_purchase";
-            this.col_date_purchase.ReadOnly = true;
-            // 
-            // col_money
-            // 
-            this.col_money.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_money.DataPropertyName = "money";
-            this.col_money.FillWeight = 95.68577F;
-            this.col_money.HeaderText = "Money";
-            this.col_money.MinimumWidth = 6;
-            this.col_money.Name = "col_money";
-            this.col_money.ReadOnly = true;
-            // 
-            // col_total
-            // 
-            this.col_total.FillWeight = 84.24312F;
-            this.col_total.HeaderText = "Total";
-            this.col_total.MinimumWidth = 6;
-            this.col_total.Name = "col_total";
-            this.col_total.ReadOnly = true;
             // 
             // UCOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.btn_Excel);
             this.Controls.Add(this.btn_Report);
             this.Controls.Add(this.btn_search);
@@ -617,5 +626,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_total;
         private Guna.UI2.WinForms.Guna2Button btn_Report;
         private Guna.UI2.WinForms.Guna2Button btn_Excel;
+        private Guna.UI2.WinForms.Guna2Button btnHistory;
     }
 }

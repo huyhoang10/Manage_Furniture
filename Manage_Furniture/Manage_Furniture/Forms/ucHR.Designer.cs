@@ -602,7 +602,7 @@
             this.btn_Report.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Report.ForeColor = System.Drawing.Color.White;
-            this.btn_Report.Location = new System.Drawing.Point(669, 895);
+            this.btn_Report.Location = new System.Drawing.Point(677, 895);
             this.btn_Report.Name = "btn_Report";
             this.btn_Report.Size = new System.Drawing.Size(114, 33);
             this.btn_Report.TabIndex = 29;
@@ -619,7 +619,7 @@
             this.btn_Excel.FillColor = System.Drawing.Color.DarkGreen;
             this.btn_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Excel.ForeColor = System.Drawing.Color.White;
-            this.btn_Excel.Location = new System.Drawing.Point(789, 895);
+            this.btn_Excel.Location = new System.Drawing.Point(810, 895);
             this.btn_Excel.Name = "btn_Excel";
             this.btn_Excel.Size = new System.Drawing.Size(114, 33);
             this.btn_Excel.TabIndex = 30;

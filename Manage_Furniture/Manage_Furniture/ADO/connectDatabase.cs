@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Runtime.Remoting.Contexts;
+using System.Security.Cryptography;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
@@ -262,24 +263,9 @@ namespace Manage_Furniture.ADO
             return data;
         }
 
-        // Top 3 sản phẩm order gần đây nhất    
-        public static List<RecentOrder> GetTop4RecentOrders()
+        // Top 5 sản phẩm order gần đây nhất    
+        public static List<RecentOrder> GetTop5RecentOrders()
         {
-            //var orders1 = (from o in db.orders
-            //              join p in db.products on o.id_product equals p.id
-            //              join c in db.customers on o.id_customer equals c.id
-            //              //orderby o.date_purchase descending
-            //              orderby c.id descending
-            //              select new RecentOrder
-            //              {
-            //                  Id = o.id_order,
-            //                  CustomerName = c.name,      // Thay vì IdCustomer
-            //                  //ProductName = p.name,        // Thay vì IdProduct
-            //                  //Quantity = o.quantity.Value,
-            //                  DatePurchase = o.date_purchase.Value,
-            //                  Money = o.money ?? 0,
-            //                  //Note = o.note
-            //              }).Take(4).ToList();
             var orders = (
                 from b in db.bills
                 join o in db.orders on b.id_order equals o.id_order
@@ -294,8 +280,62 @@ namespace Manage_Furniture.ADO
                     DatePurchase = first.o.date_purchase.Value,
                     Money = first.b.money ?? 0,
                     Note = first.o.note
-                }).Take(4).ToList();
+                }).Take(5).ToList();
             return orders;
+        }
+
+        public static List<RecentOrder> GetAllOrders()
+        {
+            var orders = (
+                from b in db.bills
+                join o in db.orders on b.id_order equals o.id_order
+                join c in db.customers on o.id_customer equals c.id
+                group new { b, o, c } by b.id_order into g
+                let first = g.FirstOrDefault()
+                orderby first.o.date_purchase descending
+                select new RecentOrder
+                {
+                    Id = first.b.id_order,
+                    CustomerName = first.c.name,
+                    DatePurchase = first.o.date_purchase.Value,
+                    Money = first.b.money ?? 0,
+                    Note = first.o.note
+                }).ToList();
+            return orders;
+        }
+
+        //public static List<Order> GetInfoOrders(int idbill) { 
+        //    var orders = new List<Order>();
+        //    var list_product_order = db.orders.Where(x => x.id_order == idbill).ToList();
+        //    foreach (var item in list_product_order)
+        //    {
+        //        Order order = new Order();
+        //        order.Id = item.id_order;
+        //        order.Id_customer = (int)item.id_customer;
+        //        order.Id_product = (int)item.id_product;
+        //        order.Quantity = (int)item.quantity;
+        //        order.Date_purchase = (DateTime)item.date_purchase;
+        //        order.Money = (decimal)item.money;
+        //        order.Note = item.note;
+        //        orders.Add(order);
+        //    }
+        //    return orders;
+        //}
+        public static List<OrderInfo> GetInfoOrders(int idbill)
+        {
+            var query = from o in db.orders
+                        join p in db.products on o.id_product equals p.id
+                        where o.id_order == idbill
+                        select new OrderInfo
+                        {
+                            IdOrder = o.id_order,
+                            ProductName = p.name,
+                            Quantity = (int)o.quantity,
+                            Price = (decimal)p.price,
+                            Money = (decimal)o.money
+                        };
+
+            return query.ToList();
         }
 
     }
@@ -310,10 +350,17 @@ namespace Manage_Furniture.ADO
     {
         public int Id { get; set; }
         public string CustomerName { get; set; } 
-        //public string ProductName { get; set; }
-        //public int Quantity { get; set; }
         public DateTime DatePurchase { get; set; }
         public decimal Money { get; set; }
         public string Note { get; set; }
+    }
+
+    public class OrderInfo
+    {
+        public int IdOrder { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public decimal Price { get; set; }
+        public decimal Money { get; set; }
     }
 }

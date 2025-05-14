@@ -161,6 +161,7 @@
     <Compile Include="Controls\Helper.cs" />
     <Compile Include="Controls\HRControl.cs" />
     <Compile Include="Controls\UCCustomerController.cs" />
+    <Compile Include="Controls\ucHistoryControls.cs" />
     <Compile Include="Controls\ucLoginControl.cs" />
     <Compile Include="Controls\ucOrderControl.cs" />
     <Compile Include="Controls\ucOverviewControl.cs" />
@@ -273,6 +274,12 @@
     </Compile>
     <Compile Include="Forms\UCCustomer.Designer.cs">
       <DependentUpon>UCCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucHistory.Designer.cs">
+      <DependentUpon>ucHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ucHR.cs">
       <SubType>UserControl</SubType>
@@ -476,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UCCustomer.resx">
       <DependentUpon>UCCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucHistory.resx">
+      <DependentUpon>ucHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucHR.resx">
       <DependentUpon>ucHR.cs</DependentUpon>

@@ -23,12 +23,17 @@ namespace Manage_Furniture.Controls
         {
             return new Customerclass
             {
-                Id = row.Cells["col_id"].Value?.ToString(),
-                Name = row.Cells["col_name"].Value?.ToString(),
-                Phone = row.Cells["col_phone"].Value?.ToString(),
-                Sex = row.Cells["col_sex"].Value?.ToString(),
-                Address = row.Cells["col_address"].Value?.ToString(),
-                Type = row.Cells["col_type"].Value?.ToString()
+                Id = row.Cells[0].Value?.ToString(),//Id = row.Cells["col_id"].Value?.ToString(),
+                //Name = row.Cells["col_name"].Value?.ToString(),
+                //Phone = row.Cells["col_phone"].Value?.ToString(),
+                //Sex = row.Cells["col_sex"].Value?.ToString(),
+                //Address = row.Cells["col_address"].Value?.ToString(),
+                //Type = row.Cells["col_type"].Value?.ToString()
+                Name = row.Cells[1].Value?.ToString(),
+                Phone = row.Cells[2].Value?.ToString(),
+                Sex = row.Cells[3].Value?.ToString(),
+                Address = row.Cells[4].Value?.ToString(),
+                Type = row.Cells[5].Value?.ToString()
             };
         }
         public bool UpdateCustomer(Customerclass updatedCustomer, out string message)

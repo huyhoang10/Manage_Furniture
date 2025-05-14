@@ -14,6 +14,7 @@ using Guna.UI2.WinForms;
 using Guna.UI2.AnimatorNS;
 using System.Xml.Linq;
 using Manage_Furniture.Forms;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace Manage_Furniture.Controls
 {
@@ -68,6 +69,7 @@ namespace Manage_Furniture.Controls
                     cmb_Type.SelectedIndex = -1;
                 btn_Update.Enabled = true;
             }
+
         }
         
         private void btn_Update_Click(object sender, EventArgs e)

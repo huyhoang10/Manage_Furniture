@@ -30,7 +30,7 @@ namespace Manage_Furniture.Controls
 
         public List<RecentOrder> GetTop4RecentOrders()
         {
-            return connectDatabase.GetTop4RecentOrders();
+            return connectDatabase.GetTop5RecentOrders();
         }
 
     }

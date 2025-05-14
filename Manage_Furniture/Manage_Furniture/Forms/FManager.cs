@@ -22,6 +22,7 @@ namespace Manage_Furniture.Forms
         {
             btnHome.Visible = true;
             btnHR.Visible = true;
+            btnSupplier.Visible = true;
             SetAllButton();
             btnHome.FillColor = Color.FromArgb(197, 166, 158);
         }
