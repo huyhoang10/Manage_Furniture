@@ -1036,7 +1036,7 @@ SELECT id, id_customer, id_product, quantity, date_purchase, money, note FROM or
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString;
+            this._connection.ConnectionString = global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

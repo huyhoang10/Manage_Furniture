@@ -30,7 +30,7 @@ namespace Manage_Furniture.Forms
             LoadDgvView();
             btnAdd.Enabled = true;
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+            //btnDelete.Enabled = false;
         }
 
         private void LoadDgvView()
@@ -83,7 +83,7 @@ namespace Manage_Furniture.Forms
         {
             btnAdd.Enabled = false;
             btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            //btnDelete.Enabled = true;
             if (e.RowIndex>=0 && e.ColumnIndex >= 0)
             {
                 txtID.Text = dgvView.Rows[e.RowIndex].Cells["col_Id"].Value.ToString();
@@ -122,7 +122,7 @@ namespace Manage_Furniture.Forms
         {
             btnAdd.Enabled = true;
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+            //btnDelete.Enabled = false;
             LoadDgvView();
             txtID.Text = "";
             txtName.Text = "";

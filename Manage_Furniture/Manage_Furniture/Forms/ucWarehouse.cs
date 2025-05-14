@@ -33,9 +33,9 @@ namespace Manage_Furniture.Forms
             LoadCmbSubCategory();
             btnAdd.Enabled = true;
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false; btnAdd.Enabled = true;
+            //btnDelete.Enabled = false; btnAdd.Enabled = true;
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+            //btnDelete.Enabled = false;
         }
 
         private void LoadDgvView()
@@ -63,7 +63,7 @@ namespace Manage_Furniture.Forms
         {
             btnAdd.Enabled = false;
             btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            //btnDelete.Enabled = true;
             if (e.RowIndex >=0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = this.dgvView.Rows[e.RowIndex];
@@ -185,7 +185,7 @@ namespace Manage_Furniture.Forms
         {
             btnAdd.Enabled = true;
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+            //btnDelete.Enabled = false;
             LoadDgvView();
             txtId.Text = "";
             txtName.Text = "";

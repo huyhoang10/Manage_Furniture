@@ -38,19 +38,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dgvHistoryOrder = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvOderDetail = new Guna.UI2.WinForms.Guna2DataGridView();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dgvOderDetail = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryOrder)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             this.guna2CustomGradientPanel2.BorderRadius = 16;
             this.guna2CustomGradientPanel2.Controls.Add(this.dgvHistoryOrder);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(32, 118);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(19, 210);
             this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(470, 575);
@@ -112,7 +113,7 @@
             this.dgvHistoryOrder.RowHeadersWidth = 51;
             this.dgvHistoryOrder.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvHistoryOrder.RowTemplate.Height = 24;
-            this.dgvHistoryOrder.Size = new System.Drawing.Size(427, 536);
+            this.dgvHistoryOrder.Size = new System.Drawing.Size(437, 536);
             this.dgvHistoryOrder.TabIndex = 2;
             this.dgvHistoryOrder.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvHistoryOrder.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -137,12 +138,52 @@
             this.dgvHistoryOrder.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvHistoryOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistoryOrder_CellClick);
             // 
+            // col_id
+            // 
+            this.col_id.DataPropertyName = "Id";
+            this.col_id.HeaderText = "ID Bill";
+            this.col_id.MinimumWidth = 6;
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            // 
+            // col_customer
+            // 
+            this.col_customer.DataPropertyName = "CustomerName";
+            this.col_customer.HeaderText = "Customer";
+            this.col_customer.MinimumWidth = 6;
+            this.col_customer.Name = "col_customer";
+            this.col_customer.ReadOnly = true;
+            // 
+            // col_date
+            // 
+            this.col_date.DataPropertyName = "DatePurchase";
+            this.col_date.HeaderText = "Date";
+            this.col_date.MinimumWidth = 6;
+            this.col_date.Name = "col_date";
+            this.col_date.ReadOnly = true;
+            // 
+            // col_money
+            // 
+            this.col_money.DataPropertyName = "Money";
+            this.col_money.HeaderText = "Money";
+            this.col_money.MinimumWidth = 6;
+            this.col_money.Name = "col_money";
+            this.col_money.ReadOnly = true;
+            // 
+            // col_Note
+            // 
+            this.col_Note.DataPropertyName = "Note";
+            this.col_Note.HeaderText = "Note";
+            this.col_Note.MinimumWidth = 6;
+            this.col_Note.Name = "col_Note";
+            this.col_Note.ReadOnly = true;
+            // 
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BorderRadius = 16;
             this.guna2CustomGradientPanel1.Controls.Add(this.txtTotal);
             this.guna2CustomGradientPanel1.Controls.Add(this.dgvOderDetail);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(521, 118);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(517, 210);
             this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(623, 575);
@@ -243,46 +284,6 @@
             this.dgvOderDetail.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOderDetail.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // col_id
-            // 
-            this.col_id.DataPropertyName = "Id";
-            this.col_id.HeaderText = "ID Bill";
-            this.col_id.MinimumWidth = 6;
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            // 
-            // col_customer
-            // 
-            this.col_customer.DataPropertyName = "CustomerName";
-            this.col_customer.HeaderText = "Customer";
-            this.col_customer.MinimumWidth = 6;
-            this.col_customer.Name = "col_customer";
-            this.col_customer.ReadOnly = true;
-            // 
-            // col_date
-            // 
-            this.col_date.DataPropertyName = "DatePurchase";
-            this.col_date.HeaderText = "Date";
-            this.col_date.MinimumWidth = 6;
-            this.col_date.Name = "col_date";
-            this.col_date.ReadOnly = true;
-            // 
-            // col_money
-            // 
-            this.col_money.DataPropertyName = "Money";
-            this.col_money.HeaderText = "Money";
-            this.col_money.MinimumWidth = 6;
-            this.col_money.Name = "col_money";
-            this.col_money.ReadOnly = true;
-            // 
-            // col_Note
-            // 
-            this.col_Note.DataPropertyName = "Note";
-            this.col_Note.HeaderText = "Note";
-            this.col_Note.MinimumWidth = 6;
-            this.col_Note.Name = "col_Note";
-            this.col_Note.ReadOnly = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -333,11 +334,23 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(436, 75);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "History Orders";
+            // 
             // ucHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -349,6 +362,7 @@
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOderDetail)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -369,5 +383,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label label1;
     }
 }

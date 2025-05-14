@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSuppliercs));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvView = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -44,7 +44,6 @@
             this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,26 +61,27 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 30);
+            this.label1.Location = new System.Drawing.Point(7, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(794, 92);
+            this.label1.Size = new System.Drawing.Size(635, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "Suppier Management";
             // 
             // dgvView
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.dgvView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvView.ColumnHeadersHeight = 50;
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -90,23 +90,23 @@
             this.col_Address,
             this.col_Contact,
             this.col_Note});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvView.GridColor = System.Drawing.Color.White;
-            this.dgvView.Location = new System.Drawing.Point(15, 25);
-            this.dgvView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvView.Location = new System.Drawing.Point(11, 20);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvView.Name = "dgvView";
             this.dgvView.ReadOnly = true;
             this.dgvView.RowHeadersVisible = false;
             this.dgvView.RowHeadersWidth = 51;
             this.dgvView.RowTemplate.Height = 30;
-            this.dgvView.Size = new System.Drawing.Size(869, 668);
+            this.dgvView.Size = new System.Drawing.Size(652, 543);
             this.dgvView.TabIndex = 0;
             this.dgvView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -187,14 +187,14 @@
             this.txtNote.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNote.ForeColor = System.Drawing.Color.Black;
             this.txtNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNote.Location = new System.Drawing.Point(36, 308);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(6);
+            this.txtNote.Location = new System.Drawing.Point(27, 250);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtNote.PlaceholderText = "Note";
             this.txtNote.SelectedText = "";
-            this.txtNote.Size = new System.Drawing.Size(511, 225);
+            this.txtNote.Size = new System.Drawing.Size(383, 183);
             this.txtNote.TabIndex = 4;
             // 
             // txtContact
@@ -213,13 +213,13 @@
             this.txtContact.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.ForeColor = System.Drawing.Color.Black;
             this.txtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContact.Location = new System.Drawing.Point(36, 215);
-            this.txtContact.Margin = new System.Windows.Forms.Padding(6);
+            this.txtContact.Location = new System.Drawing.Point(27, 175);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtContact.Name = "txtContact";
             this.txtContact.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtContact.PlaceholderText = "Contact";
             this.txtContact.SelectedText = "";
-            this.txtContact.Size = new System.Drawing.Size(511, 69);
+            this.txtContact.Size = new System.Drawing.Size(383, 56);
             this.txtContact.TabIndex = 3;
             this.txtContact.TextChanged += new System.EventHandler(this.txtContact_TextChanged);
             // 
@@ -240,13 +240,13 @@
             this.txtID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.Black;
             this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID.Location = new System.Drawing.Point(410, 25);
-            this.txtID.Margin = new System.Windows.Forms.Padding(6);
+            this.txtID.Location = new System.Drawing.Point(308, 20);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtID.Name = "txtID";
             this.txtID.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtID.PlaceholderText = "ID";
             this.txtID.SelectedText = "";
-            this.txtID.Size = new System.Drawing.Size(137, 69);
+            this.txtID.Size = new System.Drawing.Size(103, 56);
             this.txtID.TabIndex = 8;
             // 
             // txtAddress
@@ -265,13 +265,13 @@
             this.txtAddress.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Location = new System.Drawing.Point(36, 118);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(6);
+            this.txtAddress.Location = new System.Drawing.Point(27, 96);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtAddress.PlaceholderText = "Address";
             this.txtAddress.SelectedText = "";
-            this.txtAddress.Size = new System.Drawing.Size(511, 69);
+            this.txtAddress.Size = new System.Drawing.Size(383, 56);
             this.txtAddress.TabIndex = 2;
             // 
             // txtName
@@ -290,32 +290,14 @@
             this.txtName.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(36, 25);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6);
+            this.txtName.Location = new System.Drawing.Point(27, 20);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtName.PlaceholderText = "Name*";
             this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(362, 69);
+            this.txtName.Size = new System.Drawing.Size(272, 56);
             this.txtName.TabIndex = 1;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BorderRadius = 16;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
-            this.btnDelete.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(1264, 901);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(231, 50);
-            this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -327,10 +309,10 @@
             this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnEdit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Location = new System.Drawing.Point(1264, 833);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Location = new System.Drawing.Point(874, 677);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(231, 50);
+            this.btnEdit.Size = new System.Drawing.Size(112, 41);
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -345,10 +327,10 @@
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnAdd.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(987, 833);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Location = new System.Drawing.Point(740, 677);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(231, 50);
+            this.btnAdd.Size = new System.Drawing.Size(112, 41);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -368,13 +350,13 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(1095, 160);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearch.Location = new System.Drawing.Point(821, 130);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtSearch.PlaceholderText = "Search Name";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(428, 69);
+            this.txtSearch.Size = new System.Drawing.Size(321, 56);
             this.txtSearch.TabIndex = 8;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -388,10 +370,10 @@
             this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(987, 901);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Location = new System.Drawing.Point(1008, 677);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(231, 50);
+            this.btnCancel.Size = new System.Drawing.Size(112, 41);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -400,9 +382,10 @@
             // 
             this.guna2CustomGradientPanel2.BorderRadius = 16;
             this.guna2CustomGradientPanel2.Controls.Add(this.dgvView);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(25, 258);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(19, 210);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 708);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(674, 575);
             this.guna2CustomGradientPanel2.TabIndex = 11;
             // 
             // guna2CustomGradientPanel1
@@ -413,9 +396,10 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.txtNote);
             this.guna2CustomGradientPanel1.Controls.Add(this.txtAddress);
             this.guna2CustomGradientPanel1.Controls.Add(this.txtID);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(948, 258);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(711, 210);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(575, 550);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(431, 447);
             this.guna2CustomGradientPanel1.TabIndex = 12;
             // 
             // btn_Report
@@ -428,9 +412,10 @@
             this.btn_Report.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Report.ForeColor = System.Drawing.Color.White;
-            this.btn_Report.Location = new System.Drawing.Point(30, 208);
+            this.btn_Report.Location = new System.Drawing.Point(22, 169);
+            this.btn_Report.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Report.Name = "btn_Report";
-            this.btn_Report.Size = new System.Drawing.Size(114, 33);
+            this.btn_Report.Size = new System.Drawing.Size(86, 27);
             this.btn_Report.TabIndex = 27;
             this.btn_Report.Text = "Report";
             this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
@@ -445,16 +430,17 @@
             this.btn_Excel.FillColor = System.Drawing.Color.DarkGreen;
             this.btn_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Excel.ForeColor = System.Drawing.Color.White;
-            this.btn_Excel.Location = new System.Drawing.Point(162, 208);
+            this.btn_Excel.Location = new System.Drawing.Point(122, 169);
+            this.btn_Excel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Excel.Name = "btn_Excel";
-            this.btn_Excel.Size = new System.Drawing.Size(114, 33);
+            this.btn_Excel.Size = new System.Drawing.Size(86, 27);
             this.btn_Excel.TabIndex = 28;
             this.btn_Excel.Text = "Excel";
             this.btn_Excel.Click += new System.EventHandler(this.btn_Excel_Click);
             // 
             // ucSuppliercs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.Controls.Add(this.btn_Excel);
@@ -463,13 +449,11 @@
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucSuppliercs";
-            this.Size = new System.Drawing.Size(1552, 1036);
+            this.Size = new System.Drawing.Size(1164, 842);
             this.Load += new System.EventHandler(this.ucSuppliercs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
@@ -485,7 +469,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2TextBox txtContact;
         private Guna.UI2.WinForms.Guna2TextBox txtAddress;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2TextBox txtNote;

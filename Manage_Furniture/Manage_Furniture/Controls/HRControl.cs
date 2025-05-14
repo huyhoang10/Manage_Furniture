@@ -6,6 +6,13 @@ using System.Windows.Forms;
 using ClosedXML.Excel;
 using System;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Text;
+using Newtonsoft.Json;
+using System.Net;
+using System.Web.UI.WebControls;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace Manage_Furniture.Controls
 {
@@ -22,6 +29,9 @@ namespace Manage_Furniture.Controls
                 query = query.Where(e => e.status.Equals(status));
             }
 
+            // Lọc nhân viên chưa bị xóa (deleted == false)
+            query = query.Where(e => e.deleted == false);
+
             var result = query.Select(e => new EmployeeModel(
                 e.id.ToString(),
                 e.name,
@@ -30,8 +40,13 @@ namespace Manage_Furniture.Controls
                 e.address,
                 e.salary.ToString(),
                 e.password,
-                e.status
+                e.status,
+                e.deleted ?? false,
+                e.email,
+                e.role
+
             )).ToList();
+            
 
             // Định dạng lại salary sau khi lấy từ DB
             return result.Select(emp => new EmployeeModel(
@@ -40,16 +55,22 @@ namespace Manage_Furniture.Controls
                 emp.Phone,
                 emp.Sex,
                 emp.Address,
-                decimal.TryParse(emp.Salary, out decimal salary) ? salary.ToString("N0") : "0", // Định dạng sau khi lấy dữ liệu
+                decimal.TryParse(emp.Salary, out decimal salary) ? salary.ToString("N0") : "0", // Định dạng lương có dấu phẩy
                 emp.Password,
-                emp.Status
+                emp.Status,
+                emp.Deleted,
+                emp.Email,
+                emp.Role
+
+
             )).ToList();
         }
+
         public bool IsEmployeeIdExists(string id)
         {
             return db.employees.Any(e => e.id.ToString() == id);
         }
-    
+       
 
         public void AddEmployee(EmployeeModel emp)
 
@@ -70,11 +91,29 @@ namespace Manage_Furniture.Controls
                 address = emp.Address,
                 salary = decimal.Parse(emp.Salary.Replace(",", "")),
                 password = emp.Password,
-                status = emp.Status
+                status = emp.Status,
+                deleted = emp.Deleted,
+                email = emp.Email,
+                role = emp.Role
             };
 
             db.employees.InsertOnSubmit(newEmp);
-            db.SubmitChanges();
+           
+            db.SubmitChanges();  // Lưu dữ liệu vào bảng employees
+        }
+
+        //sort theo lương
+        public List<EmployeeModel> SortBySalary(string order)
+        {
+            var employees = GetAll();
+            if (order == "asc")
+            {
+                return employees.OrderBy(e => decimal.Parse(e.Salary.Replace(",", ""))).ToList();
+            }
+            else
+            {
+                return employees.OrderByDescending(e => decimal.Parse(e.Salary.Replace(",", ""))).ToList();
+            }
         }
         public bool IsPhoneExists(string phone, string excludeId = null)
         {
@@ -113,8 +152,9 @@ namespace Manage_Furniture.Controls
                 var employee = db.employees.FirstOrDefault(emp => emp.id == id);
                 if (employee == null) return false;
 
-                db.employees.DeleteOnSubmit(employee);
-                db.SubmitChanges(); // Không cần db.employees.Context
+                employee.deleted = true; 
+                db.SubmitChanges();     
+
                 return true;
             }
             catch
@@ -123,21 +163,35 @@ namespace Manage_Furniture.Controls
             }
         }
 
-        public void UpdateEmployee(EmployeeModel emp)
-        {
-            var existing = db.employees.FirstOrDefault(e => e.id == int.Parse(emp.Id));  // Convert string to int for id
-            if (existing != null)
-            {
-                existing.name = emp.Name;
-                existing.phone = emp.Phone;
-                existing.sex = emp.Sex;
-                existing.address = emp.Address;
-                existing.salary = decimal.Parse(emp.Salary.Replace(",", ""));
-                existing.status = emp.Status;
-                existing.password = emp.Password;  // Update password if needed
 
-                db.SubmitChanges();
+        public bool UpdateEmployee(EmployeeModel emp)
+        {
+            try
+            {
+                var existing = db.employees.FirstOrDefault(e => e.id == int.Parse(emp.Id));  // Convert string to int for id
+                if (existing != null)
+                {
+                    existing.name = emp.Name;
+                    existing.phone = emp.Phone;
+                    existing.sex = emp.Sex;
+                    existing.address = emp.Address;
+                    existing.salary = decimal.Parse(emp.Salary.Replace(",", ""));
+                    existing.status = emp.Status;
+                    existing.password = emp.Password;  // Update password if needed
+                    existing.email = emp.Email;  // Update email if needed
+
+
+                    db.SubmitChanges();
+                    return true;
+                }
+                return false;  // Không tìm thấy nhân viên để cập nhật
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
         }
 
         public List<EmployeeModel> SearchEmployees(string keyword)
@@ -147,28 +201,38 @@ namespace Manage_Furniture.Controls
             if (!string.IsNullOrWhiteSpace(keyword))
             {
                 query = query.Where(e =>
-                    e.id.ToString().Contains(keyword) ||  // Convert id to string for search (if id is int)
-                    e.name.Contains(keyword) ||
-                    e.phone.Contains(keyword) ||
-                    e.address.Contains(keyword)
+                    (
+                        e.id.ToString().Contains(keyword) ||
+                        e.name.Contains(keyword) ||
+                        e.phone.Contains(keyword) ||
+                        e.address.Contains(keyword)
+                    )
+                    && e.deleted == false
                 );
             }
+            else
+            {
+                // Nếu không có keyword, chỉ lọc nhân viên chưa bị xóa
+                query = query.Where(e => e.deleted == false);
+            }
 
-            // Lấy danh sách nhân viên từ cơ sở dữ liệu
             var employees = query.ToList();
 
-            // Định dạng salary trong bộ nhớ
             return employees.Select(e => new EmployeeModel(
-                e.id.ToString(),  // Convert id to string to match EmployeeModel constructor
+                e.id.ToString(),
                 e.name,
                 e.phone,
                 e.sex,
                 e.address,
                 e.salary.HasValue ? e.salary.Value.ToString("N0") : "0",
                 e.password,
-                e.status
+                e.status,
+                e.deleted ?? false,
+                e.email,
+                e.role
             )).ToList();
         }
+
         public void ExportEmployeesToExcel(List<EmployeeModel> employees)
         {
             using (var workbook = new XLWorkbook())
@@ -224,6 +288,48 @@ namespace Manage_Furniture.Controls
                 
             }
         }
+        public void SendEmailNotification(string contentEmail, string email)
+        {
+            try
+            {
+                // Tạo dữ liệu JSON
+                var requestData = new
+                {
+                   
+                    content = contentEmail,
+                    recipientEmail = email,
+
+                    
+                };
+
+                string json = JsonConvert.SerializeObject(requestData);
+
+                // Tạo yêu cầu POST
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://send-email-self-one.vercel.app/api/email/send");
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                request.Accept = "application/json";
+
+                // Gửi dữ liệu JSON trong yêu cầu
+                using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
+                {
+                    writer.Write(json);
+                }
+
+                // Đọc phản hồi từ server
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    MessageBox.Show("Email sent successfully!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
     }
 
 }

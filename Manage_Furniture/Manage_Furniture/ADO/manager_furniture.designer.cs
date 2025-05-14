@@ -22,7 +22,7 @@ namespace Manage_Furniture.ADO
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ManageFurniture")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ManageFurniture2")]
 	public partial class manager_furnitureDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,9 +36,6 @@ namespace Manage_Furniture.ADO
     partial void Insertcustomer(customer instance);
     partial void Updatecustomer(customer instance);
     partial void Deletecustomer(customer instance);
-    partial void Insertemployee(employee instance);
-    partial void Updateemployee(employee instance);
-    partial void Deleteemployee(employee instance);
     partial void Insertorder(order instance);
     partial void Updateorder(order instance);
     partial void Deleteorder(order instance);
@@ -54,10 +51,13 @@ namespace Manage_Furniture.ADO
     partial void Insertwarehouse(warehouse instance);
     partial void Updatewarehouse(warehouse instance);
     partial void Deletewarehouse(warehouse instance);
+    partial void Insertemployee(employee instance);
+    partial void Updateemployee(employee instance);
+    partial void Deleteemployee(employee instance);
     #endregion
 		
 		public manager_furnitureDataContext() : 
-				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString, mappingSource)
+				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurniture2ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -102,14 +102,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		public System.Data.Linq.Table<employee> employees
-		{
-			get
-			{
-				return this.GetTable<employee>();
-			}
-		}
-		
 		public System.Data.Linq.Table<order> orders
 		{
 			get
@@ -149,6 +141,14 @@ namespace Manage_Furniture.ADO
 				return this.GetTable<warehouse>();
 			}
 		}
+		
+		public System.Data.Linq.Table<employee> employees
+		{
+			get
+			{
+				return this.GetTable<employee>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bill")]
@@ -160,6 +160,8 @@ namespace Manage_Furniture.ADO
 		private int _id_order;
 		
 		private System.Nullable<decimal> _money;
+		
+		private EntitySet<order> _orders;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -173,6 +175,7 @@ namespace Manage_Furniture.ADO
 		
 		public bill()
 		{
+			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
 			OnCreated();
 		}
 		
@@ -216,6 +219,19 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bill_order", Storage="_orders", ThisKey="id_order", OtherKey="id_order")]
+		public EntitySet<order> orders
+		{
+			get
+			{
+				return this._orders;
+			}
+			set
+			{
+				this._orders.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -234,6 +250,18 @@ namespace Manage_Furniture.ADO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_orders(order entity)
+		{
+			this.SendPropertyChanging();
+			entity.bill = this;
+		}
+		
+		private void detach_orders(order entity)
+		{
+			this.SendPropertyChanging();
+			entity.bill = null;
 		}
 	}
 	
@@ -447,236 +475,6 @@ namespace Manage_Furniture.ADO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.employee")]
-	public partial class employee : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _name;
-		
-		private string _phone;
-		
-		private string _sex;
-		
-		private string _address;
-		
-		private System.Nullable<decimal> _salary;
-		
-		private string _password;
-		
-		private string _status;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void OnphoneChanging(string value);
-    partial void OnphoneChanged();
-    partial void OnsexChanging(string value);
-    partial void OnsexChanged();
-    partial void OnaddressChanging(string value);
-    partial void OnaddressChanged();
-    partial void OnsalaryChanging(System.Nullable<decimal> value);
-    partial void OnsalaryChanged();
-    partial void OnpasswordChanging(string value);
-    partial void OnpasswordChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public employee()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50)")]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(10)")]
-		public string phone
-		{
-			get
-			{
-				return this._phone;
-			}
-			set
-			{
-				if ((this._phone != value))
-				{
-					this.OnphoneChanging(value);
-					this.SendPropertyChanging();
-					this._phone = value;
-					this.SendPropertyChanged("phone");
-					this.OnphoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sex", DbType="NVarChar(10)")]
-		public string sex
-		{
-			get
-			{
-				return this._sex;
-			}
-			set
-			{
-				if ((this._sex != value))
-				{
-					this.OnsexChanging(value);
-					this.SendPropertyChanging();
-					this._sex = value;
-					this.SendPropertyChanged("sex");
-					this.OnsexChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(100)")]
-		public string address
-		{
-			get
-			{
-				return this._address;
-			}
-			set
-			{
-				if ((this._address != value))
-				{
-					this.OnaddressChanging(value);
-					this.SendPropertyChanging();
-					this._address = value;
-					this.SendPropertyChanged("address");
-					this.OnaddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_salary", DbType="Decimal(15,2)")]
-		public System.Nullable<decimal> salary
-		{
-			get
-			{
-				return this._salary;
-			}
-			set
-			{
-				if ((this._salary != value))
-				{
-					this.OnsalaryChanging(value);
-					this.SendPropertyChanging();
-					this._salary = value;
-					this.SendPropertyChanged("salary");
-					this.OnsalaryChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(100)")]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this.OnpasswordChanging(value);
-					this.SendPropertyChanging();
-					this._password = value;
-					this.SendPropertyChanged("password");
-					this.OnpasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.orders")]
 	public partial class order : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -698,6 +496,8 @@ namespace Manage_Furniture.ADO
 		private string _note;
 		
 		private EntityRef<customer> _customer;
+		
+		private EntityRef<bill> _bill;
 		
 		private EntityRef<product> _product;
 		
@@ -724,6 +524,7 @@ namespace Manage_Furniture.ADO
 		public order()
 		{
 			this._customer = default(EntityRef<customer>);
+			this._bill = default(EntityRef<bill>);
 			this._product = default(EntityRef<product>);
 			OnCreated();
 		}
@@ -739,6 +540,10 @@ namespace Manage_Furniture.ADO
 			{
 				if ((this._id_order != value))
 				{
+					if (this._bill.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.Onid_orderChanging(value);
 					this.SendPropertyChanging();
 					this._id_order = value;
@@ -906,6 +711,40 @@ namespace Manage_Furniture.ADO
 						this._id_customer = default(int);
 					}
 					this.SendPropertyChanged("customer");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bill_order", Storage="_bill", ThisKey="id_order", OtherKey="id_order", IsForeignKey=true)]
+		public bill bill
+		{
+			get
+			{
+				return this._bill.Entity;
+			}
+			set
+			{
+				bill previousValue = this._bill.Entity;
+				if (((previousValue != value) 
+							|| (this._bill.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._bill.Entity = null;
+						previousValue.orders.Remove(this);
+					}
+					this._bill.Entity = value;
+					if ((value != null))
+					{
+						value.orders.Add(this);
+						this._id_order = value.id_order;
+					}
+					else
+					{
+						this._id_order = default(int);
+					}
+					this.SendPropertyChanged("bill");
 				}
 			}
 		}
@@ -1646,6 +1485,308 @@ namespace Manage_Furniture.ADO
 						this._id_product = default(int);
 					}
 					this.SendPropertyChanged("product");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.employee")]
+	public partial class employee : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _name;
+		
+		private string _phone;
+		
+		private string _sex;
+		
+		private string _address;
+		
+		private System.Nullable<decimal> _salary;
+		
+		private string _password;
+		
+		private string _email;
+		
+		private string _status;
+		
+		private System.Nullable<bool> _deleted;
+		
+		private string _role;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnphoneChanging(string value);
+    partial void OnphoneChanged();
+    partial void OnsexChanging(string value);
+    partial void OnsexChanged();
+    partial void OnaddressChanging(string value);
+    partial void OnaddressChanged();
+    partial void OnsalaryChanging(System.Nullable<decimal> value);
+    partial void OnsalaryChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnstatusChanging(string value);
+    partial void OnstatusChanged();
+    partial void OndeletedChanging(System.Nullable<bool> value);
+    partial void OndeletedChanged();
+    partial void OnroleChanging(string value);
+    partial void OnroleChanged();
+    #endregion
+		
+		public employee()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(10)")]
+		public string phone
+		{
+			get
+			{
+				return this._phone;
+			}
+			set
+			{
+				if ((this._phone != value))
+				{
+					this.OnphoneChanging(value);
+					this.SendPropertyChanging();
+					this._phone = value;
+					this.SendPropertyChanged("phone");
+					this.OnphoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sex", DbType="NVarChar(10)")]
+		public string sex
+		{
+			get
+			{
+				return this._sex;
+			}
+			set
+			{
+				if ((this._sex != value))
+				{
+					this.OnsexChanging(value);
+					this.SendPropertyChanging();
+					this._sex = value;
+					this.SendPropertyChanged("sex");
+					this.OnsexChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(100)")]
+		public string address
+		{
+			get
+			{
+				return this._address;
+			}
+			set
+			{
+				if ((this._address != value))
+				{
+					this.OnaddressChanging(value);
+					this.SendPropertyChanging();
+					this._address = value;
+					this.SendPropertyChanged("address");
+					this.OnaddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_salary", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> salary
+		{
+			get
+			{
+				return this._salary;
+			}
+			set
+			{
+				if ((this._salary != value))
+				{
+					this.OnsalaryChanging(value);
+					this.SendPropertyChanging();
+					this._salary = value;
+					this.SendPropertyChanged("salary");
+					this.OnsalaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(100)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deleted", DbType="Bit")]
+		public System.Nullable<bool> deleted
+		{
+			get
+			{
+				return this._deleted;
+			}
+			set
+			{
+				if ((this._deleted != value))
+				{
+					this.OndeletedChanging(value);
+					this.SendPropertyChanging();
+					this._deleted = value;
+					this.SendPropertyChanged("deleted");
+					this.OndeletedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="NVarChar(50)")]
+		public string role
+		{
+			get
+			{
+				return this._role;
+			}
+			set
+			{
+				if ((this._role != value))
+				{
+					this.OnroleChanging(value);
+					this.SendPropertyChanging();
+					this._role = value;
+					this.SendPropertyChanged("role");
+					this.OnroleChanged();
 				}
 			}
 		}

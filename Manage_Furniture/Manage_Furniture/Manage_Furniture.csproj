@@ -68,6 +68,9 @@
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -156,7 +159,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsWarehouse.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ADO\manager_furniture.designer.cs" />
+    <Compile Include="ADO\manager_furniture.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>manager_furniture.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FEmployeeControl.cs" />
     <Compile Include="Controls\Helper.cs" />
     <Compile Include="Controls\HRControl.cs" />
@@ -327,7 +334,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
-    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ADO\dtOrder.xsc">
@@ -398,7 +409,7 @@
     </None>
     <None Include="ADO\manager_furniture.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>manager_furniture1.designer.cs</LastGenOutput>
+      <LastGenOutput>manager_furniture.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="ADO\manager_furniture.dbml.layout">
@@ -489,6 +500,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucHR.resx">
       <DependentUpon>ucHR.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UCOrder.resx">
       <DependentUpon>UCOrder.cs</DependentUpon>
