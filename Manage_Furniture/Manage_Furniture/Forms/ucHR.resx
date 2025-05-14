@@ -121,7 +121,7 @@
   <data name="txtSearch.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAiRJREFUSEvtlrtuE0EYhS1uDYQOJF4B6HgAhyLCzBgEiEWeXVcUiYi4I4q9SNtG
+        DQAACw0B7QfALAAAAiRJREFUSEvtlrtuE0EYhS1uDYQOJF4B6HgAhyLCzBgEiEWeXVcUiYi4I4q9SNtG
         vEYCPAoSooEgAUpCn9opkio5Z3IWW0JkPI4JFPmkUawz+8+Zyz//pHXMf0OdJGfynnlQpPZd4ez30tkt
         Nv1+yz5+o8+nQ5Wae2VqN9B2D2qY1HqR2bsKm5y6rk9gwDfDwc3nIjVP86xz+VV/7ixb1bt1pXL2GVb+
         ZfidXWKshokHAzSm26UzCwcN5ifp7CP/rczVFYe215vmrtuWHKTM7GxjXrnuHcnjwSRB4P6ZYqWSx6Zw
@@ -161,6 +161,9 @@
     <value>True</value>
   </metadata>
   <metadata name="email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="role.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

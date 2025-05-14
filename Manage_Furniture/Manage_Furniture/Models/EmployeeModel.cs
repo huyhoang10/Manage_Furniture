@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Manage_Furniture.ADO;
 
 namespace Manage_Furniture.Models
 {
@@ -19,8 +20,9 @@ namespace Manage_Furniture.Models
         public bool Deleted { get; set; }
 
         public string Email { get; set; }
+        public string Role { get; set; } // Add Role property
 
-        public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string password, string status, bool deleted, string email )
+        public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string password, string status, bool deleted, string email, string role )
         {
             Id = id;
             Name = name;
@@ -32,8 +34,20 @@ namespace Manage_Furniture.Models
             Password = password;
             Deleted= deleted;
             Email = email;
+            Role = role;
         }
+        public string CheckLogin(string username, string password, string role)
+        {
+            var db = new manager_furnitureDataContext();// connectDatabase.GetContext();
 
+            var user = db.employees.FirstOrDefault(u =>
+                u.phone == username &&
+                u.password == password &&
+                u.deleted == false &&
+                u.role == role);
+
+            return user?.role;
+        }
         public EmployeeModel() { }
     }
 

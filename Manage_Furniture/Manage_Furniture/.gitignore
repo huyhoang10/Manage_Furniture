@@ -2,8 +2,7 @@
 .vs/
 *.user
 *.suo
-App.config
-ADO/
+
 # Build results
 bin/
 obj/

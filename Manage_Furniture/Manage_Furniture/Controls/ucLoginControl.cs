@@ -11,11 +11,11 @@ namespace Manage_Furniture.Controls
 {
     internal class ucLoginControl
     {
-        private UserModel userModel = new UserModel();
+        private EmployeeModel EmployeeModel = new EmployeeModel();
 
         public string Login(string username, string password, string role)
         {
-            return userModel.CheckLogin(username, password, role);
+            return EmployeeModel.CheckLogin(username, password, role);
         }
 
         public bool CheckActive(string phone)

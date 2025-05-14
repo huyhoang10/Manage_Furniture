@@ -42,7 +42,8 @@ namespace Manage_Furniture.Controls
                 e.password,
                 e.status,
                 e.deleted,
-                e.email
+                e.email,
+                e.role
 
             )).ToList();
             
@@ -58,7 +59,8 @@ namespace Manage_Furniture.Controls
                 emp.Password,
                 emp.Status,
                 emp.Deleted,
-                emp.Email
+                emp.Email,
+                emp.Role
 
 
             )).ToList();
@@ -68,20 +70,7 @@ namespace Manage_Furniture.Controls
         {
             return db.employees.Any(e => e.id.ToString() == id);
         }
-        public string getRole(string phone, string password)
-        {
-            var user = db.users.FirstOrDefault(u => u.phone == phone && u.password == password);
-            return user?.role;
-        }
-        public void editRole(string phone, string pass)
-        {
-            var user = db.users.FirstOrDefault(u => u.phone == phone);
-            if (user != null)
-            {
-                user.password = pass;
-                db.SubmitChanges();
-            }
-        }
+       
 
         public void AddEmployee(EmployeeModel emp)
 
@@ -104,25 +93,13 @@ namespace Manage_Furniture.Controls
                 password = emp.Password,
                 status = emp.Status,
                 deleted = emp.Deleted,
-                email = emp.Email
+                email = emp.Email,
+                role = emp.Role
             };
 
             db.employees.InsertOnSubmit(newEmp);
            
             db.SubmitChanges();  // Lưu dữ liệu vào bảng employees
-            
-            // Thêm dữ liệu vào bảng users
-            var newUser = new user
-            {
-                phone = emp.Phone,
-                password = emp.Password,
-                role = "Staff",
-
-                
-            };
-
-            db.users.InsertOnSubmit(newUser);
-            db.SubmitChanges();  // Lưu dữ liệu vào bảng users
         }
 
         //sort theo lương
@@ -251,7 +228,8 @@ namespace Manage_Furniture.Controls
                 e.password,
                 e.status,
                 e.deleted,
-                e.email
+                e.email,
+                e.role
             )).ToList();
         }
 

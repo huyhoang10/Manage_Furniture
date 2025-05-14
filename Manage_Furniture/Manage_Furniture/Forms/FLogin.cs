@@ -52,7 +52,7 @@ namespace Manage_Furniture.Forms
             string username = txt_username.Text.Trim();
             string password = txt_passwd.Text;
 
-            string role = rbtn_admin.Checked ? "admin" : "employee";
+            string role = rbtn_admin.Checked ? "Admin" : "Employee";
 
             if (!string.IsNullOrEmpty(role))
             {
@@ -60,7 +60,7 @@ namespace Manage_Furniture.Forms
 
                 if (loginRole != null)
                 {
-                    if (loginRole == "employee")
+                    if (loginRole == "Employee")
                     {
                         if (uclogin_control.CheckActive(username))
                             MessageBox.Show("Login successful!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,13 +71,13 @@ namespace Manage_Furniture.Forms
                         }
                     }
                     
-                    if (loginRole == "admin")
+                    if (loginRole == "Admin")
                     {
                         userLogin.Name = "Admin";
                         FManager fManager = new FManager();
                         fManager.ShowDialog();
                     }
-                    else if (loginRole == "employee")
+                    else if (loginRole == "Employee")
                     {
                         userLogin = uclogin_control.GetEmployee(username);
                         //employeeModel = uclogin_control.GetEmployee(username);

@@ -62,7 +62,7 @@ namespace Manage_Furniture.Controls
             // Tuỳ chỉnh header cột (nếu cần)
             var activeEmployees = employees.Where(e => e.Status == "Active").ToList();
             var inactiveEmployees = employees.Where(e => e.Status == "Inactive").ToList();
-            EnsureRoleColumn();
+           
 
 
 
@@ -157,7 +157,8 @@ namespace Manage_Furniture.Controls
                 txtPassword.Text,
                 "Active",
                 false,
-                txtEmail.Text
+                txtEmail.Text,
+                "Employee" // Mặc định là Employee
             );
 
             controller.AddEmployee(newEmp);
@@ -204,7 +205,7 @@ namespace Manage_Furniture.Controls
             var results = controller.SearchEmployees(keyword);  // Tìm kiếm nhân viên theo từ khoá
             dgvView.DataSource = null;
             dgvView.DataSource = results;
-            EnsureRoleColumn();
+          
         }
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -240,7 +241,7 @@ namespace Manage_Furniture.Controls
 
             dgvView.DataSource = null;
             dgvView.DataSource = list;
-            EnsureRoleColumn();
+         
         }
 
         private void dgvView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -279,33 +280,6 @@ namespace Manage_Furniture.Controls
             }
         }
 
-        private void EnsureRoleColumn()
-        {
-            // Thêm cột Role nếu chưa tồn tại
-            if (!dgvView.Columns.Contains("Role"))
-            {
-                DataGridViewTextBoxColumn roleColumn = new DataGridViewTextBoxColumn
-                {
-                    HeaderText = "Role",
-                    Name = "Role",
-                    ReadOnly = true,
-                    DisplayIndex = dgvView.Columns.Count // Đặt ở vị trí cuối cùng
-                };
-                dgvView.Columns.Add(roleColumn);
-            }
-
-            // Cập nhật giá trị cho cột Role
-            foreach (DataGridViewRow row in dgvView.Rows)
-            {
-                if (row.Cells["Phone"].Value != null && row.Cells["password"].Value != null)
-                {
-                    string phone = row.Cells["Phone"].Value.ToString();
-                    string password = row.Cells["password"].Value.ToString();
-                    string role = controller.getRole(phone, password);
-                    row.Cells["Role"].Value = role;
-                }
-            }
-        }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -355,7 +329,7 @@ namespace Manage_Furniture.Controls
             employee.Password = txtPassword.Text;
             employee.Email = txtEmail.Text;
             var check = controller.UpdateEmployee(employee);
-            controller.editRole(employee.Phone, txtPassword.Text);
+           
             if (check)
 
             {
@@ -474,6 +448,11 @@ namespace Manage_Furniture.Controls
                 e.Graphics.FillPolygon(Brushes.White, triangle);
                 e.Handled = true;
             }
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
