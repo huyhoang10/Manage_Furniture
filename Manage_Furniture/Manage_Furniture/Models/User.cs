@@ -20,6 +20,17 @@ namespace Manage_Furniture.Models
 
             return user?.role;
         }
+        public string Phone { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
+        public UserModel(string phone, string password, string role)
+        {
+            Phone = phone;
+            Password = password;
+            Role = role;
+        }
+        public UserModel() { }
+
 
     }
 }

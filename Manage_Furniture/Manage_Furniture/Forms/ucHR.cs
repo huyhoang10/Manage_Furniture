@@ -7,6 +7,8 @@ using Manage_Furniture.ADO;
 using System.Drawing;
 using System.Collections.Generic;
 using Manage_Furniture.Forms;
+using System.Runtime.CompilerServices;
+using DocumentFormat.OpenXml.Bibliography;
 
 namespace Manage_Furniture.Controls
 {
@@ -21,7 +23,7 @@ namespace Manage_Furniture.Controls
 
         public void ucHumanResourceManagement_Load(object sender, EventArgs e)
         {
-            dgvView.AutoGenerateColumns = true; // Đảm bảo tự động tạo cột bị tắt
+            dgvView.AutoGenerateColumns = false; // Đảm bảo tự động tạo cột bị tắt
                                                  
             //if (!dgvView.Columns.Contains("STT"))
             //{
@@ -38,8 +40,10 @@ namespace Manage_Furniture.Controls
 
         private void RefreshGrid()
         {
+            
             cmbSex.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbSex.ItemHeight = 56; 
+            cmbSex.ItemHeight = 56;
+            dgvView.Columns["Salary"].SortMode = DataGridViewColumnSortMode.Programmatic;
 
             cmbSex.DrawItem += (s, e) =>
             {
@@ -50,15 +54,18 @@ namespace Manage_Furniture.Controls
                 e.DrawFocusRectangle();
             };
             dgvView.DataSource = null;
-            dgvView.DataSource = controller.GetAll("Active"); // Lấy danh sách nhân viên từ cơ sở dữ liệu
+            dgvView.DataSource = controller.GetAll(); 
+            
             var employees = controller.GetAll();
-
+            dgvView.CellPainting += dgvView_CellPainting;
+            dgvView.ColumnHeaderMouseClick += dgvView_ColumnHeaderMouseClick;
             // Tuỳ chỉnh header cột (nếu cần)
             var activeEmployees = employees.Where(e => e.Status == "Active").ToList();
             var inactiveEmployees = employees.Where(e => e.Status == "Inactive").ToList();
-            
-            
-            
+            EnsureRoleColumn();
+
+
+
             // Cập nhật số liệu
             txtTotalE.Text = employees.Count.ToString();
             txtEActive.Text = activeEmployees.Count.ToString();
@@ -66,7 +73,7 @@ namespace Manage_Furniture.Controls
             cmbFilter.SelectedIndex = 0;
             cmbSex.SelectedIndex = 0;
         }
-
+        
         private string GenerateUniqueId()
         {
             Random rnd = new Random();
@@ -133,6 +140,11 @@ namespace Manage_Furniture.Controls
                 MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if(string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Vui lòng nhập email.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             // Tạo model và gọi thêm
             EmployeeModel newEmp = new EmployeeModel(
@@ -143,7 +155,9 @@ namespace Manage_Furniture.Controls
                 txtAddress.Text,
                 salary.ToString("N0"), // Lưu lương theo định dạng có dấu phẩy
                 txtPassword.Text,
-                "Active"
+                "Active",
+                false,
+                txtEmail.Text
             );
 
             controller.AddEmployee(newEmp);
@@ -161,7 +175,9 @@ namespace Manage_Furniture.Controls
 
             // Chuyển đổi id sang kiểu int
             int id = Convert.ToInt32(dgvView.SelectedRows[0].Cells["Id"].Value);
+            string email = (dgvView.SelectedRows[0].Cells["Email"].Value).ToString();
             controller.DeleteEmployee(id);  // Cập nhật trạng thái nhân viên thành Inactive
+            controller.SendEmailNotification("Your account has been locked, you should contact admin to know the reason.", email);
             RefreshGrid();  // Cập nhật lại Grid
             MessageBox.Show("Đã xoá nhân viên!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -173,45 +189,27 @@ namespace Manage_Furniture.Controls
             txtPhone.Clear();
             cmbSex.Refresh();
             txtAddress.Clear();
+            txtPassword.Clear();
+            txtEmail.Clear();
+
             txtSalary.Clear();
         }
 
-        private void btnActive_Click(object sender, EventArgs e)
-        {
-            btnActive.FillColor = Color.Green;  // Thay đổi màu nền
-            btnInactive.FillColor = Color.White;
-            btnAll.FillColor = Color.White;
+       
 
-            var activeEmployees = controller.GetAll("Active");
-            dgvView.DataSource = null;
-            dgvView.DataSource = activeEmployees;
-        }
-
-        private void btnInactive_Click(object sender, EventArgs e)
-        {
-            btnInactive.FillColor = Color.Green;  // Thay đổi màu nền
-            btnActive.FillColor = Color.White;
-            btnAll.FillColor = Color.White;
-
-            var inactiveEmployees = controller.GetAll("Inactive");
-            dgvView.DataSource = null;
-            dgvView.DataSource = inactiveEmployees;
-        }
-
+        
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            btnAll.FillColor = Color.Green;
-            btnActive.FillColor = Color.White;
             string keyword = txtSearch.Text.Trim();
             var results = controller.SearchEmployees(keyword);  // Tìm kiếm nhân viên theo từ khoá
             dgvView.DataSource = null;
             dgvView.DataSource = results;
+            EnsureRoleColumn();
         }
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnAll.FillColor = Color.Green;  // Thay đổi màu nền
-            btnActive.FillColor = Color.White;
+           
             string selected = cmbFilter.SelectedItem.ToString();
             // Lấy toàn bộ danh sách nhân viên
             List<EmployeeModel> list = controller.GetAll();
@@ -222,25 +220,18 @@ namespace Manage_Furniture.Controls
                     emp.Sex.Equals(selected, StringComparison.OrdinalIgnoreCase)
                 ).ToList();
             }
-            //else if (selected == "< 100$")
-            //{
-            //    list = list.Where(emp =>
-            //        decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary < 100
-            //    ).ToList();
-            //}
-
-            //else if (selected == "100$ – 500$")
-            //{
-            //    list = list.Where(emp =>
-            //        decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary >= 100 && salary <= 500
-            //    ).ToList();
-            //}
-            //else if (selected == "> 500$")
-            //{
-            //    list = list.Where(emp =>
-            //        decimal.TryParse(emp.Salary.Replace(",", ""), out decimal salary) && salary > 500
-            //    ).ToList();
-            //}
+            else if (selected == "Active")
+            {
+                list = list.Where(emp =>
+                    emp.Status.Equals("Active", StringComparison.OrdinalIgnoreCase)
+                ).ToList();
+            }
+            else if (selected == "Inactive")
+            {
+                list = list.Where(emp =>
+                    emp.Status.Equals("Inactive", StringComparison.OrdinalIgnoreCase)
+                ).ToList();
+            }
             else if (selected == "All")
             {
                 // Không cần lọc gì cả
@@ -249,6 +240,7 @@ namespace Manage_Furniture.Controls
 
             dgvView.DataSource = null;
             dgvView.DataSource = list;
+            EnsureRoleColumn();
         }
 
         private void dgvView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -261,11 +253,14 @@ namespace Manage_Furniture.Controls
               
                 txtName.Text = row.Cells["Name"].Value?.ToString();
                 txtPhone.Text = row.Cells["Phone"].Value?.ToString();
+                txtPhone.ReadOnly = true;
+                txtPhone.FillColor = Color.LightGray;
                 cmbSex.Text = row.Cells["Sex"].Value?.ToString();
                 txtAddress.Text = row.Cells["Address"].Value?.ToString();
                 txtSalary.Text = row.Cells["Salary"].Value?.ToString();
                 txtPassword.Text = row.Cells["password"].Value?.ToString();
-                if(row.Cells["Status"].Value != null)
+                txtEmail.Text = row.Cells["Email"].Value?.ToString();
+                if (row.Cells["Status"].Value != null)
                 {
                     if (row.Cells["Status"].Value.ToString() == "Active")
                     {
@@ -284,22 +279,37 @@ namespace Manage_Furniture.Controls
             }
         }
 
-        private void btnAll_Click(object sender, EventArgs e)
-
+        private void EnsureRoleColumn()
         {
+            // Thêm cột Role nếu chưa tồn tại
+            if (!dgvView.Columns.Contains("Role"))
+            {
+                DataGridViewTextBoxColumn roleColumn = new DataGridViewTextBoxColumn
+                {
+                    HeaderText = "Role",
+                    Name = "Role",
+                    ReadOnly = true,
+                    DisplayIndex = dgvView.Columns.Count // Đặt ở vị trí cuối cùng
+                };
+                dgvView.Columns.Add(roleColumn);
+            }
 
-            btnAll.FillColor = Color.Green;  // Thay đổi màu nền
-            btnActive.FillColor = Color.White;
-            btnInactive.FillColor = Color.White;
-
-            var allEmployees = controller.GetAll();  // Lấy tất cả nhân viên
-            dgvView.DataSource = null;
-            dgvView.DataSource = allEmployees;
+            // Cập nhật giá trị cho cột Role
+            foreach (DataGridViewRow row in dgvView.Rows)
+            {
+                if (row.Cells["Phone"].Value != null && row.Cells["password"].Value != null)
+                {
+                    string phone = row.Cells["Phone"].Value.ToString();
+                    string password = row.Cells["password"].Value.ToString();
+                    string role = controller.getRole(phone, password);
+                    row.Cells["Role"].Value = role;
+                }
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            
             // Kiểm tra xem người dùng đã chọn một hàng trong DataGridView chưa
             if (dgvView.SelectedRows.Count == 0)
             {
@@ -318,16 +328,47 @@ namespace Manage_Furniture.Controls
                 MessageBox.Show("Số điện thoại đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            string content = $"Employee Update Summary:\n\n" +
+                 "Before Update:\n" +
+                 $"Name: {txtName.Text}\n" +
+                 
+                 $"Sex: {cmbSex.Text}\n" +
+                 $"Address: {txtAddress.Text}\n" +
+                 $"Salary: {txtSalary.Text}\n" +
+                 $"Password: {txtPassword.Text}\n" +
+                 $"Email: {txtEmail.Text}\n\n" +
+                 "After Update:\n" +
+                 $"Name: {employee.Name}\n" +
+                
+                 $"Sex: {employee.Sex}\n" +
+                 $"Address: {employee.Address}\n" +
+                 $"Salary: {employee.Salary}\n" +
+                 $"Password: {employee.Password}\n" +
+                 $"Email: {employee.Email}";
+
             // Cập nhật thông tin vào các trường nhập
             employee.Name = txtName.Text;
-            employee.Phone = txtPhone.Text;
+        
             employee.Sex = cmbSex.Text;
             employee.Address = txtAddress.Text;
             employee.Salary = txtSalary.Text;
             employee.Password = txtPassword.Text;
+            employee.Email = txtEmail.Text;
+            var check = controller.UpdateEmployee(employee);
+            controller.editRole(employee.Phone, txtPassword.Text);
+            if (check)
 
-            controller.UpdateEmployee(employee);
-            MessageBox.Show("Chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                var email = employee.Email;
+                controller.SendEmailNotification(content, email);
+                MessageBox.Show("Cập nhật thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
             RefreshGrid();
         }
 
@@ -346,6 +387,7 @@ namespace Manage_Furniture.Controls
             {
                
                 controller.UnblockEmployee(id); // Cập nhật trạng thái nhân viên thành Inactive
+                controller.SendEmailNotification("Your account is unlocked", controller.GetAll().FirstOrDefault(ee => ee.Id.ToString() == id.ToString()).Email);
                 RefreshGrid();  // Cập nhật lại Grid
                 MessageBox.Show("Đã mở khoá nhân viên!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -353,6 +395,7 @@ namespace Manage_Furniture.Controls
             {
               
                 controller.BlockEmployee(id); // Cập nhật trạng thái nhân viên thành Inactive
+                controller.SendEmailNotification("Your account is locked, you should contact admin to unlock it.", controller.GetAll().FirstOrDefault(ee => ee.Id.ToString() == id.ToString()).Email);
                 RefreshGrid();  // Cập nhật lại Grid
                 MessageBox.Show("Đã khoá nhân viên!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -371,5 +414,67 @@ namespace Manage_Furniture.Controls
             FReportEmployee report = new FReportEmployee();
             report.ShowDialog();
         }
+        public bool sortAscending = false;
+        private string sortedColumn = "salary";
+
+        private void dgvView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string columnName = dgvView.Columns[e.ColumnIndex].Name;
+
+            if (columnName == sortedColumn)
+                sortAscending = !sortAscending;
+            else
+            {
+                sortedColumn = columnName;
+                sortAscending = true;
+            }
+
+            // Gọi sort trong controller
+            if (columnName == "salary")
+            {
+                var sorted = controller.SortBySalary(sortAscending ? "asc" : "desc");
+                dgvView.DataSource = null;
+                dgvView.DataSource = sorted;
+            }
+
+            dgvView.Invalidate();
+        }
+
+        private void dgvView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0 && dgvView.Columns[e.ColumnIndex].Name == sortedColumn)
+            {
+                e.PaintBackground(e.CellBounds, true);
+                e.PaintContent(e.CellBounds);
+
+                int x = e.CellBounds.Right - 20;
+                int y = e.CellBounds.Top + (e.CellBounds.Height / 2) - 5;
+
+                Point[] triangle;
+
+                if (sortAscending)
+                {
+                    triangle = new Point[]
+                    {
+                new Point(x, y + 6),
+                new Point(x + 6, y + 6),
+                new Point(x + 3, y)
+                    };
+                }
+                else
+                {
+                    triangle = new Point[]
+                    {
+                new Point(x, y),
+                new Point(x + 6, y),
+                new Point(x + 3, y + 6)
+                    };
+                }
+
+                e.Graphics.FillPolygon(Brushes.White, triangle);
+                e.Handled = true;
+            }
+        }
     }
+
 }

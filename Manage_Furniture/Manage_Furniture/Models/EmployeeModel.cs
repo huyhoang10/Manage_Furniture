@@ -15,9 +15,12 @@ namespace Manage_Furniture.Models
         public string Address { get; set; }
         public string Salary { get; set; }
         public string Status { get; set; }
-        public string Password { get; set; } // Thêm thuộc tính password
+        public string Password { get; set; } 
+        public bool Deleted { get; set; }
 
-        public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string password, string status )
+        public string Email { get; set; }
+
+        public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string password, string status, bool deleted, string email )
         {
             Id = id;
             Name = name;
@@ -27,9 +30,13 @@ namespace Manage_Furniture.Models
             Salary = salary;
             Status = status;
             Password = password;
+            Deleted= deleted;
+            Email = email;
         }
+
         public EmployeeModel() { }
     }
+
 
 
 }

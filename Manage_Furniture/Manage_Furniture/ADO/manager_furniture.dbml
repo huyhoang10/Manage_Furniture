@@ -18,25 +18,13 @@
       <Association Name="customer_order" Member="orders" ThisKey="id" OtherKey="id_customer" Type="order" />
     </Type>
   </Table>
-  <Table Name="dbo.employee" Member="employees">
-    <Type Name="employee">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="salary" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
-      <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.orders" Member="orders">
     <Type Name="order">
       <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_customer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="date_purchase" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_purchase" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="money" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="customer_order" Member="customer" ThisKey="id_customer" OtherKey="id" Type="customer" IsForeignKey="true" />
@@ -72,6 +60,7 @@
       <Column Name="phone" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="role" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="employee_user" Member="employee" ThisKey="phone" OtherKey="phone" Type="employee" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.warehouse" Member="warehouses">
@@ -79,6 +68,21 @@
       <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="product_warehouse" Member="product" ThisKey="id_product" OtherKey="id" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.employee" Member="employees">
+    <Type Name="employee">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="salary" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="employee_user" Member="user" ThisKey="phone" OtherKey="phone" Type="user" Cardinality="One" />
     </Type>
   </Table>
 </Database>
