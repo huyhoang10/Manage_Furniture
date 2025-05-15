@@ -58,15 +58,16 @@ namespace Manage_Furniture.Controls
 
         }
 
-        public void EditSupplier(string id, string name, string address, string contact, string note)
+        public bool EditSupplier(string id, string name, string address, string contact, string note)
         {
             if (id != "")
             {
                 connectDB.EditSuppliers(Int32.Parse(id), name, contact, address, note);
-                return;
+                return true;
             }
             else
                 MessageBox.Show("Please choose supplier", "Error");
+            return false;
         }
 
         public void DeleteSupplier(string id)

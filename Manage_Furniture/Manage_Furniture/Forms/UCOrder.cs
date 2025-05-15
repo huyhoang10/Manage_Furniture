@@ -20,6 +20,7 @@ namespace Manage_Furniture.Forms
         {
             InitializeComponent();
             LoadProduct();
+            
             InitializeDataGridViewEvents();
             EntryLock();
             dgv_orders.EditMode = DataGridViewEditMode.EditOnEnter;
@@ -61,39 +62,11 @@ namespace Manage_Furniture.Forms
                 productColumn.ValueMember = "id_name";
             }
         }
-        //public void LoadProduct()
-        //{
-        //    var products = orderControl.GetAllProducts()
-        //        .Select(p => new
-        //        {
-        //            id = p.id,
-        //            id_name = $"{p.id}-{p.name}",
-        //            name = p.name,
-        //            price = p.price
-        //        }).ToList();
-
-        //    var productColumn = dgv_orders.Columns["col_product"] as DataGridViewComboBoxColumn;
-        //    if (productColumn != null)
-        //    {
-        //        productColumn.DataSource = products;
-        //        productColumn.DisplayMember = "id_name";
-        //        productColumn.ValueMember = "id";  // Giá trị thật là ID
-        //    }
-        //}
 
         private void dgv_orders_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (dgv_orders.CurrentCell.ColumnIndex == dgv_orders.Columns["col_product"].Index && e.Control is ComboBox cb)
             {
-                cb.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
-                cb.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
-
-                var selectedProducts = dgv_orders.Rows.Cast<DataGridViewRow>()
-                    .Where(r => !r.IsNewRow && r.Index != dgv_orders.CurrentCell.RowIndex)
-                    .Select(r => r.Cells["col_product"].Value?.ToString())
-                    .Where(v => !string.IsNullOrEmpty(v))
-                    .ToList();
-
                 var allProducts = orderControl.GetAllProducts()
                     .Select(p => new
                     {
@@ -101,6 +74,15 @@ namespace Manage_Furniture.Forms
                         name = p.name,
                         price = p.price
                     })
+                    .ToList();
+
+                cb.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+                cb.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+
+                var selectedProducts = dgv_orders.Rows.Cast<DataGridViewRow>()
+                    .Where(r => !r.IsNewRow && r.Index != dgv_orders.CurrentCell.RowIndex)
+                    .Select(r => r.Cells["col_product"].Value?.ToString())
+                    .Where(v => !string.IsNullOrEmpty(v))
                     .ToList();
 
                 var currentValue = dgv_orders.CurrentCell.Value?.ToString();
@@ -160,6 +142,7 @@ namespace Manage_Furniture.Forms
 
         private void UpdateOrderRow(int rowIndex)
         {
+            LoadProduct();
             if (rowIndex < 0 || rowIndex >= dgv_orders.Rows.Count)
                 return;
 

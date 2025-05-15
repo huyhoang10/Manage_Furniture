@@ -55,28 +55,31 @@ namespace Manage_Furniture.Forms
                     }
                     else
                     {
-                        suppliersControls.AddSupplier(txtName.Text, txtAddress.Text, txtContact.Text, txtNote.Text);
-                        LoadDgvView();
-                        txtID.Text = "";
-                        txtName.Text = "";
-                        txtContact.Text = "";
-                        txtAddress.Text = "";
-                        txtNote.Text = "";
-                        return;
+                        if(suppliersControls.AddSupplier(txtName.Text, txtAddress.Text, txtContact.Text, txtNote.Text)==true)
+                        {
+                            MessageBox.Show("Supplier added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadDgvView();
+                            txtID.Text = "";
+                            txtName.Text = "";
+                            txtContact.Text = "";
+                            txtAddress.Text = "";
+                            txtNote.Text = "";
+                            return;
+                        }
                     }
                 }
             }
-            MessageBox.Show("chua ton tai!");
-            //if(suppliersControls.AddSupplier(txtName.Text, txtAddress.Text, txtContact.Text, txtNote.Text) == true)
-            //{
-            //    LoadDgvView();
-            //    txtID.Text = "";
-            //    txtName.Text = "";
-            //    txtContact.Text = "";
-            //    txtAddress.Text = "";
-            //    txtNote.Text = "";
-            //}
-            
+            if (suppliersControls.AddSupplier(txtName.Text, txtAddress.Text, txtContact.Text, txtNote.Text) == true)
+            {
+                MessageBox.Show("Supplier added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDgvView();
+                txtID.Text = "";
+                txtName.Text = "";
+                txtContact.Text = "";
+                txtAddress.Text = "";
+                txtNote.Text = "";
+            }
+
         }
 
         private void dgvView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -96,8 +99,48 @@ namespace Manage_Furniture.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            suppliersControls.EditSupplier(txtID.Text,txtName.Text,txtAddress.Text,txtContact.Text,txtNote.Text);
-            LoadDgvView();
+            //suppliersControls.EditSupplier(txtID.Text,txtName.Text,txtAddress.Text,txtContact.Text,txtNote.Text);
+            //LoadDgvView();
+            foreach (DataGridViewRow row in dgvView.Rows)
+            {
+                if (row.Cells["col_Name"].Value.ToString() == txtName.Text)
+                {
+                    if (MessageBox.Show("This supplier already exists.\nDo you want to continue edit more?", "Warming", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                    {
+                        txtID.Text = row.Cells["col_Id"].Value.ToString();
+                        txtName.Text = row.Cells["col_Name"].Value.ToString();
+                        txtAddress.Text = row.Cells["col_Address"].Value.ToString();
+                        txtContact.Text = row.Cells["col_Contact"].Value.ToString();
+                        txtNote.Text = row.Cells["col_Note"].Value.ToString();
+                        return;
+                    }
+                    else
+                    {
+                        if (suppliersControls.EditSupplier(txtID.Text, txtName.Text, txtAddress.Text, txtContact.Text, txtNote.Text))
+                        {
+                            MessageBox.Show("Supplier edit successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadDgvView();
+                            txtID.Text = "";
+                            txtName.Text = "";
+                            txtContact.Text = "";
+                            txtAddress.Text = "";
+                            txtNote.Text = "";
+                            return;
+                        }
+                    }
+                }
+            }
+            if(suppliersControls.EditSupplier(txtID.Text, txtName.Text, txtAddress.Text, txtContact.Text, txtNote.Text))
+            {
+                MessageBox.Show("Supplier edit successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDgvView();
+                txtID.Text = "";
+                txtName.Text = "";
+                txtContact.Text = "";
+                txtAddress.Text = "";
+                txtNote.Text = "";
+            }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
