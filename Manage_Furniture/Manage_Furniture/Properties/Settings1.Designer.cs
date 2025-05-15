@@ -34,15 +34,26 @@ namespace Manage_Furniture.Properties {
             }
         }
         
-        //[global::System.Configuration.ApplicationScopedSettingAttribute()]
-        //[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        //[global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        //[global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ManageFurniture2;Integrated Security=True;TrustServ" +
-        //    "erCertificate=True")]
-        //public string ManageFurniture2ConnectionString {
-        //    get {
-        //        return ((string)(this["ManageFurniture2ConnectionString"]));
-        //    }
-        //}
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ManageFurniture2;Integrated Security=True;TrustServ" +
+            "erCertificate=True")]
+        public string ManageFurniture2ConnectionString {
+            get {
+                return ((string)(this["ManageFurniture2ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ManageFurniture;Integrated Security=True;TrustServe" +
+            "rCertificate=True")]
+        public string ManageFurnitureConnectionString {
+            get {
+                return ((string)(this["ManageFurnitureConnectionString"]));
+            }
+        }
     }
 }

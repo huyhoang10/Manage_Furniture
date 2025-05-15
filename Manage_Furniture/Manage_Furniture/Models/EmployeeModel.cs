@@ -21,8 +21,10 @@ namespace Manage_Furniture.Models
 
         public string Email { get; set; }
         public string Role { get; set; } // Add Role property
+        public DateTime CreatedAt { get; set; }
 
-        public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string password, string status, bool deleted, string email, string role )
+
+        public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string password, string status, bool deleted, string email, string role, DateTime createdAt)
         {
             Id = id;
             Name = name;
@@ -35,6 +37,7 @@ namespace Manage_Furniture.Models
             Deleted= deleted;
             Email = email;
             Role = role;
+            CreatedAt = createdAt;
         }
         public string CheckLogin(string username, string password, string role)
         {

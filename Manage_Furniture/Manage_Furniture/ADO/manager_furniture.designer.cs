@@ -22,7 +22,7 @@ namespace Manage_Furniture.ADO
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ManageFurniture2")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ManageFurniture")]
 	public partial class manager_furnitureDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -57,7 +57,7 @@ namespace Manage_Furniture.ADO
     #endregion
 		
 		public manager_furnitureDataContext() : 
-				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString1, mappingSource)
+				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1530,13 +1530,15 @@ namespace Manage_Furniture.ADO
 		
 		private string _password;
 		
-		private string _email;
-		
 		private string _status;
 		
-		private System.Nullable<bool> _deleted;
+		private bool _deleted;
+		
+		private string _email;
 		
 		private string _role;
+		
+		private System.DateTime _CreatedAt;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1556,14 +1558,16 @@ namespace Manage_Furniture.ADO
     partial void OnsalaryChanged();
     partial void OnpasswordChanging(string value);
     partial void OnpasswordChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
     partial void OnstatusChanging(string value);
     partial void OnstatusChanged();
-    partial void OndeletedChanging(System.Nullable<bool> value);
+    partial void OndeletedChanging(bool value);
     partial void OndeletedChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
     partial void OnroleChanging(string value);
     partial void OnroleChanged();
+    partial void OnCreatedAtChanging(System.DateTime value);
+    partial void OnCreatedAtChanged();
     #endregion
 		
 		public employee()
@@ -1611,7 +1615,7 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string phone
 		{
 			get
@@ -1711,26 +1715,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				if ((this._email != value))
-				{
-					this.OnemailChanging(value);
-					this.SendPropertyChanging();
-					this._email = value;
-					this.SendPropertyChanged("email");
-					this.OnemailChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
 		public string status
 		{
@@ -1751,8 +1735,8 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deleted", DbType="Bit")]
-		public System.Nullable<bool> deleted
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deleted", DbType="Bit NOT NULL")]
+		public bool deleted
 		{
 			get
 			{
@@ -1771,7 +1755,27 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string role
 		{
 			get
@@ -1787,6 +1791,26 @@ namespace Manage_Furniture.ADO
 					this._role = value;
 					this.SendPropertyChanged("role");
 					this.OnroleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedAt
+		{
+			get
+			{
+				return this._CreatedAt;
+			}
+			set
+			{
+				if ((this._CreatedAt != value))
+				{
+					this.OnCreatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedAt = value;
+					this.SendPropertyChanged("CreatedAt");
+					this.OnCreatedAtChanged();
 				}
 			}
 		}

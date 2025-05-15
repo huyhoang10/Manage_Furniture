@@ -41,9 +41,10 @@ namespace Manage_Furniture.Controls
                 e.salary.ToString(),
                 e.password,
                 e.status,
-                e.deleted ?? false,
+                e.deleted,
                 e.email,
-                e.role
+                e.role,
+                e.CreatedAt 
 
             )).ToList();
             
@@ -60,7 +61,8 @@ namespace Manage_Furniture.Controls
                 emp.Status,
                 emp.Deleted,
                 emp.Email,
-                emp.Role
+                emp.Role,
+                emp.CreatedAt
 
 
             )).ToList();
@@ -94,7 +96,8 @@ namespace Manage_Furniture.Controls
                 status = emp.Status,
                 deleted = emp.Deleted,
                 email = emp.Email,
-                role = emp.Role
+                role = emp.Role,
+                CreatedAt = DateTime.Now
             };
 
             db.employees.InsertOnSubmit(newEmp);
@@ -183,7 +186,7 @@ namespace Manage_Furniture.Controls
                 if (existing != null)
                 {
                     existing.name = emp.Name;
-                    existing.phone = emp.Phone;
+                
                     existing.sex = emp.Sex;
                     existing.address = emp.Address;
                     existing.salary = decimal.Parse(emp.Salary.Replace(",", ""));
@@ -238,9 +241,10 @@ namespace Manage_Furniture.Controls
                 e.salary.HasValue ? e.salary.Value.ToString("N0") : "0",
                 e.password,
                 e.status,
-                e.deleted ?? false,
+                e.deleted,
                 e.email,
-                e.role
+                e.role,
+                e.CreatedAt
             )).ToList();
         }
 

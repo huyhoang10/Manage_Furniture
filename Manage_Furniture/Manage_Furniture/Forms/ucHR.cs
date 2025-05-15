@@ -162,7 +162,8 @@ namespace Manage_Furniture.Controls
                 "Active",
                 false,
                 txtEmail.Text,
-                "Employee"
+                "Employee",
+                DateTime.Now
             );
 
             controller.AddEmployee(newEmp);
@@ -242,6 +243,7 @@ namespace Manage_Furniture.Controls
                 txtPhone.ReadOnly = true;
                 txtPhone.FillColor = System.Drawing.Color.LightGray;
                 cmbSex.Text = row.Cells["Sex"].Value?.ToString();
+                txtCreateTime.Text = row.Cells["CreatedAt"].Value?.ToString();
                 txtAddress.Text = row.Cells["Address"].Value?.ToString();
                 txtSalary.Text = row.Cells["Salary"].Value?.ToString();
                 txtPassword.Text = row.Cells["password"].Value?.ToString();

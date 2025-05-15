@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucHR));
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -57,6 +57,9 @@
             this.btn_Report = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Excel = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVerify = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCreateTime = new Guna.UI2.WinForms.Guna2TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,8 +71,7 @@
             this.deleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVerify = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -417,17 +419,17 @@
             // 
             // dgvView
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgvView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvView.ColumnHeadersHeight = 50;
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -441,15 +443,16 @@
             this.status,
             this.deleted,
             this.email,
-            this.role});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvView.DefaultCellStyle = dataGridViewCellStyle12;
+            this.role,
+            this.CreatedAt});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvView.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvView.Location = new System.Drawing.Point(13, 88);
             this.dgvView.Name = "dgvView";
@@ -612,6 +615,73 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnVerify
+            // 
+            this.btnVerify.BorderRadius = 16;
+            this.btnVerify.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVerify.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVerify.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVerify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVerify.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
+            this.btnVerify.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerify.ForeColor = System.Drawing.Color.Black;
+            this.btnVerify.Location = new System.Drawing.Point(947, 739);
+            this.btnVerify.Name = "btnVerify";
+            this.btnVerify.Size = new System.Drawing.Size(173, 41);
+            this.btnVerify.TabIndex = 27;
+            this.btnVerify.Text = "Verify Admin";
+            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderColor = System.Drawing.Color.Maroon;
+            this.txtSearch.BorderRadius = 16;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
+            this.txtSearch.Location = new System.Drawing.Point(712, 130);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PlaceholderText = "Search Name";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(432, 56);
+            this.txtSearch.TabIndex = 13;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // txtCreateTime
+            // 
+            this.txtCreateTime.BackColor = System.Drawing.Color.Transparent;
+            this.txtCreateTime.BorderColor = System.Drawing.Color.Maroon;
+            this.txtCreateTime.BorderRadius = 16;
+            this.txtCreateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCreateTime.DefaultText = "";
+            this.txtCreateTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCreateTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCreateTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCreateTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCreateTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(227)))));
+            this.txtCreateTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCreateTime.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCreateTime.ForeColor = System.Drawing.Color.Black;
+            this.txtCreateTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCreateTime.Location = new System.Drawing.Point(231, 149);
+            this.txtCreateTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCreateTime.Name = "txtCreateTime";
+            this.txtCreateTime.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtCreateTime.PlaceholderText = "Time";
+            this.txtCreateTime.SelectedText = "";
+            this.txtCreateTime.Size = new System.Drawing.Size(256, 37);
+            this.txtCreateTime.TabIndex = 28;
+            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -706,53 +776,20 @@
             this.role.Name = "role";
             this.role.ReadOnly = true;
             // 
-            // btnVerify
+            // CreatedAt
             // 
-            this.btnVerify.BorderRadius = 16;
-            this.btnVerify.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVerify.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnVerify.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnVerify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnVerify.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
-            this.btnVerify.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerify.ForeColor = System.Drawing.Color.Black;
-            this.btnVerify.Location = new System.Drawing.Point(947, 739);
-            this.btnVerify.Name = "btnVerify";
-            this.btnVerify.Size = new System.Drawing.Size(173, 41);
-            this.btnVerify.TabIndex = 27;
-            this.btnVerify.Text = "Verify Admin";
-            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BorderColor = System.Drawing.Color.Maroon;
-            this.txtSearch.BorderRadius = 16;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
-            this.txtSearch.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txtSearch.Location = new System.Drawing.Point(712, 130);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PlaceholderText = "Search Name";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(432, 56);
-            this.txtSearch.TabIndex = 13;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.CreatedAt.DataPropertyName = "CreatedAt";
+            this.CreatedAt.HeaderText = "CreatedAt";
+            this.CreatedAt.Name = "CreatedAt";
+            this.CreatedAt.ReadOnly = true;
+            this.CreatedAt.Visible = false;
             // 
             // ucHR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.Controls.Add(this.txtCreateTime);
             this.Controls.Add(this.btnVerify);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btn_Excel);
@@ -806,6 +843,8 @@
         private Guna.UI2.WinForms.Guna2Button btn_Excel;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2Button btnVerify;
+        private Guna.UI2.WinForms.Guna2TextBox txtCreateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
@@ -817,6 +856,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn deleted;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
-        private Guna.UI2.WinForms.Guna2Button btnVerify;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedAt;
     }
 }
