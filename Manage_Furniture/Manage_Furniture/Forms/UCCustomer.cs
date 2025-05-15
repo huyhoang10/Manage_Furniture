@@ -38,6 +38,7 @@ namespace Manage_Furniture.Controls
         private void LoadData()
         {
             Customerclass cc = new Customerclass();
+            dgv_Customer.AutoGenerateColumns = false;
             dgv_Customer.DataSource = null;
             dgv_Customer.DataSource = cc.GetAllCustomers();
             cmb_FillterType.SelectedItem = "All";
