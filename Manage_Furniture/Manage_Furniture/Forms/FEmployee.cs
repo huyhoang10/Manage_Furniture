@@ -25,7 +25,7 @@ namespace Manage_Furniture.Forms
             btnSupplier.Visible = false;
             SetAllButton();
             btnOrder.FillColor = Color.FromArgb(197, 166, 158);
-            ucOverview1.BringToFront();
+            ucOrder1.BringToFront();
             btnUser.Text = "Hi! "+FLogin.userLogin.Name;
         }
 

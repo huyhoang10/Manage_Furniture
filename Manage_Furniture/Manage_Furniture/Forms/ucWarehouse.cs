@@ -31,11 +31,13 @@ namespace Manage_Furniture.Forms
             LoadDgvView();
             LoadCmbSuppliers();
             LoadCmbSubCategory();
+            LoadCmbFilter();
             btnAdd.Enabled = true;
             btnEdit.Enabled = false;
             //btnDelete.Enabled = false; btnAdd.Enabled = true;
             btnEdit.Enabled = false;
             //btnDelete.Enabled = false;
+            cmbFilter.Text = "All";
         }
 
         private void LoadDgvView()
@@ -59,6 +61,14 @@ namespace Manage_Furniture.Forms
             }
         }
 
+        private void LoadCmbFilter()
+        {
+            List<string> dataCmbFilter = warehouseControls.LoadcmbSubCategory();
+            foreach (var item in dataCmbFilter)
+            {
+                cmbFilter.Items.Add(item);
+            }
+        }
         private void dgvView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnAdd.Enabled = false;
@@ -162,8 +172,10 @@ namespace Manage_Furniture.Forms
                             txtName.Text = "";
                             txtPrice.Text = "";
                             txtBrand.Text = "";
-                            cmbSubcategory.Text = "";
-                            cmbSuppliers.Text = "";  
+                            cmbFilter.Text = "All";
+                            cmbSubcategory.SelectedIndex = 0;
+                            cmbSuppliers.SelectedIndex = 0;
+                            nmrQuantity.Value = nmrQuantity.Minimum;
                         }
                         return;
                     }
@@ -191,13 +203,18 @@ namespace Manage_Furniture.Forms
             txtName.Text = "";
             txtPrice.Text = "";
             txtBrand.Text = "";
-            cmbSubcategory.Text = "";
-            cmbSuppliers.Text = "";
+            cmbSubcategory.SelectedIndex = 0;
+            cmbSuppliers.SelectedIndex = 0;
+            nmrQuantity.Value = nmrQuantity.Minimum;
+            cmbFilter.Text = "All";
+            txtSearch.Text = "";
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            cmbFilter.Text = "All";
             dgvView.DataSource = warehouseControls.SearchProducts(txtSearch.Text);
+            
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -221,6 +238,11 @@ namespace Manage_Furniture.Forms
         {
             FReportWarehouse fReportWarehouse = new FReportWarehouse();
             fReportWarehouse.ShowDialog();
+        }
+
+        private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvView.DataSource = warehouseControls.FilterProduct(cmbFilter.Text);
         }
     }
 }

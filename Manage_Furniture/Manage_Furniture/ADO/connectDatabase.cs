@@ -225,6 +225,44 @@ namespace Manage_Furniture.ADO
             return listProducts;
         }
 
+        public List<Products> FilterSubcategory(string subcategory)
+        {
+            var result = from p in db.products
+                         join w in db.warehouses on p.id equals w.id_product
+                         where p.subcategory == subcategory
+                         select new
+                         {
+                             p.id,
+                             p.name,
+                             p.supplier,
+                             p.price,
+                             p.subcategory,
+                             p.brand,
+                             w.quantity
+                         };
+
+            List<Products> listProducts = new List<Products>();
+
+            foreach (var item in result)
+            {
+                Products product = new Products();
+                product.Id = item.id;
+                product.Name = item.name;
+                product.Brand = item.brand;
+                product.Subcategory = item.subcategory;
+                product.Price = (float)item.price;
+                product.Quantity = (int)item.quantity;
+
+                int IdSupplier = (int)item.supplier;
+                var supllier = db.suppliers.FirstOrDefault(x => x.id == IdSupplier);
+                product.Supplier = IdSupplier.ToString() + " - " + supllier?.name;
+
+                listProducts.Add(product);
+            }
+
+            return listProducts;
+        }
+
         // Tổng doanh thu tháng hiện tại    
         public static decimal GetCurrentMonthRevenue()
         {

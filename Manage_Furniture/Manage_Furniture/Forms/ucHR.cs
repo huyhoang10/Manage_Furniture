@@ -371,6 +371,7 @@ namespace Manage_Furniture.Controls
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            txtPhone.ReadOnly = false;
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
             txtName.Text = "";

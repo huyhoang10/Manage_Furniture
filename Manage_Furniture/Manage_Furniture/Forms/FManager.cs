@@ -25,6 +25,7 @@ namespace Manage_Furniture.Forms
             btnSupplier.Visible = true;
             SetAllButton();
             btnHome.FillColor = Color.FromArgb(197, 166, 158);
+            ucOverview1.BringToFront();
         }
 
         protected override void SetAllButton()

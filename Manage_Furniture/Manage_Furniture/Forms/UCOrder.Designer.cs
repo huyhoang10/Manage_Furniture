@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Order = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.guna2ColorTransition1 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
@@ -70,10 +70,9 @@
             // 
             this.Order.AutoSize = true;
             this.Order.Font = new System.Drawing.Font("Montserrat", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Order.Location = new System.Drawing.Point(7, 24);
-            this.Order.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Order.Location = new System.Drawing.Point(9, 30);
             this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(592, 75);
+            this.Order.Size = new System.Drawing.Size(725, 92);
             this.Order.TabIndex = 0;
             this.Order.Text = "Order Management";
             // 
@@ -94,11 +93,11 @@
             this.btn_reset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btn_reset.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reset.ForeColor = System.Drawing.Color.Black;
-            this.btn_reset.Location = new System.Drawing.Point(861, 714);
-            this.btn_reset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_reset.Location = new System.Drawing.Point(1148, 879);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(131, 52);
-            this.btn_reset.TabIndex = 3;
+            this.btn_reset.Size = new System.Drawing.Size(175, 64);
+            this.btn_reset.TabIndex = 8;
             this.btn_reset.Text = "Reset";
             this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
@@ -112,11 +111,11 @@
             this.btn_order.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btn_order.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_order.ForeColor = System.Drawing.Color.Black;
-            this.btn_order.Location = new System.Drawing.Point(711, 714);
-            this.btn_order.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_order.Location = new System.Drawing.Point(948, 879);
+            this.btn_order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_order.Name = "btn_order";
-            this.btn_order.Size = new System.Drawing.Size(131, 52);
-            this.btn_order.TabIndex = 4;
+            this.btn_order.Size = new System.Drawing.Size(175, 64);
+            this.btn_order.TabIndex = 7;
             this.btn_order.Text = "Order";
             this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
@@ -130,11 +129,11 @@
             this.btn_export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btn_export.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_export.ForeColor = System.Drawing.Color.Black;
-            this.btn_export.Location = new System.Drawing.Point(1011, 714);
-            this.btn_export.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_export.Location = new System.Drawing.Point(1348, 879);
+            this.btn_export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_export.Name = "btn_export";
-            this.btn_export.Size = new System.Drawing.Size(131, 52);
-            this.btn_export.TabIndex = 5;
+            this.btn_export.Size = new System.Drawing.Size(175, 64);
+            this.btn_export.TabIndex = 9;
             this.btn_export.Text = "Export";
             this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
@@ -154,14 +153,14 @@
             this.txt_customer_name.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_customer_name.ForeColor = System.Drawing.Color.Black;
             this.txt_customer_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_name.Location = new System.Drawing.Point(27, 94);
-            this.txt_customer_name.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txt_customer_name.Location = new System.Drawing.Point(36, 116);
+            this.txt_customer_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_customer_name.Name = "txt_customer_name";
             this.txt_customer_name.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_customer_name.PlaceholderText = "Name Customer";
+            this.txt_customer_name.PlaceholderText = "Name Customer*";
             this.txt_customer_name.SelectedText = "";
-            this.txt_customer_name.Size = new System.Drawing.Size(383, 58);
-            this.txt_customer_name.TabIndex = 2;
+            this.txt_customer_name.Size = new System.Drawing.Size(511, 71);
+            this.txt_customer_name.TabIndex = 3;
             this.txt_customer_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_customer_name_KeyPress);
             // 
             // txt_customer_phone
@@ -180,14 +179,14 @@
             this.txt_customer_phone.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_customer_phone.ForeColor = System.Drawing.Color.Black;
             this.txt_customer_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_customer_phone.Location = new System.Drawing.Point(27, 20);
-            this.txt_customer_phone.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txt_customer_phone.Location = new System.Drawing.Point(36, 25);
+            this.txt_customer_phone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_customer_phone.Name = "txt_customer_phone";
             this.txt_customer_phone.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_customer_phone.PlaceholderText = "Phone";
+            this.txt_customer_phone.PlaceholderText = "Phone*";
             this.txt_customer_phone.SelectedText = "";
-            this.txt_customer_phone.Size = new System.Drawing.Size(250, 58);
-            this.txt_customer_phone.TabIndex = 2;
+            this.txt_customer_phone.Size = new System.Drawing.Size(333, 71);
+            this.txt_customer_phone.TabIndex = 1;
             // 
             // txt_custormer_address
             // 
@@ -205,14 +204,14 @@
             this.txt_custormer_address.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_custormer_address.ForeColor = System.Drawing.Color.Black;
             this.txt_custormer_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_custormer_address.Location = new System.Drawing.Point(27, 168);
-            this.txt_custormer_address.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txt_custormer_address.Location = new System.Drawing.Point(36, 207);
+            this.txt_custormer_address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_custormer_address.Name = "txt_custormer_address";
             this.txt_custormer_address.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_custormer_address.PlaceholderText = "Address";
             this.txt_custormer_address.SelectedText = "";
-            this.txt_custormer_address.Size = new System.Drawing.Size(383, 58);
-            this.txt_custormer_address.TabIndex = 2;
+            this.txt_custormer_address.Size = new System.Drawing.Size(511, 71);
+            this.txt_custormer_address.TabIndex = 4;
             // 
             // guna2CustomGradientPanel1
             // 
@@ -223,10 +222,10 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.txt_customer_phone);
             this.guna2CustomGradientPanel1.Controls.Add(this.txt_customer_name);
             this.guna2CustomGradientPanel1.Controls.Add(this.cmb_customer_type);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(711, 210);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(948, 258);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(431, 474);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(575, 583);
             this.guna2CustomGradientPanel1.TabIndex = 7;
             // 
             // cmb_customer_sex
@@ -247,12 +246,12 @@
             this.cmb_customer_sex.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmb_customer_sex.Location = new System.Drawing.Point(292, 20);
-            this.cmb_customer_sex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_customer_sex.Location = new System.Drawing.Point(389, 25);
+            this.cmb_customer_sex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_customer_sex.Name = "cmb_customer_sex";
-            this.cmb_customer_sex.Size = new System.Drawing.Size(119, 56);
+            this.cmb_customer_sex.Size = new System.Drawing.Size(157, 56);
             this.cmb_customer_sex.StartIndex = 0;
-            this.cmb_customer_sex.TabIndex = 4;
+            this.cmb_customer_sex.TabIndex = 2;
             this.cmb_customer_sex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_order_note
@@ -271,16 +270,16 @@
             this.txt_order_note.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_order_note.ForeColor = System.Drawing.Color.Black;
             this.txt_order_note.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_order_note.Location = new System.Drawing.Point(27, 319);
-            this.txt_order_note.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txt_order_note.Location = new System.Drawing.Point(36, 393);
+            this.txt_order_note.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_order_note.Multiline = true;
             this.txt_order_note.Name = "txt_order_note";
-            this.txt_order_note.Padding = new System.Windows.Forms.Padding(11, 8, 11, 8);
+            this.txt_order_note.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.txt_order_note.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_order_note.PlaceholderText = "Note Orders";
             this.txt_order_note.SelectedText = "";
-            this.txt_order_note.Size = new System.Drawing.Size(383, 132);
-            this.txt_order_note.TabIndex = 2;
+            this.txt_order_note.Size = new System.Drawing.Size(511, 162);
+            this.txt_order_note.TabIndex = 6;
             // 
             // cmb_customer_type
             // 
@@ -303,27 +302,27 @@
             "Regular",
             "Loyal",
             "VIP"});
-            this.cmb_customer_type.Location = new System.Drawing.Point(27, 242);
-            this.cmb_customer_type.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_customer_type.Location = new System.Drawing.Point(36, 298);
+            this.cmb_customer_type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_customer_type.Name = "cmb_customer_type";
-            this.cmb_customer_type.Size = new System.Drawing.Size(384, 56);
+            this.cmb_customer_type.Size = new System.Drawing.Size(511, 56);
             this.cmb_customer_type.StartIndex = 0;
-            this.cmb_customer_type.TabIndex = 3;
+            this.cmb_customer_type.TabIndex = 5;
             this.cmb_customer_type.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgv_orders
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_orders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgv_orders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_orders.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(19)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_orders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(19)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_orders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_orders.ColumnHeadersHeight = 50;
             this.dgv_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -333,31 +332,31 @@
             this.col_date_purchase,
             this.col_money,
             this.col_total});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_orders.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_orders.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_orders.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_orders.Location = new System.Drawing.Point(8, 20);
-            this.dgv_orders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_orders.Location = new System.Drawing.Point(11, 25);
+            this.dgv_orders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_orders.Name = "dgv_orders";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(19)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_orders.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(19)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_orders.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_orders.RowHeadersVisible = false;
             this.dgv_orders.RowHeadersWidth = 51;
             this.dgv_orders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_orders.RowTemplate.Height = 24;
-            this.dgv_orders.Size = new System.Drawing.Size(656, 453);
+            this.dgv_orders.Size = new System.Drawing.Size(875, 558);
             this.dgv_orders.TabIndex = 1;
             this.dgv_orders.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_orders.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -445,10 +444,10 @@
             this.guna2CustomGradientPanel2.BorderRadius = 16;
             this.guna2CustomGradientPanel2.Controls.Add(this.txt_sum);
             this.guna2CustomGradientPanel2.Controls.Add(this.dgv_orders);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(19, 210);
-            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(25, 258);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(674, 575);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 708);
             this.guna2CustomGradientPanel2.TabIndex = 8;
             // 
             // txt_sum
@@ -468,13 +467,13 @@
             this.txt_sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txt_sum.ForeColor = System.Drawing.Color.Black;
             this.txt_sum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_sum.Location = new System.Drawing.Point(471, 505);
-            this.txt_sum.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txt_sum.Location = new System.Drawing.Point(628, 622);
+            this.txt_sum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_sum.Name = "txt_sum";
             this.txt_sum.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_sum.PlaceholderText = "Total = 0";
             this.txt_sum.SelectedText = "";
-            this.txt_sum.Size = new System.Drawing.Size(192, 52);
+            this.txt_sum.Size = new System.Drawing.Size(256, 64);
             this.txt_sum.TabIndex = 5;
             // 
             // txt_search_phone
@@ -493,14 +492,14 @@
             this.txt_search_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_search_phone.IconRightOffset = new System.Drawing.Point(5, 0);
             this.txt_search_phone.IconRightSize = new System.Drawing.Size(25, 25);
-            this.txt_search_phone.Location = new System.Drawing.Point(821, 130);
-            this.txt_search_phone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_search_phone.Location = new System.Drawing.Point(1095, 160);
+            this.txt_search_phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_search_phone.Name = "txt_search_phone";
             this.txt_search_phone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_search_phone.PlaceholderText = "Phone Customer";
             this.txt_search_phone.SelectedText = "";
-            this.txt_search_phone.Size = new System.Drawing.Size(321, 56);
-            this.txt_search_phone.TabIndex = 9;
+            this.txt_search_phone.Size = new System.Drawing.Size(428, 69);
+            this.txt_search_phone.TabIndex = 10;
             this.txt_search_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_phone_KeyPress);
             // 
             // btn_search
@@ -515,11 +514,11 @@
             this.btn_search.ForeColor = System.Drawing.Color.White;
             this.btn_search.HoverState.FillColor = System.Drawing.Color.LightGray;
             this.btn_search.Image = global::Manage_Furniture.Properties.Resources.search_1;
-            this.btn_search.Location = new System.Drawing.Point(1098, 139);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_search.Location = new System.Drawing.Point(1464, 171);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_search.Name = "btn_search";
             this.btn_search.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btn_search.Size = new System.Drawing.Size(38, 37);
+            this.btn_search.Size = new System.Drawing.Size(51, 46);
             this.btn_search.TabIndex = 10;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
@@ -533,11 +532,11 @@
             this.btn_Report.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Report.ForeColor = System.Drawing.Color.White;
-            this.btn_Report.Location = new System.Drawing.Point(22, 169);
-            this.btn_Report.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Report.Location = new System.Drawing.Point(29, 208);
+            this.btn_Report.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Report.Name = "btn_Report";
-            this.btn_Report.Size = new System.Drawing.Size(86, 27);
-            this.btn_Report.TabIndex = 26;
+            this.btn_Report.Size = new System.Drawing.Size(115, 33);
+            this.btn_Report.TabIndex = 11;
             this.btn_Report.Text = "Report";
             this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
             // 
@@ -551,11 +550,11 @@
             this.btn_Excel.FillColor = System.Drawing.Color.DarkGreen;
             this.btn_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Excel.ForeColor = System.Drawing.Color.White;
-            this.btn_Excel.Location = new System.Drawing.Point(122, 169);
-            this.btn_Excel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Excel.Location = new System.Drawing.Point(163, 208);
+            this.btn_Excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Excel.Name = "btn_Excel";
-            this.btn_Excel.Size = new System.Drawing.Size(86, 27);
-            this.btn_Excel.TabIndex = 27;
+            this.btn_Excel.Size = new System.Drawing.Size(115, 33);
+            this.btn_Excel.TabIndex = 12;
             this.btn_Excel.Text = "Excel";
             this.btn_Excel.Click += new System.EventHandler(this.btn_Excel_Click);
             // 
@@ -566,7 +565,7 @@
             // 
             // UCOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.Controls.Add(this.btn_Excel);
@@ -579,9 +578,9 @@
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.Order);
             this.Controls.Add(this.guna2CustomGradientPanel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCOrder";
-            this.Size = new System.Drawing.Size(1164, 842);
+            this.Size = new System.Drawing.Size(1552, 1036);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orders)).EndInit();
             this.guna2CustomGradientPanel2.ResumeLayout(false);

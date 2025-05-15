@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCustomer));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Update = new Guna.UI2.WinForms.Guna2Button();
@@ -86,7 +86,7 @@
             this.btn_Update.ShadowDecoration.BorderRadius = 24;
             this.btn_Update.ShadowDecoration.Color = System.Drawing.SystemColors.GrayText;
             this.btn_Update.Size = new System.Drawing.Size(183, 67);
-            this.btn_Update.TabIndex = 4;
+            this.btn_Update.TabIndex = 6;
             this.btn_Update.Text = "Update";
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
@@ -104,15 +104,16 @@
             this.txt_Name.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(230)))));
             this.txt_Name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Name.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Name.ForeColor = System.Drawing.Color.Black;
             this.txt_Name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Name.Location = new System.Drawing.Point(22, 25);
             this.txt_Name.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_Name.PlaceholderText = "Name Customer";
+            this.txt_Name.PlaceholderText = "Name Customer*";
             this.txt_Name.SelectedText = "";
             this.txt_Name.Size = new System.Drawing.Size(350, 69);
-            this.txt_Name.TabIndex = 9;
+            this.txt_Name.TabIndex = 1;
             // 
             // txt_Phone
             // 
@@ -128,15 +129,16 @@
             this.txt_Phone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(230)))));
             this.txt_Phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Phone.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Phone.ForeColor = System.Drawing.Color.Black;
             this.txt_Phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Phone.Location = new System.Drawing.Point(22, 125);
             this.txt_Phone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_Phone.PlaceholderText = "Phone";
+            this.txt_Phone.PlaceholderText = "Phone*";
             this.txt_Phone.SelectedText = "";
             this.txt_Phone.Size = new System.Drawing.Size(350, 69);
-            this.txt_Phone.TabIndex = 11;
+            this.txt_Phone.TabIndex = 2;
             // 
             // txt_ID
             // 
@@ -152,6 +154,7 @@
             this.txt_ID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(230)))));
             this.txt_ID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_ID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ID.ForeColor = System.Drawing.Color.Black;
             this.txt_ID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_ID.Location = new System.Drawing.Point(380, 25);
             this.txt_ID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -176,6 +179,7 @@
             this.txt_Address.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(230)))));
             this.txt_Address.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Address.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Address.ForeColor = System.Drawing.Color.Black;
             this.txt_Address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Address.Location = new System.Drawing.Point(22, 225);
             this.txt_Address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -184,21 +188,21 @@
             this.txt_Address.PlaceholderText = "Address";
             this.txt_Address.SelectedText = "";
             this.txt_Address.Size = new System.Drawing.Size(525, 69);
-            this.txt_Address.TabIndex = 14;
+            this.txt_Address.TabIndex = 4;
             // 
             // dgv_Customer
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgv_Customer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_Customer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Customer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Customer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Customer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Customer.ColumnHeadersHeight = 50;
             this.dgv_Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_Customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -208,22 +212,22 @@
             this.col_sex,
             this.col_address,
             this.col_type});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Customer.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Customer.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Customer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgv_Customer.Location = new System.Drawing.Point(15, 25);
             this.dgv_Customer.Name = "dgv_Customer";
             this.dgv_Customer.ReadOnly = true;
             this.dgv_Customer.RowHeadersVisible = false;
             this.dgv_Customer.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.dgv_Customer.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.dgv_Customer.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Customer.RowTemplate.Height = 30;
             this.dgv_Customer.Size = new System.Drawing.Size(869, 703);
             this.dgv_Customer.TabIndex = 16;
@@ -309,7 +313,7 @@
             this.cmb_FillterType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_FillterType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_FillterType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_FillterType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_FillterType.ForeColor = System.Drawing.Color.Black;
             this.cmb_FillterType.ItemHeight = 50;
             this.cmb_FillterType.Items.AddRange(new object[] {
             "All",
@@ -319,7 +323,7 @@
             this.cmb_FillterType.Location = new System.Drawing.Point(775, 160);
             this.cmb_FillterType.Name = "cmb_FillterType";
             this.cmb_FillterType.Size = new System.Drawing.Size(149, 56);
-            this.cmb_FillterType.TabIndex = 18;
+            this.cmb_FillterType.TabIndex = 8;
             this.cmb_FillterType.SelectedIndexChanged += new System.EventHandler(this.cmb_FillterType_SelectedIndexChanged);
             // 
             // guna2HtmlLabel2
@@ -346,6 +350,7 @@
             this.txt_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Search.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Search.ForeColor = System.Drawing.Color.Black;
             this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Search.IconRight = ((System.Drawing.Image)(resources.GetObject("txt_Search.IconRight")));
             this.txt_Search.IconRightOffset = new System.Drawing.Point(5, 0);
@@ -358,7 +363,7 @@
             this.txt_Search.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Search.SelectedText = "";
             this.txt_Search.Size = new System.Drawing.Size(428, 69);
-            this.txt_Search.TabIndex = 8;
+            this.txt_Search.TabIndex = 7;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
             // cmb_Type
@@ -372,7 +377,7 @@
             this.cmb_Type.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_Type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_Type.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Type.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_Type.ForeColor = System.Drawing.Color.Black;
             this.cmb_Type.ItemHeight = 50;
             this.cmb_Type.Items.AddRange(new object[] {
             "Regular",
@@ -381,7 +386,7 @@
             this.cmb_Type.Location = new System.Drawing.Point(22, 325);
             this.cmb_Type.Name = "cmb_Type";
             this.cmb_Type.Size = new System.Drawing.Size(525, 56);
-            this.cmb_Type.TabIndex = 20;
+            this.cmb_Type.TabIndex = 5;
             // 
             // cmb_Sex
             // 
@@ -394,7 +399,7 @@
             this.cmb_Sex.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_Sex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmb_Sex.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Sex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmb_Sex.ForeColor = System.Drawing.Color.Black;
             this.cmb_Sex.ItemHeight = 50;
             this.cmb_Sex.Items.AddRange(new object[] {
             "Male",
@@ -402,7 +407,7 @@
             this.cmb_Sex.Location = new System.Drawing.Point(380, 125);
             this.cmb_Sex.Name = "cmb_Sex";
             this.cmb_Sex.Size = new System.Drawing.Size(167, 56);
-            this.cmb_Sex.TabIndex = 22;
+            this.cmb_Sex.TabIndex = 3;
             // 
             // guna2CustomGradientPanel1
             // 
@@ -436,11 +441,11 @@
             this.btnExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExcel.FillColor = System.Drawing.Color.DarkGreen;
             this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExcel.ForeColor = System.Drawing.Color.Black;
             this.btnExcel.Location = new System.Drawing.Point(162, 208);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(114, 33);
-            this.btnExcel.TabIndex = 32;
+            this.btnExcel.TabIndex = 10;
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
@@ -457,7 +462,7 @@
             this.btnReport.Location = new System.Drawing.Point(30, 208);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(114, 33);
-            this.btnReport.TabIndex = 31;
+            this.btnReport.TabIndex = 9;
             this.btnReport.Text = "Report";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 

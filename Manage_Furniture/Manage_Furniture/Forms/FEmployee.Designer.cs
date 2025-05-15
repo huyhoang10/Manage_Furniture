@@ -67,9 +67,9 @@
             this.pnlAllButton.Controls.Add(this.btnCustomer);
             this.pnlAllButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlAllButton.Location = new System.Drawing.Point(0, 0);
-            this.pnlAllButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAllButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAllButton.Name = "pnlAllButton";
-            this.pnlAllButton.Size = new System.Drawing.Size(270, 839);
+            this.pnlAllButton.Size = new System.Drawing.Size(360, 1033);
             this.pnlAllButton.TabIndex = 1;
             // 
             // btnHistory
@@ -85,10 +85,10 @@
             this.btnHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnHistory.Image")));
             this.btnHistory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHistory.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnHistory.Location = new System.Drawing.Point(9, 454);
-            this.btnHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHistory.Location = new System.Drawing.Point(12, 559);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(250, 62);
+            this.btnHistory.Size = new System.Drawing.Size(333, 76);
             this.btnHistory.TabIndex = 13;
             this.btnHistory.Text = "History";
             this.btnHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -106,10 +106,10 @@
             this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
             this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUser.ImageSize = new System.Drawing.Size(70, 70);
-            this.btnUser.Location = new System.Drawing.Point(9, 10);
-            this.btnUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUser.Location = new System.Drawing.Point(12, 12);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(251, 81);
+            this.btnUser.Size = new System.Drawing.Size(335, 100);
             this.btnUser.TabIndex = 12;
             this.btnUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -126,10 +126,10 @@
             this.btnHR.Image = ((System.Drawing.Image)(resources.GetObject("btnHR.Image")));
             this.btnHR.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHR.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnHR.Location = new System.Drawing.Point(11, 610);
-            this.btnHR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHR.Location = new System.Drawing.Point(15, 751);
+            this.btnHR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHR.Name = "btnHR";
-            this.btnHR.Size = new System.Drawing.Size(250, 62);
+            this.btnHR.Size = new System.Drawing.Size(333, 76);
             this.btnHR.TabIndex = 11;
             this.btnHR.Text = "HR";
             this.btnHR.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -149,10 +149,10 @@
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnHome.Location = new System.Drawing.Point(9, 142);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHome.Location = new System.Drawing.Point(12, 175);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(250, 62);
+            this.btnHome.Size = new System.Drawing.Size(333, 76);
             this.btnHome.TabIndex = 10;
             this.btnHome.Text = "Home";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -171,10 +171,10 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLogout.Location = new System.Drawing.Point(19, 768);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Location = new System.Drawing.Point(25, 945);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(225, 62);
+            this.btnLogout.Size = new System.Drawing.Size(300, 76);
             this.btnLogout.TabIndex = 9;
             this.btnLogout.Text = "Log out";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -188,10 +188,10 @@
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(19, 106);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button4.Location = new System.Drawing.Point(25, 130);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(225, 2);
+            this.guna2Button4.Size = new System.Drawing.Size(300, 2);
             this.guna2Button4.TabIndex = 6;
             this.guna2Button4.Text = "guna2Button4";
             // 
@@ -208,10 +208,10 @@
             this.btnSupplier.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplier.Image")));
             this.btnSupplier.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSupplier.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSupplier.Location = new System.Drawing.Point(11, 532);
-            this.btnSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupplier.Location = new System.Drawing.Point(15, 655);
+            this.btnSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSupplier.Name = "btnSupplier";
-            this.btnSupplier.Size = new System.Drawing.Size(250, 62);
+            this.btnSupplier.Size = new System.Drawing.Size(333, 76);
             this.btnSupplier.TabIndex = 5;
             this.btnSupplier.Text = "Supplier";
             this.btnSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -230,10 +230,10 @@
             this.btnWarehouse.Image = ((System.Drawing.Image)(resources.GetObject("btnWarehouse.Image")));
             this.btnWarehouse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnWarehouse.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnWarehouse.Location = new System.Drawing.Point(9, 376);
-            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWarehouse.Location = new System.Drawing.Point(12, 463);
+            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Size = new System.Drawing.Size(250, 62);
+            this.btnWarehouse.Size = new System.Drawing.Size(333, 76);
             this.btnWarehouse.TabIndex = 4;
             this.btnWarehouse.Text = "Warehouse";
             this.btnWarehouse.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -252,10 +252,10 @@
             this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
             this.btnOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnOrder.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnOrder.Location = new System.Drawing.Point(9, 220);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOrder.Location = new System.Drawing.Point(12, 271);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(250, 62);
+            this.btnOrder.Size = new System.Drawing.Size(333, 76);
             this.btnOrder.TabIndex = 3;
             this.btnOrder.Text = "Order";
             this.btnOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -275,10 +275,10 @@
             this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
             this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnCustomer.Location = new System.Drawing.Point(9, 298);
-            this.btnCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustomer.Location = new System.Drawing.Point(12, 367);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(250, 62);
+            this.btnCustomer.Size = new System.Drawing.Size(333, 76);
             this.btnCustomer.TabIndex = 2;
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -294,27 +294,28 @@
             this.pnlUserControls.Controls.Add(this.ucCustomer1);
             this.pnlUserControls.Controls.Add(this.ucOrder1);
             this.pnlUserControls.Controls.Add(this.ucOverview1);
-            this.pnlUserControls.Location = new System.Drawing.Point(270, 0);
-            this.pnlUserControls.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlUserControls.Location = new System.Drawing.Point(360, 0);
+            this.pnlUserControls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUserControls.Name = "pnlUserControls";
-            this.pnlUserControls.Size = new System.Drawing.Size(1275, 842);
+            this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
             this.pnlUserControls.TabIndex = 3;
             // 
             // ucHistory1
             // 
             this.ucHistory1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucHistory1.Location = new System.Drawing.Point(0, 0);
-            this.ucHistory1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucHistory1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucHistory1.Name = "ucHistory1";
-            this.ucHistory1.Size = new System.Drawing.Size(1164, 842);
+            this.ucHistory1.Size = new System.Drawing.Size(1552, 1036);
             this.ucHistory1.TabIndex = 6;
             // 
             // ucHR1
             // 
             this.ucHR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucHR1.Location = new System.Drawing.Point(0, 0);
+            this.ucHR1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucHR1.Name = "ucHR1";
-            this.ucHR1.Size = new System.Drawing.Size(1164, 842);
+            this.ucHR1.Size = new System.Drawing.Size(1552, 1036);
             this.ucHR1.TabIndex = 5;
             // 
             // ucSuppliercs1
@@ -322,55 +323,56 @@
             this.ucSuppliercs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucSuppliercs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucSuppliercs1.Location = new System.Drawing.Point(0, 0);
+            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucSuppliercs1.Name = "ucSuppliercs1";
-            this.ucSuppliercs1.Size = new System.Drawing.Size(1275, 842);
+            this.ucSuppliercs1.Size = new System.Drawing.Size(1700, 1036);
             this.ucSuppliercs1.TabIndex = 4;
             // 
             // ucWarehouse1
             // 
             this.ucWarehouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucWarehouse1.Location = new System.Drawing.Point(0, 0);
-            this.ucWarehouse1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucWarehouse1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucWarehouse1.Name = "ucWarehouse1";
-            this.ucWarehouse1.Size = new System.Drawing.Size(1164, 842);
+            this.ucWarehouse1.Size = new System.Drawing.Size(1552, 1036);
             this.ucWarehouse1.TabIndex = 3;
             // 
             // ucCustomer1
             // 
             this.ucCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucCustomer1.Location = new System.Drawing.Point(0, 0);
-            this.ucCustomer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucCustomer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucCustomer1.Name = "ucCustomer1";
-            this.ucCustomer1.Size = new System.Drawing.Size(1164, 842);
+            this.ucCustomer1.Size = new System.Drawing.Size(1552, 1036);
             this.ucCustomer1.TabIndex = 2;
             // 
             // ucOrder1
             // 
             this.ucOrder1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucOrder1.Location = new System.Drawing.Point(0, 0);
-            this.ucOrder1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucOrder1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucOrder1.Name = "ucOrder1";
-            this.ucOrder1.Size = new System.Drawing.Size(1164, 842);
+            this.ucOrder1.Size = new System.Drawing.Size(1552, 1036);
             this.ucOrder1.TabIndex = 1;
             // 
             // ucOverview1
             // 
             this.ucOverview1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucOverview1.Location = new System.Drawing.Point(0, 0);
-            this.ucOverview1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucOverview1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucOverview1.Name = "ucOverview1";
-            this.ucOverview1.Size = new System.Drawing.Size(1164, 842);
+            this.ucOverview1.Size = new System.Drawing.Size(1552, 1036);
             this.ucOverview1.TabIndex = 0;
             // 
             // FEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ClientSize = new System.Drawing.Size(1426, 839);
+            this.ClientSize = new System.Drawing.Size(1901, 1033);
             this.Controls.Add(this.pnlAllButton);
             this.Controls.Add(this.pnlUserControls);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage_Furniture";
@@ -394,14 +396,14 @@
         protected Guna.UI2.WinForms.Guna2Panel pnlUserControls;
         protected Guna.UI2.WinForms.Guna2Button btnHR;
         protected Guna.UI2.WinForms.Guna2Button btnHome;
-        private ucSuppliercs ucSuppliercs1;
-        private ucWarehouse ucWarehouse1;
-        private Controls.UCCustomer ucCustomer1;
-        private UCOrder ucOrder1;
-        private ucOverview ucOverview1;
-        private Guna.UI2.WinForms.Guna2Button btnUser;
-        private Controls.ucHR ucHR1;
-        private ucHistory ucHistory1;
+        protected ucSuppliercs ucSuppliercs1;
+        protected ucWarehouse ucWarehouse1;
+        protected Controls.UCCustomer ucCustomer1;
+        protected UCOrder ucOrder1;
+        protected ucOverview ucOverview1;
+        protected Guna.UI2.WinForms.Guna2Button btnUser;
+        protected Controls.ucHR ucHR1;
+        protected ucHistory ucHistory1;
         protected Guna.UI2.WinForms.Guna2Button btnHistory;
     }
 }

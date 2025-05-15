@@ -66,7 +66,7 @@ namespace Manage_Furniture.Forms
                                 //EmployeeName = e.name, // nếu có liên kết cụ thể
                                 DatePurchase = (DateTime)o.date_purchase,
                                 Note = o.note,
-
+                                EmployeeName = FLogin.userLogin.Name,
                                 GrandTotal = (decimal)b.money
                             };
 

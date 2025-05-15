@@ -163,6 +163,18 @@ namespace Manage_Furniture.Controls
             return connectDB.SearchProducts(key);
         }
 
+        public List<Products> FilterProduct(string key)
+        {
+            if(key == "All")
+            {
+                return connectDB.getProductToWarehouse();
+            }
+            else
+            {
+                return connectDB.FilterSubcategory(key);
+            }
+        }
+
         public void ExportProductsToExcel(List<Products> products)
         {
             using (var workbook = new XLWorkbook())

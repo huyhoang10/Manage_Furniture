@@ -62,9 +62,9 @@ namespace Manage_Furniture.Forms
                 {
                     if (loginRole == "Employee")
                     {
-                        if (uclogin_control.CheckActive(username))
-                            MessageBox.Show("Login successful!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        else
+                        if (!uclogin_control.CheckActive(username))
+                        //    MessageBox.Show("Login successful!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //else
                         {
                             MessageBox.Show("Your account is inactive. Please contact the administrator.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
@@ -73,12 +73,16 @@ namespace Manage_Furniture.Forms
                     
                     if (loginRole == "Admin")
                     {
+                        txt_username.Text = "";
+                        txt_passwd.Text = "";
                         userLogin.Name = "Admin";
                         FManager fManager = new FManager();
                         fManager.ShowDialog();
                     }
                     else if (loginRole == "Employee")
                     {
+                        txt_username.Text = "";
+                        txt_passwd.Text = "";
                         userLogin = uclogin_control.GetEmployee(username);
                         //employeeModel = uclogin_control.GetEmployee(username);
                         FEmployee fEmployee = new FEmployee();
