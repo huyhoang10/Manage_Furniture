@@ -23,6 +23,7 @@ namespace Manage_Furniture.Forms
         {
             dgvHistoryOrder.DataSource = ucHistoryControls.GetAllOrders();
             dgvOderDetail.DataSource = null;
+            txtTotal.Text = "";
         }
 
         private void dgvHistoryOrder_CellClick(object sender, DataGridViewCellEventArgs e)

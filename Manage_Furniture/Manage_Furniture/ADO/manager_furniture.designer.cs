@@ -22,7 +22,7 @@ namespace Manage_Furniture.ADO
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ManageFurniture")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ManageFurniture2")]
 	public partial class manager_furnitureDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -57,7 +57,7 @@ namespace Manage_Furniture.ADO
     #endregion
 		
 		public manager_furnitureDataContext() : 
-				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString, mappingSource)
+				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurniture2ConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1530,11 +1530,11 @@ namespace Manage_Furniture.ADO
 		
 		private string _password;
 		
+		private string _email;
+		
 		private string _status;
 		
-		private bool _deleted;
-		
-		private string _email;
+		private System.Nullable<bool> _deleted;
 		
 		private string _role;
 		
@@ -1558,12 +1558,12 @@ namespace Manage_Furniture.ADO
     partial void OnsalaryChanged();
     partial void OnpasswordChanging(string value);
     partial void OnpasswordChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    partial void OndeletedChanging(bool value);
-    partial void OndeletedChanged();
     partial void OnemailChanging(string value);
     partial void OnemailChanged();
+    partial void OnstatusChanging(string value);
+    partial void OnstatusChanged();
+    partial void OndeletedChanging(System.Nullable<bool> value);
+    partial void OndeletedChanged();
     partial void OnroleChanging(string value);
     partial void OnroleChanged();
     partial void OnCreatedAtChanging(System.DateTime value);
@@ -1615,7 +1615,7 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(10)")]
 		public string phone
 		{
 			get
@@ -1715,46 +1715,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deleted", DbType="Bit NOT NULL")]
-		public bool deleted
-		{
-			get
-			{
-				return this._deleted;
-			}
-			set
-			{
-				if ((this._deleted != value))
-				{
-					this.OndeletedChanging(value);
-					this.SendPropertyChanging();
-					this._deleted = value;
-					this.SendPropertyChanged("deleted");
-					this.OndeletedChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		public string email
 		{
@@ -1775,7 +1735,47 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deleted", DbType="Bit")]
+		public System.Nullable<bool> deleted
+		{
+			get
+			{
+				return this._deleted;
+			}
+			set
+			{
+				if ((this._deleted != value))
+				{
+					this.OndeletedChanging(value);
+					this.SendPropertyChanging();
+					this._deleted = value;
+					this.SendPropertyChanged("deleted");
+					this.OndeletedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="NVarChar(50)")]
 		public string role
 		{
 			get

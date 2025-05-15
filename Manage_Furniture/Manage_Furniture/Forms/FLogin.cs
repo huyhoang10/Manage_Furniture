@@ -76,8 +76,18 @@ namespace Manage_Furniture.Forms
                         txt_username.Text = "";
                         txt_passwd.Text = "";
                         userLogin.Name = "Admin";
-                        FManager fManager = new FManager();
-                        fManager.ShowDialog();
+                        //FManager fManager = new FManager();
+                        //fManager.ShowDialog();
+                        this.Hide(); // Ẩn FormA
+
+                        var fManager = new FManager();
+                        fManager.Show();
+
+                        fManager.FormClosed += (s, args) =>
+                        {
+                            // Khi formB đóng thì thoát chương trình
+                            Application.Exit();
+                        };
                     }
                     else if (loginRole == "Employee")
                     {
@@ -85,9 +95,19 @@ namespace Manage_Furniture.Forms
                         txt_passwd.Text = "";
                         userLogin = uclogin_control.GetEmployee(username);
                         //employeeModel = uclogin_control.GetEmployee(username);
-                        FEmployee fEmployee = new FEmployee();
-                        fEmployee.ShowInTaskbar = false;
-                        fEmployee.ShowDialog();
+                        //FEmployee fEmployee = new FEmployee();
+                        //fEmployee.ShowInTaskbar = false;
+                        //fEmployee.ShowDialog();
+                        this.Hide(); // Ẩn FormA
+
+                        var fEmployee = new FEmployee();
+                        fEmployee.Show();
+
+                        fEmployee.FormClosed += (s, args) =>
+                        {
+                            // Khi formB đóng thì thoát chương trình
+                            Application.Exit();
+                        };
                     }
                     
                     //this.Hide();

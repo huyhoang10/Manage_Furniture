@@ -41,7 +41,7 @@ namespace Manage_Furniture.Controls
                 e.salary.ToString(),
                 e.password,
                 e.status,
-                e.deleted,
+                e.deleted ?? false,
                 e.email,
                 e.role,
                 e.CreatedAt 
@@ -241,7 +241,7 @@ namespace Manage_Furniture.Controls
                 e.salary.HasValue ? e.salary.Value.ToString("N0") : "0",
                 e.password,
                 e.status,
-                e.deleted,
+                e.deleted ?? false,
                 e.email,
                 e.role,
                 e.CreatedAt

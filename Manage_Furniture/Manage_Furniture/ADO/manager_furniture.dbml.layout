@@ -79,10 +79,10 @@
         <classShapeMoniker Id="7f46c2d9-51fb-4547-8ad6-cc6e306f73f8" />
       </nodes>
     </associationConnector>
-    <classShape Id="15fc1e5f-6856-4f3f-b52d-c7d868611494" absoluteBounds="8.375, 1.375, 2, 3.1170068359375">
+    <classShape Id="daead90a-a8fe-4938-80d9-a7e158a535d0" absoluteBounds="8, 1, 2, 3.1170068359375">
       <DataClassMoniker Name="/manager_furnitureDataContext/employee" />
       <nestedChildShapes>
-        <elementListCompartment Id="a3ab83fa-e171-49fe-8fe2-655bd46d9949" absoluteBounds="8.39, 1.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5eaf3996-6a81-4e8f-b889-167ac0a92b6e" absoluteBounds="8.015, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

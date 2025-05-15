@@ -93,9 +93,15 @@ namespace Manage_Furniture.Forms
             {
                 FLogin.userLogin.Name = "";
                 FLogin.userLogin.Phone = "";
-                FLogin loginForm = new FLogin();
-                loginForm.Show();
-                this.Close();
+                this.Hide(); // Ẩn FormA
+
+                var flogin = new FLogin();
+                flogin.Show();
+                flogin.FormClosed += (s, args) =>
+                {
+                    // Khi formB đóng thì thoát chương trình
+                    Application.Exit();
+                };
             }
         }
 

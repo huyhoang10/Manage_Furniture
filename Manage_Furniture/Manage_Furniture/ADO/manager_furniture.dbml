@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ManageFurniture" Class="manager_furnitureDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ManageFurniture;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="Manage_Furniture.Properties.Settings" SettingsPropertyName="ManageFurnitureConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ManageFurniture2" Class="manager_furnitureDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ManageFurniture2;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Manage_Furniture.Properties.Settings" SettingsPropertyName="ManageFurniture2ConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.bill" Member="bills">
     <Type Name="bill">
       <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -73,15 +73,15 @@
     <Type Name="employee">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="salary" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="role" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>

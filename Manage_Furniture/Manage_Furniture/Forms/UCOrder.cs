@@ -43,11 +43,30 @@ namespace Manage_Furniture.Forms
             cmb_customer_type.Enabled = false;
         }
 
+        //public void LoadProduct()
+        //{
+        //    var products = orderControl.GetAllProducts()
+        //        .Select(p => new
+        //        {
+        //            id_name = $"{p.id}-{p.name}",
+        //            name = p.name,
+        //            price = p.price
+        //        }).ToList();
+
+        //    var productColumn = dgv_orders.Columns["col_product"] as DataGridViewComboBoxColumn;
+        //    if (productColumn != null)
+        //    {
+        //        productColumn.DataSource = products;
+        //        productColumn.DisplayMember = "id_name";
+        //        productColumn.ValueMember = "id_name";
+        //    }
+        //}
         public void LoadProduct()
         {
             var products = orderControl.GetAllProducts()
                 .Select(p => new
                 {
+                    id = p.id,
                     id_name = $"{p.id}-{p.name}",
                     name = p.name,
                     price = p.price
@@ -58,7 +77,7 @@ namespace Manage_Furniture.Forms
             {
                 productColumn.DataSource = products;
                 productColumn.DisplayMember = "id_name";
-                productColumn.ValueMember = "id_name";
+                productColumn.ValueMember = "id";  // Giá trị thật là ID
             }
         }
 

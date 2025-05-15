@@ -38,6 +38,9 @@ namespace Manage_Furniture.Forms
             btnEdit.Enabled = false;
             //btnDelete.Enabled = false;
             cmbFilter.Text = "All";
+            cmbSubcategory.SelectedIndex = 0;
+            cmbSuppliers.SelectedIndex = 0;
+            nmrQuantity.Value = nmrQuantity.Minimum;
         }
 
         private void LoadDgvView()
@@ -99,6 +102,9 @@ namespace Manage_Furniture.Forms
             txtBrand.Text = "";
             cmbSubcategory.Text = "";
             cmbSuppliers.Text = "";
+            cmbSubcategory.SelectedIndex = 0;
+            cmbSuppliers.SelectedIndex = 0;
+            nmrQuantity.Value = nmrQuantity.Minimum;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -129,6 +135,9 @@ namespace Manage_Furniture.Forms
                             txtBrand.Text = "";
                             cmbSubcategory.Text = "";
                             cmbSuppliers.Text = "";
+                            cmbSubcategory.SelectedIndex = 0;
+                            cmbSuppliers.SelectedIndex = 0;
+                            nmrQuantity.Value = nmrQuantity.Minimum;
                         }
                         return;
                     }
@@ -143,6 +152,9 @@ namespace Manage_Furniture.Forms
                 txtBrand.Text = "";
                 cmbSubcategory.Text = "";
                 cmbSuppliers.Text = "";
+                cmbSubcategory.SelectedIndex = 0;
+                cmbSuppliers.SelectedIndex = 0;
+                nmrQuantity.Value = nmrQuantity.Minimum;
             }
         }
 
@@ -190,6 +202,9 @@ namespace Manage_Furniture.Forms
                 txtBrand.Text = "";
                 cmbSubcategory.Text = "";
                 cmbSuppliers.Text = "";
+                cmbSubcategory.SelectedIndex = 0;
+                cmbSuppliers.SelectedIndex = 0;
+                nmrQuantity.Value = nmrQuantity.Minimum;
             }
         }
 
