@@ -64,9 +64,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 30);
+            this.label1.Location = new System.Drawing.Point(7, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(865, 92);
+            this.label1.Size = new System.Drawing.Size(701, 75);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Management";
             // 
@@ -81,11 +82,12 @@
             this.btn_Update.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(223)))), ((int)(((byte)(172)))));
             this.btn_Update.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Update.ForeColor = System.Drawing.Color.Black;
-            this.btn_Update.Location = new System.Drawing.Point(1156, 708);
+            this.btn_Update.Location = new System.Drawing.Point(867, 575);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.ShadowDecoration.BorderRadius = 24;
             this.btn_Update.ShadowDecoration.Color = System.Drawing.SystemColors.GrayText;
-            this.btn_Update.Size = new System.Drawing.Size(183, 67);
+            this.btn_Update.Size = new System.Drawing.Size(137, 54);
             this.btn_Update.TabIndex = 6;
             this.btn_Update.Text = "Update";
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
@@ -106,13 +108,13 @@
             this.txt_Name.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Name.ForeColor = System.Drawing.Color.Black;
             this.txt_Name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Name.Location = new System.Drawing.Point(22, 25);
-            this.txt_Name.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txt_Name.Location = new System.Drawing.Point(16, 20);
+            this.txt_Name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_Name.PlaceholderText = "Name Customer*";
             this.txt_Name.SelectedText = "";
-            this.txt_Name.Size = new System.Drawing.Size(350, 69);
+            this.txt_Name.Size = new System.Drawing.Size(262, 56);
             this.txt_Name.TabIndex = 1;
             // 
             // txt_Phone
@@ -131,13 +133,13 @@
             this.txt_Phone.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Phone.ForeColor = System.Drawing.Color.Black;
             this.txt_Phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Phone.Location = new System.Drawing.Point(22, 125);
-            this.txt_Phone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txt_Phone.Location = new System.Drawing.Point(16, 102);
+            this.txt_Phone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_Phone.PlaceholderText = "Phone*";
             this.txt_Phone.SelectedText = "";
-            this.txt_Phone.Size = new System.Drawing.Size(350, 69);
+            this.txt_Phone.Size = new System.Drawing.Size(262, 56);
             this.txt_Phone.TabIndex = 2;
             // 
             // txt_ID
@@ -156,13 +158,13 @@
             this.txt_ID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ID.ForeColor = System.Drawing.Color.Black;
             this.txt_ID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_ID.Location = new System.Drawing.Point(380, 25);
-            this.txt_ID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_ID.Location = new System.Drawing.Point(285, 20);
+            this.txt_ID.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_ID.Name = "txt_ID";
             this.txt_ID.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_ID.PlaceholderText = "ID";
             this.txt_ID.SelectedText = "";
-            this.txt_ID.Size = new System.Drawing.Size(171, 69);
+            this.txt_ID.Size = new System.Drawing.Size(128, 56);
             this.txt_ID.TabIndex = 12;
             // 
             // txt_Address
@@ -181,13 +183,13 @@
             this.txt_Address.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Address.ForeColor = System.Drawing.Color.Black;
             this.txt_Address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Address.Location = new System.Drawing.Point(22, 225);
-            this.txt_Address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_Address.Location = new System.Drawing.Point(16, 183);
+            this.txt_Address.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_Address.Name = "txt_Address";
             this.txt_Address.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_Address.PlaceholderText = "Address";
             this.txt_Address.SelectedText = "";
-            this.txt_Address.Size = new System.Drawing.Size(525, 69);
+            this.txt_Address.Size = new System.Drawing.Size(394, 56);
             this.txt_Address.TabIndex = 4;
             // 
             // dgv_Customer
@@ -221,7 +223,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Customer.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Customer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.dgv_Customer.Location = new System.Drawing.Point(15, 25);
+            this.dgv_Customer.Location = new System.Drawing.Point(11, 20);
+            this.dgv_Customer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_Customer.Name = "dgv_Customer";
             this.dgv_Customer.ReadOnly = true;
             this.dgv_Customer.RowHeadersVisible = false;
@@ -229,7 +232,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgv_Customer.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Customer.RowTemplate.Height = 30;
-            this.dgv_Customer.Size = new System.Drawing.Size(869, 703);
+            this.dgv_Customer.Size = new System.Drawing.Size(652, 571);
             this.dgv_Customer.TabIndex = 16;
             this.dgv_Customer.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_Customer.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -320,9 +323,10 @@
             "Regular",
             "Loyal",
             "VIP"});
-            this.cmb_FillterType.Location = new System.Drawing.Point(775, 160);
+            this.cmb_FillterType.Location = new System.Drawing.Point(581, 130);
+            this.cmb_FillterType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_FillterType.Name = "cmb_FillterType";
-            this.cmb_FillterType.Size = new System.Drawing.Size(149, 56);
+            this.cmb_FillterType.Size = new System.Drawing.Size(113, 56);
             this.cmb_FillterType.TabIndex = 8;
             this.cmb_FillterType.SelectedIndexChanged += new System.EventHandler(this.cmb_FillterType_SelectedIndexChanged);
             // 
@@ -332,9 +336,10 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(712, 176);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(534, 143);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(57, 29);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(43, 24);
             this.guna2HtmlLabel2.TabIndex = 19;
             this.guna2HtmlLabel2.Text = "Type";
             // 
@@ -355,14 +360,14 @@
             this.txt_Search.IconRight = ((System.Drawing.Image)(resources.GetObject("txt_Search.IconRight")));
             this.txt_Search.IconRightOffset = new System.Drawing.Point(5, 0);
             this.txt_Search.IconRightSize = new System.Drawing.Size(35, 35);
-            this.txt_Search.Location = new System.Drawing.Point(1097, 160);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_Search.Location = new System.Drawing.Point(823, 130);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_Search.PlaceholderText = "Search Phone";
             this.txt_Search.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Search.SelectedText = "";
-            this.txt_Search.Size = new System.Drawing.Size(428, 69);
+            this.txt_Search.Size = new System.Drawing.Size(321, 56);
             this.txt_Search.TabIndex = 7;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
@@ -383,9 +388,10 @@
             "Regular",
             "Loyal",
             "VIP"});
-            this.cmb_Type.Location = new System.Drawing.Point(22, 325);
+            this.cmb_Type.Location = new System.Drawing.Point(16, 264);
+            this.cmb_Type.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_Type.Name = "cmb_Type";
-            this.cmb_Type.Size = new System.Drawing.Size(525, 56);
+            this.cmb_Type.Size = new System.Drawing.Size(395, 56);
             this.cmb_Type.TabIndex = 5;
             // 
             // cmb_Sex
@@ -404,9 +410,10 @@
             this.cmb_Sex.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmb_Sex.Location = new System.Drawing.Point(380, 125);
+            this.cmb_Sex.Location = new System.Drawing.Point(285, 102);
+            this.cmb_Sex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_Sex.Name = "cmb_Sex";
-            this.cmb_Sex.Size = new System.Drawing.Size(167, 56);
+            this.cmb_Sex.Size = new System.Drawing.Size(126, 56);
             this.cmb_Sex.TabIndex = 3;
             // 
             // guna2CustomGradientPanel1
@@ -418,18 +425,20 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.txt_Phone);
             this.guna2CustomGradientPanel1.Controls.Add(this.txt_Address);
             this.guna2CustomGradientPanel1.Controls.Add(this.txt_ID);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(950, 258);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(712, 210);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(575, 429);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(431, 349);
             this.guna2CustomGradientPanel1.TabIndex = 24;
             // 
             // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.BorderRadius = 16;
             this.guna2CustomGradientPanel2.Controls.Add(this.dgv_Customer);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(25, 258);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(19, 210);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(899, 708);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(674, 575);
             this.guna2CustomGradientPanel2.TabIndex = 23;
             // 
             // btnExcel
@@ -441,10 +450,11 @@
             this.btnExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExcel.FillColor = System.Drawing.Color.DarkGreen;
             this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(162, 208);
+            this.btnExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExcel.Location = new System.Drawing.Point(122, 169);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(114, 33);
+            this.btnExcel.Size = new System.Drawing.Size(86, 27);
             this.btnExcel.TabIndex = 10;
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
@@ -459,16 +469,17 @@
             this.btnReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Location = new System.Drawing.Point(30, 208);
+            this.btnReport.Location = new System.Drawing.Point(22, 169);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(114, 33);
+            this.btnReport.Size = new System.Drawing.Size(86, 27);
             this.btnReport.TabIndex = 9;
             this.btnReport.Text = "Report";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // UCCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.Controls.Add(this.btnExcel);
@@ -480,8 +491,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCCustomer";
-            this.Size = new System.Drawing.Size(1552, 1036);
+            this.Size = new System.Drawing.Size(1164, 842);
             this.Load += new System.EventHandler(this.UCCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customer)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
