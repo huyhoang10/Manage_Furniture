@@ -57,7 +57,7 @@ namespace Manage_Furniture.ADO
     #endregion
 		
 		public manager_furnitureDataContext() : 
-				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurniture2ConnectionString, mappingSource)
+				base(global::Manage_Furniture.Properties.Settings.Default.ManageFurnitureConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

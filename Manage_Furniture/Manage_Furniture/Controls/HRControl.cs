@@ -126,6 +126,17 @@ namespace Manage_Furniture.Controls
                 return db.employees.Any(e => e.phone == phone && e.id.ToString() != excludeId);
             }
         }
+        public bool IsEmailExists(string email, string excludeId = null)
+        {
+            if (string.IsNullOrEmpty(excludeId))
+            {
+                return db.employees.Any(e => e.email == email);
+            }
+            else
+            {
+                return db.employees.Any(e => e.email == email  && e.id.ToString() != excludeId);
+            }
+        }
 
         public void BlockEmployee(int id)  // Use int for id
         {

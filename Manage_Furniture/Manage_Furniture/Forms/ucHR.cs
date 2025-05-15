@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using Manage_Furniture.Forms;
 using System.Runtime.CompilerServices;
 using DocumentFormat.OpenXml.Bibliography;
+using Microsoft.VisualBasic;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace Manage_Furniture.Controls
 {
@@ -30,6 +32,7 @@ namespace Manage_Furniture.Controls
             dgvView.AutoGenerateColumns = false;
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
+            btnVerify.Visible = false;
             RefreshGrid();
         }
 
@@ -53,7 +56,16 @@ namespace Manage_Furniture.Controls
             var employees = controller.GetAll();
             dgvView.CellPainting += dgvView_CellPainting;
             dgvView.ColumnHeaderMouseClick += dgvView_ColumnHeaderMouseClick;
+            foreach (DataGridViewRow row in dgvView.Rows)
+            {
+                if (row.Cells["Role"].Value.ToString() == "Admin")
+                {
+                    row.Cells["Salary"].Value = "0";
+                   
+                    
 
+                }
+            }
             var activeEmployees = employees.Where(e => e.Status == "Active").ToList();
             var inactiveEmployees = employees.Where(e => e.Status == "Inactive").ToList();
 
@@ -127,6 +139,17 @@ namespace Manage_Furniture.Controls
                 MessageBox.Show("Please enter the email.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
+            {
+                MessageBox.Show("Invalid email format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (controller.IsEmailExists(txtEmail.Text.Trim()))
+            {
+                MessageBox.Show("Email already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             EmployeeModel newEmp = new EmployeeModel(
                 generatedId,
@@ -208,6 +231,8 @@ namespace Manage_Furniture.Controls
         {
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
+          
+
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvView.Rows[e.RowIndex];
@@ -215,13 +240,51 @@ namespace Manage_Furniture.Controls
                 txtName.Text = row.Cells["Name"].Value?.ToString();
                 txtPhone.Text = row.Cells["Phone"].Value?.ToString();
                 txtPhone.ReadOnly = true;
-                txtPhone.FillColor = Color.LightGray;
+                txtPhone.FillColor = System.Drawing.Color.LightGray;
                 cmbSex.Text = row.Cells["Sex"].Value?.ToString();
                 txtAddress.Text = row.Cells["Address"].Value?.ToString();
                 txtSalary.Text = row.Cells["Salary"].Value?.ToString();
                 txtPassword.Text = row.Cells["password"].Value?.ToString();
                 txtEmail.Text = row.Cells["Email"].Value?.ToString();
                 btnBlock.Text = row.Cells["Status"].Value?.ToString() == "Active" ? "Block" : "Unblock";
+                if (row.Cells["Role"].Value?.ToString() == "Admin")
+                {
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnVerify.Visible = true;
+                    txtSalary.ReadOnly = true;
+                    txtPassword.ReadOnly = true;
+                    txtEmail.ReadOnly = true;
+                    txtPhone.ReadOnly = true;
+                    btnBlock.Enabled = false;
+                    btnBlock.Text = "Admin";
+
+                    System.Drawing.Color grayColor = System.Drawing.Color.LightGray;
+                    txtSalary.FillColor = grayColor;
+                    txtPassword.FillColor = grayColor;
+                    txtEmail.FillColor = grayColor;
+                    txtPhone.FillColor = grayColor;
+                }
+                else
+                {
+                    btnEdit.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnVerify.Visible = false;
+                    txtSalary.ReadOnly = false;
+                    txtPassword.ReadOnly = false;
+                    txtEmail.ReadOnly = false;
+                   
+                    btnBlock.Enabled = true;
+                    btnBlock.Text = row.Cells["Status"].Value?.ToString() == "Active" ? "Block" : "Unblock";
+
+                    System.Drawing.Color normalColor = System.Drawing.Color.FromArgb(255, 248, 227);
+                    txtSalary.FillColor = normalColor;
+                    txtPassword.FillColor = normalColor;
+                    txtEmail.FillColor = normalColor;
+                   
+                }
+
+
             }
         }
 
@@ -242,7 +305,15 @@ namespace Manage_Furniture.Controls
                 MessageBox.Show("Phone number already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            if(txtEmail.Text.Trim() != employee.Email)
+            {
+                if (controller.IsEmailExists(txtEmail.Text, id))
+                {
+                    MessageBox.Show("Email already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            
             string content = $"Employee Update Summary:\n\n" +
                 "Before Update:\n" +
                 $"Name: {employee.Name}\n" +
@@ -373,6 +444,7 @@ namespace Manage_Furniture.Controls
         {
             txtPhone.ReadOnly = false;
             btnDelete.Enabled = false;
+            txtPhone.FillColor = System.Drawing.Color.FromArgb(255, 248, 227);
             btnEdit.Enabled = false;
             txtName.Text = "";
             txtPhone.Text = "";
@@ -383,5 +455,64 @@ namespace Manage_Furniture.Controls
 
 
         }
+        public string GenerateOtp()
+        {
+            Random rnd = new Random();
+            return rnd.Next(100000, 999999).ToString();
+        }
+       
+
+        private string currentOtp = ""; // Khai báo toàn cục nếu cần
+
+        private void btnVerify_Click(object sender, EventArgs e)
+        {
+            // 1. Gửi OTP
+            currentOtp = GenerateOtp();
+            var admin = controller.GetAll().FirstOrDefault(ee => ee.Role == "Admin");
+
+            if (admin == null)
+            {
+                MessageBox.Show("Không tìm thấy tài khoản admin.");
+                return;
+            }
+
+            controller.SendEmailNotification(
+                $"Your OTP code to change admin password is: {currentOtp}",
+                admin.Email
+            );
+
+            MessageBox.Show("OTP đã được gửi đến email admin. Vui lòng nhập mã OTP.");
+
+            // 2. Nhập OTP
+            string inputOtp = Microsoft.VisualBasic.Interaction.InputBox(
+                "Nhập mã OTP vừa được gửi đến email:", "Xác thực OTP", "");
+
+            if (inputOtp == currentOtp)
+            {
+
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = false;
+
+                txtSalary.ReadOnly = false;
+                txtPassword.ReadOnly = false;
+                txtEmail.ReadOnly = false;
+               
+                btnBlock.Enabled = false;
+
+
+                System.Drawing.Color normalColor = System.Drawing.Color.FromArgb(255, 248, 227);
+                txtSalary.FillColor = normalColor;
+                txtPassword.FillColor = normalColor;
+                txtEmail.FillColor = normalColor;
+             
+
+            }
+            else
+            {
+                MessageBox.Show("OTP không đúng. Vui lòng thử lại.");
+            }
+        }
+
+
     }
 }
