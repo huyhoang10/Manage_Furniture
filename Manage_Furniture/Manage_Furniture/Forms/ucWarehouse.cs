@@ -146,6 +146,7 @@ namespace Manage_Furniture.Forms
             }
             if (warehouseControls.EditProductInWarehouse(txtId.Text, txtName.Text, cmbSuppliers.Text, cmbSubcategory.Text, txtPrice.Text, nmrQuantity.Text, txtBrand.Text) == true)
             {
+                MessageBox.Show("Product edited successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDgvView();
                 txtId.Text = "";
                 txtName.Text = "";
@@ -197,6 +198,7 @@ namespace Manage_Furniture.Forms
             }
             if(warehouseControls.AddProductToWarehouse(txtName.Text, cmbSuppliers.Text, cmbSubcategory.Text, txtPrice.Text, nmrQuantity.Text, txtBrand.Text)==true)
             {
+                MessageBox.Show("Product added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDgvView();
                 txtId.Text = "";
                 txtName.Text = "";

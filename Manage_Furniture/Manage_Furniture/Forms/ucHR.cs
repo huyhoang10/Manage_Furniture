@@ -474,7 +474,7 @@ namespace Manage_Furniture.Controls
 
             if (admin == null)
             {
-                MessageBox.Show("Không tìm thấy tài khoản admin.");
+                MessageBox.Show("No found admin account!");
                 return;
             }
 
@@ -483,11 +483,11 @@ namespace Manage_Furniture.Controls
                 admin.Email
             );
 
-            MessageBox.Show("OTP đã được gửi đến email admin. Vui lòng nhập mã OTP.");
+            MessageBox.Show("OTP has been sent.\nPlease enter the confirmation code");
 
             // 2. Nhập OTP
             string inputOtp = Microsoft.VisualBasic.Interaction.InputBox(
-                "Nhập mã OTP vừa được gửi đến email:", "Xác thực OTP", "");
+                "Enter the OTP code just sent to email:", "Confirm OTP", "");
 
             if (inputOtp == currentOtp)
             {
@@ -511,7 +511,7 @@ namespace Manage_Furniture.Controls
             }
             else
             {
-                MessageBox.Show("OTP không đúng. Vui lòng thử lại.");
+                MessageBox.Show("OTP is incorrect. Please try again!");
             }
         }
 

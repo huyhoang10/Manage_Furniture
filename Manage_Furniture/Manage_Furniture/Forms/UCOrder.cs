@@ -16,14 +16,22 @@ namespace Manage_Furniture.Forms
         private Random random = new Random();
         private int tempOrderId = 1;
 
+
         public UCOrder()
         {
             InitializeComponent();
             LoadProduct();
-            
             InitializeDataGridViewEvents();
             EntryLock();
             dgv_orders.EditMode = DataGridViewEditMode.EditOnEnter;
+        }
+
+        public void UCOrder_Load(object sender, EventArgs e)
+        {
+            EntryLock();
+            LoadProduct();
+            dgv_orders.EditMode = DataGridViewEditMode.EditOnEnter;
+            btn_export.Enabled = false;
         }
 
         private void EntryAllow()
@@ -178,7 +186,7 @@ namespace Manage_Furniture.Forms
                     }
                     else if (qty < 0)
                     {
-                        MessageBox.Show("Quantity must be greater than 0.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Quantity must be greater than 0!", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -188,6 +196,8 @@ namespace Manage_Furniture.Forms
 
                     decimal total = (int)product.price * qty;
                     row.Cells["col_total"].Value = total.ToString("C");
+                    //row.Cells["col_total"].Value = ((int)total).ToString();
+
                 }
 
                 // Sum of Orders
@@ -200,10 +210,10 @@ namespace Manage_Furniture.Forms
                         sum += t;
                     }
                 }
-                txt_sum.Text = sum.ToString("C");
+                //txt_sum.Text = sum.ToString("C");
+                txt_sum.Text = ((int)sum).ToString("C");
             }
         }
-
 
         // Update No in Orders
         private void dgv_orders_RowLeave(object sender, DataGridViewCellEventArgs e)
@@ -274,13 +284,32 @@ namespace Manage_Furniture.Forms
         //  Order 
         private void btn_order_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in dgv_orders.Rows)
+            {
+                // Bỏ qua dòng mới (NewRow) nếu có
+                if (row.IsNewRow) continue;
+
+                var cellValue = row.Cells["col_total"].Value;
+
+                if (cellValue == null || string.IsNullOrWhiteSpace(cellValue.ToString()))
+                {
+                    MessageBox.Show("Please check the order list!", "Missing Total");
+                    return; // Hoặc return false nếu trong hàm kiểm tra
+                }
+            }
+
+            if (!decimal.TryParse(txt_sum.Text, System.Globalization.NumberStyles.Currency, null, out decimal total))
+            {
+                MessageBox.Show("Please check the order list!", "Missing Total");
+                return; // Hoặc return false nếu trong hàm kiểm tra
+            }
             string customer_name = txt_customer_name.Text.Trim();
             string sex = cmb_customer_sex.Text;
             string phone = txt_customer_phone.Text.Trim();
             string address = txt_custormer_address.Text.Trim();
             string type = cmb_customer_type.Text;
             string note = txt_order_note.Text.Trim();
-
+            btn_export.Enabled = true;
 
             // Check Row dgv_orders ?=null
             if (!dgv_orders.Rows.Cast<DataGridViewRow>().Any(r => !r.IsNewRow && r.Cells["col_product"].Value != null))
@@ -320,17 +349,18 @@ namespace Manage_Furniture.Forms
         }
         private void btn_reset_Click(object sender, EventArgs e)
         {
-            txt_customer_name.ResetText();
+            txt_customer_name.Text = "";
             cmb_customer_sex.SelectedIndex = 0;
-            txt_customer_phone.ResetText();
-            txt_custormer_address.ResetText();
+            txt_customer_phone.Text = "";
+            txt_custormer_address.Text = "";
             cmb_customer_type.SelectedIndex = 0;
-            txt_order_note.ResetText();
+            txt_order_note.Text = "";
             txt_order_note.ResetText();
             txt_search_phone.ResetText();
             txt_sum.Text = "";
             dgv_orders.Rows.Clear();
             tempOrderId = 1;
+            btn_export.Enabled = false;
             EntryLock();
         }
 
@@ -412,5 +442,7 @@ namespace Manage_Furniture.Forms
             ucHistory ucHistory = new ucHistory();
             ucHistory.Show();
         }
+
+        
     }
 }

@@ -97,7 +97,12 @@ namespace Manage_Furniture.Controls
             }
             if (float.TryParse(price, out float priceValue) == false)
             {
-                MessageBox.Show("Please enter valid price", "Error");
+                MessageBox.Show("Please enter valid price", "Error");            
+                return false;
+            }
+            if (float.Parse(price) == 0)
+            {
+                MessageBox.Show("Price must be greater than zero.", "Invalid Price");
                 return false;
             }
             while (true)
@@ -143,6 +148,11 @@ namespace Manage_Furniture.Controls
                 if (float.TryParse(price, out float priceValue) == false)
                 {
                     MessageBox.Show("Please enter valid price", "Error");
+                    return false;
+                }
+                if (float.Parse(price) == 0)
+                {
+                    MessageBox.Show("Price must be greater than zero.", "Invalid Price");
                     return false;
                 }
                 connectDB.EditProductToWarehouse(Int32.Parse(id), name, Int32.Parse(supplier), priceValue, subcategory, brand, Int32.Parse(quantity));

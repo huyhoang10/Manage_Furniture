@@ -52,6 +52,7 @@ namespace Manage_Furniture.Forms
         {
             SetAllButton();
             btnOrder.FillColor = Color.FromArgb(197, 166, 158);
+            ucOrder1.UCOrder_Load(sender,e);
             ucOrder1.BringToFront();
         }
 

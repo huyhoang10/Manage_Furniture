@@ -133,11 +133,15 @@ namespace Manage_Furniture.Controls
                         continue;
 
                     if (!int.TryParse(row.Cells["col_quantity"].Value?.ToString(), out int quantity) || quantity <= 0)
-                        quantity = 1;
+                        quantity = 0;
 
                     var product = GetProductById(id_product);
                     if (product == null) continue;
 
+                    if (quantity == 0)
+                    {
+                        continue;
+                    }
                     var newOrder = new order
                     {
                         id_order = orderId,
