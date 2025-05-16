@@ -55,13 +55,6 @@
       <Association Name="supplier_product" Member="products" ThisKey="id" OtherKey="supplier" Type="product" />
     </Type>
   </Table>
-  <Table Name="dbo.users" Member="users">
-    <Type Name="user">
-      <Column Name="phone" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="role" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.warehouse" Member="warehouses">
     <Type Name="warehouse">
       <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

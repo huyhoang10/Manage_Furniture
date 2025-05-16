@@ -103,7 +103,11 @@ namespace Manage_Furniture.Controls
                 MessageBox.Show("Invalid phone number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            if (txtPhone.Text.Length != 10)
+            {
+                MessageBox.Show("Phone number must be exactly 10 digits.", "Invalid Phone");
+                return;
+            }
             if (controller.IsPhoneExists(txtPhone.Text.Trim()))
             {
                 MessageBox.Show("Phone number already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -448,12 +452,20 @@ namespace Manage_Furniture.Controls
             btnDelete.Enabled = false;
             txtPhone.FillColor = System.Drawing.Color.FromArgb(255, 248, 227);
             btnEdit.Enabled = false;
+            
             txtName.Text = "";
+            txtPassword.ReadOnly = false;
+            txtEmail.ReadOnly = false;
+            txtSalary.ReadOnly = false;
+            txtPassword.FillColor = System.Drawing.Color.FromArgb(255, 248, 227);
+            txtEmail.FillColor = System.Drawing.Color.FromArgb(255, 248, 227);
+            txtSalary.FillColor = System.Drawing.Color.FromArgb(255, 248, 227);
             txtPhone.Text = "";
             txtAddress.Text = "";
             txtPassword.Text = "";
             txtEmail.Text = "";
             txtSalary.Text = "";
+            txtCreateTime.Text = "";
 
 
         }

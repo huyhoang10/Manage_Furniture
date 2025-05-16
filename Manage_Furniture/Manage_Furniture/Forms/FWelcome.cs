@@ -25,8 +25,16 @@ namespace Manage_Furniture
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            FLogin fLogin = new FLogin();
-            fLogin.ShowDialog();
+            this.Hide(); // Ẩn FormA
+
+            var flogin = new FLogin();
+            flogin.Show();
+
+            flogin.FormClosed += (s, args) =>
+            {
+                // Khi formB đóng thì thoát chương trình
+                Application.Exit();
+            };
         }
     }
 }

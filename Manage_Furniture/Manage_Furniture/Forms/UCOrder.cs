@@ -24,6 +24,7 @@ namespace Manage_Furniture.Forms
             InitializeDataGridViewEvents();
             EntryLock();
             dgv_orders.EditMode = DataGridViewEditMode.EditOnEnter;
+            
         }
 
         public void UCOrder_Load(object sender, EventArgs e)
@@ -124,7 +125,7 @@ namespace Manage_Furniture.Forms
                         row.Cells["col_id"].Value = tempOrderId++;
                     }
                     row.Cells["col_date_purchase"].Value = DateTime.Now.ToString("yyyy-MM-dd");
-                    row.Cells["col_money"].Value = ((int)product.price).ToString("C");
+                    row.Cells["col_money"].Value = ((decimal)product.price).ToString("C");
 
                     var quantityStr = row.Cells["col_quantity"].Value?.ToString();
                     if (!string.IsNullOrEmpty(quantityStr) && decimal.TryParse(quantityStr, out decimal qty))
@@ -194,7 +195,7 @@ namespace Manage_Furniture.Forms
                         row.DefaultCellStyle.BackColor = dgv_orders.DefaultCellStyle.BackColor;
                     }
 
-                    decimal total = (int)product.price * qty;
+                    decimal total = (decimal)product.price * qty;
                     row.Cells["col_total"].Value = total.ToString("C");
                     //row.Cells["col_total"].Value = ((int)total).ToString();
 
@@ -211,7 +212,7 @@ namespace Manage_Furniture.Forms
                     }
                 }
                 //txt_sum.Text = sum.ToString("C");
-                txt_sum.Text = ((int)sum).ToString("C");
+                txt_sum.Text = ((decimal)sum).ToString("C");
             }
         }
 
@@ -422,20 +423,7 @@ namespace Manage_Furniture.Forms
             }
         }
 
-        private void btn_Excel_Click(object sender, EventArgs e)
-        {
-            Customerclass cc = new Customerclass();
-            List<order> orders = orderControl.GetAllOrders();
-            List<product> products = orderControl.GetAllProducts();
-            List<customer> customers = cc.GetAllCustomers();
-            orderControl.ExportOrdersToExcel(orders, products, customers);
-        }
-
-        private void btn_Report_Click(object sender, EventArgs e)
-        {
-            FReportOrder fReportOrder = new FReportOrder();
-            fReportOrder.ShowDialog();
-        }
+        
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
