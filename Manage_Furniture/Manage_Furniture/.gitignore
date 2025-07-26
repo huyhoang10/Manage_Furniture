@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿﻿# Visual Studio
+=======
+﻿# Visual Studio
+>>>>>>> feature/Hoang
 .vs/
 *.user
 *.suo
@@ -11,4 +15,8 @@ packages/
 # Others
 *.log
 *.cache
+<<<<<<< HEAD
 *.tmp
+=======
+*.tmp
+>>>>>>> feature/Hoang
