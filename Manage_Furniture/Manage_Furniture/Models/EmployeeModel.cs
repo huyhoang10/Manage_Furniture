@@ -15,14 +15,12 @@ namespace Manage_Furniture.Models
         public string Sex { get; set; }
         public string Address { get; set; }
         public string Salary { get; set; }
-        public string Status { get; set; }
         public string Password { get; set; } 
         public bool Deleted { get; set; }
-
-        public string Email { get; set; }
         public string Role { get; set; } // Add Role property
-        public DateTime CreatedAt { get; set; }
-
+        public string Email { get; set; } // Add Email property
+        public string Status { get; set; } // Add Status property
+        public DateTime CreatedAt { get; set; } // Add CreatedAt property
 
         public EmployeeModel(string id, string name, string phone, string sex, string address, string salary, string password, string status, bool deleted, string email, string role, DateTime createdAt)
         {
@@ -32,16 +30,16 @@ namespace Manage_Furniture.Models
             Sex = sex;
             Address = address;
             Salary = salary;
-            Status = status;
             Password = password;
             Deleted= deleted;
-            Email = email;
             Role = role;
+            Email = email;
+            Status = status;
             CreatedAt = createdAt;
         }
         public string CheckLogin(string username, string password, string role)
         {
-            var db = new manager_furnitureDataContext();// connectDatabase.GetContext();
+            var db = new manager_furnitureDataContext();
 
             var user = db.employees.FirstOrDefault(u =>
                 u.phone == username &&

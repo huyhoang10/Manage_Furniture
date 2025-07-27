@@ -44,7 +44,7 @@ namespace Manage_Furniture.Controls
                 e.deleted ?? false,
                 e.email,
                 e.role,
-                e.CreatedAt 
+                e.CreatedAt ?? DateTime.Now
 
             )).ToList();
             
@@ -244,7 +244,7 @@ namespace Manage_Furniture.Controls
                 e.deleted ?? false,
                 e.email,
                 e.role,
-                e.CreatedAt
+                e.CreatedAt ?? DateTime.Now
             )).ToList();
         }
 

@@ -45,6 +45,9 @@ namespace Manage_Furniture.ADO
     partial void Insertsupplier(supplier instance);
     partial void Updatesupplier(supplier instance);
     partial void Deletesupplier(supplier instance);
+    partial void Insertuser(user instance);
+    partial void Updateuser(user instance);
+    partial void Deleteuser(user instance);
     partial void Insertwarehouse(warehouse instance);
     partial void Updatewarehouse(warehouse instance);
     partial void Deletewarehouse(warehouse instance);
@@ -123,6 +126,14 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
+		public System.Data.Linq.Table<user> users
+		{
+			get
+			{
+				return this.GetTable<user>();
+			}
+		}
+		
 		public System.Data.Linq.Table<warehouse> warehouses
 		{
 			get
@@ -150,8 +161,6 @@ namespace Manage_Furniture.ADO
 		
 		private System.Nullable<decimal> _money;
 		
-		private EntitySet<order> _orders;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -164,7 +173,6 @@ namespace Manage_Furniture.ADO
 		
 		public bill()
 		{
-			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
 			OnCreated();
 		}
 		
@@ -208,19 +216,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bill_order", Storage="_orders", ThisKey="id_order", OtherKey="id_order")]
-		public EntitySet<order> orders
-		{
-			get
-			{
-				return this._orders;
-			}
-			set
-			{
-				this._orders.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -239,18 +234,6 @@ namespace Manage_Furniture.ADO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_orders(order entity)
-		{
-			this.SendPropertyChanging();
-			entity.bill = this;
-		}
-		
-		private void detach_orders(order entity)
-		{
-			this.SendPropertyChanging();
-			entity.bill = null;
 		}
 	}
 	
@@ -272,8 +255,6 @@ namespace Manage_Furniture.ADO
 		
 		private string _type;
 		
-		private EntitySet<order> _orders;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -294,7 +275,6 @@ namespace Manage_Furniture.ADO
 		
 		public customer()
 		{
-			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
 			OnCreated();
 		}
 		
@@ -418,19 +398,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_order", Storage="_orders", ThisKey="id", OtherKey="id_customer")]
-		public EntitySet<order> orders
-		{
-			get
-			{
-				return this._orders;
-			}
-			set
-			{
-				this._orders.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -449,18 +416,6 @@ namespace Manage_Furniture.ADO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_orders(order entity)
-		{
-			this.SendPropertyChanging();
-			entity.customer = this;
-		}
-		
-		private void detach_orders(order entity)
-		{
-			this.SendPropertyChanging();
-			entity.customer = null;
 		}
 	}
 	
@@ -484,12 +439,6 @@ namespace Manage_Furniture.ADO
 		
 		private string _note;
 		
-		private EntityRef<customer> _customer;
-		
-		private EntityRef<bill> _bill;
-		
-		private EntityRef<product> _product;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -512,9 +461,6 @@ namespace Manage_Furniture.ADO
 		
 		public order()
 		{
-			this._customer = default(EntityRef<customer>);
-			this._bill = default(EntityRef<bill>);
-			this._product = default(EntityRef<product>);
 			OnCreated();
 		}
 		
@@ -529,10 +475,6 @@ namespace Manage_Furniture.ADO
 			{
 				if ((this._id_order != value))
 				{
-					if (this._bill.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onid_orderChanging(value);
 					this.SendPropertyChanging();
 					this._id_order = value;
@@ -553,10 +495,6 @@ namespace Manage_Furniture.ADO
 			{
 				if ((this._id_customer != value))
 				{
-					if (this._customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onid_customerChanging(value);
 					this.SendPropertyChanging();
 					this._id_customer = value;
@@ -577,10 +515,6 @@ namespace Manage_Furniture.ADO
 			{
 				if ((this._id_product != value))
 				{
-					if (this._product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onid_productChanging(value);
 					this.SendPropertyChanging();
 					this._id_product = value;
@@ -670,108 +604,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_order", Storage="_customer", ThisKey="id_customer", OtherKey="id", IsForeignKey=true)]
-		public customer customer
-		{
-			get
-			{
-				return this._customer.Entity;
-			}
-			set
-			{
-				customer previousValue = this._customer.Entity;
-				if (((previousValue != value) 
-							|| (this._customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._customer.Entity = null;
-						previousValue.orders.Remove(this);
-					}
-					this._customer.Entity = value;
-					if ((value != null))
-					{
-						value.orders.Add(this);
-						this._id_customer = value.id;
-					}
-					else
-					{
-						this._id_customer = default(int);
-					}
-					this.SendPropertyChanged("customer");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bill_order", Storage="_bill", ThisKey="id_order", OtherKey="id_order", IsForeignKey=true)]
-		public bill bill
-		{
-			get
-			{
-				return this._bill.Entity;
-			}
-			set
-			{
-				bill previousValue = this._bill.Entity;
-				if (((previousValue != value) 
-							|| (this._bill.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._bill.Entity = null;
-						previousValue.orders.Remove(this);
-					}
-					this._bill.Entity = value;
-					if ((value != null))
-					{
-						value.orders.Add(this);
-						this._id_order = value.id_order;
-					}
-					else
-					{
-						this._id_order = default(int);
-					}
-					this.SendPropertyChanged("bill");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_order", Storage="_product", ThisKey="id_product", OtherKey="id", IsForeignKey=true)]
-		public product product
-		{
-			get
-			{
-				return this._product.Entity;
-			}
-			set
-			{
-				product previousValue = this._product.Entity;
-				if (((previousValue != value) 
-							|| (this._product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._product.Entity = null;
-						previousValue.orders.Remove(this);
-					}
-					this._product.Entity = value;
-					if ((value != null))
-					{
-						value.orders.Add(this);
-						this._id_product = value.id;
-					}
-					else
-					{
-						this._id_product = default(int);
-					}
-					this.SendPropertyChanged("product");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -811,12 +643,6 @@ namespace Manage_Furniture.ADO
 		
 		private string _subcategory;
 		
-		private EntitySet<order> _orders;
-		
-		private EntityRef<warehouse> _warehouse;
-		
-		private EntityRef<supplier> _supplier1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -837,9 +663,6 @@ namespace Manage_Furniture.ADO
 		
 		public product()
 		{
-			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
-			this._warehouse = default(EntityRef<warehouse>);
-			this._supplier1 = default(EntityRef<supplier>);
 			OnCreated();
 		}
 		
@@ -934,10 +757,6 @@ namespace Manage_Furniture.ADO
 			{
 				if ((this._supplier != value))
 				{
-					if (this._supplier1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnsupplierChanging(value);
 					this.SendPropertyChanging();
 					this._supplier = value;
@@ -967,82 +786,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_order", Storage="_orders", ThisKey="id", OtherKey="id_product")]
-		public EntitySet<order> orders
-		{
-			get
-			{
-				return this._orders;
-			}
-			set
-			{
-				this._orders.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_warehouse", Storage="_warehouse", ThisKey="id", OtherKey="id_product", IsUnique=true, IsForeignKey=false)]
-		public warehouse warehouse
-		{
-			get
-			{
-				return this._warehouse.Entity;
-			}
-			set
-			{
-				warehouse previousValue = this._warehouse.Entity;
-				if (((previousValue != value) 
-							|| (this._warehouse.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._warehouse.Entity = null;
-						previousValue.product = null;
-					}
-					this._warehouse.Entity = value;
-					if ((value != null))
-					{
-						value.product = this;
-					}
-					this.SendPropertyChanged("warehouse");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="supplier_product", Storage="_supplier1", ThisKey="supplier", OtherKey="id", IsForeignKey=true)]
-		public supplier supplier1
-		{
-			get
-			{
-				return this._supplier1.Entity;
-			}
-			set
-			{
-				supplier previousValue = this._supplier1.Entity;
-				if (((previousValue != value) 
-							|| (this._supplier1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._supplier1.Entity = null;
-						previousValue.products.Remove(this);
-					}
-					this._supplier1.Entity = value;
-					if ((value != null))
-					{
-						value.products.Add(this);
-						this._supplier = value.id;
-					}
-					else
-					{
-						this._supplier = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("supplier1");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1062,18 +805,6 @@ namespace Manage_Furniture.ADO
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_orders(order entity)
-		{
-			this.SendPropertyChanging();
-			entity.product = this;
-		}
-		
-		private void detach_orders(order entity)
-		{
-			this.SendPropertyChanging();
-			entity.product = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.supplier")]
@@ -1091,8 +822,6 @@ namespace Manage_Furniture.ADO
 		private string _contact;
 		
 		private string _note;
-		
-		private EntitySet<product> _products;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1112,7 +841,6 @@ namespace Manage_Furniture.ADO
 		
 		public supplier()
 		{
-			this._products = new EntitySet<product>(new Action<product>(this.attach_products), new Action<product>(this.detach_products));
 			OnCreated();
 		}
 		
@@ -1216,16 +944,113 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="supplier_product", Storage="_products", ThisKey="id", OtherKey="supplier")]
-		public EntitySet<product> products
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.users")]
+	public partial class user : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _phone;
+		
+		private string _password;
+		
+		private string _role;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnphoneChanging(string value);
+    partial void OnphoneChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnroleChanging(string value);
+    partial void OnroleChanged();
+    #endregion
+		
+		public user()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string phone
 		{
 			get
 			{
-				return this._products;
+				return this._phone;
 			}
 			set
 			{
-				this._products.Assign(value);
+				if ((this._phone != value))
+				{
+					this.OnphoneChanging(value);
+					this.SendPropertyChanging();
+					this._phone = value;
+					this.SendPropertyChanged("phone");
+					this.OnphoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(100)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="NVarChar(50)")]
+		public string role
+		{
+			get
+			{
+				return this._role;
+			}
+			set
+			{
+				if ((this._role != value))
+				{
+					this.OnroleChanging(value);
+					this.SendPropertyChanging();
+					this._role = value;
+					this.SendPropertyChanged("role");
+					this.OnroleChanged();
+				}
 			}
 		}
 		
@@ -1248,18 +1073,6 @@ namespace Manage_Furniture.ADO
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_products(product entity)
-		{
-			this.SendPropertyChanging();
-			entity.supplier1 = this;
-		}
-		
-		private void detach_products(product entity)
-		{
-			this.SendPropertyChanging();
-			entity.supplier1 = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.warehouse")]
@@ -1271,8 +1084,6 @@ namespace Manage_Furniture.ADO
 		private int _id_product;
 		
 		private System.Nullable<int> _quantity;
-		
-		private EntityRef<product> _product;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1286,7 +1097,6 @@ namespace Manage_Furniture.ADO
 		
 		public warehouse()
 		{
-			this._product = default(EntityRef<product>);
 			OnCreated();
 		}
 		
@@ -1301,10 +1111,6 @@ namespace Manage_Furniture.ADO
 			{
 				if ((this._id_product != value))
 				{
-					if (this._product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onid_productChanging(value);
 					this.SendPropertyChanging();
 					this._id_product = value;
@@ -1330,40 +1136,6 @@ namespace Manage_Furniture.ADO
 					this._quantity = value;
 					this.SendPropertyChanged("quantity");
 					this.OnquantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_warehouse", Storage="_product", ThisKey="id_product", OtherKey="id", IsForeignKey=true)]
-		public product product
-		{
-			get
-			{
-				return this._product.Entity;
-			}
-			set
-			{
-				product previousValue = this._product.Entity;
-				if (((previousValue != value) 
-							|| (this._product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._product.Entity = null;
-						previousValue.warehouse = null;
-					}
-					this._product.Entity = value;
-					if ((value != null))
-					{
-						value.warehouse = this;
-						this._id_product = value.id;
-					}
-					else
-					{
-						this._id_product = default(int);
-					}
-					this.SendPropertyChanged("product");
 				}
 			}
 		}
@@ -1409,15 +1181,15 @@ namespace Manage_Furniture.ADO
 		
 		private string _password;
 		
-		private string _email;
-		
-		private string _status;
-		
 		private System.Nullable<bool> _deleted;
 		
 		private string _role;
 		
-		private System.DateTime _CreatedAt;
+		private string _email;
+		
+		private string _status;
+		
+		private System.Nullable<System.DateTime> _CreatedAt;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1437,15 +1209,15 @@ namespace Manage_Furniture.ADO
     partial void OnsalaryChanged();
     partial void OnpasswordChanging(string value);
     partial void OnpasswordChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
     partial void OndeletedChanging(System.Nullable<bool> value);
     partial void OndeletedChanged();
     partial void OnroleChanging(string value);
     partial void OnroleChanged();
-    partial void OnCreatedAtChanging(System.DateTime value);
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnstatusChanging(string value);
+    partial void OnstatusChanged();
+    partial void OnCreatedAtChanging(System.Nullable<System.DateTime> value);
     partial void OnCreatedAtChanged();
     #endregion
 		
@@ -1594,46 +1366,6 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				if ((this._email != value))
-				{
-					this.OnemailChanging(value);
-					this.SendPropertyChanging();
-					this._email = value;
-					this.SendPropertyChanged("email");
-					this.OnemailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deleted", DbType="Bit")]
 		public System.Nullable<bool> deleted
 		{
@@ -1674,8 +1406,48 @@ namespace Manage_Furniture.ADO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime NOT NULL")]
-		public System.DateTime CreatedAt
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(100)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedAt
 		{
 			get
 			{
