@@ -14,6 +14,12 @@ namespace Manage_Furniture.Models
         public string Name { get; set; }     
         public string Brand { get; set; }     
         public decimal Price { get; set; }
+
+        public string color { get; set; }
+        public string Material { get; set; }
+        public string Category { get; set; }
+        public byte[] Image { get; set; } // Assuming Image is stored as byte array
+
         //public int SupplierId { get; set; }
 
         //public List<product> GetAllProducts()

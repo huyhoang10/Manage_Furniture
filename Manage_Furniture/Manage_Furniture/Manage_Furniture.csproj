@@ -166,6 +166,7 @@
       <DependentUpon>manager_furniture.dbml</DependentUpon>
     </Compile>
     <Compile Include="Controls\FEmployeeControl.cs" />
+    <Compile Include="Controls\FProductControl.cs" />
     <Compile Include="Controls\Helper.cs" />
     <Compile Include="Controls\HRControl.cs" />
     <Compile Include="Controls\UCCustomerController.cs" />
@@ -234,6 +235,12 @@
     </Compile>
     <Compile Include="Forms\FManager.Designer.cs">
       <DependentUpon>FManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FProduct.Designer.cs">
+      <DependentUpon>FProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FReportCustomer.cs">
       <SubType>Form</SubType>
@@ -331,7 +338,6 @@
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Product_Warehouse.cs" />
     <Compile Include="Models\Suppliers.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
@@ -471,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FManager.resx">
       <DependentUpon>FManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FProduct.resx">
+      <DependentUpon>FProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FReportCustomer.resx">
       <DependentUpon>FReportCustomer.cs</DependentUpon>

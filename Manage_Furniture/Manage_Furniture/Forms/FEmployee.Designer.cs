@@ -41,13 +41,13 @@
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
+            this.ucHR1 = new Manage_Furniture.Controls.ucHR();
             this.ucHistory1 = new Manage_Furniture.Forms.ucHistory();
             this.ucSuppliercs1 = new Manage_Furniture.Forms.ucSuppliercs();
             this.ucWarehouse1 = new Manage_Furniture.Forms.ucWarehouse();
             this.ucCustomer1 = new Manage_Furniture.Controls.UCCustomer();
             this.ucOrder1 = new Manage_Furniture.Forms.UCOrder();
             this.ucOverview1 = new Manage_Furniture.Forms.ucOverview();
-            this.ucHR1 = new Manage_Furniture.Controls.ucHR();
             this.pnlAllButton.SuspendLayout();
             this.pnlUserControls.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +90,7 @@
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(333, 76);
             this.btnHistory.TabIndex = 13;
-            this.btnHistory.Text = "History";
+            this.btnHistory.Text = "Lịch sử";
             this.btnHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
@@ -131,7 +131,7 @@
             this.btnHR.Name = "btnHR";
             this.btnHR.Size = new System.Drawing.Size(333, 76);
             this.btnHR.TabIndex = 11;
-            this.btnHR.Text = "HR";
+            this.btnHR.Text = "Nhân viên";
             this.btnHR.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHR.Click += new System.EventHandler(this.btnHR_Click);
             // 
@@ -154,7 +154,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(333, 76);
             this.btnHome.TabIndex = 10;
-            this.btnHome.Text = "Home";
+            this.btnHome.Text = "Tổng quan";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -171,12 +171,12 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLogout.Location = new System.Drawing.Point(25, 945);
+            this.btnLogout.Location = new System.Drawing.Point(12, 946);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(300, 76);
+            this.btnLogout.Size = new System.Drawing.Size(333, 76);
             this.btnLogout.TabIndex = 9;
-            this.btnLogout.Text = "Log out";
+            this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // guna2Button4
@@ -213,7 +213,7 @@
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Size = new System.Drawing.Size(333, 76);
             this.btnSupplier.TabIndex = 5;
-            this.btnSupplier.Text = "Supplier";
+            this.btnSupplier.Text = "Cung cấp";
             this.btnSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
             // 
@@ -235,7 +235,7 @@
             this.btnWarehouse.Name = "btnWarehouse";
             this.btnWarehouse.Size = new System.Drawing.Size(333, 76);
             this.btnWarehouse.TabIndex = 4;
-            this.btnWarehouse.Text = "Warehouse";
+            this.btnWarehouse.Text = "Nhà kho";
             this.btnWarehouse.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
             // 
@@ -257,7 +257,7 @@
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(333, 76);
             this.btnOrder.TabIndex = 3;
-            this.btnOrder.Text = "Order";
+            this.btnOrder.Text = "Đơn hàng";
             this.btnOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
@@ -280,7 +280,7 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(333, 76);
             this.btnCustomer.TabIndex = 2;
-            this.btnCustomer.Text = "Customer";
+            this.btnCustomer.Text = "Khách hàng";
             this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
@@ -300,6 +300,15 @@
             this.pnlUserControls.Size = new System.Drawing.Size(1700, 1036);
             this.pnlUserControls.TabIndex = 3;
             // 
+            // ucHR1
+            // 
+            this.ucHR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucHR1.Location = new System.Drawing.Point(0, 0);
+            this.ucHR1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucHR1.Name = "ucHR1";
+            this.ucHR1.Size = new System.Drawing.Size(1552, 1036);
+            this.ucHR1.TabIndex = 7;
+            // 
             // ucHistory1
             // 
             this.ucHistory1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
@@ -314,7 +323,7 @@
             this.ucSuppliercs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
             this.ucSuppliercs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucSuppliercs1.Location = new System.Drawing.Point(0, 0);
-            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(5);
             this.ucSuppliercs1.Name = "ucSuppliercs1";
             this.ucSuppliercs1.Size = new System.Drawing.Size(1700, 1036);
             this.ucSuppliercs1.TabIndex = 4;
@@ -354,15 +363,6 @@
             this.ucOverview1.Name = "ucOverview1";
             this.ucOverview1.Size = new System.Drawing.Size(1552, 1036);
             this.ucOverview1.TabIndex = 0;
-            // 
-            // ucHR1
-            // 
-            this.ucHR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucHR1.Location = new System.Drawing.Point(0, 0);
-            this.ucHR1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ucHR1.Name = "ucHR1";
-            this.ucHR1.Size = new System.Drawing.Size(1552, 1036);
-            this.ucHR1.TabIndex = 7;
             // 
             // FEmployee
             // 

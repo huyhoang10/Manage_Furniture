@@ -91,6 +91,8 @@ namespace Manage_Furniture.ADO
             return listSuppliers;
         }
 
+
+
         public List<Products> GetProducts()
         {
             List<Products> listProducts = new List<Products>();
@@ -100,10 +102,10 @@ namespace Manage_Furniture.ADO
                 Products product = new Products();
                 product.Id = products[i].id;
                 product.Name = products[i].name;
-                product.Supplier = products[i].supplier.ToString();
                 product.Brand = products[i].brand;
-                product.Subcategory = products[i].subcategory;
                 product.Price = (float)products[i].price;
+                product.Material = products[i].material;
+                product.Image = products[i].image.ToArray(); // Assuming image is a byte array
                 listProducts.Add(product);
             }
             return listProducts;
@@ -121,10 +123,9 @@ namespace Manage_Furniture.ADO
                 product.Id = products[i].id;
                 product.Name = products[i].name;
                 product.Brand = products[i].brand;
-                product.Subcategory = products[i].subcategory;
                 product.Price = (float)products[i].price;
-                var name_supplier = db.suppliers.Where(x => x.id == products[i].supplier).FirstOrDefault().name;
-                product.Supplier = products[i].supplier.ToString()+" - "+name_supplier;
+                //var name_supplier = db.suppliers.Where(x => x.id == products[i].supplier).FirstOrDefault().name;
+                //product.Supplier = products[i].supplier.ToString()+" - "+name_supplier;
                 product.Quantity = (int)db.warehouses.Where(x => x.id_product == products[i].id).FirstOrDefault().quantity;
                 listProducts.Add(product);
             }
@@ -132,15 +133,17 @@ namespace Manage_Furniture.ADO
         }
 
        
-        public void AddProductToWarehouse(int id, string name, int idsupplier, float price, string brand, string subcategory, int quantity)
+        public void AddProductToWarehouse(int id, string name, float price, string brand, string subcategory, int quantity, string color, string material, byte[] image)
         {
             product newProduct = new product();
             newProduct.id = id;
             newProduct.name = name;
             newProduct.subcategory = subcategory;
-            newProduct.supplier = idsupplier;
             newProduct.brand = brand;
             newProduct.price = (decimal)price;
+            newProduct.color = color;
+            newProduct.material = material;
+            newProduct.image = image; // Assuming image is a byte array
             db.products.InsertOnSubmit(newProduct);
             warehouse newWarehouse = new warehouse();
             newWarehouse.id_product = id;
@@ -149,7 +152,7 @@ namespace Manage_Furniture.ADO
             db.SubmitChanges();
         }
 
-        public void EditProductToWarehouse(int idproduct, string name_product, int id_supplier, float price,string subcategory,string brand,int quantity)
+        public void EditProductToWarehouse(int idproduct, string name_product, int id_supplier, float price,string subcategory,string brand,int quantity, string color, string material, byte[] image)
         {
             var warehouse = db.warehouses.Where(x => x.id_product == idproduct).FirstOrDefault();
             {
@@ -164,10 +167,12 @@ namespace Manage_Furniture.ADO
                 if (product != null)
                 {
                     product.name = name_product;
-                    product.supplier = id_supplier;
                     product.brand = brand;
                     product.subcategory = subcategory;
                     product.price = (decimal)price;
+                    product.color = color;
+                    product.material = material;
+                    product.image = image; // Assuming image is a byte array
                     db.SubmitChanges();
                 }
             }
@@ -202,10 +207,11 @@ namespace Manage_Furniture.ADO
                          select new
                          {   p.id,
                              p.name,
-                             p.supplier,
                              p.price,
                              p.subcategory,
                              p.brand,
+                             p.image,
+                             p.material,
                              w.quantity
                          };
             foreach(var item in result)
@@ -214,12 +220,10 @@ namespace Manage_Furniture.ADO
                 product.Id = item.id;
                 product.Name = item.name;
                 product.Brand = item.brand;
-                product.Subcategory = item.subcategory;
                 product.Price = (float)item.price;
                 product.Quantity = (int)item.quantity;
-                int IdSupplier = (int)item.supplier;
-                var supllier = db.suppliers.Where(x => x.id == IdSupplier).FirstOrDefault();
-                product.Supplier = IdSupplier.ToString() + " - " + supllier.name;
+                product.Material = item.material;
+                product.Image = item.image.ToArray(); // Assuming image is a byte array
                 listProducts.Add(product);
             }
             return listProducts;
@@ -234,7 +238,6 @@ namespace Manage_Furniture.ADO
                          {
                              p.id,
                              p.name,
-                             p.supplier,
                              p.price,
                              p.subcategory,
                              p.brand,
@@ -249,14 +252,8 @@ namespace Manage_Furniture.ADO
                 product.Id = item.id;
                 product.Name = item.name;
                 product.Brand = item.brand;
-                product.Subcategory = item.subcategory;
                 product.Price = (float)item.price;
                 product.Quantity = (int)item.quantity;
-
-                int IdSupplier = (int)item.supplier;
-                var supllier = db.suppliers.FirstOrDefault(x => x.id == IdSupplier);
-                product.Supplier = IdSupplier.ToString() + " - " + supllier?.name;
-
                 listProducts.Add(product);
             }
 

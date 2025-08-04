@@ -20,22 +20,10 @@
         <elementListCompartment Id="8c180f8a-7617-4faf-b689-99ab98a7b9a3" absoluteBounds="7.765, 7.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="88fc1c80-5565-4d8a-96c4-150a9ab95a3a" absoluteBounds="4.375, 8.875, 2, 1.9631982421875">
-      <DataClassMoniker Name="/manager_furnitureDataContext/product" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4b7509a2-8cae-462f-bcc7-b7a8a3026166" absoluteBounds="4.39, 9.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="06a4cdf8-2eeb-45be-8249-88d9fc5ff679" absoluteBounds="8, 9.625, 2, 1.7708968098958331">
       <DataClassMoniker Name="/manager_furnitureDataContext/supplier" />
       <nestedChildShapes>
         <elementListCompartment Id="077b50fa-c3ef-4999-a3fa-c25c7e76a823" absoluteBounds="8.015, 10.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a339741d-bc55-4f27-aecb-68572636feff" absoluteBounds="4.5, 11.375, 2, 1.3862939453125">
-      <DataClassMoniker Name="/manager_furnitureDataContext/user" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fcfb064e-0fa0-4906-ac77-07855b93980c" absoluteBounds="4.515, 11.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="4144685f-b76f-4896-94a6-a1c35f342b4a" absoluteBounds="8, 12.25, 2, 1.1939925130208333">
@@ -48,6 +36,12 @@
       <DataClassMoniker Name="/manager_furnitureDataContext/employee" />
       <nestedChildShapes>
         <elementListCompartment Id="f438ec0b-8300-4e80-a961-b9e69608fc61" absoluteBounds="3.7649999999999997, 6.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6af2a3d8-411f-41fc-917b-11fac47dc886" absoluteBounds="3.375, 10.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/manager_furnitureDataContext/product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6308f2c3-1039-4471-9daf-98a2ae2aa280" absoluteBounds="3.39, 10.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

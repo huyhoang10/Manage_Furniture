@@ -36,18 +36,6 @@ namespace Manage_Furniture.Controls
             return dataCmbSupplier;
         }
 
-        public bool isExistSupplier(int id)
-        {
-            for (int i = 0; i < listSuppliers.Count; i++)
-            {
-                if (listSuppliers[i].Id == id)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         public List<string> LoadcmbSubCategory()
         {
             List<string> furnitureCategories = new List<string>
@@ -76,46 +64,7 @@ namespace Manage_Furniture.Controls
 
             return furnitureCategories;
         }
-        public bool AddProductToWarehouse(string name, string supplier, string subcategory, string price, string quantity, string brand)
-        {
-            Random random = new Random();
-
-            if (name == "")
-            {
-                MessageBox.Show("Please fill name the fields", "Error");
-                return false;
-            }
-            if (supplier != "")
-            {
-                string[] idSupplier = supplier.Split('-');
-                supplier = idSupplier[0].Trim();
-            }
-            else
-            {
-                MessageBox.Show("Please choose supplier", "Error");
-                return false;
-            }
-            if (float.TryParse(price, out float priceValue) == false)
-            {
-                MessageBox.Show("Please enter valid price", "Error");            
-                return false;
-            }
-            if (float.Parse(price) == 0)
-            {
-                MessageBox.Show("Price must be greater than zero.", "Invalid Price");
-                return false;
-            }
-            while (true)
-            {
-                int id = random.Next(10000, 99999);
-                if (!isExistSupplier(id))
-                {
-                    connectDB.AddProductToWarehouse(id, name, Int32.Parse(supplier), priceValue, brand, subcategory, Int32.Parse(quantity));
-                    return true;
-                }
-            }
-
-        }
+        
         public void DeleteProductFromWarehouse(string id)
         {
             if (id != "")
@@ -126,42 +75,7 @@ namespace Manage_Furniture.Controls
             else
                 MessageBox.Show("Please choose product.", "Error");
         }
-        public bool EditProductInWarehouse(string id, string name, string supplier, string subcategory, string price, string quantity, string brand)
-        {
-            if (id != "")
-            {
-                if (name == "")
-                {
-                    MessageBox.Show("Please fill name the fields", "Error");
-                    return false;
-                }
-                if (supplier != "")
-                {
-                    string[] idSupplier = supplier.Split('-');
-                    supplier = idSupplier[0].Trim();
-                }
-                else
-                {
-                    MessageBox.Show("Please choose supplier", "Error");
-                    return false;
-                }
-                if (float.TryParse(price, out float priceValue) == false)
-                {
-                    MessageBox.Show("Please enter valid price", "Error");
-                    return false;
-                }
-                if (float.Parse(price) == 0)
-                {
-                    MessageBox.Show("Price must be greater than zero.", "Invalid Price");
-                    return false;
-                }
-                connectDB.EditProductToWarehouse(Int32.Parse(id), name, Int32.Parse(supplier), priceValue, subcategory, brand, Int32.Parse(quantity));
-                return true;
-            }
-            else
-                MessageBox.Show("Please choose Product", "Error");
-            return false;
-        }
+        
 
         public List<Products> DisplayInformation()
         {
@@ -206,10 +120,10 @@ namespace Manage_Furniture.Controls
                     var p = products[i];
                     worksheet.Cell(i + 2, 1).Value = p.Id;
                     worksheet.Cell(i + 2, 2).Value = p.Name;
-                    worksheet.Cell(i + 2, 3).Value = p.Supplier;
+                    //worksheet.Cell(i + 2, 3).Value = p.Supplier;
                     worksheet.Cell(i + 2, 4).Value = p.Price;
                     worksheet.Cell(i + 2, 5).Value = p.Brand;
-                    worksheet.Cell(i + 2, 6).Value = p.Subcategory;
+                    //worksheet.Cell(i + 2, 6).Value = p.Subcategory;
                     worksheet.Cell(i + 2, 7).Value = p.Quantity;
                 }
 
@@ -253,18 +167,18 @@ namespace Manage_Furniture.Controls
                 DataRow row = dt.NewRow();
                 row["ID"] = product.Id.ToString();
                 row["Product"] = product.Name;
-                string[] parts = product.Supplier.Split('-');
-                if (parts.Length > 0 && int.TryParse(parts[0].Trim(), out int supplierId))
-                {
-                    row["Supplier"] = supplierId;
-                }
-                else
-                {
-                    row["Supplier"] = DBNull.Value;  // hoặc xử lý lỗi phù hợp
-                } // Nếu cần lấy tên nhà cung cấp thay vì ID, bạn sẽ cần truy vấn thêm từ bảng Supplier
+                //string[] parts = product.Supplier.Split('-');
+                //if (parts.Length > 0 && int.TryParse(parts[0].Trim(), out int supplierId))
+                //{
+                //    row["Supplier"] = supplierId;
+                //}
+                //else
+                //{
+                //    row["Supplier"] = DBNull.Value;  // hoặc xử lý lỗi phù hợp
+                //} // Nếu cần lấy tên nhà cung cấp thay vì ID, bạn sẽ cần truy vấn thêm từ bảng Supplier
                 row["Price"] = product.Price;
                 row["Brand"] = product.Brand;
-                row["Subcategory"] = product.Subcategory;
+                //row["Subcategory"] = product.Subcategory;
                 row["Quantity"] = product.Quantity;
 
                 dt.Rows.Add(row);

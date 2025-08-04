@@ -10,19 +10,19 @@ namespace Manage_Furniture.Models
     {
         int id;
         string name;
-        string subcategory;
-        string supplier;
         string brand;
         float price;
         int quantity;
+        string material;
+        byte[] image; // Assuming Image is stored as byte array
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
-        public string Subcategory { get => subcategory; set => subcategory = value; }
-        public string Supplier { get => supplier; set => supplier = value; }
         public string Brand { get => brand; set => brand = value; }
         public float Price { get => price; set => price = value; }
         public int Quantity { get => quantity; set => quantity = value; }
+        public string Material { get => material; set => material = value; }
+        public byte[] Image { get => image; set => image = value; }
         public int RandomID()
         {
             Random random = new Random();

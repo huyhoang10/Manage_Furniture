@@ -47,17 +47,17 @@
             this.txt_order_note = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmb_customer_type = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgv_orders = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.txt_sum = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_search_phone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_search = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.manageFurnitureDataSet = new Manage_Furniture.ManageFurnitureDataSet();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_product = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.col_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_date_purchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.txt_sum = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_search_phone = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btn_search = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.manageFurnitureDataSet = new Manage_Furniture.ManageFurnitureDataSet();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orders)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
@@ -96,7 +96,7 @@
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(175, 64);
             this.btn_reset.TabIndex = 8;
-            this.btn_reset.Text = "Reset";
+            this.btn_reset.Text = "Hủy";
             this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // btn_order
@@ -114,7 +114,7 @@
             this.btn_order.Name = "btn_order";
             this.btn_order.Size = new System.Drawing.Size(175, 64);
             this.btn_order.TabIndex = 7;
-            this.btn_order.Text = "Order";
+            this.btn_order.Text = "Đặt";
             this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // btn_export
@@ -132,7 +132,7 @@
             this.btn_export.Name = "btn_export";
             this.btn_export.Size = new System.Drawing.Size(175, 64);
             this.btn_export.TabIndex = 9;
-            this.btn_export.Text = "Export";
+            this.btn_export.Text = "Xuất HĐ";
             this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
             // txt_customer_name
@@ -155,7 +155,7 @@
             this.txt_customer_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_customer_name.Name = "txt_customer_name";
             this.txt_customer_name.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_customer_name.PlaceholderText = "Name Customer*";
+            this.txt_customer_name.PlaceholderText = "Tên khách hàng*";
             this.txt_customer_name.SelectedText = "";
             this.txt_customer_name.Size = new System.Drawing.Size(511, 71);
             this.txt_customer_name.TabIndex = 3;
@@ -181,7 +181,7 @@
             this.txt_customer_phone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_customer_phone.Name = "txt_customer_phone";
             this.txt_customer_phone.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_customer_phone.PlaceholderText = "Phone*";
+            this.txt_customer_phone.PlaceholderText = "Số điện thoại*";
             this.txt_customer_phone.SelectedText = "";
             this.txt_customer_phone.Size = new System.Drawing.Size(333, 71);
             this.txt_customer_phone.TabIndex = 1;
@@ -206,7 +206,7 @@
             this.txt_custormer_address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_custormer_address.Name = "txt_custormer_address";
             this.txt_custormer_address.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_custormer_address.PlaceholderText = "Address";
+            this.txt_custormer_address.PlaceholderText = "Địa chỉ";
             this.txt_custormer_address.SelectedText = "";
             this.txt_custormer_address.Size = new System.Drawing.Size(511, 71);
             this.txt_custormer_address.TabIndex = 4;
@@ -274,7 +274,7 @@
             this.txt_order_note.Name = "txt_order_note";
             this.txt_order_note.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.txt_order_note.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_order_note.PlaceholderText = "Note Orders";
+            this.txt_order_note.PlaceholderText = "Ghi chú";
             this.txt_order_note.SelectedText = "";
             this.txt_order_note.Size = new System.Drawing.Size(511, 162);
             this.txt_order_note.TabIndex = 6;
@@ -380,63 +380,6 @@
             this.dgv_orders.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_CellValueChanged);
             this.dgv_orders.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_RowLeave);
             // 
-            // col_id
-            // 
-            this.col_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_id.FillWeight = 47.03881F;
-            this.col_id.HeaderText = "No";
-            this.col_id.MinimumWidth = 6;
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            // 
-            // col_product
-            // 
-            this.col_product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_product.DataPropertyName = "id";
-            this.col_product.FillWeight = 168.0779F;
-            this.col_product.HeaderText = "Product";
-            this.col_product.MinimumWidth = 6;
-            this.col_product.Name = "col_product";
-            this.col_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // col_quantity
-            // 
-            this.col_quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_quantity.DataPropertyName = "quantity";
-            this.col_quantity.FillWeight = 95.68577F;
-            this.col_quantity.HeaderText = "Quantity";
-            this.col_quantity.MinimumWidth = 6;
-            this.col_quantity.Name = "col_quantity";
-            // 
-            // col_date_purchase
-            // 
-            this.col_date_purchase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_date_purchase.DataPropertyName = "date_purchase";
-            this.col_date_purchase.FillWeight = 95.68577F;
-            this.col_date_purchase.HeaderText = "Date Purchase";
-            this.col_date_purchase.MinimumWidth = 6;
-            this.col_date_purchase.Name = "col_date_purchase";
-            this.col_date_purchase.ReadOnly = true;
-            // 
-            // col_money
-            // 
-            this.col_money.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_money.DataPropertyName = "money";
-            this.col_money.FillWeight = 95.68577F;
-            this.col_money.HeaderText = "Money";
-            this.col_money.MinimumWidth = 6;
-            this.col_money.Name = "col_money";
-            this.col_money.ReadOnly = true;
-            // 
-            // col_total
-            // 
-            this.col_total.FillWeight = 84.24312F;
-            this.col_total.HeaderText = "Total";
-            this.col_total.MinimumWidth = 6;
-            this.col_total.Name = "col_total";
-            this.col_total.ReadOnly = true;
-            // 
             // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.BorderRadius = 16;
@@ -465,13 +408,13 @@
             this.txt_sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txt_sum.ForeColor = System.Drawing.Color.Black;
             this.txt_sum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_sum.Location = new System.Drawing.Point(628, 622);
+            this.txt_sum.Location = new System.Drawing.Point(620, 622);
             this.txt_sum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_sum.Name = "txt_sum";
             this.txt_sum.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txt_sum.PlaceholderText = "Total = 0";
+            this.txt_sum.PlaceholderText = "Tổng cộng = 0";
             this.txt_sum.SelectedText = "";
-            this.txt_sum.Size = new System.Drawing.Size(256, 64);
+            this.txt_sum.Size = new System.Drawing.Size(264, 64);
             this.txt_sum.TabIndex = 5;
             // 
             // txt_search_phone
@@ -494,7 +437,7 @@
             this.txt_search_phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_search_phone.Name = "txt_search_phone";
             this.txt_search_phone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_search_phone.PlaceholderText = "Phone Customer";
+            this.txt_search_phone.PlaceholderText = "Nhập số điện thoại";
             this.txt_search_phone.SelectedText = "";
             this.txt_search_phone.Size = new System.Drawing.Size(428, 69);
             this.txt_search_phone.TabIndex = 10;
@@ -524,6 +467,63 @@
             // 
             this.manageFurnitureDataSet.DataSetName = "ManageFurnitureDataSet";
             this.manageFurnitureDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // col_id
+            // 
+            this.col_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_id.FillWeight = 47.03881F;
+            this.col_id.HeaderText = "Stt";
+            this.col_id.MinimumWidth = 6;
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            // 
+            // col_product
+            // 
+            this.col_product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_product.DataPropertyName = "id";
+            this.col_product.FillWeight = 168.0779F;
+            this.col_product.HeaderText = "Sản phẩm";
+            this.col_product.MinimumWidth = 6;
+            this.col_product.Name = "col_product";
+            this.col_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // col_quantity
+            // 
+            this.col_quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_quantity.DataPropertyName = "quantity";
+            this.col_quantity.FillWeight = 95.68577F;
+            this.col_quantity.HeaderText = "Số lượng";
+            this.col_quantity.MinimumWidth = 6;
+            this.col_quantity.Name = "col_quantity";
+            // 
+            // col_date_purchase
+            // 
+            this.col_date_purchase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_date_purchase.DataPropertyName = "date_purchase";
+            this.col_date_purchase.FillWeight = 95.68577F;
+            this.col_date_purchase.HeaderText = "Ngày mua";
+            this.col_date_purchase.MinimumWidth = 6;
+            this.col_date_purchase.Name = "col_date_purchase";
+            this.col_date_purchase.ReadOnly = true;
+            // 
+            // col_money
+            // 
+            this.col_money.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_money.DataPropertyName = "money";
+            this.col_money.FillWeight = 95.68577F;
+            this.col_money.HeaderText = "Giá trị";
+            this.col_money.MinimumWidth = 6;
+            this.col_money.Name = "col_money";
+            this.col_money.ReadOnly = true;
+            // 
+            // col_total
+            // 
+            this.col_total.FillWeight = 84.24312F;
+            this.col_total.HeaderText = "Thành tiền";
+            this.col_total.MinimumWidth = 6;
+            this.col_total.Name = "col_total";
+            this.col_total.ReadOnly = true;
             // 
             // UCOrder
             // 

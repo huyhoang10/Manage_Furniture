@@ -28,17 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSuppliercs));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNote = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtContact = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,6 +47,11 @@
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btn_Report = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Excel = new Guna.UI2.WinForms.Guna2Button();
+            this.col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -69,18 +69,18 @@
             // 
             // dgvView
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.dgvView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvView.ColumnHeadersHeight = 50;
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -89,14 +89,14 @@
             this.col_Address,
             this.col_Contact,
             this.col_Note});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvView.GridColor = System.Drawing.Color.White;
             this.dgvView.Location = new System.Drawing.Point(15, 25);
             this.dgvView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -130,46 +130,6 @@
             this.dgvView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellClick);
             // 
-            // col_Id
-            // 
-            this.col_Id.DataPropertyName = "id";
-            this.col_Id.HeaderText = "ID";
-            this.col_Id.MinimumWidth = 6;
-            this.col_Id.Name = "col_Id";
-            this.col_Id.ReadOnly = true;
-            // 
-            // col_Name
-            // 
-            this.col_Name.DataPropertyName = "name";
-            this.col_Name.HeaderText = "Name";
-            this.col_Name.MinimumWidth = 6;
-            this.col_Name.Name = "col_Name";
-            this.col_Name.ReadOnly = true;
-            // 
-            // col_Address
-            // 
-            this.col_Address.DataPropertyName = "address";
-            this.col_Address.HeaderText = "Address";
-            this.col_Address.MinimumWidth = 6;
-            this.col_Address.Name = "col_Address";
-            this.col_Address.ReadOnly = true;
-            // 
-            // col_Contact
-            // 
-            this.col_Contact.DataPropertyName = "contact";
-            this.col_Contact.HeaderText = "Contact";
-            this.col_Contact.MinimumWidth = 6;
-            this.col_Contact.Name = "col_Contact";
-            this.col_Contact.ReadOnly = true;
-            // 
-            // col_Note
-            // 
-            this.col_Note.DataPropertyName = "note";
-            this.col_Note.HeaderText = "Note";
-            this.col_Note.MinimumWidth = 6;
-            this.col_Note.Name = "col_Note";
-            this.col_Note.ReadOnly = true;
-            // 
             // txtNote
             // 
             this.txtNote.BackColor = System.Drawing.Color.Transparent;
@@ -191,7 +151,7 @@
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtNote.PlaceholderText = "Note";
+            this.txtNote.PlaceholderText = "Ghi chú";
             this.txtNote.SelectedText = "";
             this.txtNote.Size = new System.Drawing.Size(511, 225);
             this.txtNote.TabIndex = 4;
@@ -216,7 +176,7 @@
             this.txtContact.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtContact.Name = "txtContact";
             this.txtContact.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtContact.PlaceholderText = "Contact";
+            this.txtContact.PlaceholderText = "Liên hệ";
             this.txtContact.SelectedText = "";
             this.txtContact.Size = new System.Drawing.Size(511, 69);
             this.txtContact.TabIndex = 3;
@@ -243,7 +203,7 @@
             this.txtID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtID.Name = "txtID";
             this.txtID.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtID.PlaceholderText = "ID";
+            this.txtID.PlaceholderText = "Mã số";
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(137, 69);
             this.txtID.TabIndex = 15;
@@ -268,7 +228,7 @@
             this.txtAddress.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtAddress.PlaceholderText = "Address";
+            this.txtAddress.PlaceholderText = "Địa chỉ";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(511, 69);
             this.txtAddress.TabIndex = 2;
@@ -293,7 +253,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtName.Name = "txtName";
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtName.PlaceholderText = "Name*";
+            this.txtName.PlaceholderText = "Tên*";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(363, 69);
             this.txtName.TabIndex = 1;
@@ -313,7 +273,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(149, 50);
             this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "Sửa";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
@@ -331,7 +291,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(149, 50);
             this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Thêm";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSearch
@@ -354,7 +314,7 @@
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtSearch.PlaceholderText = "Search Name";
+            this.txtSearch.PlaceholderText = "Tìm kiếm";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(428, 69);
             this.txtSearch.TabIndex = 8;
@@ -375,7 +335,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(149, 50);
             this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // guna2CustomGradientPanel2
@@ -438,6 +398,46 @@
             this.btn_Excel.Text = "Excel";
             this.btn_Excel.Click += new System.EventHandler(this.btn_Excel_Click);
             // 
+            // col_Id
+            // 
+            this.col_Id.DataPropertyName = "id";
+            this.col_Id.HeaderText = "Mã số";
+            this.col_Id.MinimumWidth = 6;
+            this.col_Id.Name = "col_Id";
+            this.col_Id.ReadOnly = true;
+            // 
+            // col_Name
+            // 
+            this.col_Name.DataPropertyName = "name";
+            this.col_Name.HeaderText = "Tên";
+            this.col_Name.MinimumWidth = 6;
+            this.col_Name.Name = "col_Name";
+            this.col_Name.ReadOnly = true;
+            // 
+            // col_Address
+            // 
+            this.col_Address.DataPropertyName = "address";
+            this.col_Address.HeaderText = "Địa chỉ";
+            this.col_Address.MinimumWidth = 6;
+            this.col_Address.Name = "col_Address";
+            this.col_Address.ReadOnly = true;
+            // 
+            // col_Contact
+            // 
+            this.col_Contact.DataPropertyName = "contact";
+            this.col_Contact.HeaderText = "Liên hệ";
+            this.col_Contact.MinimumWidth = 6;
+            this.col_Contact.Name = "col_Contact";
+            this.col_Contact.ReadOnly = true;
+            // 
+            // col_Note
+            // 
+            this.col_Note.DataPropertyName = "note";
+            this.col_Note.HeaderText = "Ghi chú";
+            this.col_Note.MinimumWidth = 6;
+            this.col_Note.Name = "col_Note";
+            this.col_Note.ReadOnly = true;
+            // 
             // ucSuppliercs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,7 +452,7 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucSuppliercs";
             this.Size = new System.Drawing.Size(1552, 1036);
             this.Load += new System.EventHandler(this.ucSuppliercs_Load);
@@ -477,14 +477,14 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvView;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2Button btn_Report;
+        private Guna.UI2.WinForms.Guna2Button btn_Excel;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Contact;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Note;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private Guna.UI2.WinForms.Guna2Button btn_Report;
-        private Guna.UI2.WinForms.Guna2Button btn_Excel;
     }
 }
