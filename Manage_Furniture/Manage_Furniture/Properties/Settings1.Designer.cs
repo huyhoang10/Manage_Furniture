@@ -55,5 +55,16 @@ namespace Manage_Furniture.Properties {
                 return ((string)(this["ManageFurnitureConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=DBMS;Integrated Security=True;TrustServerCertificat" +
+            "e=True")]
+        public string DBMSConnectionString {
+            get {
+                return ((string)(this["DBMSConnectionString"]));
+            }
+        }
     }
 }

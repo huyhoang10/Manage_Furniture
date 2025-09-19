@@ -139,7 +139,7 @@
             this.phide.Size = new System.Drawing.Size(50, 50);
             this.phide.TabIndex = 8;
             this.phide.TabStop = false;
-            this.phide.Click += new System.EventHandler(this.phide_Click);
+           
             // 
             // guna2Shapes3
             // 
@@ -165,7 +165,7 @@
             this.pshow.Size = new System.Drawing.Size(50, 50);
             this.pshow.TabIndex = 7;
             this.pshow.TabStop = false;
-            this.pshow.Click += new System.EventHandler(this.pshow_Click);
+          
             // 
             // label2
             // 
@@ -226,7 +226,7 @@
             this.btn_login.Size = new System.Drawing.Size(279, 77);
             this.btn_login.TabIndex = 7;
             this.btn_login.Text = " LOG IN";
-            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
+           
             // 
             // rbtn_admin
             // 
@@ -346,7 +346,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FLogin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FLogin_Load);
+       
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

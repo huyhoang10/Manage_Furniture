@@ -123,7 +123,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADO\connectDatabase.cs" />
     <Compile Include="ADO\dtOrder.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,16 +164,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>manager_furniture.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\FEmployeeControl.cs" />
-    <Compile Include="Controls\Helper.cs" />
-    <Compile Include="Controls\HRControl.cs" />
-    <Compile Include="Controls\UCCustomerController.cs" />
-    <Compile Include="Controls\ucHistoryControls.cs" />
     <Compile Include="Controls\ucLoginControl.cs" />
-    <Compile Include="Controls\ucOrderControl.cs" />
-    <Compile Include="Controls\ucOverviewControl.cs" />
-    <Compile Include="Controls\ucSuppliersControls.cs" />
-    <Compile Include="Controls\ucWarehouseControls.cs" />
     <Compile Include="Forms\crvBill.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,53 +207,29 @@
     <Compile Include="Forms\FAdmin.Designer.cs">
       <DependentUpon>FAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FEmployee.Designer.cs">
-      <DependentUpon>FEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FManager.cs">
+    <Compile Include="Forms\FrmThemChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FManager.Designer.cs">
-      <DependentUpon>FManager.cs</DependentUpon>
+    <Compile Include="Forms\FrmThemChucVu.Designer.cs">
+      <DependentUpon>FrmThemChucVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FReportCustomer.cs">
+    <Compile Include="Forms\FrmThemTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FReportCustomer.Designer.cs">
-      <DependentUpon>FReportCustomer.cs</DependentUpon>
+    <Compile Include="Forms\FrmThemTaiKhoan.Designer.cs">
+      <DependentUpon>FrmThemTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FReportEmployee.cs">
+    <Compile Include="Forms\FrmThemVaiTro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FReportEmployee.Designer.cs">
-      <DependentUpon>FReportEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FReportOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FReportOrder.Designer.cs">
-      <DependentUpon>FReportOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FReportSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FReportSupplier.Designer.cs">
-      <DependentUpon>FReportSupplier.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FReportWarehouse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FReportWarehouse.Designer.cs">
-      <DependentUpon>FReportWarehouse.cs</DependentUpon>
+    <Compile Include="Forms\FrmThemVaiTro.Designer.cs">
+      <DependentUpon>FrmThemVaiTro.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FWelcome.cs">
       <SubType>Form</SubType>
@@ -271,23 +237,41 @@
     <Compile Include="Forms\FWelcome.Designer.cs">
       <DependentUpon>FWelcome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UCBill.cs">
+    <Compile Include="Forms\GhiChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UCBill.Designer.cs">
-      <DependentUpon>UCBill.cs</DependentUpon>
+    <Compile Include="Forms\GhiChu.Designer.cs">
+      <DependentUpon>GhiChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UCCustomer.cs">
+    <Compile Include="Forms\ThemCaLam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ThemCaLam.Designer.cs">
+      <DependentUpon>ThemCaLam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ThemNhanVien.Designer.cs">
+      <DependentUpon>ThemNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TinhLuongChoCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TinhLuongChoCaNhan.Designer.cs">
+      <DependentUpon>TinhLuongChoCaNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucChamCong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UCCustomer.Designer.cs">
-      <DependentUpon>UCCustomer.cs</DependentUpon>
+    <Compile Include="Forms\ucChamCong.Designer.cs">
+      <DependentUpon>ucChamCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucHistory.cs">
+    <Compile Include="Forms\ucHopDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ucHistory.Designer.cs">
-      <DependentUpon>ucHistory.cs</DependentUpon>
+    <Compile Include="Forms\ucHopDong.Designer.cs">
+      <DependentUpon>ucHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ucHR.cs">
       <SubType>UserControl</SubType>
@@ -295,43 +279,59 @@
     <Compile Include="Forms\ucHR.Designer.cs">
       <DependentUpon>ucHR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UCOrder.cs">
+    <Compile Include="Forms\UCPhongBan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UCOrder.Designer.cs">
-      <DependentUpon>UCOrder.cs</DependentUpon>
+    <Compile Include="Forms\UCPhongBan.Designer.cs">
+      <DependentUpon>UCPhongBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucOverview.cs">
+    <Compile Include="Forms\ucTaiKhoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ucOverview.Designer.cs">
-      <DependentUpon>ucOverview.cs</DependentUpon>
+    <Compile Include="Forms\ucTaiKhoan.Designer.cs">
+      <DependentUpon>ucTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucSuppliercs.cs">
+    <Compile Include="Forms\ucChucVuVaiTro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ucSuppliercs.Designer.cs">
-      <DependentUpon>ucSuppliercs.cs</DependentUpon>
+    <Compile Include="Forms\ucChucVuVaiTro.Designer.cs">
+      <DependentUpon>ucChucVuVaiTro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ucWarehouse.cs">
+    <Compile Include="Forms\ucBangLuong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ucWarehouse.Designer.cs">
-      <DependentUpon>ucWarehouse.cs</DependentUpon>
+    <Compile Include="Forms\ucBangLuong.Designer.cs">
+      <DependentUpon>ucBangLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThemGiaoDichLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemGiaoDichLuong.Designer.cs">
+      <DependentUpon>FrmThemGiaoDichLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThemHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemHopDong.Designer.cs">
+      <DependentUpon>FrmThemHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThemPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemPhongBan.Designer.cs">
+      <DependentUpon>FrmThemPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThongTinNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongTinNhanVien.Designer.cs">
+      <DependentUpon>FrmThongTinNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageFurnitureDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ManageFurnitureDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\EmployeeModel.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Products.cs" />
-    <Compile Include="Models\Product_Warehouse.cs" />
-    <Compile Include="Models\Suppliers.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
@@ -339,6 +339,24 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ThemChamCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemChamCong.Designer.cs">
+      <DependentUpon>ThemChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemLoaiTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemLoaiTien.Designer.cs">
+      <DependentUpon>ThemLoaiTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TinhLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TinhLuong.Designer.cs">
+      <DependentUpon>TinhLuong.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -463,61 +481,82 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crvCustomer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FEmployee.resx">
-      <DependentUpon>FEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FAdmin.resx">
+      <DependentUpon>FAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FManager.resx">
-      <DependentUpon>FManager.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmThemChucVu.resx">
+      <DependentUpon>FrmThemChucVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FReportCustomer.resx">
-      <DependentUpon>FReportCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmThemTaiKhoan.resx">
+      <DependentUpon>FrmThemTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FReportEmployee.resx">
-      <DependentUpon>FReportEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FReportOrder.resx">
-      <DependentUpon>FReportOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FReportSupplier.resx">
-      <DependentUpon>FReportSupplier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FReportWarehouse.resx">
-      <DependentUpon>FReportWarehouse.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmThemVaiTro.resx">
+      <DependentUpon>FrmThemVaiTro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FWelcome.resx">
       <DependentUpon>FWelcome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UCBill.resx">
-      <DependentUpon>UCBill.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\GhiChu.resx">
+      <DependentUpon>GhiChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UCCustomer.resx">
-      <DependentUpon>UCCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ThemCaLam.resx">
+      <DependentUpon>ThemCaLam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucHistory.resx">
-      <DependentUpon>ucHistory.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ThemNhanVien.resx">
+      <DependentUpon>ThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TinhLuongChoCaNhan.resx">
+      <DependentUpon>TinhLuongChoCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucChamCong.resx">
+      <DependentUpon>ucChamCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucHopDong.resx">
+      <DependentUpon>ucHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucHR.resx">
       <DependentUpon>ucHR.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UCOrder.resx">
-      <DependentUpon>UCOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UCPhongBan.resx">
+      <DependentUpon>UCPhongBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucOverview.resx">
-      <DependentUpon>ucOverview.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ucTaiKhoan.resx">
+      <DependentUpon>ucTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucSuppliercs.resx">
-      <DependentUpon>ucSuppliercs.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ucChucVuVaiTro.resx">
+      <DependentUpon>ucChucVuVaiTro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ucWarehouse.resx">
-      <DependentUpon>ucWarehouse.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ucBangLuong.resx">
+      <DependentUpon>ucBangLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemGiaoDichLuong.resx">
+      <DependentUpon>FrmThemGiaoDichLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemHopDong.resx">
+      <DependentUpon>FrmThemHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemPhongBan.resx">
+      <DependentUpon>FrmThemPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongTinNhanVien.resx">
+      <DependentUpon>FrmThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemChamCong.resx">
+      <DependentUpon>ThemChamCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemLoaiTien.resx">
+      <DependentUpon>ThemLoaiTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TinhLuong.resx">
+      <DependentUpon>TinhLuong.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
