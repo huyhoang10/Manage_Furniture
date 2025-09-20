@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Manage_Furniture.Forms;
 
 namespace Manage_Furniture
 {
@@ -31,7 +32,7 @@ namespace Manage_Furniture
             isEditMode = true;
 
         }
-        string connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         private void FrmThemPhongBan_Load(object sender, EventArgs e)
         {
 

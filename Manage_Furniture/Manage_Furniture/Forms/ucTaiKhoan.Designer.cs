@@ -133,6 +133,11 @@
             this.cmbVaiTro.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbVaiTro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbVaiTro.ItemHeight = 30;
+            this.cmbVaiTro.Items.AddRange(new object[] {
+            "Role_Admin",
+            "Role_NhanVien",
+            "Role_KeToan",
+            "Role_NhanSu"});
             this.cmbVaiTro.Location = new System.Drawing.Point(620, 153);
             this.cmbVaiTro.Name = "cmbVaiTro";
             this.cmbVaiTro.Size = new System.Drawing.Size(140, 36);

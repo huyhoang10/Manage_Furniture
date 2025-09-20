@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Manage_Furniture.Forms;
 
 namespace Manage_Furniture
 {
     public partial class ThemChamCong : Form
     {
-        string connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string connectionString = CurrentUserSession.ConnectionString;
         bool is_edit = false;
         int MaCC;
         public ThemChamCong()

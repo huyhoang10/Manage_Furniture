@@ -19,23 +19,35 @@ namespace Manage_Furniture.Forms
             InitializeComponent();
            
         }
-        string connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         private void UCOrder_Load(object sender, EventArgs e)
         {
-            load();
+            if (!DesignMode)
+            {
+                load();
+            }
+                
         }
         private void load()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                con.Open();
-                string query = "SELECT * FROM vw_PhongBan_NhanVien";
-                SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvBangNhanVien.DataSource = dt;
-                con.Close();
+                try
+                {
+                    con.Open();
+                    string query = "SELECT * FROM vw_PhongBan_NhanVien";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvBangNhanVien.DataSource = dt;
+                    con.Close();
+                }
+                catch(Exception ezx)
+                {
+                    MessageBox.Show(ezx.ToString());
+                }
+                
             }
 
         }

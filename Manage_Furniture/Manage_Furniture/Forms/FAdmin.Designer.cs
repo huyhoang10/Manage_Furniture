@@ -42,11 +42,11 @@
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
             this.ucHistory1 = new Manage_Furniture.Forms.ucHopDong();
             this.ucHR1 = new Manage_Furniture.Controls.ucHR();
-            this.ucSuppliercs1 = new Manage_Furniture.Forms.ucChucVuVaiTro();
             this.ucWarehouse1 = new Manage_Furniture.Forms.ucBangLuong();
             this.ucCustomer1 = new Manage_Furniture.Controls.ucChamCong();
             this.ucOrder1 = new Manage_Furniture.Forms.UCPhongBan();
             this.ucOverview1 = new Manage_Furniture.Forms.ucTaiKhoan();
+            this.ucChucVuVaiTro1 = new Manage_Furniture.Forms.ucChucVuVaiTro();
             this.pnlAllButton.SuspendLayout();
             this.pnlUserControls.SuspendLayout();
             this.SuspendLayout();
@@ -263,9 +263,9 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
+            this.pnlUserControls.Controls.Add(this.ucChucVuVaiTro1);
             this.pnlUserControls.Controls.Add(this.ucHistory1);
             this.pnlUserControls.Controls.Add(this.ucHR1);
-            this.pnlUserControls.Controls.Add(this.ucSuppliercs1);
             this.pnlUserControls.Controls.Add(this.ucWarehouse1);
             this.pnlUserControls.Controls.Add(this.ucCustomer1);
             this.pnlUserControls.Controls.Add(this.ucOrder1);
@@ -279,7 +279,7 @@
             // ucHistory1
             // 
             this.ucHistory1.BackColor = System.Drawing.Color.White;
-            this.ucHistory1.Location = new System.Drawing.Point(4, 0);
+            this.ucHistory1.Location = new System.Drawing.Point(4, 2);
             this.ucHistory1.Margin = new System.Windows.Forms.Padding(2);
             this.ucHistory1.Name = "ucHistory1";
             this.ucHistory1.Size = new System.Drawing.Size(1162, 842);
@@ -289,57 +289,59 @@
             // ucHR1
             // 
             this.ucHR1.BackColor = System.Drawing.Color.White;
-            this.ucHR1.Location = new System.Drawing.Point(0, 0);
+            this.ucHR1.Location = new System.Drawing.Point(4, 0);
             this.ucHR1.Margin = new System.Windows.Forms.Padding(4);
             this.ucHR1.Name = "ucHR1";
             this.ucHR1.Size = new System.Drawing.Size(1164, 842);
             this.ucHR1.TabIndex = 5;
-            // 
-            // ucSuppliercs1
-            // 
-            this.ucSuppliercs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucSuppliercs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucSuppliercs1.Location = new System.Drawing.Point(0, 0);
-            this.ucSuppliercs1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucSuppliercs1.Name = "ucSuppliercs1";
-            this.ucSuppliercs1.Size = new System.Drawing.Size(1275, 842);
-            this.ucSuppliercs1.TabIndex = 4;
+            this.ucHR1.Load += new System.EventHandler(this.ucHR1_Load);
             // 
             // ucWarehouse1
             // 
-            this.ucWarehouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucWarehouse1.Location = new System.Drawing.Point(0, 0);
+            this.ucWarehouse1.BackColor = System.Drawing.Color.White;
+            this.ucWarehouse1.Location = new System.Drawing.Point(2, 0);
             this.ucWarehouse1.Margin = new System.Windows.Forms.Padding(2);
             this.ucWarehouse1.Name = "ucWarehouse1";
             this.ucWarehouse1.Size = new System.Drawing.Size(1164, 842);
             this.ucWarehouse1.TabIndex = 3;
+            this.ucWarehouse1.Load += new System.EventHandler(this.ucWarehouse1_Load);
             // 
             // ucCustomer1
             // 
-            this.ucCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucCustomer1.Location = new System.Drawing.Point(0, 0);
+            this.ucCustomer1.BackColor = System.Drawing.Color.White;
+            this.ucCustomer1.Location = new System.Drawing.Point(2, 2);
             this.ucCustomer1.Margin = new System.Windows.Forms.Padding(2);
             this.ucCustomer1.Name = "ucCustomer1";
             this.ucCustomer1.Size = new System.Drawing.Size(1164, 842);
             this.ucCustomer1.TabIndex = 2;
+            this.ucCustomer1.Load += new System.EventHandler(this.ucCustomer1_Load);
             // 
             // ucOrder1
             // 
-            this.ucOrder1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
-            this.ucOrder1.Location = new System.Drawing.Point(0, 0);
+            this.ucOrder1.BackColor = System.Drawing.Color.White;
+            this.ucOrder1.Location = new System.Drawing.Point(17, 11);
             this.ucOrder1.Margin = new System.Windows.Forms.Padding(2);
             this.ucOrder1.Name = "ucOrder1";
             this.ucOrder1.Size = new System.Drawing.Size(1164, 842);
             this.ucOrder1.TabIndex = 1;
+            this.ucOrder1.Load += new System.EventHandler(this.ucOrder1_Load);
             // 
             // ucOverview1
             // 
-            this.ucOverview1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(163)))));
+            this.ucOverview1.BackColor = System.Drawing.Color.White;
             this.ucOverview1.Location = new System.Drawing.Point(0, 0);
             this.ucOverview1.Margin = new System.Windows.Forms.Padding(2);
             this.ucOverview1.Name = "ucOverview1";
             this.ucOverview1.Size = new System.Drawing.Size(1164, 842);
             this.ucOverview1.TabIndex = 0;
+            // 
+            // ucChucVuVaiTro1
+            // 
+            this.ucChucVuVaiTro1.BackColor = System.Drawing.Color.White;
+            this.ucChucVuVaiTro1.Location = new System.Drawing.Point(0, 3);
+            this.ucChucVuVaiTro1.Name = "ucChucVuVaiTro1";
+            this.ucChucVuVaiTro1.Size = new System.Drawing.Size(1164, 842);
+            this.ucChucVuVaiTro1.TabIndex = 7;
             // 
             // FAdmin
             // 
@@ -381,5 +383,6 @@
         protected Controls.ucHR ucHR1;
         protected ucHopDong ucHistory1;
         protected Guna.UI2.WinForms.Guna2Button btnHopDong;
+        private ucChucVuVaiTro ucChucVuVaiTro1;
     }
 }

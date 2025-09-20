@@ -23,7 +23,7 @@ namespace Manage_Furniture.Controls
     public partial class ucHR : UserControl
     {
 
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         String selectedMaNV; // Dùng để lưu mã nhân viên đang được chọn
 
         public ucHR()
@@ -210,16 +210,21 @@ namespace Manage_Furniture.Controls
 
         private void ucHR_Load_1(object sender, EventArgs e)
         {
-            // Tải dữ liệu cho các ComboBox lấy từ DB
-            LoadChucVu();
-            LoadPhongBan();
 
-            // Thêm mục "Tất cả..." vào đầu các ComboBox đã có item sẵn từ giao diện
-            cmbLoaiNhanVien.Items.Insert(0, "--- Tất cả loại HĐ ---");
-            cmbTrangThaiNhanVien.Items.Insert(0, "--- Tất cả trạng thái ---");
+            if (!DesignMode)
+            {
 
-            // Thiết lập trạng thái mặc định và tải dữ liệu lần đầu
-            btnLamMoi_Click(null, null);
+
+                LoadChucVu();
+                LoadPhongBan();
+
+                // Thêm mục "Tất cả..." vào đầu các ComboBox đã có item sẵn từ giao diện
+                cmbLoaiNhanVien.Items.Insert(0, "--- Tất cả loại HĐ ---");
+                cmbTrangThaiNhanVien.Items.Insert(0, "--- Tất cả trạng thái ---");
+
+                // Thiết lập trạng thái mặc định và tải dữ liệu lần đầu
+                btnLamMoi_Click(null, null);
+            }
         }
     }
 }

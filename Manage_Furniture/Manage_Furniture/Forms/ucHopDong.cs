@@ -25,7 +25,7 @@ namespace Manage_Furniture.Forms
             frmThemHopDong.ShowDialog();
             load();
         }
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         private void load()
         {
             // Sử dụng khối 'using' để đảm bảo kết nối được đóng tự động
@@ -59,7 +59,11 @@ namespace Manage_Furniture.Forms
 
         private void ucHopDong_Load(object sender, EventArgs e)
         {
-            load();
+            if (!DesignMode)
+            {
+                load();
+            }
+                
         }
 
         private void dgvBangNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)

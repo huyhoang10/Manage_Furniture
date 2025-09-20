@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Manage_Furniture.Forms
@@ -9,7 +10,7 @@ namespace Manage_Furniture.Forms
     {
         bool isEdit = false;
         string maDN_HienTai; // Tên cũ là MaDN
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
 
         // Constructor cho chế độ THÊM
         public FrmThemTaiKhoan()
@@ -61,7 +62,7 @@ namespace Manage_Furniture.Forms
                         txtTenDangNhap.Text = reader["Tên Đăng Nhập"].ToString();
                         txtMatKhau.Text = reader["Mật Khẩu"].ToString();
                         cmbNhanVien.SelectedValue = reader["Mã Nhân Viên"];
-                        cmbVaiTro.SelectedValue = reader["MaVaiTro"];
+                        cmbVaiTro.SelectedValue = reader["VaiTro"];
                         chkTrangThai.Checked = Convert.ToBoolean(reader["TrangThai"]);
                     }
                     reader.Close();
@@ -73,18 +74,7 @@ namespace Manage_Furniture.Forms
             }
         }
 
-        private void LoadVaiTro()
-        {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT MaVaiTro, TenVaiTro FROM VAITRO", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                cmbVaiTro.DataSource = dt;
-                cmbVaiTro.DisplayMember = "TenVaiTro";
-                cmbVaiTro.ValueMember = "MaVaiTro";
-            }
-        }
+      
 
         private void LoadNhanVien()
         {
@@ -100,7 +90,22 @@ namespace Manage_Furniture.Forms
                 cmbNhanVien.ValueMember = "MaNV";
             }
         }
+        private void LoadVaiTro()
+        {
+            using (var con = new SqlConnection(CurrentUserSession.ConnectionString))
+            {
+                using (var cmd = new SqlCommand("sp_LayDanhSachRole", con) { CommandType = CommandType.StoredProcedure })
+                {
+                    var da = new SqlDataAdapter(cmd);
+                    var dt = new DataTable();
+                    da.Fill(dt);
 
+                    cmbVaiTro.DataSource = dt;
+                    cmbVaiTro.DisplayMember = "TenVaiTro";
+                    cmbVaiTro.ValueMember = "TenVaiTro";
+                }
+            }
+        }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             try
@@ -121,7 +126,7 @@ namespace Manage_Furniture.Forms
                         {
                             cmd.Parameters.AddWithValue("@MatKhau", txtMatKhau.Text);
                         }
-                        cmd.Parameters.AddWithValue("@MaVaiTro", cmbVaiTro.SelectedValue);
+                        cmd.Parameters.AddWithValue("@VaiTro", cmbVaiTro.SelectedValue);
                         cmd.Parameters.AddWithValue("@TrangThai", chkTrangThai.Checked);
                     }
                     else
@@ -132,7 +137,7 @@ namespace Manage_Furniture.Forms
                         cmd.Parameters.AddWithValue("@TenDangNhap", txtTenDangNhap.Text);
                         cmd.Parameters.AddWithValue("@MatKhau", txtMatKhau.Text);
                         cmd.Parameters.AddWithValue("@MaNV", cmbNhanVien.SelectedValue);
-                        cmd.Parameters.AddWithValue("@MaVaiTro", cmbVaiTro.SelectedValue);
+                        cmd.Parameters.AddWithValue("@VaiTro", cmbVaiTro.SelectedValue);
                     }
 
                     cmd.ExecuteNonQuery();

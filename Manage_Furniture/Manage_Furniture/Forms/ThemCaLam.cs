@@ -13,7 +13,7 @@ namespace Manage_Furniture.Forms
 {
     public partial class ThemCaLam : Form
     {
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         bool is_edit = false;
         string MaCa;
 

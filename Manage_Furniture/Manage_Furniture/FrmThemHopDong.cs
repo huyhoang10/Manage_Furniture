@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Manage_Furniture.Forms;
 
 namespace Manage_Furniture
 {
@@ -29,7 +30,7 @@ namespace Manage_Furniture
             lblTitle.Text = "Sửa thông tin hợp đồng";
             this.maHD_HienTai = maHD;
         }
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         private void FrmThemHopDong_Load(object sender, EventArgs e)
         {
             LoadNhanVien();

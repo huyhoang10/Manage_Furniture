@@ -16,7 +16,7 @@ namespace Manage_Furniture.Controls
 {
     public partial class ucChamCong : UserControl
     {
-        string connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
 
         public ucChamCong()
         {
@@ -107,8 +107,15 @@ namespace Manage_Furniture.Controls
         {
             txtNhanVien.Clear();
             dateNgayChamCong.Checked = false; // Bỏ tick
-            cmbCaLam.SelectedIndex = 0; // Chọn "[-- Tất cả ca --]"
-            cmbTrangThai.SelectedIndex = 0; // Chọn "[-- Tất cả TT --]"
+            if (cmbCaLam.Items.Count > 0)
+            {
+                cmbCaLam.SelectedIndex = 0;
+            }
+
+            if (cmbTrangThai.Items.Count > 0)
+            {
+                cmbTrangThai.SelectedIndex = 0;
+            } // Chọn "[-- Tất cả TT --]"
         }
 
         #endregion
@@ -143,7 +150,11 @@ namespace Manage_Furniture.Controls
 
         private void ucChamCong_Load_1(object sender, EventArgs e)
         {
-            load();
+            if(!DesignMode)
+            {
+                load();
+            }    
+                
         }
 
         private void btnApDung_Click_1(object sender, EventArgs e)

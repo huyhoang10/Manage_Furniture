@@ -32,10 +32,30 @@ namespace Manage_Furniture.Forms
 
         private void ucTaiKhoan_Load(object sender, EventArgs e)
         {
-            load();
+            if (!DesignMode)
+            {
+                load();
+                LoadVaiTro();
+            }
 
         }
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private void LoadVaiTro()
+        {
+            using (var con = new SqlConnection(CurrentUserSession.ConnectionString))
+            {
+                using (var cmd = new SqlCommand("sp_LayDanhSachRole", con) { CommandType = CommandType.StoredProcedure })
+                {
+                    var da = new SqlDataAdapter(cmd);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+
+                    cmbVaiTro.DataSource = dt;
+                    cmbVaiTro.DisplayMember = "TenVaiTro";
+                    cmbVaiTro.ValueMember = "TenVaiTro";
+                }
+            }
+        }
+        String connectionString = CurrentUserSession.ConnectionString;
         private void load()
         {
             // Sử dụng khối 'using' để đảm bảo kết nối được đóng tự động

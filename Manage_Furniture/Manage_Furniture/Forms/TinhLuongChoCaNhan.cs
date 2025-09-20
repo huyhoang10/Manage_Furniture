@@ -15,7 +15,7 @@ namespace Manage_Furniture.Forms
     {
 
         // Chuỗi kết nối đến CSDL của bạn
-        string connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string connectionString = CurrentUserSession.ConnectionString   ;
         public TinhLuongChoCaNhan()
         {
             InitializeComponent();

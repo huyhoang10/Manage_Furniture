@@ -16,7 +16,7 @@ namespace Manage_Furniture.Forms
 
         bool is_edit = true;
         string mavt;
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         public FrmThemVaiTro()
         {
             InitializeComponent();

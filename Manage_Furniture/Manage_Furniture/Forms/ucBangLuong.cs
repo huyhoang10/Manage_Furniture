@@ -16,7 +16,7 @@ namespace Manage_Furniture.Forms
 {
     public partial class ucBangLuong : UserControl
     {
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         public ucBangLuong()
         {
             InitializeComponent();
@@ -63,11 +63,15 @@ namespace Manage_Furniture.Forms
 
         private void tabQLLuong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dateTuNgay.Checked = false;
-            dateDenNgay.Checked = false;
-            ConfigureComboBoxLoaiGiaoDich();
-            TimKiemVaHienThi();
-            loadBangLuong();
+            if(!DesignMode)
+            {
+                dateTuNgay.Checked = false;
+                dateDenNgay.Checked = false;
+                ConfigureComboBoxLoaiGiaoDich();
+                TimKiemVaHienThi();
+                loadBangLuong();
+            }
+           
         }
         private void TimKiemVaHienThi()
         {

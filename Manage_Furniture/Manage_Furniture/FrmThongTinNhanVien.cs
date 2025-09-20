@@ -9,13 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Manage_Furniture.Forms;
 
 namespace Manage_Furniture
 {
     public partial class FrmThongTinNhanVien : Form
     {
         string MaNV;
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
 
         public FrmThongTinNhanVien(String MaNV)
         {

@@ -14,7 +14,7 @@ namespace Manage_Furniture.Forms
 {
     public partial class FrmThemNhanVien : Form
     {
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         bool is_edit = true;
         private string maNV_HienTai;
         public FrmThemNhanVien()

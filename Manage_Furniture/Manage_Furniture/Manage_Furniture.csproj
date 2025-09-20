@@ -201,6 +201,7 @@
       <DependentUpon>crvCustomer.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\CurrentUserSession.cs" />
     <Compile Include="Forms\FAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

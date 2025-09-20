@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,85 +23,66 @@ namespace Manage_Furniture.Forms
             InitializeComponent();
         }
 
-        //private void FLogin_Load(object sender, EventArgs e)
-        //{
-        //    txt_username.Focus();
-        //}
+        private async void btn_login_Click(object sender, EventArgs e)
+        {
+            string username = txt_username.Text.Trim();
+            string password = txt_passwd.Text;
 
-        //private void phide_Click(object sender, EventArgs e)
-        //{
-        //    if (txt_passwd.PasswordChar == '*')
-        //    {
-        //        pshow.BringToFront();
-        //        txt_passwd.PasswordChar = '\0';
-        //    }
+            this.Cursor = Cursors.WaitCursor;
+            try
+            {
+                string connectionString = $"Data Source=.;Initial Catalog=DBMS;User ID={username};Password={password};Encrypt=True;TrustServerCertificate=True";
 
-        //}
-        //private void pshow_Click(object sender, EventArgs e)
-        //{
-        //    if (txt_passwd.PasswordChar == '\0')
-        //    {
-        //        phide.BringToFront();
-        //        txt_passwd.PasswordChar = '*';
-        //    }   
-        //}
+                // DÙNG 'USING' ĐỂ ĐẢM BẢO KẾT NỐI LUÔN ĐƯỢC ĐÓNG
+                using (SqlConnection userConnection = new SqlConnection(connectionString))
+                {
+                    await userConnection.OpenAsync();
 
-        //private void btn_login_Click(object sender, EventArgs e)
-        //{
-        //    var uclogin_control = new ucLoginControl();
+                    string hoTen = "";
+                    string vaiTro = "";
 
-        //    string username = txt_username.Text.Trim();
-        //    string password = txt_passwd.Text;
+                    // CÂU QUERY ĐƠN GIẢN HƠN RẤT NHIỀU
+                    string query = @"
+                SELECT nv.HoTen, tk.VaiTro
+                FROM TAIKHOAN tk
+                JOIN NHANVIEN nv ON tk.MaNV = nv.MaNV
+                WHERE tk.TenDangNhap = @TenDangNhap";
 
-        //    string role = rbtn_admin.Checked ? "Admin" : "Employee";
+                    using (SqlCommand cmd = new SqlCommand(query, userConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@TenDangNhap", username);
+                        using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                        {
+                            if (await reader.ReadAsync())
+                            {
+                                hoTen = reader["HoTen"].ToString();
+                                vaiTro = reader["VaiTro"].ToString();
+                            }
+                            else
+                            {
+                                // Trường hợp hiếm: login SQL thành công nhưng không tìm thấy record trong bảng TAIKHOAN
+                                throw new Exception("Thông tin tài khoản không được cấu hình đúng trong hệ thống.");
+                            }
+                        }
+                    }
 
-        //    if (!string.IsNullOrEmpty(role))
-        //    {
-        //        //string loginRole = uclogin_control.Login(username, password, role);
+                    // ĐĂNG NHẬP THÀNH CÔNG -> GỌI StartSession MỘT LẦN DUY NHẤT VỚI DỮ LIỆU ĐÚNG
+                    CurrentUserSession.StartSession(connectionString, username, vaiTro);
+                }
 
-        //        if (loginRole != null)
-        //        {
-        //            if (loginRole == "Employee")
-        //            {
-        //                if (!uclogin_control.CheckActive(username))
-        //                //    MessageBox.Show("Login successful!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                //else
-        //                {
-        //                    MessageBox.Show("Your account is inactive. Please contact the administrator.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //                    return;
-        //                }
-        //            }
-                    
-        //            if (loginRole == "Admin")
-        //            {
-        //                txt_username.Text = "";
-        //                txt_passwd.Text = "";
-        //                userLogin.Name = "Admin";
-        //                FAdmin fManager = new FAdmin();
-        //                fManager.ShowDialog();
-        //            }
-        //            else if (loginRole == "Employee")
-        //            {
-        //                txt_username.Text = "";
-        //                txt_passwd.Text = "";
-        //                userLogin = uclogin_control.GetEmployee(username);
-        //                //employeeModel = uclogin_control.GetEmployee(username);
-        //                FAdmin fEmployee = new FAdmin();
-        //                fEmployee.ShowInTaskbar = false;
-        //                fEmployee.ShowDialog();
-        //            }
-                    
-        //            //this.Hide();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Please select a role (Admin or Employee).", "Role Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //    }
-        //}
+                // Mở form sau
+                FAdmin f = new FAdmin();
+                f.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đăng nhập thất bại: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
     }
 }

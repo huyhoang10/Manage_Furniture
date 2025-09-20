@@ -27,7 +27,7 @@ namespace Manage_Furniture.Forms
             txtMaPhongBan.Text = MaCv;
             txtTenPhongBan.Text = TenCv;
         }
-        String connectionString = "Data Source=.;Initial Catalog=DBMS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        String connectionString = CurrentUserSession.ConnectionString;
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             if (!is_edit)
