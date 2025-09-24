@@ -40,13 +40,13 @@ namespace Manage_Furniture.Forms
                 connection.Open();
                 try
                 {
-                    SqlCommand command = new SqlCommand("sp_LayDanhSachChucVu", connection);
-                    command.CommandType = CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand("select * from v_DanhSachChucVu", connection);
+                    
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
                     dgvBangChucVu.DataSource = dataTable;
-                }
+                }   
                 catch(Exception ezz)
                 {
                     MessageBox.Show(ezz.ToString());
@@ -97,16 +97,34 @@ namespace Manage_Furniture.Forms
         {
             using (SqlConnection con = new SqlConnection(CurrentUserSession.ConnectionString))
             {
-                con.Open();
-                // Cập nhật phòng ban bằng cách gọi thủ tục lưu trữ  
-                SqlCommand cmd = new SqlCommand("sp_XoaChucVu", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MaChucVu", MaCv);
+                try
+                {
+                    con.Open();
+                    // Cập nhật phòng ban bằng cách gọi thủ tục lưu trữ  
+                    SqlCommand cmd = new SqlCommand("sp_XoaChucVu", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MaChucVu", MaCv);
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa chúc vụ thành công!");
-                con.Close();
-                loadChucVu();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Xóa chúc vụ thành công!");
+                    con.Close();
+                    loadChucVu();
+                }
+                catch (SqlException ex) // Bắt lỗi SQL một cách cụ thể
+                {
+                    // Chỉ hiển thị thông báo lỗi từ SQL Server cho người dùng
+                    // ex.Message sẽ chính là câu "Không thể xóa ca làm việc..."
+                    MessageBox.Show(ex.Message, "Không thể thực hiện", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                catch (Exception ex) // Bắt các loại lỗi chung khác (ví dụ: mất kết nối)
+                {
+                    // Ghi log lỗi chi tiết cho lập trình viên xem (tùy chọn)
+                    System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                    // Hiển thị một thông báo chung chung cho người dùng
+                    MessageBox.Show("Đã có lỗi không xác định xảy ra, vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }       
+
             }
         }
 
@@ -184,20 +202,38 @@ namespace Manage_Furniture.Forms
         {
             using(SqlConnection con = new SqlConnection(CurrentUserSession.ConnectionString))
             {
-                if(MessageBox.Show("Bạn có chắc chắn muốn xóa ca làm này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                try
                 {
-                    return;
+                    if (MessageBox.Show("Bạn có chắc chắn muốn xóa ca làm này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+
+                    con.Open();
+                    // Cập nhật phòng ban bằng cách gọi thủ tục lưu trữ  
+                    SqlCommand cmd = new SqlCommand("sp_XoaCaLamViec", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MaCa", MaCa);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Xóa ca làm thành công!");
+                    con.Close();
+                    LoadDataCaLamViec();
+                }
+                catch (SqlException ex) // Bắt lỗi SQL một cách cụ thể
+                {
+                    // Chỉ hiển thị thông báo lỗi từ SQL Server cho người dùng
+                    // ex.Message sẽ chính là câu "Không thể xóa ca làm việc..."
+                    MessageBox.Show(ex.Message, "Không thể thực hiện", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                catch (Exception ex) // Bắt các loại lỗi chung khác (ví dụ: mất kết nối)
+                {
+                    // Ghi log lỗi chi tiết cho lập trình viên xem (tùy chọn)
+                    System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                    // Hiển thị một thông báo chung chung cho người dùng
+                    MessageBox.Show("Đã có lỗi không xác định xảy ra, vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                con.Open();
-                // Cập nhật phòng ban bằng cách gọi thủ tục lưu trữ  
-                SqlCommand cmd = new SqlCommand("sp_XoaCaLamViec", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MaCa", MaCa);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa ca làm thành công!");
-                con.Close();
-                LoadDataCaLamViec();
             }
         }
 
@@ -219,6 +255,42 @@ namespace Manage_Furniture.Forms
                 LoadDataCaLamViec();
                 // loadVaiTro(); // Nếu có
             }
+        }
+
+        private void btnApDung_Click(object sender, EventArgs e)
+        {
+            using(SqlConnection con = new SqlConnection(CurrentUserSession.ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_TimKiemChucVu", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    if (txtTimKiem.Text.Trim() != "")
+                    {
+                        cmd.Parameters.AddWithValue("@Keyword", txtTimKiem.Text.Trim());
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Keyword", DBNull.Value);
+                    }
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgvBangChucVu.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải danh sách chức vụ: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnLamMoiChucVu_Click(object sender, EventArgs e)
+        {
+            loadChucVu();
+            txtTimKiem.Clear();
+            
         }
     }
 }

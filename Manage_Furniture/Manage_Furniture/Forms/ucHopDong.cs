@@ -63,12 +63,12 @@ namespace Manage_Furniture.Forms
             {
                 load();
             }
-                
+
         }
 
         private void dgvBangNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0) // Đảm bảo rằng người dùng không nhấp vào tiêu đề cột
+            if (e.RowIndex >= 0) // Đảm bảo rằng người dùng không nhấp vào tiêu đề cột
             {
                 DataGridViewRow row = dgvBangNhanVien.Rows[e.RowIndex];
                 MaHD = row.Cells[0].Value.ToString();
@@ -79,6 +79,43 @@ namespace Manage_Furniture.Forms
         {
             FrmThemHopDong f = new FrmThemHopDong(MaHD);
             f.ShowDialog();
+            load();
+        }
+
+        private void btnApDung_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_DanhSachHopDong", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (txtTimKiem.Text.Trim() != "")
+                {
+                    cmd.Parameters.AddWithValue("@Keyword", txtTimKiem.Text.Trim());
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@Keyword", DBNull.Value);
+                }
+                if (cmbLoaiHopDong.SelectedItem != null)
+                {
+                    cmd.Parameters.AddWithValue("@LoaiHopDong", cmbLoaiHopDong.SelectedItem.ToString());
+
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@LoaiHopDong", DBNull.Value);
+                }
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvBangNhanVien.DataSource = dt;
+
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
             load();
         }
     }

@@ -26,6 +26,7 @@ namespace Manage_Furniture.Forms
             title.Text = "SỬA CHỨC VỤ";
             txtMaPhongBan.Text = MaCv;
             txtTenPhongBan.Text = TenCv;
+            txtMaPhongBan.Enabled = false;
         }
         String connectionString = CurrentUserSession.ConnectionString;
         private void guna2Button2_Click(object sender, EventArgs e)

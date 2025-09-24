@@ -63,7 +63,7 @@ namespace Manage_Furniture.Forms
 
         private void tabQLLuong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(!DesignMode)
+            if (!DesignMode)
             {
                 dateTuNgay.Checked = false;
                 dateDenNgay.Checked = false;
@@ -71,7 +71,7 @@ namespace Manage_Furniture.Forms
                 TimKiemVaHienThi();
                 loadBangLuong();
             }
-           
+
         }
         private void TimKiemVaHienThi()
         {
@@ -80,7 +80,7 @@ namespace Manage_Furniture.Forms
                 try
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("sp_TimKiemGiaoDichLuong", conn))
+                    using (SqlCommand cmd = new SqlCommand("sp_DanhSachGiaoDichLuong", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -101,7 +101,10 @@ namespace Manage_Furniture.Forms
                             cmd.Parameters.AddWithValue("@TuNgay", (object)DBNull.Value);
                             cmd.Parameters.AddWithValue("@DenNgay", (object)DBNull.Value);
                         }
-                        cmd.Parameters.AddWithValue("@TrangThai", cmbTrangThai.SelectedValue);
+                        if(cmbTrangThai.SelectedItem == "Đã xử lý")
+                             cmd.Parameters.AddWithValue("@DaXuLy",1 );
+                        else if (cmbTrangThai.SelectedItem == "Chưa xử lý")
+                            cmd.Parameters.AddWithValue("@DaXuLy", 0);
 
                         // **MỚI: Thêm tham số cho Loại Giao Dịch**
                         cmd.Parameters.AddWithValue("@LoaiGiaoDich", cmbLoai.SelectedValue);
@@ -261,7 +264,7 @@ namespace Manage_Furniture.Forms
             }
         }
 
-        private async  void btnThemChamCong_Click_1(object sender, EventArgs e)
+        private async void btnThemChamCong_Click_1(object sender, EventArgs e)
         {
             // Cân nhắc thêm một thông báo để người dùng biết quá trình đang bắt đầu
             MessageBox.Show("Bắt đầu quá trình tính lương hàng loạt. Vui lòng chờ trong giây lát...",
@@ -284,7 +287,7 @@ namespace Manage_Furniture.Forms
                         // Lấy giá trị ngày tháng từ control trên form của bạn
                         // Ví dụ: DateTime dateTuNgay = dtpTuNgay.Value;
                         //       DateTime dateDenNgay = dtpDenNgay.Value;
-                     
+
                         cmd.Parameters.AddWithValue("@TuNgay", dateLuongTuNgay.Value);
                         cmd.Parameters.AddWithValue("@DenNgay", dateLuongDenNgay.Value);
 
@@ -309,7 +312,7 @@ namespace Manage_Furniture.Forms
         String MaBL;
         private void dgvBangLuong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvBangLuong.Rows[e.RowIndex];
                 // Lưu lại mã nhân viên của hàng đang được chọn
@@ -319,7 +322,7 @@ namespace Manage_Furniture.Forms
 
         private void btnXacNhanThanhToan_Click(object sender, EventArgs e)
         {
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -347,7 +350,7 @@ namespace Manage_Furniture.Forms
 
         private void btnXoaBangLuong_Click(object sender, EventArgs e)
         {
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -371,6 +374,74 @@ namespace Manage_Furniture.Forms
                     MessageBox.Show($"Lỗi khi xóa bảng lương: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void ucBangLuong_Load(object sender, EventArgs e)
+        {
+            loadBangLuong();
+            TimKiemVaHienThi();
+
+        }
+
+        private void btnApDung_Click_1(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_DanhSachLuong", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        // kiểm tra 
+                        // 1. Xử lý tham số @Keyword
+                        string keyword = txtNhanVien.Text;
+                        if(!string.IsNullOrWhiteSpace(keyword))
+                        {
+                            cmd.Parameters.AddWithValue("@Keyword", keyword);
+                        }
+          
+                       
+                        // 2. Xử lý tham số @Thang và @Nam
+                        // Giả sử bạn dùng DateTimePicker có ShowCheckBox
+                        if (dateKyLuong.Checked)
+                        {
+                            cmd.Parameters.AddWithValue("@Thang", dateKyLuong.Value.Month);
+                            cmd.Parameters.AddWithValue("@Nam", dateKyLuong.Value.Year);
+                        }
+                        else
+                        {
+                            // Nếu người dùng không tick chọn ngày, không lọc theo tháng và năm
+                            cmd.Parameters.AddWithValue("@Thang", (object)DBNull.Value);
+                            cmd.Parameters.AddWithValue("@Nam", (object)DBNull.Value);
+                        }
+                        var da = new SqlDataAdapter(cmd);
+                        var dt = new DataTable();
+                        da.Fill(dt);
+                        dgvBangLuong.DataSource = dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+        }
+
+        private void btnLamMoiBangLuong_Click(object sender, EventArgs e)
+        {
+            loadBangLuong();
+            txtTimKiem.Clear();
+            dateKyLuong.Checked = false;
+
+        }
+
+        private void btnThemGhiChu_Click(object sender, EventArgs e)
+        {
+           GhiChu ghiChu = new GhiChu(MaBL);
+            ghiChu.ShowDialog();
         }
     }
 }

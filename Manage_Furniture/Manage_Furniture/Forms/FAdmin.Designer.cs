@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAdmin));
             this.pnlAllButton = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnTrangchu = new Guna.UI2.WinForms.Guna2Button();
             this.btnHopDong = new Guna.UI2.WinForms.Guna2Button();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhanVien = new Guna.UI2.WinForms.Guna2Button();
@@ -40,13 +41,14 @@
             this.btnTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.btnChamCong = new Guna.UI2.WinForms.Guna2Button();
             this.pnlUserControls = new Guna.UI2.WinForms.Guna2Panel();
-            this.ucHistory1 = new Manage_Furniture.Forms.ucHopDong();
-            this.ucHR1 = new Manage_Furniture.Controls.ucHR();
-            this.ucWarehouse1 = new Manage_Furniture.Forms.ucBangLuong();
-            this.ucCustomer1 = new Manage_Furniture.Controls.ucChamCong();
-            this.ucOrder1 = new Manage_Furniture.Forms.UCPhongBan();
-            this.ucOverview1 = new Manage_Furniture.Forms.ucTaiKhoan();
-            this.ucChucVuVaiTro1 = new Manage_Furniture.Forms.ucChucVuVaiTro();
+            this.ucHR2 = new Manage_Furniture.Controls.ucHR();
+            this.ucChamCong1 = new Manage_Furniture.Controls.ucChamCong();
+            this.ucBangLuong1 = new Manage_Furniture.Forms.ucBangLuong();
+            this.ucHopDong1 = new Manage_Furniture.Forms.ucHopDong();
+            this.ucPhongBan1 = new Manage_Furniture.Forms.UCPhongBan();
+            this.ucTaiKhoan1 = new Manage_Furniture.Forms.ucTaiKhoan();
+            this.ucChucVuVaiTro2 = new Manage_Furniture.Forms.ucChucVuVaiTro();
+            this.ucTrangChu1 = new Manage_Furniture.Forms.ucTrangChu();
             this.pnlAllButton.SuspendLayout();
             this.pnlUserControls.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +56,7 @@
             // pnlAllButton
             // 
             this.pnlAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.pnlAllButton.Controls.Add(this.btnTrangchu);
             this.pnlAllButton.Controls.Add(this.btnHopDong);
             this.pnlAllButton.Controls.Add(this.btnUser);
             this.pnlAllButton.Controls.Add(this.btnNhanVien);
@@ -70,14 +73,37 @@
             this.pnlAllButton.Size = new System.Drawing.Size(270, 685);
             this.pnlAllButton.TabIndex = 1;
             // 
+            // btnTrangchu
+            // 
+            this.btnTrangchu.BorderRadius = 16;
+            this.btnTrangchu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTrangchu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTrangchu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTrangchu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTrangchu.FillColor = System.Drawing.Color.Transparent;
+            this.btnTrangchu.Font = new System.Drawing.Font("Montserrat", 18F);
+            this.btnTrangchu.ForeColor = System.Drawing.Color.Black;
+            this.btnTrangchu.Image = ((System.Drawing.Image)(resources.GetObject("btnTrangchu.Image")));
+            this.btnTrangchu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTrangchu.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnTrangchu.Location = new System.Drawing.Point(9, 612);
+            this.btnTrangchu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrangchu.Name = "btnTrangchu";
+            this.btnTrangchu.Size = new System.Drawing.Size(250, 62);
+            this.btnTrangchu.TabIndex = 14;
+            this.btnTrangchu.Text = "Trang Chủ";
+            this.btnTrangchu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTrangchu.Click += new System.EventHandler(this.btnTrangchu_Click);
+            // 
             // btnHopDong
             // 
+            this.btnHopDong.BackColor = System.Drawing.Color.Transparent;
             this.btnHopDong.BorderRadius = 16;
             this.btnHopDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHopDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHopDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHopDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHopDong.FillColor = System.Drawing.Color.White;
+            this.btnHopDong.FillColor = System.Drawing.Color.Transparent;
             this.btnHopDong.Font = new System.Drawing.Font("Montserrat", 18F);
             this.btnHopDong.ForeColor = System.Drawing.Color.Black;
             this.btnHopDong.Image = ((System.Drawing.Image)(resources.GetObject("btnHopDong.Image")));
@@ -178,7 +204,7 @@
             this.btnChucVuvaVaiTro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChucVuvaVaiTro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChucVuvaVaiTro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChucVuvaVaiTro.FillColor = System.Drawing.Color.White;
+            this.btnChucVuvaVaiTro.FillColor = System.Drawing.Color.Transparent;
             this.btnChucVuvaVaiTro.Font = new System.Drawing.Font("Montserrat", 18F);
             this.btnChucVuvaVaiTro.ForeColor = System.Drawing.Color.Black;
             this.btnChucVuvaVaiTro.Image = ((System.Drawing.Image)(resources.GetObject("btnChucVuvaVaiTro.Image")));
@@ -189,7 +215,7 @@
             this.btnChucVuvaVaiTro.Name = "btnChucVuvaVaiTro";
             this.btnChucVuvaVaiTro.Size = new System.Drawing.Size(250, 62);
             this.btnChucVuvaVaiTro.TabIndex = 5;
-            this.btnChucVuvaVaiTro.Text = "Chức Vụ/Vai Trò";
+            this.btnChucVuvaVaiTro.Text = "Hệ thống";
             this.btnChucVuvaVaiTro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnChucVuvaVaiTro.Click += new System.EventHandler(this.btnChucVuvaVaiTro_Click);
             // 
@@ -263,85 +289,87 @@
             // pnlUserControls
             // 
             this.pnlUserControls.BackColor = System.Drawing.Color.White;
-            this.pnlUserControls.Controls.Add(this.ucChucVuVaiTro1);
-            this.pnlUserControls.Controls.Add(this.ucHistory1);
-            this.pnlUserControls.Controls.Add(this.ucHR1);
-            this.pnlUserControls.Controls.Add(this.ucWarehouse1);
-            this.pnlUserControls.Controls.Add(this.ucCustomer1);
-            this.pnlUserControls.Controls.Add(this.ucOrder1);
-            this.pnlUserControls.Controls.Add(this.ucOverview1);
+            this.pnlUserControls.Controls.Add(this.ucTrangChu1);
+            this.pnlUserControls.Controls.Add(this.ucChucVuVaiTro2);
+            this.pnlUserControls.Controls.Add(this.ucTaiKhoan1);
+            this.pnlUserControls.Controls.Add(this.ucPhongBan1);
+            this.pnlUserControls.Controls.Add(this.ucHopDong1);
+            this.pnlUserControls.Controls.Add(this.ucBangLuong1);
+            this.pnlUserControls.Controls.Add(this.ucChamCong1);
+            this.pnlUserControls.Controls.Add(this.ucHR2);
             this.pnlUserControls.Location = new System.Drawing.Point(270, 0);
             this.pnlUserControls.Margin = new System.Windows.Forms.Padding(2);
             this.pnlUserControls.Name = "pnlUserControls";
             this.pnlUserControls.Size = new System.Drawing.Size(1275, 842);
             this.pnlUserControls.TabIndex = 3;
             // 
-            // ucHistory1
+            // ucHR2
             // 
-            this.ucHistory1.BackColor = System.Drawing.Color.White;
-            this.ucHistory1.Location = new System.Drawing.Point(4, 2);
-            this.ucHistory1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucHistory1.Name = "ucHistory1";
-            this.ucHistory1.Size = new System.Drawing.Size(1162, 842);
-            this.ucHistory1.TabIndex = 6;
-            this.ucHistory1.Load += new System.EventHandler(this.ucHistory1_Load);
+            this.ucHR2.BackColor = System.Drawing.Color.White;
+            this.ucHR2.Location = new System.Drawing.Point(0, 0);
+            this.ucHR2.Name = "ucHR2";
+            this.ucHR2.Size = new System.Drawing.Size(1164, 717);
+            this.ucHR2.TabIndex = 0;
             // 
-            // ucHR1
+            // ucChamCong1
             // 
-            this.ucHR1.BackColor = System.Drawing.Color.White;
-            this.ucHR1.Location = new System.Drawing.Point(4, 0);
-            this.ucHR1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucHR1.Name = "ucHR1";
-            this.ucHR1.Size = new System.Drawing.Size(1164, 842);
-            this.ucHR1.TabIndex = 5;
-            this.ucHR1.Load += new System.EventHandler(this.ucHR1_Load);
+            this.ucChamCong1.BackColor = System.Drawing.Color.White;
+            this.ucChamCong1.Location = new System.Drawing.Point(0, 2);
+            this.ucChamCong1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucChamCong1.Name = "ucChamCong1";
+            this.ucChamCong1.Size = new System.Drawing.Size(1164, 842);
+            this.ucChamCong1.TabIndex = 1;
             // 
-            // ucWarehouse1
+            // ucBangLuong1
             // 
-            this.ucWarehouse1.BackColor = System.Drawing.Color.White;
-            this.ucWarehouse1.Location = new System.Drawing.Point(2, 0);
-            this.ucWarehouse1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucWarehouse1.Name = "ucWarehouse1";
-            this.ucWarehouse1.Size = new System.Drawing.Size(1164, 842);
-            this.ucWarehouse1.TabIndex = 3;
-            this.ucWarehouse1.Load += new System.EventHandler(this.ucWarehouse1_Load);
+            this.ucBangLuong1.BackColor = System.Drawing.Color.White;
+            this.ucBangLuong1.Location = new System.Drawing.Point(0, 2);
+            this.ucBangLuong1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucBangLuong1.Name = "ucBangLuong1";
+            this.ucBangLuong1.Size = new System.Drawing.Size(1728, 842);
+            this.ucBangLuong1.TabIndex = 2;
             // 
-            // ucCustomer1
+            // ucHopDong1
             // 
-            this.ucCustomer1.BackColor = System.Drawing.Color.White;
-            this.ucCustomer1.Location = new System.Drawing.Point(2, 2);
-            this.ucCustomer1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucCustomer1.Name = "ucCustomer1";
-            this.ucCustomer1.Size = new System.Drawing.Size(1164, 842);
-            this.ucCustomer1.TabIndex = 2;
-            this.ucCustomer1.Load += new System.EventHandler(this.ucCustomer1_Load);
+            this.ucHopDong1.BackColor = System.Drawing.Color.White;
+            this.ucHopDong1.Location = new System.Drawing.Point(0, 2);
+            this.ucHopDong1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucHopDong1.Name = "ucHopDong1";
+            this.ucHopDong1.Size = new System.Drawing.Size(1164, 842);
+            this.ucHopDong1.TabIndex = 4;
             // 
-            // ucOrder1
+            // ucPhongBan1
             // 
-            this.ucOrder1.BackColor = System.Drawing.Color.White;
-            this.ucOrder1.Location = new System.Drawing.Point(17, 11);
-            this.ucOrder1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucOrder1.Name = "ucOrder1";
-            this.ucOrder1.Size = new System.Drawing.Size(1164, 842);
-            this.ucOrder1.TabIndex = 1;
-            this.ucOrder1.Load += new System.EventHandler(this.ucOrder1_Load);
+            this.ucPhongBan1.BackColor = System.Drawing.Color.White;
+            this.ucPhongBan1.Location = new System.Drawing.Point(0, 0);
+            this.ucPhongBan1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucPhongBan1.Name = "ucPhongBan1";
+            this.ucPhongBan1.Size = new System.Drawing.Size(1164, 842);
+            this.ucPhongBan1.TabIndex = 4;
             // 
-            // ucOverview1
+            // ucTaiKhoan1
             // 
-            this.ucOverview1.BackColor = System.Drawing.Color.White;
-            this.ucOverview1.Location = new System.Drawing.Point(0, 0);
-            this.ucOverview1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucOverview1.Name = "ucOverview1";
-            this.ucOverview1.Size = new System.Drawing.Size(1164, 842);
-            this.ucOverview1.TabIndex = 0;
+            this.ucTaiKhoan1.BackColor = System.Drawing.Color.White;
+            this.ucTaiKhoan1.Location = new System.Drawing.Point(0, 2);
+            this.ucTaiKhoan1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucTaiKhoan1.Name = "ucTaiKhoan1";
+            this.ucTaiKhoan1.Size = new System.Drawing.Size(1164, 842);
+            this.ucTaiKhoan1.TabIndex = 4;
             // 
-            // ucChucVuVaiTro1
+            // ucChucVuVaiTro2
             // 
-            this.ucChucVuVaiTro1.BackColor = System.Drawing.Color.White;
-            this.ucChucVuVaiTro1.Location = new System.Drawing.Point(0, 3);
-            this.ucChucVuVaiTro1.Name = "ucChucVuVaiTro1";
-            this.ucChucVuVaiTro1.Size = new System.Drawing.Size(1164, 842);
-            this.ucChucVuVaiTro1.TabIndex = 7;
+            this.ucChucVuVaiTro2.BackColor = System.Drawing.Color.White;
+            this.ucChucVuVaiTro2.Location = new System.Drawing.Point(0, 2);
+            this.ucChucVuVaiTro2.Name = "ucChucVuVaiTro2";
+            this.ucChucVuVaiTro2.Size = new System.Drawing.Size(1164, 842);
+            this.ucChucVuVaiTro2.TabIndex = 4;
+            // 
+            // ucTrangChu1
+            // 
+            this.ucTrangChu1.Location = new System.Drawing.Point(0, 3);
+            this.ucTrangChu1.Name = "ucTrangChu1";
+            this.ucTrangChu1.Size = new System.Drawing.Size(1164, 717);
+            this.ucTrangChu1.TabIndex = 4;
             // 
             // FAdmin
             // 
@@ -384,5 +412,14 @@
         protected ucHopDong ucHistory1;
         protected Guna.UI2.WinForms.Guna2Button btnHopDong;
         private ucChucVuVaiTro ucChucVuVaiTro1;
+        protected Guna.UI2.WinForms.Guna2Button btnTrangchu;
+        private ucTrangChu ucTrangChu1;
+        private ucChucVuVaiTro ucChucVuVaiTro2;
+        private ucTaiKhoan ucTaiKhoan1;
+        private UCPhongBan ucPhongBan1;
+        private ucHopDong ucHopDong1;
+        private ucBangLuong ucBangLuong1;
+        private Controls.ucChamCong ucChamCong1;
+        private Controls.ucHR ucHR2;
     }
 }

@@ -62,7 +62,7 @@ namespace Manage_Furniture.Forms
                         txtTenDangNhap.Text = reader["Tên Đăng Nhập"].ToString();
                         txtMatKhau.Text = reader["Mật Khẩu"].ToString();
                         cmbNhanVien.SelectedValue = reader["Mã Nhân Viên"];
-                        cmbVaiTro.SelectedValue = reader["VaiTro"];
+                        cmbVaiTro.SelectedValue = reader["Tên Vai Trò"];
                         chkTrangThai.Checked = Convert.ToBoolean(reader["TrangThai"]);
                     }
                     reader.Close();

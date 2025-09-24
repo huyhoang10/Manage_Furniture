@@ -41,10 +41,13 @@
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.tabQLLuong = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabQLL = new System.Windows.Forms.TabPage();
+            this.btnXoaBangLuong = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThemGhiChu = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.dateLuongDenNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnTinhLuongCaNhan = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cmbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvBangLuong = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -67,10 +70,10 @@
             this.btnThemPhongBan = new Guna.UI2.WinForms.Guna2Button();
             this.dgvGiaoDich = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnSuaThongTinGiaoDich = new Guna.UI2.WinForms.Guna2Button();
-            this.dateLuongDenNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnThemGhiChu = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoaBangLuong = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLamMoiBangLuong = new Guna.UI2.WinForms.Guna2Button();
+            this.dateKyLuong = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.cmbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.manageFurnitureDataSet)).BeginInit();
             this.tabQLLuong.SuspendLayout();
             this.tabQLL.SuspendLayout();
@@ -110,7 +113,7 @@
             this.tabQLLuong.Controls.Add(this.tabQLL);
             this.tabQLLuong.Controls.Add(this.tabQuanLyGDL);
             this.tabQLLuong.ItemSize = new System.Drawing.Size(180, 40);
-            this.tabQLLuong.Location = new System.Drawing.Point(3, 3);
+            this.tabQLLuong.Location = new System.Drawing.Point(0, 0);
             this.tabQLLuong.Name = "tabQLLuong";
             this.tabQLLuong.SelectedIndex = 0;
             this.tabQLLuong.Size = new System.Drawing.Size(1105, 734);
@@ -137,6 +140,8 @@
             // 
             // tabQLL
             // 
+            this.tabQLL.Controls.Add(this.dateKyLuong);
+            this.tabQLL.Controls.Add(this.btnLamMoiBangLuong);
             this.tabQLL.Controls.Add(this.btnXoaBangLuong);
             this.tabQLL.Controls.Add(this.btnThemGhiChu);
             this.tabQLL.Controls.Add(this.guna2HtmlLabel8);
@@ -144,7 +149,6 @@
             this.tabQLL.Controls.Add(this.btnTinhLuongCaNhan);
             this.tabQLL.Controls.Add(this.guna2HtmlLabel5);
             this.tabQLL.Controls.Add(this.guna2HtmlLabel4);
-            this.tabQLL.Controls.Add(this.cmbTrangThai);
             this.tabQLL.Controls.Add(this.guna2HtmlLabel2);
             this.tabQLL.Controls.Add(this.guna2HtmlLabel1);
             this.tabQLL.Controls.Add(this.dgvBangLuong);
@@ -161,18 +165,73 @@
             this.tabQLL.Text = "QUẢN LÝ LƯƠNG";
             this.tabQLL.UseVisualStyleBackColor = true;
             // 
+            // btnXoaBangLuong
+            // 
+            this.btnXoaBangLuong.BorderRadius = 5;
+            this.btnXoaBangLuong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaBangLuong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaBangLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaBangLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaBangLuong.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnXoaBangLuong.ForeColor = System.Drawing.Color.White;
+            this.btnXoaBangLuong.Location = new System.Drawing.Point(381, 581);
+            this.btnXoaBangLuong.Name = "btnXoaBangLuong";
+            this.btnXoaBangLuong.Size = new System.Drawing.Size(211, 45);
+            this.btnXoaBangLuong.TabIndex = 112;
+            this.btnXoaBangLuong.Text = "Xoá bảng nháp";
+            this.btnXoaBangLuong.Click += new System.EventHandler(this.btnXoaBangLuong_Click);
+            // 
+            // btnThemGhiChu
+            // 
+            this.btnThemGhiChu.BorderRadius = 5;
+            this.btnThemGhiChu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemGhiChu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemGhiChu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThemGhiChu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThemGhiChu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnThemGhiChu.ForeColor = System.Drawing.Color.White;
+            this.btnThemGhiChu.Location = new System.Drawing.Point(619, 581);
+            this.btnThemGhiChu.Name = "btnThemGhiChu";
+            this.btnThemGhiChu.Size = new System.Drawing.Size(211, 45);
+            this.btnThemGhiChu.TabIndex = 111;
+            this.btnThemGhiChu.Text = "Thêm ghi chú";
+            this.btnThemGhiChu.Click += new System.EventHandler(this.btnThemGhiChu_Click);
+            // 
+            // guna2HtmlLabel8
+            // 
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(228, 58);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(60, 18);
+            this.guna2HtmlLabel8.TabIndex = 110;
+            this.guna2HtmlLabel8.Text = "Đến ngày";
+            // 
+            // dateLuongDenNgay
+            // 
+            this.dateLuongDenNgay.Checked = true;
+            this.dateLuongDenNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateLuongDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateLuongDenNgay.Location = new System.Drawing.Point(228, 82);
+            this.dateLuongDenNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateLuongDenNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateLuongDenNgay.Name = "dateLuongDenNgay";
+            this.dateLuongDenNgay.Size = new System.Drawing.Size(187, 44);
+            this.dateLuongDenNgay.TabIndex = 109;
+            this.dateLuongDenNgay.Value = new System.DateTime(2025, 9, 13, 14, 49, 5, 373);
+            // 
             // btnTinhLuongCaNhan
             // 
-            this.btnTinhLuongCaNhan.BorderRadius = 2;
+            this.btnTinhLuongCaNhan.BorderRadius = 5;
             this.btnTinhLuongCaNhan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTinhLuongCaNhan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTinhLuongCaNhan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTinhLuongCaNhan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTinhLuongCaNhan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTinhLuongCaNhan.ForeColor = System.Drawing.Color.White;
-            this.btnTinhLuongCaNhan.Location = new System.Drawing.Point(629, 86);
+            this.btnTinhLuongCaNhan.Location = new System.Drawing.Point(645, 82);
             this.btnTinhLuongCaNhan.Name = "btnTinhLuongCaNhan";
-            this.btnTinhLuongCaNhan.Size = new System.Drawing.Size(184, 40);
+            this.btnTinhLuongCaNhan.Size = new System.Drawing.Size(185, 44);
             this.btnTinhLuongCaNhan.TabIndex = 108;
             this.btnTinhLuongCaNhan.Text = "Tính lương cá nhân";
             this.btnTinhLuongCaNhan.Click += new System.EventHandler(this.btnTinhLuongCaNhan_Click);
@@ -181,7 +240,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(9, 66);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(9, 58);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(52, 18);
             this.guna2HtmlLabel5.TabIndex = 107;
@@ -191,26 +250,11 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(724, 144);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(591, 144);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(63, 18);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(50, 18);
             this.guna2HtmlLabel4.TabIndex = 105;
-            this.guna2HtmlLabel4.Text = "Trạng thái";
-            // 
-            // cmbTrangThai
-            // 
-            this.cmbTrangThai.BackColor = System.Drawing.Color.Transparent;
-            this.cmbTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbTrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbTrangThai.ItemHeight = 30;
-            this.cmbTrangThai.Location = new System.Drawing.Point(724, 168);
-            this.cmbTrangThai.Name = "cmbTrangThai";
-            this.cmbTrangThai.Size = new System.Drawing.Size(140, 36);
-            this.cmbTrangThai.TabIndex = 104;
+            this.guna2HtmlLabel4.Text = "Kì lương";
             // 
             // guna2HtmlLabel2
             // 
@@ -225,12 +269,12 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(9, 6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(408, 35);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(676, 39);
             this.guna2HtmlLabel1.TabIndex = 98;
-            this.guna2HtmlLabel1.Text = "QUẢN LÝ LƯƠNG NHÂN VIÊN";
+            this.guna2HtmlLabel1.Text = "QUẢN LÝ THÔNG TIN LƯƠNG NHÂN VIÊN";
             // 
             // dgvBangLuong
             // 
@@ -244,7 +288,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBangLuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvBangLuong.ColumnHeadersHeight = 4;
+            this.dgvBangLuong.ColumnHeadersHeight = 25;
             this.dgvBangLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -272,7 +316,7 @@
             this.dgvBangLuong.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvBangLuong.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvBangLuong.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvBangLuong.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvBangLuong.ThemeStyle.HeaderStyle.Height = 25;
             this.dgvBangLuong.ThemeStyle.ReadOnly = false;
             this.dgvBangLuong.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBangLuong.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -285,18 +329,19 @@
             // 
             // btnApDung
             // 
-            this.btnApDung.BorderRadius = 2;
+            this.btnApDung.BorderRadius = 5;
             this.btnApDung.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnApDung.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnApDung.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnApDung.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnApDung.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnApDung.ForeColor = System.Drawing.Color.White;
-            this.btnApDung.Location = new System.Drawing.Point(880, 168);
+            this.btnApDung.Location = new System.Drawing.Point(915, 168);
             this.btnApDung.Name = "btnApDung";
-            this.btnApDung.Size = new System.Drawing.Size(202, 36);
+            this.btnApDung.Size = new System.Drawing.Size(167, 44);
             this.btnApDung.TabIndex = 106;
             this.btnApDung.Text = "Áp dụng";
+            this.btnApDung.Click += new System.EventHandler(this.btnApDung_Click_1);
             // 
             // txtNhanVien
             // 
@@ -313,7 +358,7 @@
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.PlaceholderText = "";
             this.txtNhanVien.SelectedText = "";
-            this.txtNhanVien.Size = new System.Drawing.Size(490, 36);
+            this.txtNhanVien.Size = new System.Drawing.Size(406, 36);
             this.txtNhanVien.TabIndex = 102;
             // 
             // dateLuongTuNgay
@@ -321,21 +366,22 @@
             this.dateLuongTuNgay.Checked = true;
             this.dateLuongTuNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateLuongTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateLuongTuNgay.Location = new System.Drawing.Point(9, 90);
+            this.dateLuongTuNgay.Location = new System.Drawing.Point(9, 82);
             this.dateLuongTuNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateLuongTuNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateLuongTuNgay.Name = "dateLuongTuNgay";
-            this.dateLuongTuNgay.Size = new System.Drawing.Size(165, 36);
+            this.dateLuongTuNgay.Size = new System.Drawing.Size(198, 44);
             this.dateLuongTuNgay.TabIndex = 101;
             this.dateLuongTuNgay.Value = new System.DateTime(2025, 9, 13, 14, 49, 5, 373);
             // 
             // btnXacNhanThanhToan
             // 
+            this.btnXacNhanThanhToan.BorderRadius = 5;
             this.btnXacNhanThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnXacNhanThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXacNhanThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXacNhanThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXacNhanThanhToan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXacNhanThanhToan.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnXacNhanThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnXacNhanThanhToan.Location = new System.Drawing.Point(871, 581);
             this.btnXacNhanThanhToan.Name = "btnXacNhanThanhToan";
@@ -346,22 +392,24 @@
             // 
             // btnTinhLuongHangLoat
             // 
-            this.btnTinhLuongHangLoat.BorderRadius = 2;
+            this.btnTinhLuongHangLoat.BorderRadius = 5;
             this.btnTinhLuongHangLoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTinhLuongHangLoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTinhLuongHangLoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTinhLuongHangLoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTinhLuongHangLoat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTinhLuongHangLoat.ForeColor = System.Drawing.Color.White;
-            this.btnTinhLuongHangLoat.Location = new System.Drawing.Point(408, 90);
+            this.btnTinhLuongHangLoat.Location = new System.Drawing.Point(454, 82);
             this.btnTinhLuongHangLoat.Name = "btnTinhLuongHangLoat";
-            this.btnTinhLuongHangLoat.Size = new System.Drawing.Size(184, 40);
+            this.btnTinhLuongHangLoat.Size = new System.Drawing.Size(185, 44);
             this.btnTinhLuongHangLoat.TabIndex = 99;
             this.btnTinhLuongHangLoat.Text = "Tính lương toàn bộ nhân viên";
             this.btnTinhLuongHangLoat.Click += new System.EventHandler(this.btnThemChamCong_Click_1);
             // 
             // tabQuanLyGDL
             // 
+            this.tabQuanLyGDL.Controls.Add(this.guna2HtmlLabel9);
+            this.tabQuanLyGDL.Controls.Add(this.cmbTrangThai);
             this.tabQuanLyGDL.Controls.Add(this.btnLamMoi);
             this.tabQuanLyGDL.Controls.Add(this.dateDenNgay);
             this.tabQuanLyGDL.Controls.Add(this.dateTuNgay);
@@ -386,13 +434,14 @@
             // 
             // btnLamMoi
             // 
+            this.btnLamMoi.BorderRadius = 5;
             this.btnLamMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(841, 144);
+            this.btnLamMoi.Location = new System.Drawing.Point(832, 144);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(99, 38);
             this.btnLamMoi.TabIndex = 111;
@@ -404,12 +453,12 @@
             this.dateDenNgay.Checked = true;
             this.dateDenNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateDenNgay.Location = new System.Drawing.Point(455, 146);
+            this.dateDenNgay.Location = new System.Drawing.Point(415, 146);
             this.dateDenNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateDenNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateDenNgay.Name = "dateDenNgay";
             this.dateDenNgay.ShowCheckBox = true;
-            this.dateDenNgay.Size = new System.Drawing.Size(200, 36);
+            this.dateDenNgay.Size = new System.Drawing.Size(154, 36);
             this.dateDenNgay.TabIndex = 110;
             this.dateDenNgay.Value = new System.DateTime(2025, 9, 13, 16, 29, 25, 937);
             // 
@@ -423,7 +472,7 @@
             this.dateTuNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTuNgay.Name = "dateTuNgay";
             this.dateTuNgay.ShowCheckBox = true;
-            this.dateTuNgay.Size = new System.Drawing.Size(200, 36);
+            this.dateTuNgay.Size = new System.Drawing.Size(160, 36);
             this.dateTuNgay.TabIndex = 109;
             this.dateTuNgay.Value = new System.DateTime(2025, 9, 13, 16, 29, 25, 937);
             // 
@@ -431,7 +480,7 @@
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(661, 120);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(575, 120);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(31, 20);
             this.guna2HtmlLabel7.TabIndex = 108;
@@ -451,9 +500,9 @@
             "Thưởng",
             "Phạt",
             "Tạm ứng"});
-            this.cmbLoai.Location = new System.Drawing.Point(661, 146);
+            this.cmbLoai.Location = new System.Drawing.Point(575, 146);
             this.cmbLoai.Name = "cmbLoai";
-            this.cmbLoai.Size = new System.Drawing.Size(140, 36);
+            this.cmbLoai.Size = new System.Drawing.Size(114, 36);
             this.cmbLoai.TabIndex = 107;
             // 
             // guna2HtmlLabel3
@@ -469,10 +518,10 @@
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(6, 6);
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(0, 0);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(589, 35);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(689, 39);
             this.guna2HtmlLabel6.TabIndex = 100;
             this.guna2HtmlLabel6.Text = "QUẢN LÝ THƯỞNG PHẠT CHO NHÂN VIÊN";
             // 
@@ -483,22 +532,23 @@
             this.btnApDungLuong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnApDungLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnApDungLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnApDungLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnApDungLuong.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnApDungLuong.ForeColor = System.Drawing.Color.White;
-            this.btnApDungLuong.Location = new System.Drawing.Point(946, 146);
+            this.btnApDungLuong.Location = new System.Drawing.Point(946, 144);
             this.btnApDungLuong.Name = "btnApDungLuong";
-            this.btnApDungLuong.Size = new System.Drawing.Size(99, 36);
+            this.btnApDungLuong.Size = new System.Drawing.Size(99, 38);
             this.btnApDungLuong.TabIndex = 102;
             this.btnApDungLuong.Text = "Áp dụng";
             this.btnApDungLuong.Click += new System.EventHandler(this.btnApDungLuong_Click);
             // 
             // btnXoaGiaoDich
             // 
+            this.btnXoaGiaoDich.BorderRadius = 5;
             this.btnXoaGiaoDich.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnXoaGiaoDich.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoaGiaoDich.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXoaGiaoDich.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoaGiaoDich.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoaGiaoDich.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnXoaGiaoDich.ForeColor = System.Drawing.Color.White;
             this.btnXoaGiaoDich.Location = new System.Drawing.Point(708, 615);
             this.btnXoaGiaoDich.Name = "btnXoaGiaoDich";
@@ -527,16 +577,16 @@
             // 
             // btnThemPhongBan
             // 
-            this.btnThemPhongBan.BorderRadius = 2;
+            this.btnThemPhongBan.BorderRadius = 5;
             this.btnThemPhongBan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnThemPhongBan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThemPhongBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThemPhongBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThemPhongBan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThemPhongBan.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnThemPhongBan.ForeColor = System.Drawing.Color.White;
-            this.btnThemPhongBan.Location = new System.Drawing.Point(6, 77);
+            this.btnThemPhongBan.Location = new System.Drawing.Point(6, 69);
             this.btnThemPhongBan.Name = "btnThemPhongBan";
-            this.btnThemPhongBan.Size = new System.Drawing.Size(213, 36);
+            this.btnThemPhongBan.Size = new System.Drawing.Size(213, 44);
             this.btnThemPhongBan.TabIndex = 106;
             this.btnThemPhongBan.Text = "Thêm giao dịch lương";
             this.btnThemPhongBan.Click += new System.EventHandler(this.btnThemPhongBan_Click_1);
@@ -568,6 +618,7 @@
             this.dgvGiaoDich.Location = new System.Drawing.Point(4, 188);
             this.dgvGiaoDich.Name = "dgvGiaoDich";
             this.dgvGiaoDich.RowHeadersVisible = false;
+            this.dgvGiaoDich.RowHeadersWidth = 25;
             this.dgvGiaoDich.Size = new System.Drawing.Size(1041, 408);
             this.dgvGiaoDich.TabIndex = 99;
             this.dgvGiaoDich.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -595,11 +646,12 @@
             // 
             // btnSuaThongTinGiaoDich
             // 
+            this.btnSuaThongTinGiaoDich.BorderRadius = 5;
             this.btnSuaThongTinGiaoDich.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSuaThongTinGiaoDich.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSuaThongTinGiaoDich.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSuaThongTinGiaoDich.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSuaThongTinGiaoDich.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSuaThongTinGiaoDich.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSuaThongTinGiaoDich.ForeColor = System.Drawing.Color.White;
             this.btnSuaThongTinGiaoDich.Location = new System.Drawing.Point(897, 615);
             this.btnSuaThongTinGiaoDich.Name = "btnSuaThongTinGiaoDich";
@@ -608,57 +660,62 @@
             this.btnSuaThongTinGiaoDich.Text = "Sửa đổi thông tin";
             this.btnSuaThongTinGiaoDich.Click += new System.EventHandler(this.btnSuaThongTinGiaoDich_Click);
             // 
-            // dateLuongDenNgay
+            // btnLamMoiBangLuong
             // 
-            this.dateLuongDenNgay.Checked = true;
-            this.dateLuongDenNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dateLuongDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateLuongDenNgay.Location = new System.Drawing.Point(200, 90);
-            this.dateLuongDenNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateLuongDenNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateLuongDenNgay.Name = "dateLuongDenNgay";
-            this.dateLuongDenNgay.Size = new System.Drawing.Size(165, 36);
-            this.dateLuongDenNgay.TabIndex = 109;
-            this.dateLuongDenNgay.Value = new System.DateTime(2025, 9, 13, 14, 49, 5, 373);
+            this.btnLamMoiBangLuong.BorderRadius = 5;
+            this.btnLamMoiBangLuong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLamMoiBangLuong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLamMoiBangLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLamMoiBangLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLamMoiBangLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLamMoiBangLuong.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoiBangLuong.Location = new System.Drawing.Point(783, 168);
+            this.btnLamMoiBangLuong.Name = "btnLamMoiBangLuong";
+            this.btnLamMoiBangLuong.Size = new System.Drawing.Size(126, 44);
+            this.btnLamMoiBangLuong.TabIndex = 113;
+            this.btnLamMoiBangLuong.Text = "Làm mới";
+            this.btnLamMoiBangLuong.Click += new System.EventHandler(this.btnLamMoiBangLuong_Click);
             // 
-            // guna2HtmlLabel8
+            // dateKyLuong
             // 
-            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(200, 70);
-            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(60, 18);
-            this.guna2HtmlLabel8.TabIndex = 110;
-            this.guna2HtmlLabel8.Text = "Đến ngày";
+            this.dateKyLuong.Checked = true;
+            this.dateKyLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateKyLuong.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateKyLuong.Location = new System.Drawing.Point(590, 168);
+            this.dateKyLuong.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateKyLuong.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateKyLuong.Name = "dateKyLuong";
+            this.dateKyLuong.Size = new System.Drawing.Size(187, 44);
+            this.dateKyLuong.TabIndex = 114;
+            this.dateKyLuong.Value = new System.DateTime(2025, 9, 13, 14, 49, 5, 373);
             // 
-            // btnThemGhiChu
+            // guna2HtmlLabel9
             // 
-            this.btnThemGhiChu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemGhiChu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemGhiChu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThemGhiChu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThemGhiChu.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThemGhiChu.ForeColor = System.Drawing.Color.White;
-            this.btnThemGhiChu.Location = new System.Drawing.Point(619, 581);
-            this.btnThemGhiChu.Name = "btnThemGhiChu";
-            this.btnThemGhiChu.Size = new System.Drawing.Size(211, 45);
-            this.btnThemGhiChu.TabIndex = 111;
-            this.btnThemGhiChu.Text = "Thêm ghi chú";
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(708, 118);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(68, 20);
+            this.guna2HtmlLabel9.TabIndex = 113;
+            this.guna2HtmlLabel9.Text = "Trạng thái";
             // 
-            // btnXoaBangLuong
+            // cmbTrangThai
             // 
-            this.btnXoaBangLuong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoaBangLuong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoaBangLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoaBangLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoaBangLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoaBangLuong.ForeColor = System.Drawing.Color.White;
-            this.btnXoaBangLuong.Location = new System.Drawing.Point(381, 581);
-            this.btnXoaBangLuong.Name = "btnXoaBangLuong";
-            this.btnXoaBangLuong.Size = new System.Drawing.Size(211, 45);
-            this.btnXoaBangLuong.TabIndex = 112;
-            this.btnXoaBangLuong.Text = "Xoá bảng nháp";
-            this.btnXoaBangLuong.Click += new System.EventHandler(this.btnXoaBangLuong_Click);
+            this.cmbTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cmbTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbTrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbTrangThai.ItemHeight = 30;
+            this.cmbTrangThai.Items.AddRange(new object[] {
+            "Đã xử lý",
+            "Chưa xử lý"});
+            this.cmbTrangThai.Location = new System.Drawing.Point(708, 144);
+            this.cmbTrangThai.Name = "cmbTrangThai";
+            this.cmbTrangThai.Size = new System.Drawing.Size(92, 36);
+            this.cmbTrangThai.TabIndex = 112;
             // 
             // ucBangLuong
             // 
@@ -669,6 +726,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucBangLuong";
             this.Size = new System.Drawing.Size(1728, 842);
+            this.Load += new System.EventHandler(this.ucBangLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.manageFurnitureDataSet)).EndInit();
             this.tabQLLuong.ResumeLayout(false);
             this.tabQLL.ResumeLayout(false);
@@ -691,7 +749,6 @@
         private System.Windows.Forms.TabPage tabQuanLyGDL;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbTrangThai;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvBangLuong;
@@ -718,5 +775,9 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dateLuongDenNgay;
         private Guna.UI2.WinForms.Guna2Button btnThemGhiChu;
         private Guna.UI2.WinForms.Guna2Button btnXoaBangLuong;
+        private Guna.UI2.WinForms.Guna2Button btnLamMoiBangLuong;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateKyLuong;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbTrangThai;
     }
 }

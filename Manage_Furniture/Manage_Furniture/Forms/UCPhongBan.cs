@@ -80,16 +80,34 @@ namespace Manage_Furniture.Forms
         {
             using(SqlConnection con = new SqlConnection(connectionString))
             {
-                con.Open();
-                // Cập nhật phòng ban bằng cách gọi thủ tục lưu trữ  
-                SqlCommand cmd = new SqlCommand("sp_XoaPhongBan", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MaPhongBan", maPB);
+                try
+                {
+                    con.Open();
+                    // Cập nhật phòng ban bằng cách gọi thủ tục lưu trữ  
+                    SqlCommand cmd = new SqlCommand("sp_XoaPhongBan", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MaPhongBan", maPB);
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa phòng ban thành công!");
-                con.Close();
-                load();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Xóa phòng ban thành công!");
+                    con.Close();
+                    load();
+                }
+                catch (SqlException ex) // Bắt lỗi SQL một cách cụ thể
+                {
+                    // Chỉ hiển thị thông báo lỗi từ SQL Server cho người dùng
+                    // ex.Message sẽ chính là câu "Không thể xóa ca làm việc..."
+                    MessageBox.Show(ex.Message, "Không thể thực hiện", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                catch (Exception ex) // Bắt các loại lỗi chung khác (ví dụ: mất kết nối)
+                {
+                    // Ghi log lỗi chi tiết cho lập trình viên xem (tùy chọn)
+                    System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                    // Hiển thị một thông báo chung chung cho người dùng
+                    MessageBox.Show("Đã có lỗi không xác định xảy ra, vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
 
@@ -147,6 +165,13 @@ namespace Manage_Furniture.Forms
 
 
             }
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            load();
+            txtTimKiem.Clear();
+
         }
     }
 }

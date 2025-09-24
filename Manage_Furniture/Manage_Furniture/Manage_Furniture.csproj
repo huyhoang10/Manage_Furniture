@@ -262,6 +262,12 @@
     <Compile Include="Forms\TinhLuongChoCaNhan.Designer.cs">
       <DependentUpon>TinhLuongChoCaNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucTrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucTrangChu.Designer.cs">
+      <DependentUpon>ucTrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ucChamCong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -511,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TinhLuongChoCaNhan.resx">
       <DependentUpon>TinhLuongChoCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucTrangChu.resx">
+      <DependentUpon>ucTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucChamCong.resx">
       <DependentUpon>ucChamCong.cs</DependentUpon>

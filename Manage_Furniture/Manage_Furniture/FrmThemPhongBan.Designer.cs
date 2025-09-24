@@ -88,6 +88,7 @@
             this.btnHuy.Size = new System.Drawing.Size(129, 32);
             this.btnHuy.TabIndex = 3;
             this.btnHuy.Text = "Huỷ";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // guna2Button2
             // 
@@ -128,9 +129,9 @@
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 119);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(94, 18);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(89, 18);
             this.guna2HtmlLabel3.TabIndex = 6;
-            this.guna2HtmlLabel3.Text = "Tên phòng ban";
+            this.guna2HtmlLabel3.Text = "Mã phòng ban";
             // 
             // FrmThemPhongBan
             // 

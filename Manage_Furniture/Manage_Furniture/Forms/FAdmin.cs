@@ -28,15 +28,15 @@ namespace Manage_Furniture.Forms
                 {
                     MessageBox.Show("Bạn đang đăng nhập", CurrentUserSession.Vaitro);
                     SetAllButton();
-                    btnHopDong.FillColor = Color.FromArgb(197, 166, 158);
+                    btnHopDong.FillColor = Color.FromArgb(94, 148, 255);
                     ucHistory1.BringToFront();
                     ucHistory1_Load(sender, e);
                 }
                 else
                 {
                     MessageBox.Show("Bạn đang đăng nhập", CurrentUserSession.Vaitro);
-                    btnNhanVien.FillColor = Color.FromArgb(142, 209, 194);
-                    ucHR1.BringToFront();
+                    btnNhanVien.FillColor = Color.FromArgb(94, 148, 255);
+                    ucHR2.BringToFront();
                     ucHR1_Load(sender, e);
                 }
 
@@ -59,8 +59,8 @@ namespace Manage_Furniture.Forms
         protected void btnCustomer_Click(object sender, EventArgs e)
         {
             SetAllButton();
-            btnChamCong.FillColor = Color.FromArgb(142, 209, 194);
-            ucCustomer1.BringToFront();
+            btnChamCong.FillColor = Color.FromArgb(94, 148, 255);
+            ucChamCong1.BringToFront();
             ucCustomer1_Load(sender, e);
 
         }
@@ -68,16 +68,16 @@ namespace Manage_Furniture.Forms
         protected void btnOrder_Click(object sender, EventArgs e)
         {
             SetAllButton();
-            btnTaiKhoan.FillColor = Color.FromArgb(142, 209, 194);
-            ucOverview1.BringToFront();
+            btnTaiKhoan.FillColor = Color.FromArgb(94, 148, 255 );
+            ucTaiKhoan1.BringToFront();
             ucOrder1_Load(sender, e);
         }
 
         protected virtual void btnWarehouse_Click(object sender, EventArgs e)
         {
             SetAllButton();
-            btnBangLuong.FillColor = Color.FromArgb(142, 209, 194);
-            ucWarehouse1.BringToFront();
+            btnBangLuong.FillColor = Color.FromArgb(94, 148, 255);
+            ucBangLuong1.BringToFront();
             ucWarehouse1_Load(sender, e);
 
 
@@ -98,8 +98,8 @@ namespace Manage_Furniture.Forms
         private void btnHistory_Click(object sender, EventArgs e)
         {
             SetAllButton();
-            btnHopDong.FillColor = Color.FromArgb(197, 166, 158);
-            ucHistory1.BringToFront();
+            btnHopDong.FillColor = Color.FromArgb(94, 148, 255);
+            ucHopDong1.BringToFront();
             ucHistory1_Load(sender, e);
         }
 
@@ -111,9 +111,8 @@ namespace Manage_Furniture.Forms
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             SetAllButton();
-            btnNhanVien.FillColor = Color.FromArgb(142, 209, 194);
-            ucHR1.BringToFront();
-            ucHistory1_Load(sender,e);
+            btnNhanVien.FillColor = Color.FromArgb(94, 148, 255);
+            ucHR2.BringToFront();
 
 
 
@@ -124,8 +123,8 @@ namespace Manage_Furniture.Forms
             try
             {
                 SetAllButton();
-                btnChucVuvaVaiTro.FillColor = Color.FromArgb(142, 209, 194);
-                ucChucVuVaiTro1.BringToFront();
+                btnChucVuvaVaiTro.FillColor = Color.FromArgb(94, 148, 255);
+                ucChucVuVaiTro2.BringToFront();
                 
             }
             catch (Exception ex)
@@ -155,6 +154,15 @@ namespace Manage_Furniture.Forms
         private void ucOrder1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTrangchu_Click(object sender, EventArgs e)
+        {
+            SetAllButton();
+            btnTrangchu.FillColor = Color.FromArgb(94, 148, 255);
+            ucTrangChu1.BringToFront();
+            
+            
         }
     }
 }

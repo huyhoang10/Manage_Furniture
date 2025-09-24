@@ -28,6 +28,7 @@ namespace Manage_Furniture
             InitializeComponent();
             txtMaPhongBan.Text = maPhongBan;
             txtTenPhongBan.Text = tenPhongBan;
+            txtMaPhongBan.Enabled = false; // Mã phòng ban không thể sửa
             title.Text = "SỬA PHÒNG BAN";
             isEditMode = true;
 
@@ -74,6 +75,11 @@ namespace Manage_Furniture
                 this.Close();
                 return;
             }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

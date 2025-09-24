@@ -21,7 +21,7 @@ namespace Manage_Furniture.Forms
         {
             InitializeComponent();
             is_edit = false;
-            btnXacNhan.Text = "THÊM";
+            btnXacNhan.Text = "THÊM CA LÀM";
 
         }
         public ThemCaLam(string maca)
@@ -29,8 +29,10 @@ namespace Manage_Furniture.Forms
             InitializeComponent();
             is_edit = true;
             this.MaCa = maca;
+
             lblTitle.Text = "SỬA CA LÀM";
             btnXacNhan.Text = "LƯU";
+            txtMaCa.Enabled = false;
             if (is_edit)
             {
                 LoadDuLieuCanSua();
